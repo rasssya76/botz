@@ -3282,7 +3282,7 @@ Report Message: ${text}` })
 reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
-                     case 'alive': case 'bot':{
+                     /*case 'alive': case 'bot':{
                            	timestampe = speed();
 latensie = speed() - timestampe
  anu = ` `
@@ -3341,8 +3341,8 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 }), { userJid: m.chat })
                 rama.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
-break
-            case 'list': case 'menu': {
+break*/
+          case 'alive': case 'bot': case 'list': case 'menu': {
             	timestampe = speed();
 latensie = speed() - timestampe
                 anu = ``
@@ -3353,17 +3353,25 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 ┌─❖
 │ *Hi 👋*
 └❖ [ *${pushname}* ]
- │-> SEMOGA HARI MU MENYENANGKAN
+ │*->* *WHATSAPP BOTS*
  └───────────────┈ ⳹
  _____[ *BOT INFO* ]_____
- *÷>* 𝗦𝗽𝗲𝗲𝗱 : ${latensie.toFixed(4)} miliseconds
- *÷>* 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 : ${runtime(process.uptime())}
- *÷>* 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 : ${global.botname}
- *÷>* 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 : ${global.ownername}
- *÷>* 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 : ${global.owner}
- *÷>* 𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 : ${os.hostname()}
- *÷>* 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 : ${os.platform()}
- *÷>* 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 : ${Object.keys(global.db.data.users).length}
+ *÷>* 𝗦𝗽𝗲𝗲𝗱 
+    : ${latensie.toFixed(4)} miliseconds
+ *÷>* 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 
+    : ${runtime(process.uptime())}
+ *÷>* 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 
+    : ${global.botname}
+ *÷>* 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 
+    : ${global.ownername}
+ *÷>* 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 
+    : ${global.owner}
+ *÷>* 𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 
+    : ${os.hostname()}
+ *÷>* 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 
+    : ${os.platform()}
+ *÷>* 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 
+    : ${Object.keys(global.db.data.users).length}
  `,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./GojoMedia/gojo.jpg')}, 
@@ -3616,7 +3624,7 @@ case 'allmenu': {
  *√>* ${prefix}animequote (Query)
  *√>* ${prefix}couplepp
  
- _____[ *RANDOM ANIME* ]_____
+ _____[ *ANIME* ]_____
  *√>* ${prefix}loli
  *√>* ${prefix}bully
  *√>* ${prefix}cuddle
@@ -3716,13 +3724,13 @@ case 'allmenu': {
  *√>* ${prefix}getmsg
  *√>* ${prefix}delmsg
  
- _____[ *ANONYMOUS CHAT* ]_____
+ _____[ *ANONYMOUS* ]_____
  *√>* ${prefix}anonymous
  *√>* ${prefix}start
  *√>* ${prefix}next
  *√>* ${prefix}leave
  
- _____[ *VOICE CHANGER* ]_____
+ _____[ *VOICE* ]_____
  *√>* ${prefix}bass [reply aud]
  *√>* ${prefix}blown [reply aud]
  *√>* ${prefix}deep [reply aud]
