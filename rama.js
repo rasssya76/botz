@@ -3374,23 +3374,18 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                                     url: `${myweb}`
                                 }
                             }, {
-                            	urlButton: {
-                                displayText: 'Script🔖',
-                                    url: `${sc}`
-                                }
-                            }, {
                                 quickReplyButton: {
-                                    displayText: 'All Menu🎉',
+                                    displayText: 'All Menu',
                                     id: `${prefix}allmenu`
                                 }
                                 }, {
                                 quickReplyButton: {
-                                    displayText: 'List Menu⭐',
+                                    displayText: 'LIST MENU',
                                     id: `${prefix}command`
                                 }
                                 }, {
                                 quickReplyButton: {
-                                    displayText: 'Owner🐦',
+                                    displayText: 'OWNER',
                                     id: `${prefix}owner`
                                 }
                             }]
