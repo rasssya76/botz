@@ -15,6 +15,8 @@ const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 const nexusnw = require('xfarr-api')
+const hxz = require("hxz-api");
+const xfar = require('xfarr-api');
 LahKokTam = `WHATSAPP-BOT`
 //rpg function\\
    const { 
@@ -2439,7 +2441,7 @@ case 'webtonsearch': case 'webtoon':
             }
             break
             case 'sifatusaha': {
-                if (!ext)throw `Example : ${prefix+ command} 28, 12, 2021`
+                if (!ext)throw `Example : ${ command} 28, 12, 2021`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
@@ -2583,7 +2585,7 @@ case 'webtonsearch': case 'webtoon':
             }
             break
             case 'zodiak': case 'zodiac': {
-                if (!text) throw `Example : ${prefix+ command} 7 7 2005`
+                if (!text) throw `Example : ${ command} 7 7 2005`
                 let zodiak = [
                     ["capricorn", new Date(1970, 0, 1)],
                     ["aquarius", new Date(1970, 0, 20)],
@@ -2676,7 +2678,7 @@ case 'webtonsearch': case 'webtoon':
                 }
             }
             break
-	        case prefix+'tiktok':
+	        case 'tiktok':
 			    if (!text) return reply(`No Query Url!`)
                 reply(mess.wait)
 			    xfar.Tiktok(args[1]).then( data => {
@@ -2690,7 +2692,7 @@ case 'webtonsearch': case 'webtoon':
 				 // limitAdd(sender, limit)
 			   }).catch(() => reply(`Error Code tidak di ketahui`))
 		         break
-			case prefix+'tiktoknowm':
+			case 'tiktoknowm':
 			    if (!text) return reply(`No Query Url!`)
                 reply(mess.wait)
 			    hxz.ttdownloader(args[1]).then( data => {
@@ -2698,7 +2700,7 @@ case 'webtonsearch': case 'webtoon':
 			      //limitAdd(sender, limit)
 				}).catch(() => reply(`Error Code tidak di ketahui`))
 		       break
-			case prefix+'tiktokaudio':
+			case 'tiktokaudio':
 			    if (!text) return reply(`No Query Url!`)
                 reply(mess.wait)
 			    hxz.ttdownloader(args[1]).then( data => {
@@ -3577,6 +3579,7 @@ case 'allmenu': {
  *√>* ${prefix}getmusic [yt link]
  *√>* ${prefix}getvideo [yt link]
  *√>* ${prefix}umma [query]
+ *√>* ${prefix}tiktok [link]
  *√>* ${prefix}joox [query]
  *√>* ${prefix}soundcloud [url]
  
