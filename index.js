@@ -140,7 +140,7 @@ async function startrama() {
         let nama = await rama.getName(num)
 memb = metadata.participants.length
 
-Kon = await getBuffer(`http://hadi-api.herokuapp.com/api/card/welcome2?nama=${encodeURIComponent(nama)}}&memcount=${encodeURIComponent(memb)}&gcname=${encodeURIComponent(metadata.subject)}&gcicon=${ppgroup}&pp=${ppuser}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg`)
+Kon = await getBuffer(`http://hadi-api.herokuapp.com/api/card/welcome2?nama=${encodeURIComponent(nama)}}&descriminator=`Welcome`&memcount=${encodeURIComponent(memb)}&gcname=${encodeURIComponent(metadata.subject)}&gcicon=${ppgroup}&pp=${ppuser}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg`)
                        //http://hadi-api.herokuapp.com/api/card/welcome2?nama=${encodeURIComponent(nama)}}&memcount=${encodeURIComponent(memb)}&gcname=${encodeURIComponent(metadata.subject)}&gcicon=${ppgroup}&pp=${ppuser}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg`)
 Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
                 if (anu.action == 'add') {
