@@ -2676,60 +2676,36 @@ case 'webtonsearch': case 'webtoon':
                 }
             }
             break
-	        case 'tiktokd': case 'tiktoknowmx': {
-                if (!text) return reply(`Enter Query Link!`)
+	        case prefix+'tiktok':
+			    if (!text) return reply(`No Query Url!`)
                 reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '🥬With Watermark🥬'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '🎵Audio🎵'}, type: 1}
-                ]
-                let buttonMessage = {
-                    video: { url: anu.result.nowatermark },
-                    caption: `Download From ${text}`,
-                    footer: 'Press The Button Below',
-                    buttons: buttons,
-                    headerType: 5
-                }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
-            }
-            break
-            case 'tiktokwmx': case 'tiktokwatermarkx': {
-                if (!text) return reply(`Enter Query Link!`)
+			    xfar.Tiktok(args[1]).then( data => {
+			      rama.sendMessage(from, {
+				   video: { url: data.medias[0].url },
+				   caption: `${data.title}\n\nKamu bisa mengubahnya menjadi Vidio Tanpa Watermark atau Audio, pencet tombol dibawah untuk mengubahnya!`,
+				   buttons: [{buttonId: `${prefix}tiktoknowm ${args[1]}`, buttonText: { displayText: "Without Watermark" }, type: 1 },
+					{buttonId: `${prefix}tiktokaudio ${args[1]}`, buttonText: { displayText: "Audio" }, type: 1 }],
+				   footer: "WhatsApp-Bot"
+			      }, { quoted: msg })
+				 // limitAdd(sender, limit)
+			   }).catch(() => reply(`Error Code tidak di ketahui`))
+		         break
+			case prefix+'tiktoknowm':
+			    if (!text) return reply(`No Query Url!`)
                 reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '🥬No Watermark🥬'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '🎵Audio🎵'}, type: 1}
-                ]
-                let buttonMessage = {
-                    video: { url: anu.result.watermark },
-                    caption: `Download From ${text}`,
-                    footer: 'Press The Button Below',
-                    buttons: buttons,
-                    headerType: 5
-                }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
-            }
-            break
-            case 'tiktokmp3x': case 'tiktokaudiox': {
-                if (!text) return reply(`Enter Query Link!`)
+			    hxz.ttdownloader(args[1]).then( data => {
+			      rama.sendMessage(from, { video: { url: data.nowm }}, { quoted: msg })
+			      //limitAdd(sender, limit)
+				}).catch(() => reply(`Error Code tidak di ketahui`))
+		       break
+			case prefix+'tiktokaudio':
+			    if (!text) return reply(`No Query Url!`)
                 reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/musically', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '🥬No Watermark🥬'}, type: 1},
-                    {buttonId: `tiktokwm ${text}`, buttonText: {displayText: '🥬With Watermark🥬'}, type: 1}
-                ]
-                let buttonMessage = {
-                    text: `Download From ${text}`,
-                    footer: 'Press The Button Below',
-                    buttons: buttons,
-                    headerType: 2
-                }
-                let msg = await rama.sendMessage(m.chat, buttonMessage, { quoted: m })
-                rama.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: msg })
-            }
-            break
+			    hxz.ttdownloader(args[1]).then( data => {
+			      rama.sendMessage(from, { audio: { url: data.nowm }, mimetype: 'audio/mp4' }, { quoted: msg })
+			      // limitAdd(sender, limit)
+				}).catch(() => reply(`Error Code tidak di ketahui`))
+		        break
 	        case 'instagramx': case 'igx': case 'igdlx': {
                 if (!text) return reply(`No Query Url!`)
                 reply(mess.wait)
@@ -3353,29 +3329,27 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
 ┌─❖
 │ *Hi 👋*
 └❖ [ *${pushname}* ]
- │*->* *WHATSAPP BOTS*
+ │ *->* *WHATSAPP BOTS*
  └───────────────┈ ⳹
- _____[ *BOT INFO* ]_____
- *÷>* 𝗦𝗽𝗲𝗲𝗱 
-    : ${latensie.toFixed(4)} miliseconds
- *÷>* 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 
-    : ${runtime(process.uptime())}
- *÷>* 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 
-    : ${global.botname}
- *÷>* 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 
-    : ${global.ownername}
- *÷>* 𝗢𝘄𝗻𝗲𝗿 𝗡𝘂𝗺𝗯𝗲𝗿 
-    : ${global.owner}
- *÷>* 𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 
-    : ${os.hostname()}
- *÷>* 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 
-    : ${os.platform()}
- *÷>* 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 
-    : ${Object.keys(global.db.data.users).length}
- `,
+  `,
                             locationMessage: {
                             jpegThumbnail: fs.readFileSync('./GojoMedia/gojo.jpg')}, 
-                            hydratedFooterText: `R-BOT BY RAMA`,
+                            hydratedFooterText: `_____[ *BOT INFO* ]_____
+ ÷> 𝗦𝗽𝗲𝗲𝗱 
+ : ${latensie.toFixed(4)} miliseconds
+ ÷> 𝗥𝘂𝗻𝘁𝗶𝗺𝗲 
+ : ${runtime(process.uptime())}
+ ÷> 𝗕𝗼𝘁 𝗡𝗮𝗺𝗲 
+ : ${global.botname}
+ ÷> 𝗢𝘄𝗻𝗲𝗿 𝗡𝗮𝗺𝗲 
+ : ${global.ownername} 
+ ÷> 𝗛𝗼𝘀𝘁 𝗡𝗮𝗺𝗲 
+ : ${os.hostname()}
+ ÷> 𝗣𝗹𝗮𝘁𝗳𝗼𝗿𝗺 
+ : ${os.platform()}
+ ÷> 𝗧𝗼𝘁𝗮𝗹 𝗨𝘀𝗲𝗿 
+ : ${Object.keys(global.db.data.users).length}
+`,
                             hydratedButtons: [{
                                 urlButton: {
                                     displayText: 'BOT GRUP',
