@@ -2678,36 +2678,60 @@ case 'webtonsearch': case 'webtoon':
                 }
             }
             break
-	        case 'tiktok':
-			    if (!text) return reply(`No Query Url!`)
+	        case 'tiktok': case 'tiktoknowm': {
+                if (!text) return reply(`Enter Query Link!`)
                 reply(mess.wait)
-			    xfar.Tiktok(args[1]).then( data => {
-			      rama.sendMessage(from, {
-				   video: { url: data.medias[0].url },
-				   caption: `${data.title}\n\nKamu bisa mengubahnya menjadi Vidio Tanpa Watermark atau Audio, pencet tombol dibawah untuk mengubahnya!`,
-				   buttons: [{buttonId: `${prefix}tiktoknowm ${args[1]}`, buttonText: { displayText: "Without Watermark" }, type: 1 },
-					{buttonId: `${prefix}tiktokaudio ${args[1]}`, buttonText: { displayText: "Audio" }, type: 1 }],
-				   footer: "WhatsApp-Bot"
-			      }, { quoted: msg })
-				 // limitAdd(sender, limit)
-			   }).catch(() => reply(`Error Code tidak di ketahui`))
-		         break
-			case 'tiktoknowm':
-			    if (!text) return reply(`No Query Url!`)
+                let anu = await fetchJson(`https://hadi-api.herokuapp.com/api/tiktok?url=${text}`)
+                let buttons = [
+                    //{buttonId: `tiktokwm ${text}`, buttonText: {displayText: '🥬With Watermark🥬'}, type: 1},
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '🎵Audio🎵'}, type: 1}
+                ]
+                let buttonMessage = {
+                    video: { url: anu.result.video.nowm },
+                    caption: `VIDEO TIKTOK`,
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 5
+                }
+                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
+            case 'tiktokwmx': case 'tiktokwatermarkx': {
+                if (!text) return reply(`Enter Query Link!`)
                 reply(mess.wait)
-			    hxz.ttdownloader(args[1]).then( data => {
-			      rama.sendMessage(from, { video: { url: data.nowm }}, { quoted: msg })
-			      //limitAdd(sender, limit)
-				}).catch(() => reply(`Error Code tidak di ketahui`))
-		       break
-			case 'tiktokaudio':
-			    if (!text) return reply(`No Query Url!`)
+                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
+                let buttons = [
+                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '🥬No Watermark🥬'}, type: 1},
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '🎵Audio🎵'}, type: 1}
+                ]
+                let buttonMessage = {
+                    video: { url: anu.result.watermark },
+                    caption: `Download From ${text}`,
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 5
+                }
+                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+            }
+            break
+            case 'tiktokmp3x': case 'tiktokaudiox': {
+                if (!text) return reply(`Enter Query Link!`)
                 reply(mess.wait)
-			    hxz.ttdownloader(args[1]).then( data => {
-			      rama.sendMessage(from, { audio: { url: data.nowm }, mimetype: 'audio/mp4' }, { quoted: msg })
-			      // limitAdd(sender, limit)
-				}).catch(() => reply(`Error Code tidak di ketahui`))
-		        break
+                let anu = await fetchJson(`https://hadi-api.herokuapp.com/api/tiktok?url=${text}`)
+                let buttons = [
+                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '🥬No Watermark🥬'}, type: 1},
+                    //{buttonId: `tiktokwm ${text}`, buttonText: {displayText: '🥬With Watermark🥬'}, type: 1}
+                ]
+                let buttonMessage = {
+                    text: `MP3`,
+                    footer: 'Press The Button Below',
+                    buttons: buttons,
+                    headerType: 2
+                }
+                let msg = await rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+                rama.sendMessage(m.chat, { audio: { url: anu.result.video.audio_only.audio1 }, mimetype: 'audio/mpeg'}, { quoted: msg })
+            }
+            break
 	        case 'instagramx': case 'igx': case 'igdlx': {
                 if (!text) return reply(`No Query Url!`)
                 reply(mess.wait)
