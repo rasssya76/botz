@@ -2714,7 +2714,7 @@ case 'webtonsearch': case 'webtoon':
                 rama.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-            case 'tiktokmp3x': case 'tiktokaudiox': {
+            case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) return reply(`Enter Query Link!`)
                 reply(mess.wait)
                 let anu = await fetchJson(`https://hadi-api.herokuapp.com/api/tiktok?url=${text}`)
@@ -2729,7 +2729,7 @@ case 'webtonsearch': case 'webtoon':
                     headerType: 2
                 }
                 let msg = await rama.sendMessage(m.chat, buttonMessage, { quoted: m })
-                rama.sendMessage(m.chat, { audio: { url: anu.result.video.audio_only.audio1 }, mimetype: 'audio/mpeg'}, { quoted: msg })
+                rama.sendMessage(m.chat, { audio: { url: anu.result.audio_only.audio1 }, mimetype: 'audio/mpeg'}, { quoted: msg })
             }
             break
 	        case 'instagramx': case 'igx': case 'igdlx': {
