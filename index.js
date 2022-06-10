@@ -116,7 +116,7 @@ async function startrama() {
      }
     })
 
-    rama.ev.on('group-participants.update', async (anu) => {
+   /* rama.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
         try {
             let metadata = await rama.groupMetadata(anu.id)
@@ -152,7 +152,38 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
         } catch (err) {
             console.log(err)
         }
-    })
+    })*/
+rama.ev.on('group-participants.update', async (anu) => {
+        console.log(anu)
+        try {
+            let metadata = await rama.groupMetadata(anu.id)
+            let participants = anu.participants
+            for (let num of participants) {
+                // Get Profile Picture User
+                try {
+                    ppuser = await rama.profilePictureUrl(num, 'image')
+                } catch {
+                    ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+                }
+
+                // Get Profile Picture Group
+                try {
+                    ppgroup = await rama.profilePictureUrl(anu.id, 'image')
+                } catch {
+                    ppgroup = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+                }
+                Kon = await getBuffer(`http://hadi-api.herokuapp.com/api/card/welcome2?nama=${encodeURIComponent(nama)}}&descriminator=${wellll}&memcount=${encodeURIComponent(memb)}&gcname=${encodeURIComponent(metadata.subject)}&gcicon=${ppgroup}&pp=${ppuser}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg`)
+ 
+                if (anu.action == 'add') {
+                    rama.sendMessage(anu.id, { image: { url: Kon }, contextInfo: { mentionedJid: [num] }, caption: `\nHi👋 @${num.split("@")[0]}\nWelcome To ${metadata.subject}` })
+                } else if (anu.action == 'remove') {
+                    rama.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Leaving To ${metadata.subject}` })
+                }
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    })    
 	
     //Setting\\
     rama.decodeJid = (jid) => {
