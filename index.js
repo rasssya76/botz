@@ -172,6 +172,8 @@ rama.ev.on('group-participants.update', async (anu) => {
                 } catch {
                     ppgroup = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
                 }
+                memb = metadata.participants.length
+                let nama = await rama.getName(num)
                 Kon = await getBuffer(`http://hadi-api.herokuapp.com/api/card/welcome2?nama=${encodeURIComponent(nama)}}&descriminator=${wellll}&memcount=${encodeURIComponent(memb)}&gcname=${encodeURIComponent(metadata.subject)}&gcicon=${ppgroup}&pp=${ppuser}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg`)
  
                 if (anu.action == 'add') {
