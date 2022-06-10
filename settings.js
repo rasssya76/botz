@@ -19,9 +19,9 @@ global.APIKeys = {
 }
 
 //customize settings\\
-global.owner = ['6281515589573']
-global.premium = ['6281515589573']
-global.ownernomer = '6281515589573'
+global.owner = ['6282142108243']
+global.premium = ['6282142108243']
+global.ownernomer = '6282142108243'
 global.ownername = 'RAMA'
 global.botname = 'WHATSAPP-BOT'
 global.footer = 'WHATSAPP-BOT'

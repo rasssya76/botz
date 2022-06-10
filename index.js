@@ -144,11 +144,9 @@ Kon = await getBuffer(`http://hadi-api.herokuapp.com/api/card/welcome2?nama=${en
                        //http://hadi-api.herokuapp.com/api/card/welcome2?nama=${encodeURIComponent(nama)}}&memcount=${encodeURIComponent(memb)}&gcname=${encodeURIComponent(metadata.subject)}&gcicon=${ppgroup}&pp=${ppuser}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg`)
 Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURIComponent(ppuser)}&name=${encodeURIComponent(nama)}&bg=https://telegra.ph/file/8bbe8a7de5c351dfcb077.jpg&namegb=${encodeURIComponent(metadata.subject)}&member=${encodeURIComponent(memb)}`)
                 if (anu.action == 'add') {
-                    rama.sendMessage(anu.id, { image: ppuser, contextInfo: { mentionedJid: [num] }, caption: `
-Hi👋 @${num.split("@")[0]}
-Welcome To ${metadata.subject}`} )
+                    rama.sendMessage(anu.id, { contextInfo: { mentionedJid: [num] }, caption: `\nHi👋 @${num.split("@")[0]}\nWelcome To ${metadata.subject}` })
               } else if (anu.action == 'remove') {
-                    rama.sendMessage(anu.id, { image: ppuser, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Left ${metadata.subject}` })
+                    rama.sendMessage(anu.id, { contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Left ${metadata.subject}` })
                 }
             }
         } catch (err) {

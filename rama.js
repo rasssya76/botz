@@ -3383,7 +3383,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: 'All Menu',
+                                    displayText: 'All MENU',
                                     id: `${prefix}allmenu`
                                 }
                                 }, {
@@ -3402,6 +3402,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 }), { userJid: m.chat })
                 rama.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
+                rama.sendMessage(m.chat, { audio: { url: `https://a.uguu.se/AEJxiyrP.mp3` }, mimetype: 'audio/mp4'}, { quoted: msg }) 
                 break
                 case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
