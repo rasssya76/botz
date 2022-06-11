@@ -1336,7 +1336,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
             tex = m.quoted ? m.quoted.text ? m.quoted.text : q ? q : m.text : q ? q : m.text
             reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
             break
-            case 'reactxxx': {
+            case 'react': {
                 if (!isCreator) return replay(`${mess.owner}`)
                 reactionMessage = {
                     react: {
@@ -1883,7 +1883,7 @@ break
                 }
             }
             break
-case 'smemex': case 'stickermemex': case 'stickmemex': {
+case 'smeme': case 'stickermeme': case 'stickmeme': {
 let { TelegraPh } = require('./lib/uploader')
 if (!text) return reply(`Send/Reply Photo With Caption ${prefix + command} *Text*`)
 if (text.includes('|')) return reply(`Send/Reply Photo With Caption ${prefix + command} *Text*`)
@@ -2004,7 +2004,7 @@ break
                 await fs.unlinkSync(media)
             }
             break
-            case 'imagenobgxxx': case 'removebgxxx': case 'remove-bgxxx': {
+            case 'imagenobg': case 'removebg': case 'remove-bg': {
 	    if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
 	    if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
 	    if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
@@ -3711,6 +3711,8 @@ case 'allmenu': {
  *√>* ${prefix}tourl [reply img]
  *√>* ${prefix}tovn [reply aud]
  *√>* ${prefix}tomp3 [reply vn]
+ *√>* ${prefix}removebg [reply image]
+ *√>* ${prefix}smeme [reply image (text)] 
  *√>* ${prefix}toaudio [reply vid]
  *√>* ${prefix}ebinary [reply txt]
  *√>* ${prefix}dbinary [reply txt]
