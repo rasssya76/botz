@@ -3524,9 +3524,8 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 							}
 						],
           listType: 1
-                }
-           {quoted: m}
-            }), {})
+                }           
+            }), {quoted: m})
             rama.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
