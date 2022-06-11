@@ -175,12 +175,13 @@ rama.ev.on('group-participants.update', async (anu) => {
                 }
                 memb = metadata.participants.length
                 let nama = await rama.getName(num)
-                Kon = await getBuffer(`https://kanza-api.herokuapp.com/api/canvas/welcome?name=${encodeURIComponent(nama)}&picurl=${ppuser}&bgurl=https://telegra.ph/file/1dfe7720d51f20e4c5f0c.jpg&mem=${encodeURIComponent(memb)}&gcname=${encodeURIComponent(metadata.subject)}&apikey=${geni}`)
+                Kon = await getBuffer(`https://violetics.pw/api/canvas/welcomer?apikey=7005-2125-9f00&username=${encodeURIComponent(nama)}&avatar=ppuser&groupname=${encodeURIComponent(metadata.subject)}&timestamp=1654678938749`)
+                                       
                 Tol = await getBuffer(`https://kanza-api.herokuapp.com/api/canvas/goodbye?name=${encodeURIComponent(nama)}&picurl=${ppuser}&bgurl=https://telegra.ph/file/1dfe7720d51f20e4c5f0c.jpg&mem=${encodeURIComponent(memb)}&gcname=${encodeURIComponent(metadata.subject)}&apikey=${geni}`)
                 if (anu.action == 'add') {
                     rama.sendMessage(anu.id, { image: Kon, contextInfo: { mentionedJid: [num] }, caption: `\nHi👋 @${num.split("@")[0]}\nWelcome To ${metadata.subject}` })
                 } else if (anu.action == 'remove') {
-                    rama.sendMessage(anu.id, { image: Tol, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Leaving To ${metadata.subject}` })
+                    rama.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Leaving To ${metadata.subject}` })
                 }
             }
         } catch (err) {
