@@ -3402,13 +3402,13 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 }), { userJid: m.chat })
                 rama.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
-                rama.sendMessage(m.chat, { audio: { url: `https://a.uguu.se/AEJxiyrP.mp3` }, mimetype: 'audio/mp4'}, { quoted: m }) 
+                rama.sendMessage(m.chat, { audio: fs.readFileSync('./noLT.mp3'), mimetype: 'audio/mp4'}, { quoted: m }) 
                 break
                 case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
                     title: `Hi ${pushname}`,
-                    description: `Please Choose The Menu\n\n`,
+                    description: `\n *Please Choose The Menu* \n`,
                     buttonText: "CLICK HERE",
                     footerText: `${global.footer}`,
                     listType: "SINGLE_SELECT",
@@ -3525,6 +3525,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 						],
           listType: 1
                 }
+           {quoted: m}
             }), {})
             rama.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
