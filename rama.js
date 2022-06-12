@@ -199,16 +199,29 @@ module.exports = rama = async (rama, m, chatUpdate, store) => {
         } catch (err) {
             console.error(err)
         }
-	
+const fakee = {
+	 key: { 
+          fromMe: false,
+	      participant: `0@s.whatsapp.net`, ...(m.chat ? 
+	 { remoteJid: "6282331033919-1625305606@g.us" } : {}) 
+                },
+	 message: { 
+		"extendedTextMessage": {
+                 "text": `WHATSAPP-BOT`,
+                 "title": `RamaGans`,
+                 'jpegThumbnail': fs.readFileSync('./GojoMedia/gojo.jpg')
+                        }
+	                  } 
+                     }		
 	//group target \\
 const reply = (teks) => {
-            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: m})
+            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: fakee})
         }
         
         const replys = (teks) => {
-            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: m})
+            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: fakee})
         }
-	
+
         //Public & Self\\
         if (!rama.public) {
             if (!m.key.fromMe) return
@@ -261,25 +274,25 @@ const reply = (teks) => {
         for (let anji of setik){
 				if (budy === anji){
 					result = fs.readFileSync(`./GojoMedia/sticker/${anji}.webp`)
-					rama.sendMessage(m.chat, { sticker: result }, { quoted: m })
+					rama.sendMessage(m.chat, { sticker: result }, { quoted: fakee })
 					}
 			}
 			for (let anju of vien){
 				if (budy === anju){
 					result = fs.readFileSync(`./GojoMedia/vn/${anju}.mp3`)
-					rama.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: m })     
+					rama.sendMessage(m.chat, { audio: result, mimetype: 'audio/mp4', ptt: true }, { quoted: fakee })     
 					}
 			}
 			for (let anjh of imagi){
 				if (budy === anjh){
 					result = fs.readFileSync(`./GojoMedia/image/${anjh}.jpg`)
-					rama.sendMessage(m.chat, { image: result }, { quoted: m })
+					rama.sendMessage(m.chat, { image: result }, { quoted: fakee })
 					}
 			}
 					for (let anjh of videox){
 				if (budy === anjh){
 					result = fs.readFileSync(`./GojoMedia/vid/${anjh}.mp4`)
-					rama.sendMessage(m.chat, { video: result }, { quoted: m })
+					rama.sendMessage(m.chat, { video: result }, { quoted: fakee })
 					}
 				  }
 
@@ -300,7 +313,7 @@ const reply = (teks) => {
         let { text, mentionedJid } = hash
         let messages = await generateWAMessage(m.chat, { text: text, mentions: mentionedJid }, {
             userJid: rama.user.id,
-            quoted: m.quoted && m.quoted.fakeObj
+            quoted: fakee.quoted && m.quoted.fakeObj
         })
         messages.key.fromMe = areJidsSameUser(m.sender, rama.user.id)
         messages.key.id = m.key.id
@@ -647,7 +660,7 @@ if (q.includes('--help')) return reply(examkosong)
       buttons: buttons,
       headerType: 4
      }
-     rama.sendMessage(from, buttonMessage, { quoted: m })
+     rama.sendMessage(from, buttonMessage, { quoted: fakee })
    
    }, 7000)  
   setTimeout( () => {
@@ -874,7 +887,7 @@ if (q.includes('--help')) return reply(examkosong)
       buttons: buttons,
       headerType: 4
      }
-     rama.sendMessage(from, buttonMessage, { quoted: m })      
+     rama.sendMessage(from, buttonMessage, { quoted: fakee })      
   }, 5000)  
  setTimeout( () => {
   reply(`@${m.sender.split("@")[0]} Started Hunting In ${lokasinya}`)     
@@ -1036,7 +1049,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions`)
                     let anu = await fetchJson('https://fatiharridho.github.io/tebaklagu.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
-                    let msg = await rama.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
+                    let msg = await rama.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: fakee })
                     rama.sendText(m.chat, `What Is The Name Of This Song?\n\nArtist : ${result.artist}\nTime : 60 seconds`, msg).then(() => {
                     tebaklagu[m.sender.split('@')[0]] = result.jawaban.toLowerCase()
                     })
@@ -1179,49 +1192,49 @@ Cieeee, What's Going On❤️💖👀`
 				if (!text) return reply(`Use Text, Example : ${prefix + command} he married `)
 					const apa = [`Yes`, `No`, `It Could Be`, `Thats right`]
 					const kah = apa[Math.floor(Math.random() * apa.length)]
-rama.sendMessage(from, { text: `Question : Is ${q}\nAnswer : ${kah}` }, { quoted: m })
+rama.sendMessage(from, { text: `Question : Is ${q}\nAnswer : ${kah}` }, { quoted: fakee })
 
 					break
 					            case 'what':
 				if (!text) return reply(`Use Text, Example : ${prefix + command} he married `)
 					const lel = [`Ask Your Gf`, `I Dont Know`, `I Don't Know, Ask Your Father`]
 					const kahk = lel[Math.floor(Math.random() * lel.length)]
-rama.sendMessage(from, { text: `Question : What ${q}\nAnswer : ${kahk}` }, { quoted: m })
+rama.sendMessage(from, { text: `Question : What ${q}\nAnswer : ${kahk}` }, { quoted: fakee })
 
 					break
 case 'can':
 				if (!text) return reply(`Use Text, Example : ${prefix + command} you fuck her lol `)
 					const bisa = [`Can`,`Can't`,`Cannot`,`Of Course You Can!!!`]
 					const ga = bisa[Math.floor(Math.random() * bisa.length)]
-rama.sendMessage(from, { text: `Question : Can ${q}\nAnswer : ${ga}` }, { quoted: m })
+rama.sendMessage(from, { text: `Question : Can ${q}\nAnswer : ${ga}` }, { quoted: fakee })
 
 					break
 case 'how':
 				if (!text) return reply(`Use Text, Example : ${prefix + command} is my face`)
 					const gimana = [`It's Okay`, `It's Difficult Bro`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah`,`Ohhh I See:(`,`The Patient, Boss:(`,`How Are You?`]
 					const ya = gimana[Math.floor(Math.random() * gimana.length)]
-rama.sendMessage(from, { text: `Question : ${q}\nAnswer : How ${ya}` }, { quoted: m })
+rama.sendMessage(from, { text: `Question : ${q}\nAnswer : How ${ya}` }, { quoted: fakee })
 
 					break
 case 'rate':
 				if (!text) return reply(`Use Text, Example : ${prefix + command} My Dp`)
 					const ra = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const te = ra[Math.floor(Math.random() * ra.length)]
-rama.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m })
+rama.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: fakee })
 
 					break
   case 'handsomecheck':
 				if (!text) return reply(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
-rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
+rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: fakee })
 
 					break
 case 'beautifulcheck':
 				if (!text) return reply(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
-rama.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
+rama.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: fakee })
 
 					break
 case 'awesomecheck':
@@ -1237,13 +1250,13 @@ case 'awesomecheck':
 				if (!text) return reply(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
-rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
+rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: fakee })
 					break
 					case 'charactercheck':
 					if (!text) return reply(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const xeony =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
 					const taky = xeony[Math.floor(Math.random() * xeony.length)]
-					rama.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
+					rama.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: fakee })
 				     break
                     case 'stupid':
       case 'foolish':
@@ -1317,7 +1330,7 @@ case 'when':
 				if (!text) return reply(`Use Text, Example : ${prefix + command} will i get married `)
 					const kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','Tomorrow','The Day After Tomorrow',`After This Command, You Too ${q}`]
 					const kapankah = kapan[Math.floor(Math.random() * kapan.length)]
-rama.sendMessage(from, { text: `Question : ${q}\nAnswer : *${kapankah}*` }, { quoted: m })
+rama.sendMessage(from, { text: `Question : ${q}\nAnswer : *${kapankah}*` }, { quoted: fakee })
 					break
 case 'wangy':
               if (!text) return reply(`Use Text, Example : ${prefix + command} hinata`)
@@ -1459,14 +1472,14 @@ let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝
                 for (let mem of participants) {
                 teks += ` @${mem.id.split('@')[0]}\n`
                 }
-                rama.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: m })
+                rama.sendMessage(m.chat, { text: teks, mentions: participants.map(a => a.id) }, { quoted: fakee })
                 }
                 break
                 case 'hidetag': {
             if (!m.isGroup) return reply(`${mess.group}`)
             //if (!isBotAdmins) return reply(`${mess.botAdmin}`)
             if (!isAdmins) return reply(`${mess.admin}`)
-            rama.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
+            rama.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: fakee })
             }
             break
             case 'anuu': {
@@ -1474,7 +1487,7 @@ let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝
             //if (!isBotAdmins) return reply(`${mess.botAdmin}`)
             //if (!isAdmins) return reply(`${mess.admin}`)
             if (!isCreator) return reply(`${mess.owner}`)
-            rama.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
+            rama.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: fakee })
             }
             break
 	    case 'style': case 'styletext': {
@@ -1940,7 +1953,7 @@ break
                     fs.unlinkSync(media)
                     if (err) reply(err)
                     let buffer = fs.readFileSync(ran)
-                    rama.sendMessage(m.chat, { image: buffer }, { quoted: m })
+                    rama.sendMessage(m.chat, { image: buffer }, { quoted: fakee })
                     fs.unlinkSync(ran)
                 })
             }
@@ -1952,7 +1965,7 @@ break
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
-                await rama.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' } }, { quoted: m })
+                await rama.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' } }, { quoted: fakee })
                 await fs.unlinkSync(media)
             }
             break
@@ -1994,7 +2007,7 @@ break
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
-                await rama.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: m })
+                await rama.sendMessage(m.chat, { video: { url: webpToMp4.result, caption: 'Convert Webp To Video' }, gifPlayback: true }, { quoted: fakee })
                 await fs.unlinkSync(media)
             }
             break
@@ -2046,7 +2059,7 @@ break
                 for (let i of search.all) {
                     teks += ` No : ${no++}\n Type : ${i.type}\n Video ID : ${i.videoId}\n Title : ${i.title}\n Views : ${i.views}\n Duration : ${i.timestamp}\n Uploaded On : ${i.ago}\n Author : ${i.author.name}\n Url : ${i.url}\n\n─────────────────\n\n`
                 }
-                rama.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
+                rama.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: fakee })
             }
             break
         case 'google': {
@@ -2081,7 +2094,7 @@ break
                     buttons: buttons,
                     headerType: 4
                 }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+                rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
         })
         }
         break
@@ -2111,7 +2124,7 @@ break
                     buttons: buttons,
                     headerType: 4
                 }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+                rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
             }
             break
 	    case 'ytmp3': case 'getmusic': case 'ytaudio': {
@@ -2121,7 +2134,7 @@ break
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
                 rama.sendImage(m.chat, media.thumb, ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${isUrl(text)}\n Ext : MP3\n Resolution : ${args[1] || '320kbps'}`, m)
-                rama.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
+                rama.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: fakee })
             }
             break
             case 'ytmp4': case 'getvideo': case 'ytvideo': {
@@ -2130,7 +2143,7 @@ break
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
                 if (media.filesize >= 999999) return reply('File Over Limit '+util.format(media))
-                rama.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${isUrl(text)}\n Ext : MP3\n Resolution : ${args[1] || '360p'}` }, { quoted: m })
+                rama.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${isUrl(text)}\n Ext : MP3\n Resolution : ${args[1] || '360p'}` }, { quoted: fakee })
             }
             break
 	    case 'getmusicxxx': {
@@ -2140,7 +2153,7 @@ break
                 let media = await yta(urls[text - 1], quality)
                 if (media.filesize >= 100000) return reply('File Over Limit '+util.format(media))
                 rama.sendImage(m.chat, media.thumb, ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${urls[text - 1]}\n Ext : MP3\n Resolution : ${args[1] || '128kbps'}`, m)
-                rama.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
+                rama.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: fakee })
             }
             break
             case 'getvideoxxx': {
@@ -2153,7 +2166,7 @@ break
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(urls[text - 1], quality)
                 if (media.filesize >= 100000) return reply('File Over Limit '+util.format(media))
-                rama.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${urls[text - 1]}\n Ext : MP3\n Resolution : ${args[1] || '360p'}` }, { quoted: m })
+                rama.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${urls[text - 1]}\n Ext : MP3\n Resolution : ${args[1] || '360p'}` }, { quoted: fakee })
             }
             break
             case 'pinterest': {
@@ -2161,7 +2174,7 @@ break
 		let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
-                rama.sendMessage(m.chat, { image: { url: result }, caption: ' Media Url : '+result }, { quoted: m })
+                rama.sendMessage(m.chat, { image: { url: result }, caption: ' Media Url : '+result }, { quoted: fakee })
             }
             break
 case 'webtonsearch': case 'webtoon':
@@ -2217,7 +2230,7 @@ case 'webtonsearch': case 'webtoon':
 						}
 					}
 				]
-				await rama.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await rama.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: fakee })
                 })
                 .catch((err) => {
                     reply(mess.error)
@@ -2242,7 +2255,7 @@ case 'webtonsearch': case 'webtoon':
 						}
 					}
 				]
-				await rama.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await rama.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: fakee })
                 })
                 .catch((err) => {
                     reply(mess.error)
@@ -2266,7 +2279,7 @@ case 'webtonsearch': case 'webtoon':
 						}
 					}
 				]
-				await rama.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: m })
+				await rama.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: fakee })
                 })
                 .catch((err) => {
                     reply(mess.error)
@@ -2274,15 +2287,15 @@ case 'webtonsearch': case 'webtoon':
             break
             case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': case 'waifus': case 'nekos': case 'trap': case 'blowjob': {
                 reply(mess.wait)
-                rama.sendMessage(m.chat, { image: { url: api('zenz', '/randomanime/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: m })           
+                rama.sendMessage(m.chat, { image: { url: api('zenz', '/randomanime/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: fakee })           
              }
             break
 	    case 'couplepp':  case 'ppcouple': {
                 reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
-                rama.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male🙎🏻‍♂️` }, { quoted: m })
-                rama.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female🙎🏻‍♀️` }, { quoted: m })
+                rama.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male🙎🏻‍♂️` }, { quoted: fakee })
+                rama.sendMessage(m.chat, { image: { url: random.female }, caption: `Couple Female🙎🏻‍♀️` }, { quoted: fakee })
             }
 	    break
             case 'coffee': case 'kopi': {
@@ -2296,7 +2309,7 @@ case 'webtonsearch': case 'webtoon':
                     buttons: buttons,
                     headerType: 4
                 }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+                rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
             }
             break
             case 'wallpaper': {
@@ -2314,7 +2327,7 @@ case 'webtonsearch': case 'webtoon':
                     buttons: buttons,
                     headerType: 4
                 }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+                rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
             }
             break
             case 'wikimedia': {
@@ -2332,7 +2345,7 @@ case 'webtonsearch': case 'webtoon':
                     buttons: buttons,
                     headerType: 4
                 }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+                rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
             }
             break
             case 'quotesanime': case 'animequotes': case 'animequote': case 'quoteanime': {
@@ -2348,7 +2361,7 @@ case 'webtonsearch': case 'webtoon':
                     buttons: buttons,
                     headerType: 2
                 }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+                rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
             }
             break
 	        case 'motivasi': case 'motivationalquote': case 'bucinquote': case 'katasenja': case 'puisi': {
@@ -2362,20 +2375,20 @@ case 'webtonsearch': case 'webtoon':
                     buttons: buttons,
                     headerType: 2
                 }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+                rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
             }
             break
             /*case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
                 if (!text) return reply(`Enter Text, Example : ${prefix + command} Xeon`)
                 reply(mess.wait)
-                rama.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: m})
+                rama.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: fakee})
 	    }
             break*/
             case 'circuit': case 'classic8bit': case 'color-fireworks': case 'cool-metal': case 'cutegirl': case 'dark-gold-metal': case 'decorated-cookie': case 'deluxe-gold': case 'deluxe-silver': case 'dinamo': case 'double-exposure': case 'dragon-fire': case 'eroded-metal': case 'fabric-text': case 'firework': case 'floraltext': case 'fox-crossfire': case 'fun-certify1': case 'fun-certify2': case 'futuristic': case 'galaxy-angel': case 'galaxy-effect': case 'galaxy-effect2': case 'galaxy-text': case 'galaxy-text-3': case 'gankk-league-of-kings': case 'gemstone': case 'genji-overwatch': case 'glitchtext': case 'glossy': case 'glossy-bluemetal': case 'glossy-carbon': case 'glossy-chrome': case 'gold-avenger': case 'gold-barcar': case 'gold-batman': case 'gold-bird2': case 'gold-eagle': case 'gold-effect': case 'gold-fox': case 'gold-glitter': case 'gold-lion': case 'gold-lion2': case 'gold-star': case 'gold-tiger': case 'golden-letter': case 'gr-crossfire': case 'gradientlogo': case 'graffiti-color': case 'graffiti-text3':
 case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zombie': case '3dengraved': case '3dgalaxy-metal': case '3dgold': case '3dgolden': case '3dgradient': case '3dlove': case '3dluxury': case '3dneonlight': case '3dpapercut': case '3drainbow': case '3drealistic': case '3drosegold': case '3dscifi': case '3dsilver': case '3dspace': case '3dstone': case '3dtext-effect': case '3dunderwater': case '3dvintage': case '3dwaterpipe': case 'alice-league-of-kings': case 'angel-wing-galaxy': case 'anubis': case 'arch-crossfire': case 'art-shader': case 'assassins-creed': case 'avengers': case 'azzenka-league-of-kings': case 'balloons-cards': case 'balloons-love': case 'bearlogo': case 'bg-crossfire': case 'birthday-cake': case 'birthday-cards': case 'birthday-greeting': case 'birthday-roses': case 'black-metal': case 'blackpink': case 'blood-frosted': case 'blood-text': case 'blue-effect': case 'blue-glitter': case 'brickwall': case 'brokentext': case 'bubble-effect': case 'bulb-effectcase': {        
             if (!text) return reply(`Example : ${prefix + command} text`)
                 reply(mess.wait)
-                rama.sendMessage(m.chat, { image: { url: `https://violetics.pw/api/textpro/${command}?apikey=7005-2125-9f00&text=${text}` }, caption: `Text Pro ${command}` }, { quoted: m})
+                rama.sendMessage(m.chat, { image: { url: `https://violetics.pw/api/textpro/${command}?apikey=7005-2125-9f00&text=${text}` }, caption: `Text Pro ${command}` }, { quoted: fakee})
 	        }
             break
 	    case 'nomerhoki': case 'nomorhoki': {
@@ -2708,7 +2721,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                     buttons: buttons,
                     headerType: 5
                 }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+                rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
             }
             break
             case 'tiktokwmx': case 'tiktokwatermarkx': {
@@ -2726,7 +2739,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                     buttons: buttons,
                     headerType: 5
                 }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+                rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
             }
             break
             case 'tiktokmp3': case 'tiktokaudio': {
@@ -2743,8 +2756,8 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                     buttons: buttons,
                     headerType: 2
                 }
-                let msg = await rama.sendMessage(m.chat, buttonMessage, { quoted: m })
-                rama.sendMessage(m.chat, { audio: { url: anu.result.audio_only.audio1 }, mimetype: 'audio/mpeg'}, { quoted: msg })
+                let msg = await rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
+                rama.sendMessage(m.chat, { audio: { url: anu.result.audio_only.audio1 }, mimetype: 'audio/mpeg'}, { quoted: fakeesg })
             }
             break
 	        case 'instagram': case 'ig': case 'igdlx': {
@@ -2765,7 +2778,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 reply(mess.wait)
                 
                 let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url:text }, 'apikey'))
-                rama.sendMessage(m.chat, { video: { url: anu.data[0] } }, { quoted: m })
+                rama.sendMessage(m.chat, { video: { url: anu.data[0] } }, { quoted: fakee })
             }
             break
             case 'joox': case 'jooxdl': {
@@ -2773,7 +2786,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
                 let msg = await rama.sendImage(m.chat, anu.result.img, ` Title : ${anu.result.lagu}\n Album : ${anu.result.album}\n Singer : ${anu.result.penyanyi}\n Publish : ${anu.result.publish}\n Lyrics :\n${anu.result.lirik.result}`, m)
-                rama.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: msg })
+                rama.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: fakeesg })
             }
             break
             case 'soundcloud': case 'scdl': {
@@ -2781,7 +2794,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
                 let msg = await rama.sendImage(m.chat, anu.result.thumb, ` Title : ${anu.result.title}\n Url : ${isUrl(text)[0]}`)
-                rama.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: msg })
+                rama.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: fakeesg })
             }
             break
 	        case 'twitdlx': case 'twitterx': {
@@ -2798,7 +2811,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                     buttons: buttons,
                     headerType: 5
                 }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+                rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
             }
             break
             case 'twittermp3x': case 'twitteraudiox': {
@@ -2815,22 +2828,22 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                     buttons: buttons,
                     headerType: 4
                 }
-                let msg = await rama.sendMessage(m.chat, buttonMessage, { quoted: m })
-                rama.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: msg })
+                let msg = await rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
+                rama.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: fakeesg })
             }
             break
 	        case 'fbdlx': case 'fbx': case 'facebookx': {
                 if (!text) return reply(`Enter Query Link!`)
                 reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/facebook', { url: text }, 'apikey'))
-                rama.sendMessage(m.chat, { video: { url: anu.result.url }, caption: ` Title : ${anu.result.title}`}, { quoted: m })
+                rama.sendMessage(m.chat, { video: { url: anu.result.url }, caption: ` Title : ${anu.result.title}`}, { quoted: fakee })
             }
             break
 	        case 'pindl': case 'pinterestdl': {
                 if (!text) return reply(`Enter Query Link!`)
                 reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/pinterestdl', { url: text }, 'apikey'))
-                rama.sendMessage(m.chat, { video: { url: anu.result }, caption: `Download From ${text}` }, { quoted: m })
+                rama.sendMessage(m.chat, { video: { url: anu.result }, caption: `Download From ${text}` }, { quoted: fakee })
             }
             break
             case 'umma': case 'ummadl': {
@@ -2856,10 +2869,10 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 			buttons,
 			headerType: 4
 		    }
-		    rama.sendMessage(m.chat, buttonMessage, { quoted: m })
+		    rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
 		} else if (anu.type == 'image') {
 		    anu.media.map(async (url) => {
-		        rama.sendMessage(m.chat, { image: { url }, caption: ` Title : ${anu.title}\n Author : ${anu.author.name}\n Like : ${anu.like}\n Caption : ${anu.caption}` }, { quoted: m })
+		        rama.sendMessage(m.chat, { image: { url }, caption: ` Title : ${anu.title}\n Author : ${anu.author.name}\n Like : ${anu.like}\n Caption : ${anu.caption}` }, { quoted: fakee })
 		    })
 		}
 	    }
@@ -2869,7 +2882,7 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
         let { ringtone } = require('./lib/scraper')
 		let anu = await ringtone(text)
 		let result = anu[Math.floor(Math.random() * anu.length)]
-		rama.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
+		rama.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: fakee })
 	    }
 	    break
 		case 'iqraxxx': {
@@ -3359,7 +3372,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 rama.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
 break*/
-          case 'alive': case 'bot': case 'list': case 'menu': {
+          case 'help': case 'bot': case 'list': case 'menu': {
             	timestampe = speed();
 latensie = speed() - timestampe
                 anu = ``
@@ -3417,7 +3430,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 }), { userJid: m.chat })
                 rama.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
-                rama.sendMessage(m.chat, { audio: fs.readFileSync('./noLT.m4a'), mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
+                rama.sendMessage(m.chat, { audio: fs.readFileSync('./noLT.m4a'), mimetype: 'audio/mp4', ptt: true }, { quoted: fakee }) 
                 break
                 case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -3540,12 +3553,15 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 						],
           listType: 1
                 }           
-            }), {quoted: m})
+            }), {quoted: fakee})
             rama.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
             break
-    case 'donasi': case 'donate': case 'sewabot': case 'sewa': {
-                rama.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/c15f725add0381fb69c4b.jpg' }, caption: `*Hi Bro ${m.pushName}*\nDonation section is currently down🥲 , I know you are happy but me 🥲💔\n` }, { quoted: m })
+    case 'donasi': case 'donate': 
+    reply(`DONASI SE IKLASNYA\n0823-3809-8038(Gopay)\n082142108243(pulsa)`)
+    break
+    case 'sewabot': case 'sewa': {
+                rama.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/9aae92f026c1ee0ce8ce9.jpg' }, caption: `*Hi Bro ${m.pushName}\nJika Kamu Ingin memasukkan, bot ini\n ke grup kamu transfer pulsa ke 082142108243(Telkomsel) atau\n gopay 0823-3809-8038 Harga 20k oke kalo udah \n lu bisa ss bukti pembayaran lalu lu kirim ke wa.me//6282142108243 dan kirim link grup juga agar bot bisa segera join` }, { quoted: fakee })
             }
             break
             case 'sc': case 'script': {
