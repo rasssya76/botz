@@ -202,11 +202,11 @@ module.exports = rama = async (rama, m, chatUpdate, store) => {
 	
 	//group target \\
 const reply = (teks) => {
-            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "http://bit.ly/Bot-Wa"}}}, { quoted: m})
+            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: m})
         }
         
-        const replay = (teks) => {
-            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "http://bit.ly/Bot-Wa"}}}, { quoted: m})
+        const reply = (teks) => {
+            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: m})
         }
 	
         //Public & Self\\
@@ -898,7 +898,7 @@ if (q.includes('--help')) return reply(examkosong)
         case 'ttc': case 'ttt': case 'tictactoe': {
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
-            if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return replay(`You Are Still In The Game`)
+            if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return reply(`You Are Still In The Game`)
             let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
             if (room) {
             reply('Partner found!')
@@ -964,7 +964,7 @@ Type *surrender* to surrender and admit defeat`
             let poin = 10
             let poin_lose = 10
             let timeout = 60000
-            if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) return replay(`Complete Your Previous Suit`)
+            if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) return reply(`Complete Your Previous Suit`)
 	    if (m.mentionedJid[0] === m.sender) return reply(`Can't Play With Myself !`)
             if (!m.mentionedJid[0]) return reply(`_Who Do You Want To Challenge?_\nTag The Person..\n\nExample : ${prefix}suit @${owner[1]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
             if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0])))  reply(`The Person You Are Challenging Is Playing Suit With Someone Else :(`)
@@ -988,8 +988,8 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             }
             break
             case 'chat': {
-                if (!isCreator) return replay(`${mess.owner}`)
-                if (!q) return replay(`Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete`)
+                if (!isCreator) return reply(`${mess.owner}`)
+                if (!q) return reply(`Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete`)
                 if (args[0] === 'mute') {
                     rama.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'unmute') {
@@ -1025,15 +1025,15 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             }
             break
             case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
-            if (!m.quoted && !text) return replay(`Send/Reply Text With Caption ${prefix + command}`)
+            if (!m.quoted && !text) return reply(`Send/Reply Text With Caption ${prefix + command}`)
             ter = command[1].toLowerCase()
             tex = m.quoted ? m.quoted.text ? m.quoted.text : q ? q : m.text : q ? q : m.text
             reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
             break
             case 'guess': {
-                if (!text) return replay(`Example : ${prefix + command} song\n\nOption : \n1. music\n2. picture (Query)\n3. word\n4. sentence\n5. lyrics (Query)\n6. blank (Query)`)
+                if (!text) return reply(`Example : ${prefix + command} song\n\nOption : \n1. music\n2. picture (Query)\n3. word\n4. sentence\n5. lyrics (Query)\n6. blank (Query)`)
                 if (args[0] === "song") {
-                    if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions`)
+                    if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions`)
                     let anu = await fetchJson('https://fatiharridho.github.io/tebaklagu.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     let msg = await rama.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: m })
@@ -1047,7 +1047,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     delete tebaklagu[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'picture') {
-                    if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions!`)
+                    if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     rama.sendImage(m.chat, result.img, `Please Answer The Questions Above\n\nDescription : ${result.deskripsi}\nTime : 60 seconds`, m).then(() => {
@@ -1060,7 +1060,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     delete tebakgambar[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'word') {
-                    if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions!`)
+                    if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/nexusnw/fungames/main/GuessTheWord.js')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     rama.sendText(m.chat, `Please Answer The Following Question\n\n${result.soal}\nTime : 60 seconds`, m).then(() => {
@@ -1073,7 +1073,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     delete tebakkata[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'sentence') {
-                    if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions!`)
+                    if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/nexusnw/fungames/main/GuessTheSentence.js')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     rama.sendText(m.chat, `Please Answer The Following Question\n\n${result.soal}\nTime : 60 seconds`, m).then(() => {
@@ -1086,7 +1086,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     delete tebakkalimat[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'lyrics') {
-                    if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions!`)
+                    if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaklirik.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     rama.sendText(m.chat, `These Are The Lyrics Of Which Song? : *${result.soal}*?\nTime : 60 seconds`, m).then(() => {
@@ -1099,7 +1099,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     delete tebaklirik[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'blank') {
-                    if (caklontong.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions!`)
+                    if (caklontong.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/caklontong.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     rama.sendText(m.chat, `*Answer The Following Questions :*\n${result.soal}*\nTime : 60 seconds`, m).then(() => {
@@ -1131,9 +1131,9 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
 		
 		
             case 'kuismath': case 'math': {
-                if (kuismath.hasOwnProperty(m.sender.split('@')[0])) return replay(`There Are Still Unfinished Sessions!`)
+                if (kuismath.hasOwnProperty(m.sender.split('@')[0])) return reply(`There Are Still Unfinished Sessions!`)
                 let { genMath, modes } = require('./lib/math')
-                if (!text) return replay(`Mode: ${Object.keys(modes).join(' | ')}\nFor Examples: ${prefix}math medium`)
+                if (!text) return reply(`Mode: ${Object.keys(modes).join(' | ')}\nFor Examples: ${prefix}math medium`)
                 let result = await genMath(text.toLowerCase())
                 rama.sendText(m.chat, `*What Is The Result Of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
                     kuismath[m.sender.split('@')[0]] = result.jawaban
@@ -1146,8 +1146,8 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                 }
             }
             break
-            case 'mysoulmate': {
-            if (!m.isGroup) return replay(`${mess.group}`)
+            case 'jodohku': {
+            if (!m.isGroup) return reply(`${mess.group}`)
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -1162,7 +1162,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             }
             break
             case 'couple': {
-            if (!m.isGroup) return replay(`${mess.group}`)
+            if (!m.isGroup) return reply(`${mess.group}`)
             let member = participants.map(u => u.id)
             let orang = member[Math.floor(Math.random() * member.length)]
             let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -1176,49 +1176,49 @@ Cieeee, What's Going On❤️💖👀`
             }
             break
             case 'is':
-				if (!text) return replay(`Use Text, Example : ${prefix + command} he married `)
+				if (!text) return reply(`Use Text, Example : ${prefix + command} he married `)
 					const apa = [`Yes`, `No`, `It Could Be`, `Thats right`]
 					const kah = apa[Math.floor(Math.random() * apa.length)]
 rama.sendMessage(from, { text: `Question : Is ${q}\nAnswer : ${kah}` }, { quoted: m })
 
 					break
 					            case 'what':
-				if (!text) return replay(`Use Text, Example : ${prefix + command} he married `)
+				if (!text) return reply(`Use Text, Example : ${prefix + command} he married `)
 					const lel = [`Ask Your Gf`, `I Dont Know`, `I Don't Know, Ask Your Father`]
 					const kahk = lel[Math.floor(Math.random() * lel.length)]
 rama.sendMessage(from, { text: `Question : What ${q}\nAnswer : ${kahk}` }, { quoted: m })
 
 					break
 case 'can':
-				if (!text) return replay(`Use Text, Example : ${prefix + command} you fuck her lol `)
+				if (!text) return reply(`Use Text, Example : ${prefix + command} you fuck her lol `)
 					const bisa = [`Can`,`Can't`,`Cannot`,`Of Course You Can!!!`]
 					const ga = bisa[Math.floor(Math.random() * bisa.length)]
 rama.sendMessage(from, { text: `Question : Can ${q}\nAnswer : ${ga}` }, { quoted: m })
 
 					break
 case 'how':
-				if (!text) return replay(`Use Text, Example : ${prefix + command} is my face`)
+				if (!text) return reply(`Use Text, Example : ${prefix + command} is my face`)
 					const gimana = [`It's Okay`, `It's Difficult Bro`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah`,`Ohhh I See:(`,`The Patient, Boss:(`,`How Are You?`]
 					const ya = gimana[Math.floor(Math.random() * gimana.length)]
 rama.sendMessage(from, { text: `Question : ${q}\nAnswer : How ${ya}` }, { quoted: m })
 
 					break
 case 'rate':
-				if (!text) return replay(`Use Text, Example : ${prefix + command} My Dp`)
+				if (!text) return reply(`Use Text, Example : ${prefix + command} My Dp`)
 					const ra = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const te = ra[Math.floor(Math.random() * ra.length)]
 rama.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: m })
 
 					break
   case 'handsomecheck':
-				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+				if (!text) return reply(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
 rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: m })
 
 					break
 case 'beautifulcheck':
-				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+				if (!text) return reply(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
 rama.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: m })
@@ -1234,13 +1234,13 @@ case 'awesomecheck':
                  case 'prettycheck':
                     case 'lovelycheck':
                       case 'uglycheck':
-				if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+				if (!text) return reply(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: m })
 					break
 					case 'charactercheck':
-					if (!text) return replay(`Tag Someone, Example : ${prefix + command} @Xeon`)
+					if (!text) return reply(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const xeony =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
 					const taky = xeony[Math.floor(Math.random() * xeony.length)]
 					rama.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: m })
@@ -1301,7 +1301,7 @@ rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%
       case 'nigga':
       case 'sexy':
       case 'hot': {
-            if (!m.isGroup) return replay(`${mess.group}`)
+            if (!m.isGroup) return reply(`${mess.group}`)
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -1314,30 +1314,30 @@ rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%
             }
             break
 case 'when':
-				if (!text) return replay(`Use Text, Example : ${prefix + command} will i get married `)
+				if (!text) return reply(`Use Text, Example : ${prefix + command} will i get married `)
 					const kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','Tomorrow','The Day After Tomorrow',`After This Command, You Too ${q}`]
 					const kapankah = kapan[Math.floor(Math.random() * kapan.length)]
 rama.sendMessage(from, { text: `Question : ${q}\nAnswer : *${kapankah}*` }, { quoted: m })
 					break
 case 'wangy':
-              if (!text) return replay(`Use Text, Example : ${prefix + command} hinata`)
+              if (!text) return reply(`Use Text, Example : ${prefix + command} hinata`)
               qq = q.toUpperCase()
               awikwok = `${qq} ${qq} ${qq} ❤️ ❤️ ❤️ WANGY WANGY WANGY WANGY HU HA HU HA HU HA, aaah the smell of hair ${qq} smelly i want to smell the fragrance ${qq} AAAAAAAAH ~ Her hair.... aaah i want to stroke her hair too ~~ AAAAAH ${qq} first time out in anime is cute too ❤️ ❤️ ❤️ so AAAAAAAH ${qq} AAAAAA LUCCUUUUUUUUUUUUU............ ${qq} AAAAAAAAAAAAAAAAAAAAGH ❤️ ❤️ ❤️what ? ${qq} it's not real ? Just HELL you say ? no, no no no no no no no no no no no no no no no !! I DON'T CARE ABOUT THE REALITY, I DON'T CARE. ❤️ ❤️ ❤️ ${qq} me ... ${qq} on the laptop watching me, ${qq} .. you believe in me ? aaaaaaaaaaah thanks ${q} I don't want to give up ${qq} aaaaaah ❤️ ❤️ ❤️ YEAAAAAAAAAAAH I STILL HAVE ${qq} ALSO NOT THE SAME AAAAAAAAAAAAAAH`
              reply(awikwok)
               break
 case 'checkdeath':
-             if (!text) return replay(`Use Someone's Name, Example : ${prefix + command} nexus`)
+             if (!text) return reply(`Use Someone's Name, Example : ${prefix + command} nexus`)
               predea = await axios.get(`https://api.agify.io/?name=${q}`)
               reply(`Name : ${predea.data.name}\n*Dead At Age :* ${predea.data.age} Year.\n\n_Quick, Quick, Repent Bro, Because No One Knows About Death_`)
               break
 case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
-            if (!m.quoted && !text) return replay(`Send/Reply Text With Caption ${prefix + command}`)
+            if (!m.quoted && !text) return reply(`Send/Reply Text With Caption ${prefix + command}`)
             ter = command[1].toLowerCase()
             tex = m.quoted ? m.quoted.text ? m.quoted.text : q ? q : m.text : q ? q : m.text
             reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
             break
             case 'react': {
-                if (!isCreator) return replay(`${mess.owner}`)
+                if (!isCreator) return reply(`${mess.owner}`)
                 reactionMessage = {
                     react: {
                         text: args[0],
@@ -1348,112 +1348,111 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
             }
             break  
             case 'join': {
-                if (!isCreator) return replay(`${mess.owner}`)
-                if (!text) return replay(`Enter The Group Link!`)
-                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return replay(`Invalid Link!`)
+                if (!isCreator) return reply(`${mess.owner}`)
+                if (!text) return reply(`Enter The Group Link!`)
+                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply(`Invalid Link!`)
                 reply(mess.wait)
                 let result = args[0].split('https://chat.whatsapp.com/')[1]
                 await rama.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
             break
             case 'leave': {
-                if (!isCreator) return replay(`${mess.owner}`)
+                if (!isCreator) return reply(`${mess.owner}`)
                 await rama.groupLeave(m.chat).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
             break
             case 'setexif': {
-               if (!isCreator) return replay(`${mess.owner}`)
-               if (!text) return replay(`Example : ${prefix + command} packname|author`)
+               if (!isCreator) return reply(`${mess.owner}`)
+               if (!text) return reply(`Example : ${prefix + command} packname|author`)
           global.packname = text.split("|")[0]
           global.author = text.split("|")[1]
           reply(`Exif Has Been Successfully Changed to\n\n Packname : ${global.packname}\n Author : ${global.author}`)
             }
             break
 	case 'kick': {
-		if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
+		if (!m.isGroup) return reply(`${mess.group}`)
+                if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+                if (!isAdmins) return reply(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await rama.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'add': {
-		if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
+		if (!m.isGroup) return reply(`${mess.group}`)
+                if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+                if (!isAdmins) return reply(`${mess.admin}`)
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await rama.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'promote': {
-		if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
+		if (!m.isGroup) return reply(`${mess.group}`)
+                if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+                if (!isAdmins) return reply(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await rama.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	case 'demote': {
-		if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
+		if (!m.isGroup) return reply(`${mess.group}`)
+                if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+                if (!isAdmins) return reply(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await rama.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
         case 'block': {
-		if (!isCreator) return replay(`${mess.owner}`)
+		if (!isCreator) return reply(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await rama.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
         case 'unblock': {
-		if (!isCreator) return replay(`${mess.owner}`)
+		if (!isCreator) return reply(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await rama.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
 	    case 'setname': case 'setgcname': case 'setsubject': {
-                if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) replay(`${mess.admin}`)
-                if (!text) replay(`Where Is The Text?`)
+                if (!m.isGroup) return reply(`${mess.group}`)
+                if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+                if (!isAdmins) reply(`${mess.admin}`)
+                if (!text) reply(`Where Is The Text?`)
                 await rama.groupUpdateSubject(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
             }
             break
           case 'setdesc': case 'setdesk': {
-                if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) replay(`${mess.admin}`)
-                if (!text) replay(`Where Is The Text?`)
+                if (!m.isGroup) return reply(`${mess.group}`)
+                if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+                if (!isAdmins) reply(`${mess.admin}`)
+                if (!text) reply(`Where Is The Text?`)
                 await rama.groupUpdateDescription(m.chat, text).then((res) => reply(mess.success)).catch((err) => reply(jsonformat(err)))
             }
             break
           case 'setbotpp': {
-                if (!isCreator) return replay(`${mess.owner}`)
-                if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
-                if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
-                if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+                if (!isCreator) return reply(`${mess.owner}`)
+                if (!quoted) return reply(`Send/Reply Image With Caption ${prefix + command}`)
+                if (!/image/.test(mime)) return reply(`Send/Reply Image With Caption ${prefix + command}`)
+                if (/webp/.test(mime)) return reply(`Send/Reply Image With Caption ${prefix + command}`)
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
                 await rama.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
                 reply(mess.success)
                 }
                 break
            case 'setgrouppp': case 'setgruppp': case 'setgcpp': {
-                if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
-                if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
-                if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
-                if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+                if (!m.isGroup) return reply(`${mess.group}`)
+                if (!isAdmins) return reply(`${mess.admin}`)
+                if (!quoted) return reply(`Send/Reply Image With Caption ${prefix + command}`)
+                if (!/image/.test(mime)) return reply(`Send/Reply Image With Caption ${prefix + command}`)
+                if (/webp/.test(mime)) return reply(`Send/Reply Image With Caption ${prefix + command}`)
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
                 await rama.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
                 reply(mess.success)
                 }
                 break
             case 'tagall': {
-                if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
+                if (!m.isGroup) return reply(`${mess.group}`)                
+                if (!isAdmins) return reply(`${mess.admin}`)
 let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝ 
  
  ➲ *Message : ${q ? q : 'no message'}*\n\n`
@@ -1464,9 +1463,9 @@ let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝
                 }
                 break
                 case 'hidetag': {
-            if (!m.isGroup) return replay(`${mess.group}`)
-            if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-            if (!isAdmins) return replay(`${mess.admin}`)
+            if (!m.isGroup) return reply(`${mess.group}`)
+            //if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+            if (!isAdmins) return reply(`${mess.admin}`)
             rama.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
             break
@@ -1474,7 +1473,7 @@ let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝
 	        if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit) //wont response when limit runs out\\
 		db.data.users[m.sender].limit -= 1 // -1 limit
 		let { styletext } = require('./lib/scraper')
-		if (!text) return replay(`Enter Query Text!`)
+		if (!text) return reply(`Enter Query Text!`)
                 let anu = await styletext(text)
                 let teks = `Entered Text ${text}\n\n`
                 for (let i of anu) {
@@ -1484,9 +1483,9 @@ let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝
 	    }
 	    break
                case 'vote': {
-            if (!m.isGroup) return replay(`${mess.group}`)
-            if (m.chat in vote) replay(`_There Are Still Votes In This Chat!_\n\n*${prefix}delvote* - To Delete Vote Session`)
-            if (!text) return replay(`Enter Reason For Vote, Example: *${prefix + command} Handsome Owner*`)
+            if (!m.isGroup) return reply(`${mess.group}`)
+            if (m.chat in vote) reply(`_There Are Still Votes In This Chat!_\n\n*${prefix}delvote* - To Delete Vote Session`)
+            if (!text) return reply(`Enter Reason For Vote, Example: *${prefix + command} Handsome Owner*`)
             reply(`Voting Starts!\n\n*${prefix}upvote* - For Upvote\n*${prefix}devote* - For Devote\n*${prefix}checkvote* - To Check The Vote\n*${prefix}delvote* - To Delete Vote Session`)
             vote[m.chat] = [q, [], []]
             await sleep(1000)
@@ -1526,11 +1525,11 @@ let buttonsVote = [
 	    }
             break
                case 'upvote': {
-            if (!m.isGroup) return replay(`${mess.group}`)
-            if (!(m.chat in vote)) return replay(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
+            if (!m.isGroup) return reply(`${mess.group}`)
+            if (!(m.chat in vote)) return reply(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
-            if (wasVote) replay(`You've Voted`)
+            if (wasVote) reply(`You've Voted`)
             vote[m.chat][1].push(m.sender)
             menvote = vote[m.chat][1].concat(vote[m.chat][2])
             teks_vote = `* _____[ *VOTE* ]_____*
@@ -1568,11 +1567,11 @@ ${vote[m.chat][2].map((v, i) => ` *√>* ${i + 1}. @${v.split`@`[0]}`).join('\n'
 	    }
              break
                 case 'devote': {
-            if (!m.isGroup) return replay(`${mess.group}`)
-            if (!(m.chat in vote)) return replay(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
+            if (!m.isGroup) return reply(`${mess.group}`)
+            if (!(m.chat in vote)) return reply(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
-            if (wasVote) return replay(`You've Voted`)
+            if (wasVote) return reply(`You've Voted`)
             vote[m.chat][2].push(m.sender)
             menvote = vote[m.chat][1].concat(vote[m.chat][2])
             teks_vote = `* _____[ *VOTE* ]_____*
@@ -1611,8 +1610,8 @@ ${vote[m.chat][2].map((v, i) => ` *√>* ${i + 1}. @${v.split`@`[0]}`).join('\n'
             break
                  
 case 'checkvote':
-if (!m.isGroup) return replay(`${mess.group}`)
-if (!(m.chat in vote)) return replay(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
+if (!m.isGroup) return reply(`${mess.group}`)
+if (!(m.chat in vote)) return reply(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
 teks_vote = `* _____[ *VOTE* ]_____*
 
 *Reason:* ${vote[m.chat][0]}
@@ -1639,16 +1638,16 @@ ${vote[m.chat][2].map((v, i) => ` *√>* ${i + 1}. @${v.split`@`[0]}`).join('\n'
 rama.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
-            if (!m.isGroup) return replay(`${mess.group}`)
-            if (!(m.chat in vote)) return replay(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
+            if (!m.isGroup) return reply(`${mess.group}`)
+            if (!(m.chat in vote)) return reply(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
             delete vote[m.chat]
             reply('Successfully Deleted The Vote Session In This Group')
 	    }
             break
                case 'group': case 'grup': {
-                if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
+                if (!m.isGroup) return reply(`${mess.group}`)
+                if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+                if (!isAdmins) return reply(`${mess.admin}`)
                 if (args[0] === 'close'){
                     await rama.groupSettingUpdate(m.chat, 'announcement').then((res) => reply(`Successful Closing The Group`)).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'open'){
@@ -1664,9 +1663,9 @@ break
             }
             break
             case 'editinfo': {
-                if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
+                if (!m.isGroup) return reply(`${mess.group}`)
+                if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+                if (!isAdmins) return reply(`${mess.admin}`)
              if (args[0] === 'open'){
                 await rama.groupSettingUpdate(m.chat, 'unlocked').then((res) => reply(`Successfully Opened Edit Group Info`)).catch((err) => reply(jsonformat(err)))
              } else if (args[0] === 'close'){
@@ -1682,9 +1681,9 @@ break
             }
             break
             case 'antilink': {
-                if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
+                if (!m.isGroup) return reply(`${mess.group}`)
+                if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+                if (!isAdmins) return reply(`${mess.admin}`)
                 if (args[0] === "on") {
                 if (db.data.chats[m.chat].antilink) return reply(`Activated`)
                 db.data.chats[m.chat].antilink = true
@@ -1703,9 +1702,9 @@ break
              }
              break
              case 'mute': {
-                if (!m.isGroup) return replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
+                if (!m.isGroup) return reply(`${mess.group}`)
+                if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+                if (!isAdmins) return reply(`${mess.admin}`)
                 if (args[0] === "on") {
                 if (db.data.chats[m.chat].mute) return reply(`Previously Active`)
                 db.data.chats[m.chat].mute = true
@@ -1724,16 +1723,17 @@ break
              }
              break
             case 'linkgroup': case 'linkgc': case 'gclink': case 'grouplink': {
-                if (!m.isGroup) return replay(`${mess.group}`)
+                if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+                if (!m.isGroup) return reply(`${mess.group}`)
                 let response = await rama.groupInviteCode(m.chat)
                 rama.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\n${groupMetadata.subject} Group Link`, m, { detectLink: true })
             }
             break
             case 'ephemeral': {
-                if (!m.isGroup) replay(`${mess.group}`)
-                if (!isBotAdmins) return replay(`${mess.botAdmin}`)
-                if (!isAdmins) return replay(`${mess.admin}`)
-                if (!text) return replay(`Enter The enable/disable Values`)
+                if (!m.isGroup) reply(`${mess.group}`)
+                if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+                if (!isAdmins) return reply(`${mess.admin}`)
+                if (!text) return reply(`Enter The enable/disable Values`)
                 if (args[0] === 'enable') {
                     await rama.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL }).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
                 } else if (args[0] === 'disable') {
@@ -1744,13 +1744,13 @@ break
             case 'delete': case 'del': {
                 if (!m.quoted) reply(false)
                 let { chat, fromMe, id, isBaileys } = m.quoted
-                if (!isBaileys) return replay(`The Message Was Not Sent By A Bot!`)
+                if (!isBaileys) return reply(`The Message Was Not Sent By A Bot!`)
                 rama.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
             }
             break
             case 'bcgc': case 'bcgroup': {
-                if (!isCreator) return replay(`${mess.owner}`)
-                if (!text) return replay(`Where Is The Text?\n\nExample : ${prefix + command} Nexus Handsome`)
+                if (!isCreator) return reply(`${mess.owner}`)
+                if (!text) return reply(`Where Is The Text?\n\nExample : ${prefix + command} Nexus Handsome`)
                 let getGroups = await rama.groupFetchAllParticipating()
                 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
                 let anu = groups.map(v => v.id)
@@ -1785,8 +1785,8 @@ break
             }
             break
             case 'bc': case 'broadcast': case 'bcall': {
-                if (!isCreator) return replay(`${mess.owner}`)
-                if (!text) return replay(`Where Is The Text?\n\nExample : ${prefix + command} Nexus`)
+                if (!isCreator) return reply(`${mess.owner}`)
+                if (!text) return reply(`Where Is The Text?\n\nExample : ${prefix + command} Nexus`)
                 let anu = await store.chats.all().map(v => v.id)
                 reply(`Send Broadcast To ${anu.length} Chat\nFinish Time ${anu.length * 1.5} Seconds`)
 		for (let yoi of anu) {
@@ -1821,7 +1821,7 @@ break
             case 'chatinfo': case 'infochat': {
                 if (!m.quoted) return reply(`Reply Message`)
                 let msg = await m.getQuotedObj()
-                if (!m.quoted.isBaileys) return replay(`The Message Was Not Sent By A Bot!`)
+                if (!m.quoted.isBaileys) return reply(`The Message Was Not Sent By A Bot!`)
                 let teks = ''
                 for (let i of msg.userReceipt) {
                     let read = i.readTimestamp
@@ -1867,7 +1867,7 @@ break
              }
              break
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
-            if (!quoted) return replay(`Reply Video/Image With Caption ${prefix + command}`)
+            if (!quoted) return reply(`Reply Video/Image With Caption ${prefix + command}`)
             reply(mess.wait)
                     if (/image/.test(mime)) {
                 let media = await quoted.download()
@@ -1897,7 +1897,7 @@ await fs.unlinkSync(memek)
 }
 break
             case 'ebinary': {
-            if (!m.quoted.text && !text) return replay(`Reply Text With Caption ${prefix + command}`)
+            if (!m.quoted.text && !text) return reply(`Reply Text With Caption ${prefix + command}`)
             let { eBinary } = require('./lib/binary')
             let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
             let eb = await eBinary(teks)
@@ -1905,7 +1905,7 @@ break
         }
         break
             case 'dbinary': {
-            if (!m.quoted.text && !text) return replay(`Reply Text With Caption ${prefix + command}`)
+            if (!m.quoted.text && !text) return reply(`Reply Text With Caption ${prefix + command}`)
             let { dBinary } = require('./lib/binary')
             let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
             let db = await dBinary(teks)
@@ -1913,7 +1913,7 @@ break
         }
         break
             case 'emojimix': {
-	        if (!text) return replay(`Example : ${prefix + command} 😅+🤔`)
+	        if (!text) return reply(`Example : ${prefix + command} 😅+🤔`)
 		let [emoji1, emoji2] = text.split`+`
 		let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
 		for (let res of anu.results) {
@@ -1939,7 +1939,7 @@ break
             break
 	        case 'tomp4': case 'tovideo': {
                 if (!quoted) reply(`Reply Image`)
-                if (!/webp/.test(mime)) return replay(`Reply Sticker With Caption *${prefix + command}*`)
+                if (!/webp/.test(mime)) return reply(`Reply Sticker With Caption *${prefix + command}*`)
                 reply(mess.wait)
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
@@ -1949,7 +1949,7 @@ break
             }
             break
             case 'toaud': case 'toaudio': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
+            if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
             if (!quoted) return reply(`Send/Reply Video/Audio You Want To Convert To Audio With Caption ${prefix + command}`)
             reply(mess.wait)
             let media = await quoted.download()
@@ -1960,8 +1960,8 @@ break
             break
             case 'tomp3': {
             if (/document/.test(mime)) return reply(`Send/Reply Video/Audio You Want to Convert Into MP3 With Caption ${prefix + command}`)
-            if (!/video/.test(mime) && !/audio/.test(mime)) return replay(`Send/Reply Video/Audio You Want To Convert into MP3 With Caption ${prefix + command}`)
-            if (!quoted) return replay(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
+            if (!/video/.test(mime) && !/audio/.test(mime)) return reply(`Send/Reply Video/Audio You Want To Convert into MP3 With Caption ${prefix + command}`)
+            if (!quoted) return reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
             reply(mess.wait)
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
@@ -2004,10 +2004,10 @@ break
                 await fs.unlinkSync(media)
             }
             break
-            case 'imagenobg': case 'removebg': case 'remove-bg': {
-	    if (!quoted) return replay(`Send/Reply Image With Caption ${prefix + command}`)
-	    if (!/image/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
-	    if (/webp/.test(mime)) return replay(`Send/Reply Image With Caption ${prefix + command}`)
+           /* case 'imagenobg': case 'removebg': case 'remove-bg': {
+	    if (!quoted) return reply(`Send/Reply Image With Caption ${prefix + command}`)
+	    if (!/image/.test(mime)) return reply(`Send/Reply Image With Caption ${prefix + command}`)
+	    if (/webp/.test(mime)) return reply(`Send/Reply Image With Caption ${prefix + command}`)
 	    let remobg = require('remove.bg')
 	    let apirnobg = ['q61faXzzR5zNU6cvcrwtUkRU','S258diZhcuFJooAtHTaPEn4T','5LjfCVAp4vVNYiTjq9mXJWHF','aT7ibfUsGSwFyjaPZ9eoJc61','BY63t7Vx2tS68YZFY6AJ4HHF','5Gdq1sSWSeyZzPMHqz7ENfi8','86h6d6u4AXrst4BVMD9dzdGZ','xp8pSDavAgfE5XScqXo9UKHF','dWbCoCb3TacCP93imNEcPxcL']
 	    let apinobg = apirnobg[Math.floor(Math.random() * apirnobg.length)]
@@ -2028,9 +2028,9 @@ break
 	    await fs.unlinkSync(outputFile)
 	    })
 	    }
-	    break
+	    break*/
 	    case 'yts': case 'ytsearch': {
-                if (!text) return replay(`Example : ${prefix + command} Anime Story Whatsapp`)
+                if (!text) return reply(`Example : ${prefix + command} Anime Story Whatsapp`)
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
@@ -2357,11 +2357,18 @@ case 'webtonsearch': case 'webtoon':
                 rama.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-            case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
+            /*case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
                 if (!text) return reply(`Enter Text, Example : ${prefix + command} Xeon`)
                 reply(mess.wait)
                 rama.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: m})
 	    }
+            break*/
+            case 'circuit': case 'classic8bit': case 'color-fireworks': case 'cool-metal': case 'cutegirl': case 'dark-gold-metal': case 'decorated-cookie': case 'deluxe-gold': case 'deluxe-silver': case 'dinamo': case 'double-exposure': case 'dragon-fire': case 'eroded-metal': case 'fabric-text': case 'firework': case 'floraltext': case 'fox-crossfire': case 'fun-certify1': case 'fun-certify2': case 'futuristic': case 'galaxy-angel': case 'galaxy-effect': case 'galaxy-effect2': case 'galaxy-text': case 'galaxy-text-3': case 'gankk-league-of-kings': case 'gemstone': case 'genji-overwatch': case 'glitchtext': case 'glossy': case 'glossy-bluemetal': case 'glossy-carbon': case 'glossy-chrome': case 'gold-avenger': case 'gold-barcar': case 'gold-batman': case 'gold-bird2': case 'gold-eagle': case 'gold-effect': case 'gold-fox': case 'gold-glitter': case 'gold-lion': case 'gold-lion2': case 'gold-star': case 'gold-tiger': case 'golden-letter': case 'gr-crossfire': case 'gradientlogo': case 'graffiti-color': case 'graffiti-text3':
+case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zombie': case '3dengraved': case '3dgalaxy-metal': case '3dgold': case '3dgolden': case '3dgradient': case '3dlove': case '3dluxury': case '3dneonlight': case '3dpapercut': case '3drainbow': case '3drealistic': case '3drosegold': case '3dscifi': case '3dsilver': case '3dspace': case '3dstone': case '3dtext-effect': case '3dunderwater': case '3dvintage': case '3dwaterpipe': case 'alice-league-of-kings': case 'angel-wing-galaxy': case 'anubis': case 'arch-crossfire': case 'art-shader': case 'assassins-creed': case 'avengers': case 'azzenka-league-of-kings': case 'balloons-cards': case 'balloons-love': case 'bearlogo': case 'bg-crossfire': case 'birthday-cake': case 'birthday-cards': case 'birthday-greeting': case 'birthday-roses': case 'black-metal': case 'blackpink': case 'blood-frosted': case 'blood-text': case 'blue-effect': case 'blue-glitter': case 'brickwall': case 'brokentext': case 'bubble-effect': case 'bulb-effectcase': {        
+            if (!text) return reply(`Example : ${prefix + command} text`)
+                reply(mess.wait)
+                rama.sendMessage(m.chat, { image: { url: `https://violetics.pw/api/textpro/${command}?apikey=7005-2125-9f00&text=${text}` }, caption: `Text Pro ${command}` }, { quoted: m})
+	        }
             break
 	    case 'nomerhoki': case 'nomorhoki': {
                 if (!Number(text)) return reply(`Example : ${prefix + command} 916909137213`)
@@ -3012,7 +3019,7 @@ ${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index +
             }
             break
             case 'lockcmd': {
-                if (!isCreator) return replay(`${mess.owner}`)
+                if (!isCreator) return reply(`${mess.owner}`)
                 if (!m.quoted) return reply(`Reply Message!`)
                 if (!m.quoted.fileSha256) return reply(`SHA256 Hash Missing`)
                 let hash = m.quoted.fileSha256.toString('base64')
@@ -3171,13 +3178,13 @@ View List Of Messages With ${prefix}listmsg`)
                 break
             }
             case 'public': {
-                if (!isCreator) return replay(`${mess.owner}`)
+                if (!isCreator) return reply(`${mess.owner}`)
                 rama.public = true
                 reply('Successful Change To Public Usage')
             }
             break
             case 'self': {
-                if (!isCreator) return replay(`${mess.owner}`)
+                if (!isCreator) return reply(`${mess.owner}`)
                 rama.public = false
                 reply('Successful Change To Self Usage')
             }
@@ -3711,7 +3718,6 @@ case 'allmenu': {
  *√>* ${prefix}tourl [reply img]
  *√>* ${prefix}tovn [reply aud]
  *√>* ${prefix}tomp3 [reply vn]
- *√>* ${prefix}removebg [reply image]
  *√>* ${prefix}smeme [reply image (text)] 
  *√>* ${prefix}toaudio [reply vid]
  *√>* ${prefix}ebinary [reply txt]
@@ -4021,37 +4027,106 @@ case 'textpromenu':
 var unicorn = await getBuffer(picak+'Text Pro Menu')
 await rama.send5ButImg(from, `
  _____[ *TEXT PRO* ]_____	        
- *√>* ${prefix}3dchristmas [txt]
- *√>* ${prefix}3ddeepsea [txt]
- *√>* ${prefix}americanflag [txt]
- *√>* ${prefix}3dscifi [txt]
- *√>* ${prefix}3drainbow [txt]
- *√>* ${prefix}3dwaterpipe [txt]
- *√>* ${prefix}halloweenskeleton [txt]
- *√>* ${prefix}sketch [txt]
- *√>* ${prefix}bluecircuit [txt]
- *√>* ${prefix}space [txt]
- *√>* ${prefix}metallic [txt]
- *√>* ${prefix}fiction [txt]
- *√>* ${prefix}greenhorror [txt]
- *√>* ${prefix}transformer [txt]
- *√>* ${prefix}berry [txt]
- *√>* ${prefix}thunder [txt]
- *√>* ${prefix}magma [txt]
- *√>* ${prefix}3dcrackedstone [txt]
- *√>* ${prefix}3dneonlight [txt]
- *√>* ${prefix}impressiveglitch [txt]
- *√>* ${prefix}naturalleaves [txt]
- *√>* ${prefix}fireworksparkle [txt]
- *√>* ${prefix}matrix [txt]
- *√>* ${prefix}dropwater [txt]
- *√>* ${prefix}harrypotter [txt]
- *√>* ${prefix}foggywindow [txt]
- *√>* ${prefix}neondevils [txt]
- *√>* ${prefix}christmasholiday [txt]
- *√>* ${prefix}3dgradient [txt]
- *√>* ${prefix}blackpink [txt]
- *√>* ${prefix}gluetext [txt]
+ *√>* ${prefix}circuit
+ *√>* ${prefix}classic8bit
+ *√>* ${prefix}color-fireworks
+ *√>* ${prefix}cool-metal
+ *√>* ${prefix}cutegirl
+ *√>* ${prefix}dark-gold-metal
+ *√>* ${prefix}decorated-cookie
+ *√>* ${prefix}deluxe-gold
+ *√>* ${prefix}deluxe-silver
+ *√>* ${prefix}dinamo
+ *√>* ${prefix}double-exposure
+ *√>* ${prefix}dragon-fire
+ *√>* ${prefix}eroded-metal
+ *√>* ${prefix}fabric-text
+ *√>* ${prefix}firework
+ *√>* ${prefix}floraltext
+ *√>* ${prefix}fox-crossfire
+ *√>* ${prefix}fun-certify1
+ *√>* ${prefix}fun-certify2
+ *√>* ${prefix}futuristic
+ *√>* ${prefix}galaxy-angel
+ *√>* ${prefix}galaxy-effect
+ *√>* ${prefix}galaxy-effect2
+ *√>* ${prefix}galaxy-text
+ *√>* ${prefix}galaxy-text-3
+ *√>* ${prefix}gankk-league-of-kings
+ *√>* ${prefix}gemstone
+ *√>* ${prefix}genji-overwatch
+ *√>* ${prefix}glitchtext
+ *√>* ${prefix}glossy
+ *√>* ${prefix}glossy-bluemetal
+ *√>* ${prefix}glossy-carbon
+ *√>* ${prefix}glossy-chrome
+ *√>* ${prefix}gold-avenger
+ *√>* ${prefix}gold-barcar
+ *√>* ${prefix}gold-batman
+ *√>* ${prefix}gold-bird2
+ *√>* ${prefix}gold-eagle
+ *√>* ${prefix}gold-effect
+ *√>* ${prefix}gold-fox
+ *√>* ${prefix}gold-glitter
+ *√>* ${prefix}gold-lion
+ *√>* ${prefix}gold-lion2
+ *√>* ${prefix}gold-star
+ *√>* ${prefix}gold-tiger
+ *√>* ${prefix}golden-letter
+ *√>* ${prefix}gr-crossfire
+ *√>* ${prefix}gradientlogo
+ *√>* ${prefix}graffiti-color
+ *√>* ${prefix}graffiti-text3
+ *√>* ${prefix}1917-style 
+ *√>* ${prefix}3d-effect 
+ *√>* ${prefix}3d-rubystone 
+ *√>* ${prefix}3d-text-sub-zombie 
+ *√>* ${prefix}3dengraved 
+ *√>* ${prefix}3dgalaxy-metal 
+ *√>* ${prefix}3dgold 
+ *√>* ${prefix}3dgolden 
+ *√>* ${prefix}3dgradient 
+ *√>* ${prefix}3dlove 
+ *√>* ${prefix}3dluxury 
+ *√>* ${prefix}3dneonlight 
+ *√>* ${prefix}3dpapercut 
+ *√>* ${prefix}3drainbow 
+ *√>* ${prefix}3drealistic 
+ *√>* ${prefix}3drosegold 
+ *√>* ${prefix}3dscifi 
+ *√>* ${prefix}3dsilver 
+ *√>* ${prefix}3dspace 
+ *√>* ${prefix}3dstone 
+ *√>* ${prefix}3dtext-effect 
+ *√>* ${prefix}3dunderwater 
+ *√>* ${prefix}3dvintage 
+ *√>* ${prefix}3dwaterpipe 
+ *√>* ${prefix}alice-league-of-kings 
+ *√>* ${prefix}angel-wing-galaxy 
+ *√>* ${prefix}anubis 
+ *√>* ${prefix}arch-crossfire 
+ *√>* ${prefix}art-shader 
+ *√>* ${prefix}assassins-creed 
+ *√>* ${prefix}avengers 
+ *√>* ${prefix}azzenka-league-of-kings 
+ *√>* ${prefix}balloons-cards 
+ *√>* ${prefix}balloons-love 
+ *√>* ${prefix}bearlogo 
+ *√>* ${prefix}bg-crossfire 
+ *√>* ${prefix}birthday-cake 
+ *√>* ${prefix}birthday-cards 
+ *√>* ${prefix}birthday-greeting 
+ *√>* ${prefix}birthday-roses 
+ *√>* ${prefix}black-metal 
+ *√>* ${prefix}blackpink 
+ *√>* ${prefix}blood-frosted 
+ *√>* ${prefix}blood-text 
+ *√>* ${prefix}blue-effect 
+ *√>* ${prefix}blue-glitter 
+ *√>* ${prefix}brickwall 
+ *√>* ${prefix}brokentext 
+ *√>* ${prefix}bubble-effect 
+ *√>* ${prefix}bulb-effect 
 `,`${LahKokTam}`,unicorn, [{"urlButton": {"displayText": "BOT GRUP","url": `${myweb}`}},{"quickReplyButton": {"displayText": "DONASI","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
 case 'convertmenu':
@@ -4229,7 +4304,7 @@ break
         
 
     } catch (err) {
-        m.reply(util.format(err))
+        reply(util.format(err))
     }
 }
 

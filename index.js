@@ -179,7 +179,7 @@ rama.ev.on('group-participants.update', async (anu) => {
                                        
                 Tol = await getBuffer(`https://kanza-api.herokuapp.com/api/canvas/goodbye?name=${encodeURIComponent(nama)}&picurl=${ppuser}&bgurl=https://telegra.ph/file/1dfe7720d51f20e4c5f0c.jpg&mem=${encodeURIComponent(memb)}&gcname=${encodeURIComponent(metadata.subject)}&apikey=${geni}`)
                 if (anu.action == 'add') {
-                    rama.sendMessage(anu.id, { image: Kon, contextInfo: { mentionedJid: [num] }, caption: `\nHi👋 @${num.split("@")[0]}\nWelcome To ${metadata.subject}` })
+                    rama.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `\nHi👋 @${num.split("@")[0]}\nWelcome To ${metadata.subject}` })
                 } else if (anu.action == 'remove') {
                     rama.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Leaving To ${metadata.subject}` })
                 }

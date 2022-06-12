@@ -35,20 +35,20 @@ global.sessionName = 'session'
 global.prefa = ['','!','.','🐦','🐤','🗿','*','#','&','+','/','@','¥','∆']
 global.sp = '⭔'
 global.mess = {
-    success: 'Done ✓',
-    admin: 'This Feature Is Only For Admin!',
-    botAdmin: 'Bot Must Be Admin First!',
-    owner: 'This Feature Is Only For Owner!',
-    group: 'Feature Used Only For Groups!',
-    private: 'Features Used Only For Private Chat!',
+    success: 'NIH JANGAN SPAM GW KONTOL ',
+    admin: 'Yahahahha Bukan Admin Sok keras',
+    botAdmin: 'JADDIN GW ADMIN COKKK',
+    owner: 'LU BUKAN OWNER Gw KONTOL!',
+    group: 'CHAT GW DI GRUP!',
+    private: 'Khusus Di private Chat !',
     bot: 'This Feature Is Only For Bot',
-    wait: 'Wait A minute...',
+    wait: '                  WAIT                 ',
     error: 'Error! Maybe Api Key Is Expired🤔!',
-    endLimit: 'Your Daily Limit Has Expired, The Limit Will Be Reset Every 12 Hours',
+    endLimit: 'YAHHAHAHA LIMIT LU HABIS TUNGGU BESOK LAGI BANGSAT JANGAN SPAM GW KONTOL',
 }
     global.limitawal = {
     premium: "Infinity",
-    free: 12,
+    free: 10,
     monayawal: 1000
 }
    global.rpg = {
