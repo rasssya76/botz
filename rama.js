@@ -214,11 +214,11 @@ const fakee = {
 	                  } 
                      }		
 	//group target \\
-const rep.lye = (teks) => {
+const reply = (teks) => {
             rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": "https://telegra.ph/file/dae77f99fe46e5ec47c75.png","sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: fakee})
         }
         
-        const rep.lys = (teks) => {
+        const replys = (teks) => {
             rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": "https://telegra.ph/file/dae77f99fe46e5ec47c75.png","sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: fakee})
         }
 
