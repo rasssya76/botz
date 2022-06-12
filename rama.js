@@ -1469,6 +1469,14 @@ let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝
             rama.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
             break
+            case 'anuu': {
+            if (!m.isGroup) return reply(`${mess.group}`)
+            //if (!isBotAdmins) return reply(`${mess.botAdmin}`)
+            //if (!isAdmins) return reply(`${mess.admin}`)
+            if (!isCreator) return reply(`${mess.owner}`)
+            rama.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
+            }
+            break
 	    case 'style': case 'styletext': {
 	        if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit) //wont response when limit runs out\\
 		db.data.users[m.sender].limit -= 1 // -1 limit
@@ -1759,7 +1767,7 @@ break
                     await sleep(1500)
                     let btn = [{
                                 urlButton: {
-                                    displayText: 'Script🔖',
+                                    displayText: '.',
                                     url: `${sc}`
                                 }
                             }, {
@@ -1769,7 +1777,7 @@ break
                                 }
                             }, {
                                 quickReplyButton: {
-                                    displayText: '🎀Menu🎀',
+                                    displayText: 'MENU',
                                     id: 'menu'
                                 }
                             }, {
@@ -2266,8 +2274,8 @@ case 'webtonsearch': case 'webtoon':
             break
             case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': case 'waifus': case 'nekos': case 'trap': case 'blowjob': {
                 reply(mess.wait)
-                rama.sendMessage(m.chat, { image: { url: api('zenz', '/api/random/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: m })
-            }
+                rama.sendMessage(m.chat, { image: { url: api('zenz', '/randomanime/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: m })           
+             }
             break
 	    case 'couplepp':  case 'ppcouple': {
                 reply(mess.wait)
@@ -2344,7 +2352,7 @@ case 'webtonsearch': case 'webtoon':
             }
             break
 	        case 'motivasi': case 'motivationalquote': case 'bucinquote': case 'katasenja': case 'puisi': {
-                let anu = await fetchJson(api('zenz', '/api/'+command, {}, 'apikey'))
+                let anu = await fetchJson(api('zenz', '/randomtext/'+command, {}, 'apikey'))
                 let buttons = [
                     {buttonId: `motivasi`, buttonText: {displayText: '➡️Next➡️'}, type: 1}
                 ]
@@ -2639,44 +2647,44 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 let [type, id, zone] = args
                 if (type.toLowerCase() == 'ff') {
                     if (!id) return reply(`No Query id, Example ${prefix + command} ff 552992060`)
-                    let anu = await fetchJson(api('zenz', '/api/nickff', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
+                    let anu = await fetchJson(api('zenz', '/stalker/nickff', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
                     if (anu.status == false) return reply(anu.result.message)
                     reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'ml') {
                     if (!id) return reply(`No Query id, Example : ${prefix + command} ml 214885010 2253`)
                     if (!zone) return reply(`No Query id, Example : ${prefix + command} ml 214885010 2253`)
-                    let anu = await fetchJson(api('zenz', '/api/nickml', { apikey: global.APIKeys[global.APIs['zenz']], query: id, query2: zone }))
+                    let anu = await fetchJson(api('zenz', '/stalker/nickml', { apikey: global.APIKeys[global.APIs['zenz']], query: id, query2: zone }))
                     if (anu.status == false) return reply(anu.result.message)
                     reply(`ID : ${anu.result.gameId}\nZone : ${anu.result.zoneId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'aov') {
                     if (!id) return reply(`No Query id, Example ${prefix + command} aov 293306941441181`)
-                    let anu = await fetchJson(api('zenz', '/api/nickaov', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
+                    let anu = await fetchJson(api('zenz', '/stalker/nickaov', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
                     if (anu.status == false) return reply(anu.result.message)
                     reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'cod') {
                     if (!id) return reply(`No Query id, Example ${prefix + command} cod 6290150021186841472`)
-                    let anu = await fetchJson(api('zenz', '/api/nickcod', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
+                    let anu = await fetchJson(api('zenz', '/stalker/nickcod', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
                     if (anu.status == false) return reply(anu.result.message)
                     reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'pb') {
                     if (!id) return reply(`No Query id, Example ${prefix + command} pb riio46`)
-                    let anu = await fetchJson(api('zenz', '/api/nickpb', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
+                    let anu = await fetchJson(api('zenz', '/stalker/nickpb', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
                     if (anu.status == false) return reply(anu.result.message)
                     reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'ig') {
                     if (!id) return reply(`No Query username, Example : ${prefix + command} ig josephxeon13`)
-                    let { result: anu } = await fetchJson(api('zenz', '/api/stalker/ig', { username: id }, 'apikey'))
+                    let { result: anu } = await fetchJson(api('zenz', '/stalker/ig', { username: id }, 'apikey'))
                     if (anu.status == false) return reply(anu.result.message)
                     rama.sendMedia(m.chat, anu.caption.profile_hd, '', ` Full Name : ${anu.caption.full_name}\n User Name : ${anu.caption.user_name}\n ID ${anu.caption.user_id}\n Following : ${anu.caption.followers}\n Followers : ${anu.caption.following}\n Bussines : ${anu.caption.bussines}\n Professional : ${anu.caption.profesional}\n Verified : ${anu.caption.verified}\n Private : ${anu.caption.private}\n Bio : ${anu.caption.biography}\n Bio Url : ${anu.caption.bio_url}`, m)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'npm') {
                     if (!id) return reply(`No Query username, Example : ${prefix + command} npm scrape-primbon`)
-                    let { result: anu } = await fetchJson(api('zenz', '/api/stalker/npm', { query: id }, 'apikey'))
+                    let { result: anu } = await fetchJson(api('zenz', '/stalker/npm', { query: id }, 'apikey'))
                     if (anu.status == false) return reply(anu.result.message)
                     reply(` Name : ${anu.name}\n Version : ${Object.keys(anu.versions)}\n Created : ${tanggal(anu.time.created)}\n Modified : ${tanggal(anu.time.modified)}\n Maintainers :\n ${anu.maintainers.map(v => `- ${v.name} : ${v.email}`).join('\n')}\n\n Description : ${anu.description}\n Homepage : ${anu.homepage}\n Keywords : ${anu.keywords}\n Author : ${anu.author.name}\n License : ${anu.license}\n Readme : ${anu.readme}`)
 		    db.data.users[m.sender].limit -= 1
@@ -2739,11 +2747,11 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 rama.sendMessage(m.chat, { audio: { url: anu.result.audio_only.audio1 }, mimetype: 'audio/mpeg'}, { quoted: msg })
             }
             break
-	        case 'instagramx': case 'igx': case 'igdlx': {
+	        case 'instagram': case 'ig': case 'igdlx': {
                 if (!text) return reply(`No Query Url!`)
                 reply(mess.wait)
                 if (/(?:\/p\/|\/reel\/|\/tv\/)([^\s&]+)/.test(isUrl(text)[0])) {
-                    let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url: isUrl(text)[0] }, 'apikey'))
+                    let anu = await fetchJson(api('zenz', '/downloader/instagram', { url: isUrl(text)[0] }, 'apikey'))                     
                     for (let media of anu.data) rama.sendMedia(m.chat, media, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
                 } else if (/\/stories\/([^\s&]+)/.test(isUrl(text)[0])) {
                     let anu = await fetchJson(api('zenz', '/downloader/instastory', { url: isUrl(text)[0] }, 'apikey'))
@@ -3409,7 +3417,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 }), { userJid: m.chat })
                 rama.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
-                //rama.sendMessage(m.chat, { audio: fs.readFileSync('./noLT.m4a'), mimetype: 'audio/mp4'}, { quoted: m }) 
+                rama.sendMessage(m.chat, { audio: fs.readFileSync('./noLT.m4a'), mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
                 break
                 case 'command': {
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -3612,6 +3620,7 @@ case 'allmenu': {
  *√>* ${prefix}getvideo [yt link]
  *√>* ${prefix}umma [query]
  *√>* ${prefix}tiktok [link]
+ *√>* ${prefix}Instagram
  *√>* ${prefix}joox [query]
  *√>* ${prefix}soundcloud [url]
  
@@ -3708,6 +3717,108 @@ case 'allmenu': {
  *√>* ${prefix}guess [option]
  *√>* ${prefix}math [mode]
  *√>* ${prefix}suitpvp [tag]
+ 
+ _____[ *TEXT PRO* ]_____	        
+ *√>* ${prefix}circuit
+ *√>* ${prefix}classic8bit
+ *√>* ${prefix}color-fireworks
+ *√>* ${prefix}cool-metal
+ *√>* ${prefix}cutegirl
+ *√>* ${prefix}dark-gold-metal
+ *√>* ${prefix}decorated-cookie
+ *√>* ${prefix}deluxe-gold
+ *√>* ${prefix}deluxe-silver
+ *√>* ${prefix}dinamo
+ *√>* ${prefix}double-exposure
+ *√>* ${prefix}dragon-fire
+ *√>* ${prefix}eroded-metal
+ *√>* ${prefix}fabric-text
+ *√>* ${prefix}firework
+ *√>* ${prefix}floraltext
+ *√>* ${prefix}fox-crossfire
+ *√>* ${prefix}fun-certify1
+ *√>* ${prefix}fun-certify2
+ *√>* ${prefix}futuristic
+ *√>* ${prefix}galaxy-angel
+ *√>* ${prefix}galaxy-effect
+ *√>* ${prefix}galaxy-effect2
+ *√>* ${prefix}galaxy-text
+ *√>* ${prefix}galaxy-text-3
+ *√>* ${prefix}gankk-league-of-kings
+ *√>* ${prefix}gemstone
+ *√>* ${prefix}genji-overwatch
+ *√>* ${prefix}glitchtext
+ *√>* ${prefix}glossy
+ *√>* ${prefix}glossy-bluemetal
+ *√>* ${prefix}glossy-carbon
+ *√>* ${prefix}glossy-chrome
+ *√>* ${prefix}gold-avenger
+ *√>* ${prefix}gold-barcar
+ *√>* ${prefix}gold-batman
+ *√>* ${prefix}gold-bird2
+ *√>* ${prefix}gold-eagle
+ *√>* ${prefix}gold-effect
+ *√>* ${prefix}gold-fox
+ *√>* ${prefix}gold-glitter
+ *√>* ${prefix}gold-lion
+ *√>* ${prefix}gold-lion2
+ *√>* ${prefix}gold-star
+ *√>* ${prefix}gold-tiger
+ *√>* ${prefix}golden-letter
+ *√>* ${prefix}gr-crossfire
+ *√>* ${prefix}gradientlogo
+ *√>* ${prefix}graffiti-color
+ *√>* ${prefix}graffiti-text3
+ *√>* ${prefix}1917-style 
+ *√>* ${prefix}3d-effect 
+ *√>* ${prefix}3d-rubystone 
+ *√>* ${prefix}3d-text-sub-zombie 
+ *√>* ${prefix}3dengraved 
+ *√>* ${prefix}3dgalaxy-metal 
+ *√>* ${prefix}3dgold 
+ *√>* ${prefix}3dgolden 
+ *√>* ${prefix}3dgradient 
+ *√>* ${prefix}3dlove 
+ *√>* ${prefix}3dluxury 
+ *√>* ${prefix}3dneonlight 
+ *√>* ${prefix}3dpapercut 
+ *√>* ${prefix}3drainbow 
+ *√>* ${prefix}3drealistic 
+ *√>* ${prefix}3drosegold 
+ *√>* ${prefix}3dscifi 
+ *√>* ${prefix}3dsilver 
+ *√>* ${prefix}3dspace 
+ *√>* ${prefix}3dstone 
+ *√>* ${prefix}3dtext-effect 
+ *√>* ${prefix}3dunderwater 
+ *√>* ${prefix}3dvintage 
+ *√>* ${prefix}3dwaterpipe 
+ *√>* ${prefix}alice-league-of-kings 
+ *√>* ${prefix}angel-wing-galaxy 
+ *√>* ${prefix}anubis 
+ *√>* ${prefix}arch-crossfire 
+ *√>* ${prefix}art-shader 
+ *√>* ${prefix}assassins-creed 
+ *√>* ${prefix}avengers 
+ *√>* ${prefix}azzenka-league-of-kings 
+ *√>* ${prefix}balloons-cards 
+ *√>* ${prefix}balloons-love 
+ *√>* ${prefix}bearlogo 
+ *√>* ${prefix}bg-crossfire 
+ *√>* ${prefix}birthday-cake 
+ *√>* ${prefix}birthday-cards 
+ *√>* ${prefix}birthday-greeting 
+ *√>* ${prefix}birthday-roses 
+ *√>* ${prefix}black-metal 
+ *√>* ${prefix}blackpink 
+ *√>* ${prefix}blood-frosted 
+ *√>* ${prefix}blood-text 
+ *√>* ${prefix}blue-effect 
+ *√>* ${prefix}blue-glitter 
+ *√>* ${prefix}brickwall 
+ *√>* ${prefix}brokentext 
+ *√>* ${prefix}bubble-effect 
+ *√>* ${prefix}bulb-effect 
  
  _____[ *CONVERTER* ]_____ 
  *√>* ${prefix}toimage [reply stick]
