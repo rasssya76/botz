@@ -19,7 +19,7 @@ global.APIKeys = {
 }
 
 //customize settings\\
-global.owner = ['6282142108243','62887436223985']
+global.owner = ['6282142108243']
 global.premium = ['6282142108243']
 global.ownernomer = '6282142108243'
 global.ownername = 'RAMA'
@@ -42,7 +42,7 @@ global.mess = {
     group: 'CHAT GW DI GRUP!',
     private: 'Khusus Di private Chat !',
     bot: 'This Feature Is Only For Bot',
-    wait: '                  WAIT                 ',
+    wait: '      WAIT        ',
     error: 'Error! Maybe Api Key Is Expired🤔!',
     endLimit: 'YAHHAHAHA LIMIT LU HABIS TUNGGU BESOK LAGI BANGSAT JANGAN SPAM GW KONTOL',
 }
