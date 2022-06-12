@@ -215,11 +215,11 @@ const fakee = {
                      }		
 	//group target \\
 const reply = (teks) => {
-            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: fakee})
+            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": "https://telegra.ph/file/dae77f99fe46e5ec47c75.png","sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: fakee})
         }
         
         const replys = (teks) => {
-            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync(`./GojoMedia/gojo.jpg`),"sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: fakee})
+            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": "https://telegra.ph/file/dae77f99fe46e5ec47c75.png","sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: fakee})
         }
 
         //Public & Self\\
@@ -1881,7 +1881,7 @@ break
                  rama.sendTextWithMentions(m.chat, teks, m)
              }
              break
-             case 'listonlinexxx': case 'onlinelistxxx': {
+             case 'listonline': case 'onlinelist': {
                     let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
                     let online = [...Object.keys(store.presences[id]), botNumber]
                     rama.sendText(m.chat, 'Online List:\n\n' + online.map(v => ' @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
@@ -1889,7 +1889,7 @@ break
              break
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
             if (!quoted) return reply(`Reply Video/Image With Caption ${prefix + command}`)
-            reply(mess.wait)
+            //reply(mess.wait)
                     if (/image/.test(mime)) {
                 let media = await quoted.download()
                 let encmedia = await rama.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
@@ -2285,11 +2285,11 @@ case 'webtonsearch': case 'webtoon':
                     reply(mess.error)
                 })
             break
-            case 'waifu': case 'husbu': case 'neko': case 'shinobu': case 'megumin': case 'waifus': case 'nekos': case 'trap': case 'blowjob': {
+           /* case 'waifu': case 'bully': case 'neko': case 'shinobu': case 'megumin': {
                 reply(mess.wait)
-                rama.sendMessage(m.chat, { image: { url: api('zenz', '/randomanime/'+command, {}, 'apikey') }, caption: 'Generated Random ' + command }, { quoted: fakee })           
+                rama.sendMessage(m.chat, { image: { url: `https://fatiharridho.herokuapp.com/api/sfw/${command}` }, caption: 'Generated Random ' + command }, { quoted: fakee })           
              }
-            break
+            break*/
 	    case 'couplepp':  case 'ppcouple': {
                 reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
@@ -3658,7 +3658,7 @@ case 'allmenu': {
  *√>* ${prefix}animequote (Query)
  *√>* ${prefix}couplepp
  
- _____[ *ANIME* ]_____
+ _____[ *RANDOM ANIME* ]_____	        
  *√>* ${prefix}loli
  *√>* ${prefix}bully
  *√>* ${prefix}cuddle
@@ -3686,6 +3686,35 @@ case 'allmenu': {
  *√>* ${prefix}poke
  *√>* ${prefix}dance
  *√>* ${prefix}cringe
+ *√>* ${prefix}cry
+ *√>* ${prefix}kill
+ *√>* ${prefix}hug
+ *√>* ${prefix}pat
+ *√>* ${prefix}lick
+ *√>* ${prefix}kiss
+ *√>* ${prefix}bite
+ *√>* ${prefix}yeet
+ *√>* ${prefix}neko
+ *√>* ${prefix}bully
+ *√>* ${prefix}bonk
+ *√>* ${prefix}wink
+ *√>* ${prefix}poke
+ *√>* ${prefix}nom
+ *√>* ${prefix}slap
+ *√>* ${prefix}smile
+ *√>* ${prefix}wave
+ *√>* ${prefix}awoo
+ *√>* ${prefix}blush
+ *√>* ${prefix}smug
+ *√>* ${prefix}glomp
+ *√>* ${prefix}happy
+ *√>* ${prefix}dance
+ *√>* ${prefix}cringe
+ *√>* ${prefix}cuddle
+ *√>* ${prefix}highfive
+ *√>* ${prefix}shinobu
+ *√>* ${prefix}megumin
+ *√>* ${prefix}handhold
  
  _____[ *FUN* ]_____ 
  *√>* ${prefix}how [text
@@ -3958,6 +3987,7 @@ await rama.send5ButImg(from, `
 `,`${LahKokTam}`,unicorn, [{"urlButton": {"displayText": "BOT GRUP","url": `${myweb}`}},{"quickReplyButton": {"displayText": "DONASI","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
 
+
 case 'grupmenu': case 'groupmenu':
 var unicorn = await getBuffer(picak+'Group Menu')
 await rama.send5ButImg(from, `
@@ -4148,6 +4178,35 @@ await rama.send5ButImg(from, `
  *√>* ${prefix}poke
  *√>* ${prefix}dance
  *√>* ${prefix}cringe
+ *√>* ${prefix}cry
+ *√>* ${prefix}kill
+ *√>* ${prefix}hug
+ *√>* ${prefix}pat
+ *√>* ${prefix}lick
+ *√>* ${prefix}kiss
+ *√>* ${prefix}bite
+ *√>* ${prefix}yeet
+ *√>* ${prefix}neko
+ *√>* ${prefix}bully
+ *√>* ${prefix}bonk
+ *√>* ${prefix}wink
+ *√>* ${prefix}poke
+ *√>* ${prefix}nom
+ *√>* ${prefix}slap
+ *√>* ${prefix}smile
+ *√>* ${prefix}wave
+ *√>* ${prefix}awoo
+ *√>* ${prefix}blush
+ *√>* ${prefix}smug
+ *√>* ${prefix}glomp
+ *√>* ${prefix}happy
+ *√>* ${prefix}dance
+ *√>* ${prefix}cringe
+ *√>* ${prefix}cuddle
+ *√>* ${prefix}highfive
+ *√>* ${prefix}shinobu
+ *√>* ${prefix}megumin
+ *√>* ${prefix}handhold
 `,`${LahKokTam}`,unicorn, [{"urlButton": {"displayText": "BOT GRUP","url": `${myweb}`}},{"quickReplyButton": {"displayText": "DONASI","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
 break
 case 'textpromenu':
