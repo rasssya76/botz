@@ -1,9 +1,4 @@
-//═══════════════════════════════════════════════════════//
-//
-//                              𝙶𝙾𝙹𝙾-𝚂𝙰𝚃𝙾𝚁𝚄 𝓫𝔂 𝓷𝓮𝔁𝓾𝓼𝓝𝔀
-//𝙰𝙳𝙾𝙿𝚃𝙴𝙳 𝙵𝚁𝙾𝙼  𝚂𝙲𝚁𝙸𝙿𝚃 𝙾𝙵 𝙲𝙷𝙴𝙴𝙼𝚂𝙱𝙾𝚃 𝚅2 𝙱𝚈 𝙳𝙶𝚇𝚎𝚘𝚗 
-//
-//════════════════════════════//
+//═══════════════════════════//
 
 require('./settings')
 const { default: NexusNwIncConnect, useSingleFileAuthState, DisconnectReason, fetchLatestBaileysVersion, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, generateMessageID, downloadContentFromMessage, makeInMemoryStore, jidDecode, proto } = require("@adiwajshing/baileys")
@@ -178,10 +173,10 @@ rama.ev.on('group-participants.update', async (anu) => {
                 Kon = await getBuffer(`https://violetics.pw/api/canvas/welcomer?apikey=7005-2125-9f00&username=${encodeURIComponent(nama)}&avatar=${ppuser}&groupname=${encodeURIComponent(metadata.subject)}&timestamp=1654678938749`)
                                        
                 Tol = await getBuffer(`https://kanza-api.herokuapp.com/api/canvas/goodbye?name=${encodeURIComponent(nama)}&picurl=${ppuser}&bgurl=https://telegra.ph/file/1dfe7720d51f20e4c5f0c.jpg&mem=${encodeURIComponent(memb)}&gcname=${encodeURIComponent(metadata.subject)}&apikey=${geni}`)
-                if (anu.action == 'add') {
-                    rama.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `\nHi👋 @${num.split("@")[0]}\nWelcome To ${metadata.subject}` })
+                if (anu.action == 'add') {                     
+                    rama.sendMessage(anu.id, { text: `\nHi👋 @${num.split("@")[0]}\nWelcome To ${metadata.subject}`, contextInfo:{"externalAdReply": {"title": `WELCOME`,"body": `👨‍💻`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": ppuser,"sourceUrl": "https://wa.me/message/4DCK3UGKERTGC1", mentionedJid: [num] }}})                  
                 } else if (anu.action == 'remove') {
-                    rama.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `@${num.split("@")[0]} Leaving To ${metadata.subject}` })
+                    rama.sendMessage(anu.id, { text: `@${num.split("@")[0]} Leaving To ${metadata.subject}`, contextInfo:{"externalAdReply": {"title": `WELCOME`,"body": `👨‍💻`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": ppuser,"sourceUrl": "https://wa.me/message/4DCK3UGKERTGC1", mentionedJid: [num] }}})
                 }
             }
         } catch (err) {

@@ -3995,7 +3995,7 @@ let buttonMessage= {
 'title': `Hai kak ${pushname}`,
 'body': `${Object.keys(global.db.data.users).length} USER`,
 'thumbnail': fs.readFileSync('./GojoMedia/gojo.jpg'),
-'sourceUrl': 'https://www.instagram.com/p/Cch2IoGFomX/?utm_source=ig_web_copy_link'}},
+'sourceUrl': 'https://wa.me/message/4DCK3UGKERTGC1'}},
 'caption': `${anu}`,
 'footer': `RAMAGANS`,
 'buttons':[
