@@ -2710,13 +2710,13 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
 	        case 'tiktok': case 'tiktoknowm': {
                 if (!text) return m.reply(`Enter Query Link!`)
                 m.reply(mess.wait)
-                let anu = await fetchJson(`https://hadi-api.herokuapp.com/api/tiktok?url=${text}`)
+                let anu = await fetchJson(`https://fatiharridho.herokuapp.com/api/downloader/tiktok?url=${text}`)
                 let buttons = [
                     //{buttonId: `tiktokwm ${text}`, buttonText: {displayText: '🥬With Watermark🥬'}, type: 1},
                     {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '🎵Audio🎵'}, type: 1}
                 ]
                 let buttonMessage = {
-                    video: { url: anu.result.video.nowm },
+                    video: { url: anu.result.nowm },
                     caption: `VIDEO TIKTOK`,
                     footer: 'Press The Button Below',
                     buttons: buttons,
@@ -2746,7 +2746,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
             case 'tiktokmp3': case 'tiktokaudio': {
                 if (!text) return m.reply(`Enter Query Link!`)
                 m.reply(mess.wait)
-                let anu = await fetchJson(`https://hadi-api.herokuapp.com/api/tiktok?url=${text}`)
+                let anu = await fetchJson(`https://fatiharridho.herokuapp.com/api/downloader/tiktok?url=${text}`)
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '🥬No Watermark🥬'}, type: 1},
                     //{buttonId: `tiktokwm ${text}`, buttonText: {displayText: '🥬With Watermark🥬'}, type: 1}
@@ -2758,7 +2758,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                     headerType: 2
                 }
                 let msg = await rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
-                rama.sendMessage(m.chat, { audio: { url: anu.result.audio_only.audio1 }, mimetype: 'audio/mpeg'}, { quoted: fakee })
+                rama.sendMessage(m.chat, { audio: { url: anu.result.audio }, mimetype: 'audio/mpeg'}, { quoted: fakee })
             }
             break
 	        case 'instagram': case 'ig': case 'igdlx': {
@@ -3966,8 +3966,46 @@ case 'help': case 'bot': case 'list': case 'menu': case 'allmenu': {
                     }
                 }), { userJid: m.chat })
                 rama.relayMessage(m.chat, template.message, { messageId: template.key.id })*/
-rama.sendMessage(m.chat, { text: anu, contextInfo:{"externalAdReply": {"title": `COMMAND DI BOT INI`,"body": `👨‍💻`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync('./GojoMedia/gojo.jpg'),"sourceUrl": ".", renderLargerThumbnail: true}}}, { quoted: m})
+const fakemenu = {
+	key : {
+           participant : '0@s.whatsapp.net'
+                        },
+       message: {
+                    documentMessage: {
+                    title: `👨‍💻`, 
+                    jpegThumbnail: global.thumb
+                          }
                         }
+                      }
+
+let buttonMessage= {
+'document':{ url : `http://s.id/0x404` },
+'mimetype': 'application/pdf',
+'fileName': `ALL COMMANDS BOT`,
+'fileLength': 90181872727,
+'pageCount': 1976,
+'contextInfo':{
+'forwardingScore':555,
+'isForwarded':true,
+'externalAdReply':{ 
+'showAdAttribution': true,
+'mediaUrl': 'http://s.id/0x404',
+'mediaType': 2,
+'previewType': 'pdf',
+'title': `Hai kak ${pushname}`,
+'body': `${Object.keys(global.db.data.users).length} USER`,
+'thumbnail': fs.readFileSync('./GojoMedia/gojo.jpg'),
+'sourceUrl': 'https://www.instagram.com/p/Cch2IoGFomX/?utm_source=ig_web_copy_link'}},
+'caption': `${anu}`,
+'footer': `RAMAGANS`,
+'buttons':[
+{'buttonId':  `.ping`,'buttonText':{'displayText':'ᴘɪɴɢ'},'type':1},
+{'buttonId': `.owner`,'buttonText':{'displayText':'ᴏᴡɴᴇʀ'},'type':1}
+],
+'headerType':6}
+
+ rama.sendMessage(m.chat,buttonMessage, { quoted: fakemenu})               
+ }
 break
 /*
 case 'mainmenu':
