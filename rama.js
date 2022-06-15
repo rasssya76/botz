@@ -1,3 +1,4 @@
+/*SC ORI PUNYA ORANG INDIA HAHAHAHHA*/
 require('./settings')
 const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, generateWAMessageContent, generateWAMessage, prepareWAMessageMedia, areJidsSameUser, getContentType } = require('@adiwajshing/baileys')
 const fs = require('fs')
@@ -207,7 +208,7 @@ const fakee = {
                 },
 	 message: { 
 		"extendedTextMessage": {
-                 "text": `WHATSAPP-BOT`,
+                 "text": `${command}`,
                  "title": `RamaGans`,
                  'jpegThumbnail': fs.readFileSync('./GojoMedia/gojo.jpg')
                         }
@@ -2757,7 +2758,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                     headerType: 2
                 }
                 let msg = await rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
-                rama.sendMessage(m.chat, { audio: { url: anu.result.audio_only.audio1 }, mimetype: 'audio/mpeg'}, { quoted: fakeesg })
+                rama.sendMessage(m.chat, { audio: { url: anu.result.audio_only.audio1 }, mimetype: 'audio/mpeg'}, { quoted: fakee })
             }
             break
 	        case 'instagram': case 'ig': case 'igdlx': {
@@ -2786,7 +2787,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
                 let msg = await rama.sendImage(m.chat, anu.result.img, ` Title : ${anu.result.lagu}\n Album : ${anu.result.album}\n Singer : ${anu.result.penyanyi}\n Publish : ${anu.result.publish}\n Lyrics :\n${anu.result.lirik.result}`, m)
-                rama.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: fakeesg })
+                rama.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: fakee })
             }
             break
             case 'soundcloud': case 'scdl': {
@@ -2794,7 +2795,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
                 let msg = await rama.sendImage(m.chat, anu.result.thumb, ` Title : ${anu.result.title}\n Url : ${isUrl(text)[0]}`)
-                rama.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: fakeesg })
+                rama.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: fakee })
             }
             break
 	        case 'twitdlx': case 'twitterx': {
@@ -2829,7 +2830,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                     headerType: 4
                 }
                 let msg = await rama.sendMessage(m.chat, buttonMessage, { quoted: fakee })
-                rama.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: fakeesg })
+                rama.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: fakee })
             }
             break
 	        case 'fbdlx': case 'fbx': case 'facebookx': {
@@ -3372,7 +3373,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 rama.relayMessage(m.chat, template.message, { messageId: template.key.id })
                 }
 break*/
-          case 'help': case 'bot': case 'list': case 'menu': {
+         /* case 'help': case 'bot': case 'list': case 'menu': {
             	timestampe = speed();
 latensie = speed() - timestampe
                 anu = ``
@@ -3556,7 +3557,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             }), {quoted: fakee})
             rama.relayMessage(m.chat, template.message, { messageId: template.key.id })
             }
-            break
+            break*/
     case 'donasi': case 'donate': 
     m.reply(`DONASI SE IKLASNYA\n0823-3809-8038(Gopay)\n082142108243(pulsa)`)
     break
@@ -3568,7 +3569,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                 m.reply(`GitHub : https://github.com/ \n`)
             }
             break
-case 'allmenu': {
+case 'help': case 'bot': case 'list': case 'menu': case 'allmenu': {
   	anu = `
  _____[ *MAIN* ]_____
  *√>* ${prefix}alive
@@ -3943,7 +3944,7 @@ case 'allmenu': {
  *√>* ${prefix}masasubur (Query)
  *√>* ${prefix}zodiak (Query)
  *√>* ${prefix}shio (Query)`
-    const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
+    /*const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
                             hydratedContentText: anu,
@@ -3964,9 +3965,11 @@ case 'allmenu': {
                         }
                     }
                 }), { userJid: m.chat })
-                rama.relayMessage(m.chat, template.message, { messageId: template.key.id })
-            }
+                rama.relayMessage(m.chat, template.message, { messageId: template.key.id })*/
+rama.sendMessage(m.chat, { text: anu, contextInfo:{"externalAdReply": {"title": `COMMAND DI BOT INI`,"body": `👨‍💻`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fs.readFileSync('./GojoMedia/gojo.jpg'),"sourceUrl": ".", renderLargerThumbnail: true}}}, { quoted: m})
+                        }
 break
+/*
 case 'mainmenu':
 var unicorn = await getBuffer(picak+'Main Menu')
 await rama.send5ButImg(from, `
@@ -4414,7 +4417,7 @@ await rama.send5ButImg(from, `
  *√>* ${prefix}masasubur (Query)
  *√>* ${prefix}zodiak (Query)
  *√>* ${prefix}shio (Query)`,`${LahKokTam}`,unicorn, [{"urlButton": {"displayText": "BOT GRUP","url": `${myweb}`}},{"quickReplyButton": {"displayText": "DONASI","id": 'donate'}},{"quickReplyButton": {"displayText": "OWNER","id": 'owner'}}] )
-break
+break*/
 case 'thanksto': case 'tqto': case 'tqtt':
 var unicorn = await getBuffer(picak+'Developer')
 await rama.send5ButImg(from, `
