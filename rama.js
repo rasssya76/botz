@@ -1874,10 +1874,10 @@ break
              break
                 case 'listgc': case 'gclist': {
                  let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
-                 let teks = `⬣ *GROUP CHAT LIST*\n\nTotal Group : ${anu.length} Group\n\n`
+                 let teks = `*GROUP CHAT LIST*\n\nTotal Group : ${anu.length} Group\n\n`
                  for (let i of anu) {
                      let metadata = await rama.groupMetadata(i)
-                     teks += `💫 *Name :* ${metadata.subject}\n💫 *Owner :* @${metadata.owner.split('@')[0]}\n💫 *ID :* ${metadata.id}\n💫 *Made :* ${moment(metadata.creation * 1000).tz('Asia/Kolkata').format('DD/MM/YYYY HH:mm:ss')}\n💫 *Member :* ${metadata.participants.length}\n\n────────────────────────\n\n`
+                     teks += `*Name :* ${metadata.subject}\n*ID :* ${metadata.id}`
                  }
                  rama.sendTextWithMentions(m.chat, teks, m)
              }
@@ -3565,6 +3565,9 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                 rama.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/9aae92f026c1ee0ce8ce9.jpg' }, caption: `*Hi Bro ${m.pushName}\nJika Kamu Ingin memasukkan, bot ini\n ke grup kamu transfer pulsa ke 082142108243(Telkomsel) atau\n gopay 0823-3809-8038 Harga 20k oke kalo udah \n lu bisa ss bukti pembayaran lalu lu kirim ke wa.me//6282142108243 dan kirim link grup juga agar bot bisa segera join` }, { quoted: fakee })
             }
             break
+    case 'runtime':
+    m.reply(`Runtime: ${runtime(process.uptime())}`)
+    break      
             case 'sc': case 'script': {
                 m.reply(`GitHub : https://github.com/ \n`)
             }
@@ -4502,7 +4505,7 @@ break
                 }
 			 if (budy.startsWith('Assalamualaikum')) {
                  num = `${m.sender}`
-                 rama.sendMessage(m.chat, { text: `Walaikumsalam kak @${num.split("@")[0]}`, contextInfo: {mentionedJid: [num]}})
+                 rama.sendMessage(m.chat, { text: `Walaikumsalam kak @${num.split("@")[0]}`, contextInfo: {mentionedJid: [num]}, m})
                 }
              if (budy.startsWith('Tes')) {
                 const fakeH = {
