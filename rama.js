@@ -4501,7 +4501,7 @@ break
                     })
                 }
 			 if (budy.startsWith('Assalamualaikum')) {
-                 for (let num of participants) 
+                 num = `${m.sender}`
                  rama.sendMessage(m.chat, { text: `Walaikumsalam kak @${num.split("@")[0]}`, contextInfo: {mentionedJid: [num]}})
                 }
              if (budy.startsWith('Tes')) {
