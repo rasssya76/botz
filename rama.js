@@ -259,14 +259,14 @@ const reply = (teks) => {
 	  //antilink\\
         if (db.data.chats[m.chat].antilink) {
         if (budy.match(`chat.whatsapp.com`)) {
-        m.reply` _____[ *ANTI LINK* ]_____\n\nYou have been detected sending a group link, sorry you will be kicked !`)
-        if (!isBotAdmins) return m.reply`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
+        m.reply(` _____[ *ANTI LINK* ]_____\n\nYou have been detected sending a group link, sorry you will be kicked !`)
+        if (!isBotAdmins) return m.reply(`I Am Not An Admin, How Could I Kick Somebody Who Send Link 😒`)
         let gclink = (`https://chat.whatsapp.com/`+await rama.groupInviteCode(m.chat))
         let isLinkThisGc = new RegExp(gclink, 'i')
         let isgclink = isLinkThisGc.test(m.text)
-        if (isgclink) return m.reply`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Sent This Group Link❤️`)
-        if (isAdmins) return m.reply`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are An Admin Of The Group❤️`)
-        if (isCreator) return m.reply`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh`)
+        if (isgclink) return m.reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Sent This Group Link❤️`)
+        if (isAdmins) return m.reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are An Admin Of The Group❤️`)
+        if (isCreator) return m.reply(`Group Is Installed With Anti-Link But I Won't Kick You 😉, Because You Are My Owner Hahahahah🤣😘, You Think I Will Betray You Huh`)
         rama.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
         }
         }
@@ -356,16 +356,16 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             if (budy.toLowerCase() == jawaban) {
                 await rama.sendButtonText(m.chat, [{ buttonId: 'guess song', buttonText: { displayText: 'Guess The Song' }, type: 1 }], `🎮 Guess The Music 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, rama.user.name, m)
                 delete tebaklagu[m.sender.split('@')[0]]
-            } else m.reply'*Wrong Answer!*')
+            } else m.reply('*Wrong Answer!*')
         }
 
         if (kuismath.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
             kuis = true
             jawaban = kuismath[m.sender.split('@')[0]]
             if (budy.toLowerCase() == jawaban) {
-                await m.reply`🎮 Math Quiz 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Send ${prefix}math mode`)
+                await m.reply(`🎮 Math Quiz 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Send ${prefix}math mode`)
                 delete kuismath[m.sender.split('@')[0]]
-            } else m.reply'*Wrong Answer!*')
+            } else m.reply('*Wrong Answer!*')
         }
 
         if (tebakgambar.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -374,7 +374,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             if (budy.toLowerCase() == jawaban) {
                 await rama.sendButtonText(m.chat, [{ buttonId: 'guess picture', buttonText: { displayText: 'Guess The Picture' }, type: 1 }], `🎮 Guess The Picture 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, rama.user.name, m)
                 delete tebakgambar[m.sender.split('@')[0]]
-            } else m.reply'*Wrong Answer!*')
+            } else m.reply('*Wrong Answer!*')
         }
 
         if (tebakkata.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -383,7 +383,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             if (budy.toLowerCase() == jawaban) {
                 await rama.sendButtonText(m.chat, [{ buttonId: 'guess word', buttonText: { displayText: 'Guess The Word' }, type: 1 }], `🎮 Guess The Word 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, rama.user.name, m)
                 delete tebakkata[m.sender.split('@')[0]]
-            } else m.reply'*Wrong Answer!*')
+            } else m.reply('*Wrong Answer!*')
         }
 
         if (caklontong.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -394,7 +394,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
                 await rama.sendButtonText(m.chat, [{ buttonId: 'guess blank', buttonText: { displayText: 'Guess The Blank' }, type: 1 }], `🎮 Guess The Blank 🎮\n\nCorrect Answer 🎉\n*${deskripsi}*\n\nWant To Play Again? Press The Button Below`, rama.user.name, m)
                 delete caklontong[m.sender.split('@')[0]]
 		delete caklontong_desk[m.sender.split('@')[0]]
-            } else m.reply'*Wrong Answer!*')
+            } else m.reply('*Wrong Answer!*')
         }
 
         if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -403,7 +403,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             if (budy.toLowerCase() == jawaban) {
                 await rama.sendButtonText(m.chat, [{ buttonId: 'guess sentence', buttonText: { displayText: 'Guess The Sentence' }, type: 1 }], `🎮 Guess The Sentence 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, rama.user.name, m)
                 delete tebakkalimat[m.sender.split('@')[0]]
-            } else m.reply'*Wrong Answer!*')
+            } else m.reply('*Wrong Answer!*')
         }
 
         if (tebaklirik.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -412,7 +412,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             if (budy.toLowerCase() == jawaban) {
                 await rama.sendButtonText(m.chat, [{ buttonId: 'guess lyrics', buttonText: { displayText: 'Guess The Lyrics' }, type: 1 }], `🎮 Guess The Lyrics 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, rama.user.name, m)
                 delete tebaklirik[m.sender.split('@')[0]]
-            } else m.reply'*Wrong Answer!*')
+            } else m.reply('*Wrong Answer!*')
         }
 	    
 	if (tebaktebakan.hasOwnProperty(m.sender.split('@')[0]) && isCmd) {
@@ -421,7 +421,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
             if (budy.toLowerCase() == jawaban) {
                 await rama.sendButtonText(m.chat, [{ buttonId: 'guess riddle', buttonText: { displayText: 'Guess The Riddle' }, type: 1 }], `🎮 Guess The Riddle 🎮\n\nCorrect Answer 🎉\n\nWant To Play Again? Press The Button Below`, rama.user.name, m)
                 delete tebaktebakan[m.sender.split('@')[0]]
-            } else m.reply'*Wrong Answer!*')
+            } else m.reply('*Wrong Answer!*')
         }
         
         //TicTacToe\\
@@ -432,14 +432,14 @@ ${Array.from(room.jawaban, (jawaban, index) => {
 	    let isWin = !1
 	    let isTie = !1
 	    let isSurrender = !1
-	    //m.reply`[DEBUG]\n${parseInt(m.text)}`)
+	    //m.reply(`[DEBUG]\n${parseInt(m.text)}`)
 	    if (!/^([1-9]|(me)?give up|surr?ender|off|skip)$/i.test(m.text)) return
 	    isSurrender = !/^[1-9]$/.test(m.text)
 	    if (m.sender !== room.game.currentTurn) { 
 	    if (!isSurrender) return !0
 	    }
 	    if (!isSurrender && 1 > (ok = room.game.turn(m.sender === room.game.playerO, parseInt(m.text) - 1))) {
-	    m.reply{
+	    m.reply({
 	    '-3': 'Game Has Ended',
 	    '-2': 'Invalid',
 	    '-1': 'Invalid Position',
@@ -533,13 +533,13 @@ Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    if (jwb && reg.test(m.text) && !roof.pilih && !m.isGroup) {
 	    roof.pilih = reg.exec(m.text.toLowerCase())[0]
 	    roof.text = m.text
-	    m.reply`You Have Chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting For The Opponent To Choose` : ''}`)
+	    m.reply(`You Have Chosen ${m.text} ${!roof.pilih2 ? `\n\nWaiting For The Opponent To Choose` : ''}`)
 	    if (!roof.pilih2) rama.sendText(roof.p2, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
 	    }
 	    if (jwb2 && reg.test(m.text) && !roof.pilih2 && !m.isGroup) {
 	    roof.pilih2 = reg.exec(m.text.toLowerCase())[0]
 	    roof.text2 = m.text
-	    m.reply`You Have Chosen ${m.text} ${!roof.pilih ? `\n\nWaiting For The Opponent To Choose` : ''}`)
+	    m.reply(`You Have Chosen ${m.text} ${!roof.pilih ? `\n\nWaiting For The Opponent To Choose` : ''}`)
 	    if (!roof.pilih) rama.sendText(roof.p, '_The Opponent Has Chosen_\nNow It Is Your Turn', 0)
 	    }
 	    let stage = roof.pilih
@@ -569,7 +569,7 @@ Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
             let afkTime = user.afkTime
             if (!afkTime || afkTime < 0) continue
             let reason = user.afkReason || ''
-            m.reply`
+            m.reply(`
 Don't tag him!
 He's in AFK/Offline ${reason ? 'dengan alasan ' + reason : 'no reason'}
 It's been ${clockString(new Date - afkTime)}
@@ -578,7 +578,7 @@ It's been ${clockString(new Date - afkTime)}
 
         if (db.data.users[m.sender].afkTime > -1) {
             let user = global.db.data.users[m.sender]
-            m.reply`
+            m.reply(`
 You Came Back Online From AFK${user.afkReason ? ' after ' + user.afkReason : ''}
 In ${clockString(new Date - user.afkTime)}
 `.trim())
@@ -587,7 +587,7 @@ In ${clockString(new Date - user.afkTime)}
         }
 switch(command) {
         case 'inventori': case 'inventory': case 'profile':{
-if (q.includes('--help')) return m.replyexamkosong) 
+if (q.includes('--help')) return m.reply(examkosong) 
   if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
   if (!isInventory){ addInventori(m.sender) }
   if (!isInventoriBuruan){ addInventoriBuruan(m.sender) }
@@ -617,7 +617,7 @@ if (q.includes('--help')) return m.replyexamkosong)
      for (let i of _limit){
      txt += `➸ *ID :* @${i.id.split("@")[0]}\n➸ *Limit* : ${i.limit}\n`
      }
-    m.replytxt)       
+    m.reply(txt)       
   }
  break
  case 'leaderboard':
@@ -632,13 +632,13 @@ if (q.includes('--help')) return m.replyexamkosong)
      txt += `*🐄Cow* : ${i.sapi}\n`
      txt += `*🐘Elephant* : ${i.gajah}\n\n`
      }
-    m.replytxt)       
+    m.reply(txt)       
   }
  break
 case 'mining': case 'mine':{
-if (q.includes('--help')) return m.replyexamkosong) 
+if (q.includes('--help')) return m.reply(examkosong) 
   if (!isInventory){ addInventori(m.sender) }
-  if (isCekDarah < 1) return m.reply`You're Tired!, Try To Heal Using Potions`) 
+  if (isCekDarah < 1) return m.reply(`You're Tired!, Try To Heal Using Potions`) 
   let besi = [1,2,5,0,3,0,1,1,4,1,5,0,0]
   let emas = [0,1,2,3,0,0,0,1,1,0,0,2]
   let emerald = [0,0,1,0,0,1,0,2,1,0,0,1]
@@ -665,7 +665,7 @@ if (q.includes('--help')) return m.replyexamkosong)
    
    }, 7000)  
   setTimeout( () => {
-  m.reply`@${m.sender.split("@")[0]} Started Mining🎣`)     
+  m.reply(`@${m.sender.split("@")[0]} Started Mining🎣`)     
   }, 1500)
   kurangDarah(m.sender, 10)
   addBesi(m.sender, besinya)
@@ -675,161 +675,161 @@ if (q.includes('--help')) return m.replyexamkosong)
   break  
   //transaction\\
  case 'beli': case 'buy':{
-if (q.includes('--help')) return m.replyexamkosong) 
+if (q.includes('--help')) return m.reply(examkosong) 
  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) } 
  if (!isInventoryMonay){ addInventoriMonay(m.sender) }
  if (!isInventory){ addInventori(m.sender) }
- if (!q) return m.reply`What Do You Want To Buy?\n\n1.potion\n2.baitfood\n3.limit\n\nExample: ${prefix + command} baitfood`)
+ if (!q) return m.reply(`What Do You Want To Buy?\n\n1.potion\n2.baitfood\n3.limit\n\nExample: ${prefix + command} baitfood`)
  var anu = args[1]
   if (args[0] === 'potion'){
   let noh = 100000 * anu
- if (!args[1]) return m.reply`Example : ${prefix + command} potion 2\n 1 Potion = 100000 Money`)
- if (isMonay < noh) return m.reply'Your Remaining Money Is Not Sufficient For This Purchase')
+ if (!args[1]) return m.reply(`Example : ${prefix + command} potion 2\n 1 Potion = 100000 Money`)
+ if (isMonay < noh) return m.reply('Your Remaining Money Is Not Sufficient For This Purchase')
  kurangMonay(m.sender, noh)
  var apalu = anu * 1
  addPotion(m.sender, apalu)
   setTimeout( () => {
-  m.reply`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Potion* : ${getPotion(m.sender)}`)
+  m.reply(`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Potion* : ${getPotion(m.sender)}`)
   }, 2000) 
  } else 
  if (args[0] === 'baitfood'){
   let noh = 5000 * anu
- if (!args[1]) return m.reply`Example : ${prefix + command} baitfood 2\n 1 Bait Food = 2500 Money`)
- if (isMonay < noh) return m.reply'Your Remaining Money Is Not Sufficient For This Purchase')
+ if (!args[1]) return m.reply(`Example : ${prefix + command} baitfood 2\n 1 Bait Food = 2500 Money`)
+ if (isMonay < noh) return m.reply('Your Remaining Money Is Not Sufficient For This Purchase')
  kurangMonay(m.sender, noh)
  var apalu = anu * 1
  addUmpan(m.sender, apalu)
   setTimeout( () => {
-  m.reply`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Bait Food* : ${getUmpan(m.sender)}`)
+  m.reply(`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Bait Food* : ${getUmpan(m.sender)}`)
   }, 2000) 
   } else 
   if (args[0] === 'limit'){
   let noh = 35000 * anu
- if (!args[1]) return m.reply`Example : ${prefix + command} limit 2\n 1 Limit = 35000 Money`)
- if (isMonay < noh) return m.reply'Your Remaining Money Is Not Sufficient For This Purchase')
+ if (!args[1]) return m.reply(`Example : ${prefix + command} limit 2\n 1 Limit = 35000 Money`)
+ if (isMonay < noh) return m.reply('Your Remaining Money Is Not Sufficient For This Purchase')
  kurangMonay(m.sender, noh)
  var apalu = anu * 1
  addLimit(m.sender, apalu)
   setTimeout( () => {
-  m.reply`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Limit* : ${getLimit(m.sender)}`)
+  m.reply(`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Limit* : ${getLimit(m.sender)}`)
   }, 2000) 
-  } else { m.reply"Incorrect Format!") }
+  } else { m.reply("Incorrect Format!") }
  }
  break
  case 'sel': case 'jual':{
- if (!q) return  m.reply`What Do You Want To Sell??\nExample : ${prefix + command} fish 2`)
+ if (!q) return  m.reply(`What Do You Want To Sell??\nExample : ${prefix + command} fish 2`)
  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) } 
  if (!isInventoryMonay){ addInventoriMonay(m.sender) }
  if (!isInventory){ addInventori(m.sender) }
  var anu = args[1]
  if (args[0] === 'fish'){
- if (isIkan < anu) return m.reply`You Don't Have Enough Fish(es) For This Transaction`)
- if (!args[1]) return m.reply`Example : ${prefix + command} fish 2\n 1 Fish = 1500 Money`)
+ if (isIkan < anu) return m.reply(`You Don't Have Enough Fish(es) For This Transaction`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} fish 2\n 1 Fish = 1500 Money`)
  kurangIkan(m.sender, anu)
  let monaynya = 1500 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Fish(es)* : ${getIkan(m.sender)}`)
+  m.reply(`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Fish(es)* : ${getIkan(m.sender)}`)
   }, 2000) 
  } else
  if (args[0] === 'chicken'){
- if (isAyam < anu) return m.reply`You Don't Have Enough Chicken(s) For This Transaction`)
- if (!args[1]) return m.reply`Example : ${prefix + command} chicken 2\n 1 Chicken = 2500 Money`)
+ if (isAyam < anu) return m.reply(`You Don't Have Enough Chicken(s) For This Transaction`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} chicken 2\n 1 Chicken = 2500 Money`)
  kurangAyam(m.sender, anu)
  let monaynya = 2500 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Chicken* : ${getAyam(m.sender)}`)
+  m.reply(`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Chicken* : ${getAyam(m.sender)}`)
   }, 2000) 
  } else
  if (args[0] === 'rabbit'){
- if (isKelinci < anu) return m.reply`You Don't Have Enough Rabbit(s) For This Transaction`)
- if (!args[1]) return m.reply`Example : ${prefix + command} rabbit 2\n 1 Rabbit = 3000 Money`)
+ if (isKelinci < anu) return m.reply(`You Don't Have Enough Rabbit(s) For This Transaction`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} rabbit 2\n 1 Rabbit = 3000 Money`)
  kurangKelinci(m.sender, anu)
  let monaynya = 3000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Rabbit(s)* : ${getKelinci(m.sender)}`)
+  m.reply(`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Rabbit(s)* : ${getKelinci(m.sender)}`)
   }, 2000) 
  } else
  if (args[0] === 'sheep'){
- if (isDomba < anu) return m.reply`You Don't Have Enough Sheep(s) For This Transaction`)
- if (!args[1]) return m.reply`Example : ${prefix + command} domba 2\n 1 Sheep = 5000 money`)
+ if (isDomba < anu) return m.reply(`You Don't Have Enough Sheep(s) For This Transaction`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} domba 2\n 1 Sheep = 5000 money`)
  kurangDomba(m.sender, anu)
  let monaynya = 5000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Sheep(s)* : ${getDomba(m.sender)}`)
+  m.reply(`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Sheep(s)* : ${getDomba(m.sender)}`)
   }, 2000) 
  } else
  if (args[0] === 'cow'){
- if (isSapi < anu) return m.reply`You Don't Have Enough Cow(s) For This Transaction`)
- if (!args[1]) return m.reply`Example : ${prefix + command} cow 2\n 1 Cow = 10000 Money`)
+ if (isSapi < anu) return m.reply(`You Don't Have Enough Cow(s) For This Transaction`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} cow 2\n 1 Cow = 10000 Money`)
  kurangSapi(m.sender, anu)
  let monaynya = 10000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Cow(s)* : ${getSapi(m.sender)}`)
+  m.reply(`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Cow(s)* : ${getSapi(m.sender)}`)
   }, 2000) 
  } else
  if (args[0] === 'elephant'){
- if (isGajah < anu) return m.reply`You Don't Have Enough Elephant(s) For This Transaction`)
- if (!args[1]) return m.reply`Example : ${prefix + command} elephant 2\n 1 Elephant = 15000 Money`)
+ if (isGajah < anu) return m.reply(`You Don't Have Enough Elephant(s) For This Transaction`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} elephant 2\n 1 Elephant = 15000 Money`)
  kurangGajah(m.sender, anu)
  let monaynya = 15000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Elephant(s)* : ${getGajah(m.sender)}`)
+  m.reply(`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Elephant(s)* : ${getGajah(m.sender)}`)
   }, 2000) 
  } else
  if (args[0] === 'iron'){
- if (isBesi < anu) return m.reply`You Don't Have Enough Iron(s) For This Transaction`)
- if (!args[1]) return m.reply`Example : ${prefix + command} iron 2\n 1 Iron = 15000 Money`)
+ if (isBesi < anu) return m.reply(`You Don't Have Enough Iron(s) For This Transaction`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} iron 2\n 1 Iron = 15000 Money`)
  kurangBesi(m.sender, anu)
  let monaynya = 16000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Iron(s)* : ${getBesi(m.sender)}`)
+  m.reply(`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Iron(s)* : ${getBesi(m.sender)}`)
   }, 2000) 
  } else
  if (args[0] === 'gold'){
- if (isEmas < anu) return m.reply`You Don't Have Enough Gold(s) For This Transaction`)
- if (!args[1]) return m.reply`Example : ${prefix + command} gold 2\n 1 Gold = 50000 Money`)
+ if (isEmas < anu) return m.reply(`You Don't Have Enough Gold(s) For This Transaction`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} gold 2\n 1 Gold = 50000 Money`)
  kurangEmas(m.sender, anu)
  let monaynya = 50000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply`Transaction Successful ✔️\n*Your Money* : ${getMonay(m.sender)}\n*Your Remaining Gold(s)* : ${getEmas(m.sender)}`)
+  m.reply(`Transaction Successful ✔️\n*Your Money* : ${getMonay(m.sender)}\n*Your Remaining Gold(s)* : ${getEmas(m.sender)}`)
   }, 2000) 
  } else
  if (args[0] === 'emerald'){
- if (isEmerald < anu) return m.reply`You Don't Have Enough Emerald(s) For This Transaction`)
- if (!args[1]) return m.reply`Example : ${prefix + command} emerald 2\n 1 Emerald = 100000 Money`)
+ if (isEmerald < anu) return m.reply(`You Don't Have Enough Emerald(s) For This Transaction`)
+ if (!args[1]) return m.reply(`Example : ${prefix + command} emerald 2\n 1 Emerald = 100000 Money`)
  kurangEmerald(m.sender, anu)
  let monaynya = 100000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
-  m.reply`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*You Don't Have Enough Emerald(s) For This Transaction* : ${getEmerald(m.sender)}`)
+  m.reply(`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*You Don't Have Enough Emerald(s) For This Transaction* : ${getEmerald(m.sender)}`)
   }, 2000) 
- } else { m.reply"Incorrect Format!") }
+ } else { m.reply("Incorrect Format!") }
 
  }
  break
 
  case 'heal':{
-if (q.includes('--help')) return m.replyexamkosong) 
- if (!isCekDarah < 1) return m.reply'You Can Only Heal When Your Blood Is 0')
- if (isCekDarah > 100) return m.reply'Your Blood Is Full')
- if (isPotion < 1) return m.reply`You Don't Have A Potion, Try Buying It This Way #buypotion _amount_`) 
+if (q.includes('--help')) return m.reply(examkosong) 
+ if (!isCekDarah < 1) return m.reply('You Can Only Heal When Your Blood Is 0')
+ if (isCekDarah > 100) return m.reply('Your Blood Is Full')
+ if (isPotion < 1) return m.reply(`You Don't Have A Potion, Try Buying It This Way #buypotion _amount_`) 
  addDarah(m.sender, 100)
  kurangPotion(m.sender, 1)
- m.reply'Success! Your Bood Is Full')
+ m.reply('Success! Your Bood Is Full')
  }
  break
  case 'hunt': case 'hunting': {
-if (q.includes('--help')) return m.replyexamkosong) 
+if (q.includes('--help')) return m.reply(examkosong) 
  if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
- if (isCekDarah < 1) return m.reply'Your Blood Is Gone, Try To Heal Using Potions') 
+ if (isCekDarah < 1) return m.reply('Your Blood Is Gone, Try To Heal Using Potions') 
  if (!isInventoriBuruan){ addInventoriBuruan(m.sender) } 
   let luka = ["Pierced by a thorn while hunting","Slipped into the abyss while hunting","Scratched by a wild animal","Not careful","Entangled in roots","Fall while hunting"]
   let location = ["Jungle","Amazon forest","Tropical forest","Meadow","African forest","Mountains"]
@@ -891,7 +891,7 @@ if (q.includes('--help')) return m.replyexamkosong)
      rama.sendMessage(from, buttonMessage, { quoted: fakee })      
   }, 5000)  
  setTimeout( () => {
-  m.reply`@${m.sender.split("@")[0]} Started Hunting In ${lokasinya}`)     
+  m.reply(`@${m.sender.split("@")[0]} Started Hunting In ${lokasinya}`)     
   }, 1000) 
  addIkan(m.sender, ikanmu) 
    addAyam(m.sender, ayam) 
@@ -906,16 +906,16 @@ if (q.includes('--help')) return m.replyexamkosong)
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
                 user.afkReason = text
-                m.reply`${m.pushName} Has Gone Afk/Offline${text ? ': ' + text : ''}`)
+                m.reply(`${m.pushName} Has Gone Afk/Offline${text ? ': ' + text : ''}`)
             }
             break	
         case 'ttc': case 'ttt': case 'tictactoe': {
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
-            if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return m.reply`You Are Still In The Game`)
+            if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return m.reply(`You Are Still In The Game`)
             let room = Object.values(this.game).find(room => room.state === 'WAITING' && (text ? room.name === text : true))
             if (room) {
-            m.reply'Partner found!')
+            m.reply('Partner found!')
             room.o = m.chat
             room.game.playerO = m.sender
             room.state = 'PLAYING'
@@ -954,7 +954,7 @@ Type *surrender* to surrender and admit defeat`
             state: 'WAITING'
             }
             if (text) room.name = text
-            m.reply'Waiting For Partner' + (text ? ` Type The Command Below ${prefix}${command} ${text}` : ''))
+            m.reply('Waiting For Partner' + (text ? ` Type The Command Below ${prefix}${command} ${text}` : ''))
             this.game[room.id] = room
             }
             }
@@ -966,10 +966,10 @@ Type *surrender* to surrender and admit defeat`
             delete this.game
             rama.sendText(m.chat, `Successfully Deleted The TicTacToe Session`, m)
             } else if (!this.game) {
-            m.reply`TicTacToe🎮 Session Does Not Exist`)
-            } else m.reply'?')
+            m.reply(`TicTacToe🎮 Session Does Not Exist`)
+            } else m.reply('?')
             } catch (e) {
-            m.reply'Damaged')
+            m.reply('Damaged')
             }
             }
             break
@@ -978,10 +978,10 @@ Type *surrender* to surrender and admit defeat`
             let poin = 10
             let poin_lose = 10
             let timeout = 60000
-            if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) return m.reply`Complete Your Previous Suit`)
-	    if (m.mentionedJid[0] === m.sender) return m.reply`Can't Play With Myself !`)
-            if (!m.mentionedJid[0]) return m.reply`_Who Do You Want To Challenge?_\nTag The Person..\n\nExample : ${prefix}suit @${owner[1]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
-            if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0])))  m.reply`The Person You Are Challenging Is Playing Suit With Someone Else :(`)
+            if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.sender))) return m.reply(`Complete Your Previous Suit`)
+	    if (m.mentionedJid[0] === m.sender) return m.reply(`Can't Play With Myself !`)
+            if (!m.mentionedJid[0]) return m.reply(`_Who Do You Want To Challenge?_\nTag The Person..\n\nExample : ${prefix}suit @${owner[1]}`, m.chat, { mentions: [owner[1] + '@s.whatsapp.net'] })
+            if (Object.values(this.suit).find(roof => roof.id.startsWith('suit') && [roof.p, roof.p2].includes(m.mentionedJid[0])))  m.reply(`The Person You Are Challenging Is Playing Suit With Someone Else :(`)
             let id = 'suit_' + new Date() * 1
             let caption = `_*SUIT PvP*_
 
@@ -1002,29 +1002,29 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             }
             break
             case 'chat': {
-                if (!isCreator) return m.reply`${mess.owner}`)
-                if (!q) return m.reply`Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete`)
+                if (!isCreator) return m.reply(`${mess.owner}`)
+                if (!q) return m.reply(`Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete`)
                 if (args[0] === 'mute') {
-                    rama.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+                    rama.chatModify({ mute: 'Infinity' }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'unmute') {
-                    rama.chatModify({ mute: null }, m.chat, []).then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+                    rama.chatModify({ mute: null }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'archive') {
-                    rama.chatModify({  archive: true }, m.chat, []).then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+                    rama.chatModify({  archive: true }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'unarchive') {
-                    rama.chatModify({ archive: false }, m.chat, []).then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+                    rama.chatModify({ archive: false }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'read') {
-                    rama.chatModify({ markRead: true }, m.chat, []).then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+                    rama.chatModify({ markRead: true }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'unread') {
-                    rama.chatModify({ markRead: false }, m.chat, []).then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+                    rama.chatModify({ markRead: false }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'delete') {
-                    rama.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+                    rama.chatModify({ clear: { message: { id: m.quoted.id, fromMe: true }} }, m.chat, []).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 }
             }
             break
 	    case 'family100': {
                 if ('family100'+m.chat in _family100) {
-                    m.reply'There Are Still Unfinished Sessions!')
-                    m.replyfalse)
+                    m.reply('There Are Still Unfinished Sessions!')
+                    m.reply(false)
                 }
                 let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/family100.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
@@ -1039,15 +1039,15 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             }
             break
             case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
-            if (!m.quoted && !text) return m.reply`Send/Reply Text With Caption ${prefix + command}`)
+            if (!m.quoted && !text) return m.reply(`Send/Reply Text With Caption ${prefix + command}`)
             ter = command[1].toLowerCase()
             tex = m.quoted ? m.quoted.text ? m.quoted.text : q ? q : m.text : q ? q : m.text
-            m.replytex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
+            m.reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
             break
             case 'guess': {
-                if (!text) return m.reply`Example : ${prefix + command} song\n\nOption : \n1. music\n2. picture (Query)\n3. word\n4. sentence\n5. lyrics (Query)\n6. blank (Query)`)
+                if (!text) return m.reply(`Example : ${prefix + command} song\n\nOption : \n1. music\n2. picture (Query)\n3. word\n4. sentence\n5. lyrics (Query)\n6. blank (Query)`)
                 if (args[0] === "song") {
-                    if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) return m.reply`There Are Still Unfinished Sessions`)
+                    if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) return m.reply(`There Are Still Unfinished Sessions`)
                     let anu = await fetchJson('https://fatiharridho.github.io/tebaklagu.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     let msg = await rama.sendMessage(m.chat, { audio: { url: result.link_song }, mimetype: 'audio/mpeg' }, { quoted: fakee })
@@ -1061,7 +1061,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     delete tebaklagu[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'picture') {
-                    if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) return m.reply`There Are Still Unfinished Sessions!`)
+                    if (tebakgambar.hasOwnProperty(m.sender.split('@')[0])) return m.reply(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebakgambar.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     rama.sendImage(m.chat, result.img, `Please Answer The Questions Above\n\nDescription : ${result.deskripsi}\nTime : 60 seconds`, m).then(() => {
@@ -1074,7 +1074,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     delete tebakgambar[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'word') {
-                    if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) return m.reply`There Are Still Unfinished Sessions!`)
+                    if (tebakkata.hasOwnProperty(m.sender.split('@')[0])) return m.reply(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/nexusnw/fungames/main/GuessTheWord.js')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     rama.sendText(m.chat, `Please Answer The Following Question\n\n${result.soal}\nTime : 60 seconds`, m).then(() => {
@@ -1087,7 +1087,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     delete tebakkata[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'sentence') {
-                    if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) return m.reply`There Are Still Unfinished Sessions!`)
+                    if (tebakkalimat.hasOwnProperty(m.sender.split('@')[0])) return m.reply(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/nexusnw/fungames/main/GuessTheSentence.js')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     rama.sendText(m.chat, `Please Answer The Following Question\n\n${result.soal}\nTime : 60 seconds`, m).then(() => {
@@ -1100,7 +1100,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     delete tebakkalimat[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'lyrics') {
-                    if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) return m.reply`There Are Still Unfinished Sessions!`)
+                    if (tebaklirik.hasOwnProperty(m.sender.split('@')[0])) return m.reply(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/tebaklirik.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     rama.sendText(m.chat, `These Are The Lyrics Of Which Song? : *${result.soal}*?\nTime : 60 seconds`, m).then(() => {
@@ -1113,7 +1113,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                     delete tebaklirik[m.sender.split('@')[0]]
                     }
                 } else if (args[0] === 'blank') {
-                    if (caklontong.hasOwnProperty(m.sender.split('@')[0])) return m.reply`There Are Still Unfinished Sessions!`)
+                    if (caklontong.hasOwnProperty(m.sender.split('@')[0])) return m.reply(`There Are Still Unfinished Sessions!`)
                     let anu = await fetchJson('https://raw.githubusercontent.com/BochilTeam/database/master/games/caklontong.json')
                     let result = anu[Math.floor(Math.random() * anu.length)]
                     rama.sendText(m.chat, `*Answer The Following Questions :*\n${result.soal}*\nTime : 60 seconds`, m).then(() => {
@@ -1145,9 +1145,9 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
 		
 		
             case 'kuismath': case 'math': {
-                if (kuismath.hasOwnProperty(m.sender.split('@')[0])) return m.reply`There Are Still Unfinished Sessions!`)
+                if (kuismath.hasOwnProperty(m.sender.split('@')[0])) return m.reply(`There Are Still Unfinished Sessions!`)
                 let { genMath, modes } = require('./lib/math')
-                if (!text) return m.reply`Mode: ${Object.keys(modes).join(' | ')}\nFor Examples: ${prefix}math medium`)
+                if (!text) return m.reply(`Mode: ${Object.keys(modes).join(' | ')}\nFor Examples: ${prefix}math medium`)
                 let result = await genMath(text.toLowerCase())
                 rama.sendText(m.chat, `*What Is The Result Of: ${result.soal.toLowerCase()}*?\n\nTime: ${(result.waktu / 1000).toFixed(2)} second`, m).then(() => {
                     kuismath[m.sender.split('@')[0]] = result.jawaban
@@ -1155,13 +1155,13 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
                 await sleep(result.waktu)
                 if (kuismath.hasOwnProperty(m.sender.split('@')[0])) {
                     console.log("Answer: " + result.jawaban)
-                    m.reply"Time Out\nAnswer: " + kuismath[m.sender.split('@')[0]])
+                    m.reply("Time Out\nAnswer: " + kuismath[m.sender.split('@')[0]])
                     delete kuismath[m.sender.split('@')[0]]
                 }
             }
             break
             case 'jodohku': {
-            if (!m.isGroup) return m.reply`${mess.group}`)
+            if (!m.isGroup) return m.reply(`${mess.group}`)
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -1176,7 +1176,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             }
             break
             case 'couple': {
-            if (!m.isGroup) return m.reply`${mess.group}`)
+            if (!m.isGroup) return m.reply(`${mess.group}`)
             let member = participants.map(u => u.id)
             let orang = member[Math.floor(Math.random() * member.length)]
             let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -1190,49 +1190,49 @@ Cieeee, What's Going On❤️💖👀`
             }
             break
             case 'is':
-				if (!text) return m.reply`Use Text, Example : ${prefix + command} he married `)
+				if (!text) return m.reply(`Use Text, Example : ${prefix + command} he married `)
 					const apa = [`Yes`, `No`, `It Could Be`, `Thats right`]
 					const kah = apa[Math.floor(Math.random() * apa.length)]
 rama.sendMessage(from, { text: `Question : Is ${q}\nAnswer : ${kah}` }, { quoted: fakee })
 
 					break
 					            case 'what':
-				if (!text) return m.reply`Use Text, Example : ${prefix + command} he married `)
+				if (!text) return m.reply(`Use Text, Example : ${prefix + command} he married `)
 					const lel = [`Ask Your Gf`, `I Dont Know`, `I Don't Know, Ask Your Father`]
 					const kahk = lel[Math.floor(Math.random() * lel.length)]
 rama.sendMessage(from, { text: `Question : What ${q}\nAnswer : ${kahk}` }, { quoted: fakee })
 
 					break
 case 'can':
-				if (!text) return m.reply`Use Text, Example : ${prefix + command} you fuck her lol `)
+				if (!text) return m.reply(`Use Text, Example : ${prefix + command} you fuck her lol `)
 					const bisa = [`Can`,`Can't`,`Cannot`,`Of Course You Can!!!`]
 					const ga = bisa[Math.floor(Math.random() * bisa.length)]
 rama.sendMessage(from, { text: `Question : Can ${q}\nAnswer : ${ga}` }, { quoted: fakee })
 
 					break
 case 'how':
-				if (!text) return m.reply`Use Text, Example : ${prefix + command} is my face`)
+				if (!text) return m.reply(`Use Text, Example : ${prefix + command} is my face`)
 					const gimana = [`It's Okay`, `It's Difficult Bro`, `Sorry Bot Can't Answer`, `Try Searching On Google`,`Holy Cow! Really???`,`Dizzy Ah`,`Ohhh I See:(`,`The Patient, Boss:(`,`How Are You?`]
 					const ya = gimana[Math.floor(Math.random() * gimana.length)]
 rama.sendMessage(from, { text: `Question : ${q}\nAnswer : How ${ya}` }, { quoted: fakee })
 
 					break
 case 'rate':
-				if (!text) return m.reply`Use Text, Example : ${prefix + command} My Dp`)
+				if (!text) return m.reply(`Use Text, Example : ${prefix + command} My Dp`)
 					const ra = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const te = ra[Math.floor(Math.random() * ra.length)]
 rama.sendMessage(from, { text: `Rate : ${q}\nAnswer : *${te}%*` }, { quoted: fakee })
 
 					break
   case 'handsomecheck':
-				if (!text) return m.reply`Tag Someone, Example : ${prefix + command} @Xeon`)
+				if (!text) return m.reply(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const gan = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const teng = gan[Math.floor(Math.random() * gan.length)]
 rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${teng}%*` }, { quoted: fakee })
 
 					break
 case 'beautifulcheck':
-				if (!text) return m.reply`Tag Someone, Example : ${prefix + command} @Xeon`)
+				if (!text) return m.reply(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const can = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const tik = can[Math.floor(Math.random() * can.length)]
 rama.sendMessage(from, { text: `*${command}*\n\nNama : ${q}\nAnswer : *${tik}%*` }, { quoted: fakee })
@@ -1248,13 +1248,13 @@ case 'awesomecheck':
                  case 'prettycheck':
                     case 'lovelycheck':
                       case 'uglycheck':
-				if (!text) return m.reply`Tag Someone, Example : ${prefix + command} @Xeon`)
+				if (!text) return m.reply(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const sangeh = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100']
 					const sange = sangeh[Math.floor(Math.random() * sangeh.length)]
 rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%*` }, { quoted: fakee })
 					break
 					case 'charactercheck':
-					if (!text) return m.reply`Tag Someone, Example : ${prefix + command} @Xeon`)
+					if (!text) return m.reply(`Tag Someone, Example : ${prefix + command} @Xeon`)
 					const xeony =['Compassionate','Generous','Grumpy','Forgiving','Obedient','Good','Simp','Kind-Hearted','patient','UwU','top, anyway','Helpful']
 					const taky = xeony[Math.floor(Math.random() * xeony.length)]
 					rama.sendMessage(from, { text: `Character Check : ${q}\nAnswer : *${taky}*` }, { quoted: fakee })
@@ -1315,7 +1315,7 @@ rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%
       case 'nigga':
       case 'sexy':
       case 'hot': {
-            if (!m.isGroup) return m.reply`${mess.group}`)
+            if (!m.isGroup) return m.reply(`${mess.group}`)
             let member = participants.map(u => u.id)
             let me = m.sender
             let jodoh = member[Math.floor(Math.random() * member.length)]
@@ -1328,30 +1328,30 @@ rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%
             }
             break
 case 'when':
-				if (!text) return m.reply`Use Text, Example : ${prefix + command} will i get married `)
+				if (!text) return m.reply(`Use Text, Example : ${prefix + command} will i get married `)
 					const kapan = ['5 More Days', '10 More Days', '15 More Days','20 More Days', '25 More Days','30 More Days','35 More Days','40 More Days','45 More Days','50 More Days','55 More Days','60 More Days','65 More Days','70 More Days','75 More Days','80 More Days','85 More Days','90 More Days','100 More Days','5 Months More', '10 Months More', '15 Months More','20 Months More', '25 Months More','30 Months More','35 Months More','40 Months More','45 Months More','50 Months More','55 Months More','60 Months More','65 Months More','70 Months More','75 Months More','80 Months More','85 Months More','90 Months More','100 Months More','1 More Year','2 More Years','3 More Years','4 More Years','5 More Years','Tomorrow','The Day After Tomorrow',`After This Command, You Too ${q}`]
 					const kapankah = kapan[Math.floor(Math.random() * kapan.length)]
 rama.sendMessage(from, { text: `Question : ${q}\nAnswer : *${kapankah}*` }, { quoted: fakee })
 					break
 case 'wangy':
-              if (!text) return m.reply`Use Text, Example : ${prefix + command} hinata`)
+              if (!text) return m.reply(`Use Text, Example : ${prefix + command} hinata`)
               qq = q.toUpperCase()
               awikwok = `${qq} ${qq} ${qq} ❤️ ❤️ ❤️ WANGY WANGY WANGY WANGY HU HA HU HA HU HA, aaah the smell of hair ${qq} smelly i want to smell the fragrance ${qq} AAAAAAAAH ~ Her hair.... aaah i want to stroke her hair too ~~ AAAAAH ${qq} first time out in anime is cute too ❤️ ❤️ ❤️ so AAAAAAAH ${qq} AAAAAA LUCCUUUUUUUUUUUUU............ ${qq} AAAAAAAAAAAAAAAAAAAAGH ❤️ ❤️ ❤️what ? ${qq} it's not real ? Just HELL you say ? no, no no no no no no no no no no no no no no no !! I DON'T CARE ABOUT THE REALITY, I DON'T CARE. ❤️ ❤️ ❤️ ${qq} me ... ${qq} on the laptop watching me, ${qq} .. you believe in me ? aaaaaaaaaaah thanks ${q} I don't want to give up ${qq} aaaaaah ❤️ ❤️ ❤️ YEAAAAAAAAAAAH I STILL HAVE ${qq} ALSO NOT THE SAME AAAAAAAAAAAAAAH`
-             m.replyawikwok)
+             m.reply(awikwok)
               break
 case 'checkdeath':
-             if (!text) return m.reply`Use Someone's Name, Example : ${prefix + command} nexus`)
+             if (!text) return m.reply(`Use Someone's Name, Example : ${prefix + command} nexus`)
               predea = await axios.get(`https://api.agify.io/?name=${q}`)
-              m.reply`Name : ${predea.data.name}\n*Dead At Age :* ${predea.data.age} Year.\n\n_Quick, Quick, Repent Bro, Because No One Knows About Death_`)
+              m.reply(`Name : ${predea.data.name}\n*Dead At Age :* ${predea.data.age} Year.\n\n_Quick, Quick, Repent Bro, Because No One Knows About Death_`)
               break
 case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
-            if (!m.quoted && !text) return m.reply`Send/Reply Text With Caption ${prefix + command}`)
+            if (!m.quoted && !text) return m.reply(`Send/Reply Text With Caption ${prefix + command}`)
             ter = command[1].toLowerCase()
             tex = m.quoted ? m.quoted.text ? m.quoted.text : q ? q : m.text : q ? q : m.text
-            m.replytex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
+            m.reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
             break
             case 'react': {
-                if (!isCreator) return m.reply`${mess.owner}`)
+                if (!isCreator) return m.reply(`${mess.owner}`)
                 reactionMessage = {
                     react: {
                         text: args[0],
@@ -1362,111 +1362,111 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
             }
             break  
             case 'join': {
-                if (!isCreator) return m.reply`${mess.owner}`)
-                if (!text) return m.reply`Enter The Group Link!`)
-                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return m.reply`Invalid Link!`)
-                m.replymess.wait)
+                if (!isCreator) return m.reply(`${mess.owner}`)
+                if (!text) return m.reply(`Enter The Group Link!`)
+                if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return m.reply(`Invalid Link!`)
+                m.reply(mess.wait)
                 let result = args[0].split('https://chat.whatsapp.com/')[1]
-                await rama.groupAcceptInvite(result).then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+                await rama.groupAcceptInvite(result).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
             }
             break
             case 'leave': {
-                if (!isCreator) return m.reply`${mess.owner}`)
-                await rama.groupLeave(m.chat).then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+                if (!isCreator) return m.reply(`${mess.owner}`)
+                await rama.groupLeave(m.chat).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
             }
             break
             case 'setexif': {
-               if (!isCreator) return m.reply`${mess.owner}`)
-               if (!text) return m.reply`Example : ${prefix + command} packname|author`)
+               if (!isCreator) return m.reply(`${mess.owner}`)
+               if (!text) return m.reply(`Example : ${prefix + command} packname|author`)
           global.packname = text.split("|")[0]
           global.author = text.split("|")[1]
-          m.reply`Exif Has Been Successfully Changed to\n\n Packname : ${global.packname}\n Author : ${global.author}`)
+          m.reply(`Exif Has Been Successfully Changed to\n\n Packname : ${global.packname}\n Author : ${global.author}`)
             }
             break
 	case 'kick': {
-		if (!m.isGroup) return m.reply`${mess.group}`)
-                if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-                if (!isAdmins) return m.reply`${mess.admin}`)
+		if (!m.isGroup) return m.reply(`${mess.group}`)
+                if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+                if (!isAdmins) return m.reply(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await rama.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+		await rama.groupParticipantsUpdate(m.chat, [users], 'remove').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	case 'add': {
-		if (!m.isGroup) return m.reply`${mess.group}`)
-                if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-                if (!isAdmins) return m.reply`${mess.admin}`)
+		if (!m.isGroup) return m.reply(`${mess.group}`)
+                if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+                if (!isAdmins) return m.reply(`${mess.admin}`)
 		let users = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await rama.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+		await rama.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	case 'promote': {
-		if (!m.isGroup) return m.reply`${mess.group}`)
-                if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-                if (!isAdmins) return m.reply`${mess.admin}`)
+		if (!m.isGroup) return m.reply(`${mess.group}`)
+                if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+                if (!isAdmins) return m.reply(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await rama.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+		await rama.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	case 'demote': {
-		if (!m.isGroup) return m.reply`${mess.group}`)
-                if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-                if (!isAdmins) return m.reply`${mess.admin}`)
+		if (!m.isGroup) return m.reply(`${mess.group}`)
+                if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+                if (!isAdmins) return m.reply(`${mess.admin}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await rama.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+		await rama.groupParticipantsUpdate(m.chat, [users], 'demote').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
         case 'block': {
-		if (!isCreator) return m.reply`${mess.owner}`)
+		if (!isCreator) return m.reply(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await rama.updateBlockStatus(users, 'block').then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+		await rama.updateBlockStatus(users, 'block').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
         case 'unblock': {
-		if (!isCreator) return m.reply`${mess.owner}`)
+		if (!isCreator) return m.reply(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
-		await rama.updateBlockStatus(users, 'unblock').then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+		await rama.updateBlockStatus(users, 'unblock').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	    case 'setname': case 'setgcname': case 'setsubject': {
-                if (!m.isGroup) return m.reply`${mess.group}`)
-                if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-                if (!isAdmins) m.reply`${mess.admin}`)
-                if (!text) m.reply`Where Is The Text?`)
-                await rama.groupUpdateSubject(m.chat, text).then((res) => m.replymess.success)).catch((err) => m.replyjsonformat(err)))
+                if (!m.isGroup) return m.reply(`${mess.group}`)
+                if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+                if (!isAdmins) m.reply(`${mess.admin}`)
+                if (!text) m.reply(`Where Is The Text?`)
+                await rama.groupUpdateSubject(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
             }
             break
           case 'setdesc': case 'setdesk': {
-                if (!m.isGroup) return m.reply`${mess.group}`)
-                if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-                if (!isAdmins) m.reply`${mess.admin}`)
-                if (!text) m.reply`Where Is The Text?`)
-                await rama.groupUpdateDescription(m.chat, text).then((res) => m.replymess.success)).catch((err) => m.replyjsonformat(err)))
+                if (!m.isGroup) return m.reply(`${mess.group}`)
+                if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+                if (!isAdmins) m.reply(`${mess.admin}`)
+                if (!text) m.reply(`Where Is The Text?`)
+                await rama.groupUpdateDescription(m.chat, text).then((res) => m.reply(mess.success)).catch((err) => m.reply(jsonformat(err)))
             }
             break
           case 'setbotpp': {
-                if (!isCreator) return m.reply`${mess.owner}`)
-                if (!quoted) return m.reply`Send/Reply Image With Caption ${prefix + command}`)
-                if (!/image/.test(mime)) return m.reply`Send/Reply Image With Caption ${prefix + command}`)
-                if (/webp/.test(mime)) return m.reply`Send/Reply Image With Caption ${prefix + command}`)
+                if (!isCreator) return m.reply(`${mess.owner}`)
+                if (!quoted) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
+                if (!/image/.test(mime)) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
+                if (/webp/.test(mime)) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
                 await rama.updateProfilePicture(botNumber, { url: media }).catch((err) => fs.unlinkSync(media))
-                m.replymess.success)
+                m.reply(mess.success)
                 }
                 break
            case 'setgrouppp': case 'setgruppp': case 'setgcpp': {
-                if (!m.isGroup) return m.reply`${mess.group}`)
-                if (!isAdmins) return m.reply`${mess.admin}`)
-                if (!quoted) return m.reply`Send/Reply Image With Caption ${prefix + command}`)
-                if (!/image/.test(mime)) return m.reply`Send/Reply Image With Caption ${prefix + command}`)
-                if (/webp/.test(mime)) return m.reply`Send/Reply Image With Caption ${prefix + command}`)
+                if (!m.isGroup) return m.reply(`${mess.group}`)
+                if (!isAdmins) return m.reply(`${mess.admin}`)
+                if (!quoted) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
+                if (!/image/.test(mime)) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
+                if (/webp/.test(mime)) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
                 await rama.updateProfilePicture(m.chat, { url: media }).catch((err) => fs.unlinkSync(media))
-                m.replymess.success)
+                m.reply(mess.success)
                 }
                 break
             case 'tagall': {
-                if (!m.isGroup) return m.reply`${mess.group}`)                
-                if (!isAdmins) return m.reply`${mess.admin}`)
+                if (!m.isGroup) return m.reply(`${mess.group}`)                
+                if (!isAdmins) return m.reply(`${mess.admin}`)
 let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝ 
  
  ➲ *Message : ${q ? q : 'no message'}*\n\n`
@@ -1477,38 +1477,38 @@ let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝
                 }
                 break
                 case 'hidetag': {
-            if (!m.isGroup) return m.reply`${mess.group}`)
-            //if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-            if (!isAdmins) return m.reply`${mess.admin}`)
+            if (!m.isGroup) return m.reply(`${mess.group}`)
+            //if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+            if (!isAdmins) return m.reply(`${mess.admin}`)
             rama.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: fakee })
             }
             break
             case 'anuu': {
-            if (!m.isGroup) return m.reply`${mess.group}`)
-            //if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-            //if (!isAdmins) return m.reply`${mess.admin}`)
-            if (!isCreator) return m.reply`${mess.owner}`)
+            if (!m.isGroup) return m.reply(`${mess.group}`)
+            //if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+            //if (!isAdmins) return m.reply(`${mess.admin}`)
+            if (!isCreator) return m.reply(`${mess.owner}`)
             rama.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: fakee })
             }
             break
 	    case 'style': case 'styletext': {
-	        if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.replymess.endLimit) //wont response when limit runs out\\
+	        if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) //wont response when limit runs out\\
 		db.data.users[m.sender].limit -= 1 // -1 limit
 		let { styletext } = require('./lib/scraper')
-		if (!text) return m.reply`Enter Query Text!`)
+		if (!text) return m.reply(`Enter Query Text!`)
                 let anu = await styletext(text)
                 let teks = `Entered Text ${text}\n\n`
                 for (let i of anu) {
                     teks += ` *${i.name}* : ${i.result}\n\n`
                 }
-                m.replyteks)
+                m.reply(teks)
 	    }
 	    break
                case 'vote': {
-            if (!m.isGroup) return m.reply`${mess.group}`)
-            if (m.chat in vote) m.reply`_There Are Still Votes In This Chat!_\n\n*${prefix}delvote* - To Delete Vote Session`)
-            if (!text) return m.reply`Enter Reason For Vote, Example: *${prefix + command} Handsome Owner*`)
-            m.reply`Voting Starts!\n\n*${prefix}upvote* - For Upvote\n*${prefix}devote* - For Devote\n*${prefix}checkvote* - To Check The Vote\n*${prefix}delvote* - To Delete Vote Session`)
+            if (!m.isGroup) return m.reply(`${mess.group}`)
+            if (m.chat in vote) m.reply(`_There Are Still Votes In This Chat!_\n\n*${prefix}delvote* - To Delete Vote Session`)
+            if (!text) return m.reply(`Enter Reason For Vote, Example: *${prefix + command} Handsome Owner*`)
+            m.reply(`Voting Starts!\n\n*${prefix}upvote* - For Upvote\n*${prefix}devote* - For Devote\n*${prefix}checkvote* - To Check The Vote\n*${prefix}delvote* - To Delete Vote Session`)
             vote[m.chat] = [q, [], []]
             await sleep(1000)
             upvote = vote[m.chat][1]
@@ -1547,11 +1547,11 @@ let buttonsVote = [
 	    }
             break
                case 'upvote': {
-            if (!m.isGroup) return m.reply`${mess.group}`)
-            if (!(m.chat in vote)) return m.reply`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
+            if (!m.isGroup) return m.reply(`${mess.group}`)
+            if (!(m.chat in vote)) return m.reply(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
-            if (wasVote) m.reply`You've Voted`)
+            if (wasVote) m.reply(`You've Voted`)
             vote[m.chat][1].push(m.sender)
             menvote = vote[m.chat][1].concat(vote[m.chat][2])
             teks_vote = `* _____[ *VOTE* ]_____*
@@ -1589,11 +1589,11 @@ ${vote[m.chat][2].map((v, i) => ` *√>* ${i + 1}. @${v.split`@`[0]}`).join('\n'
 	    }
              break
                 case 'devote': {
-            if (!m.isGroup) return m.reply`${mess.group}`)
-            if (!(m.chat in vote)) return m.reply`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
+            if (!m.isGroup) return m.reply(`${mess.group}`)
+            if (!(m.chat in vote)) return m.reply(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
             wasVote = isVote.includes(m.sender)
-            if (wasVote) return m.reply`You've Voted`)
+            if (wasVote) return m.reply(`You've Voted`)
             vote[m.chat][2].push(m.sender)
             menvote = vote[m.chat][1].concat(vote[m.chat][2])
             teks_vote = `* _____[ *VOTE* ]_____*
@@ -1632,8 +1632,8 @@ ${vote[m.chat][2].map((v, i) => ` *√>* ${i + 1}. @${v.split`@`[0]}`).join('\n'
             break
                  
 case 'checkvote':
-if (!m.isGroup) return m.reply`${mess.group}`)
-if (!(m.chat in vote)) return m.reply`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
+if (!m.isGroup) return m.reply(`${mess.group}`)
+if (!(m.chat in vote)) return m.reply(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
 teks_vote = `* _____[ *VOTE* ]_____*
 
 *Reason:* ${vote[m.chat][0]}
@@ -1660,20 +1660,20 @@ ${vote[m.chat][2].map((v, i) => ` *√>* ${i + 1}. @${v.split`@`[0]}`).join('\n'
 rama.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
-            if (!m.isGroup) return m.reply`${mess.group}`)
-            if (!(m.chat in vote)) return m.reply`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
+            if (!m.isGroup) return m.reply(`${mess.group}`)
+            if (!(m.chat in vote)) return m.reply(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
             delete vote[m.chat]
-            m.reply'Successfully Deleted The Vote Session In This Group')
+            m.reply('Successfully Deleted The Vote Session In This Group')
 	    }
             break
                case 'group': case 'grup': {
-                if (!m.isGroup) return m.reply`${mess.group}`)
-                if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-                if (!isAdmins) return m.reply`${mess.admin}`)
+                if (!m.isGroup) return m.reply(`${mess.group}`)
+                if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+                if (!isAdmins) return m.reply(`${mess.admin}`)
                 if (args[0] === 'close'){
-                    await rama.groupSettingUpdate(m.chat, 'announcement').then((res) => m.reply`Successful Closing The Group`)).catch((err) => m.replyjsonformat(err)))
+                    await rama.groupSettingUpdate(m.chat, 'announcement').then((res) => m.reply(`Successful Closing The Group`)).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'open'){
-                    await rama.groupSettingUpdate(m.chat, 'not_announcement').then((res) => m.reply`Successful Opening The Group`)).catch((err) => m.replyjsonformat(err)))
+                    await rama.groupSettingUpdate(m.chat, 'not_announcement').then((res) => m.reply(`Successful Opening The Group`)).catch((err) => m.reply(jsonformat(err)))
                 } else {
                 let buttons = [
                         { buttonId: 'group open', buttonText: { displayText: 'Open' }, type: 1 },
@@ -1685,13 +1685,13 @@ break
             }
             break
             case 'editinfo': {
-                if (!m.isGroup) return m.reply`${mess.group}`)
-                if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-                if (!isAdmins) return m.reply`${mess.admin}`)
+                if (!m.isGroup) return m.reply(`${mess.group}`)
+                if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+                if (!isAdmins) return m.reply(`${mess.admin}`)
              if (args[0] === 'open'){
-                await rama.groupSettingUpdate(m.chat, 'unlocked').then((res) => m.reply`Successfully Opened Edit Group Info`)).catch((err) => m.replyjsonformat(err)))
+                await rama.groupSettingUpdate(m.chat, 'unlocked').then((res) => m.reply(`Successfully Opened Edit Group Info`)).catch((err) => m.reply(jsonformat(err)))
              } else if (args[0] === 'close'){
-                await rama.groupSettingUpdate(m.chat, 'locked').then((res) => m.reply`Successfully Closed Edit Group Info`)).catch((err) => m.replyjsonformat(err)))
+                await rama.groupSettingUpdate(m.chat, 'locked').then((res) => m.reply(`Successfully Closed Edit Group Info`)).catch((err) => m.reply(jsonformat(err)))
              } else {
              let buttons = [
                         { buttonId: 'editinfo open', buttonText: { displayText: 'Open' }, type: 1 },
@@ -1703,17 +1703,17 @@ break
             }
             break
             case 'antilink': {
-                if (!m.isGroup) return m.reply`${mess.group}`)
-                if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-                if (!isAdmins) return m.reply`${mess.admin}`)
+                if (!m.isGroup) return m.reply(`${mess.group}`)
+                if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+                if (!isAdmins) return m.reply(`${mess.admin}`)
                 if (args[0] === "on") {
-                if (db.data.chats[m.chat].antilink) return m.reply`Activated`)
+                if (db.data.chats[m.chat].antilink) return m.reply(`Activated`)
                 db.data.chats[m.chat].antilink = true
-                m.reply`Antilink Active !`)
+                m.reply(`Antilink Active !`)
                 } else if (args[0] === "off") {
-                if (!db.data.chats[m.chat].antilink) return m.reply`Deactivated`)
+                if (!db.data.chats[m.chat].antilink) return m.reply(`Deactivated`)
                 db.data.chats[m.chat].antilink = false
-                m.reply`Antilink Inactive !`)
+                m.reply(`Antilink Inactive !`)
                 } else {
                  let buttons = [
                         { buttonId: 'antilink on', buttonText: { displayText: 'On' }, type: 1 },
@@ -1724,17 +1724,17 @@ break
              }
              break
              case 'mute': {
-                if (!m.isGroup) return m.reply`${mess.group}`)
-                if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-                if (!isAdmins) return m.reply`${mess.admin}`)
+                if (!m.isGroup) return m.reply(`${mess.group}`)
+                if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+                if (!isAdmins) return m.reply(`${mess.admin}`)
                 if (args[0] === "on") {
-                if (db.data.chats[m.chat].mute) return m.reply`Previously Active`)
+                if (db.data.chats[m.chat].mute) return m.reply(`Previously Active`)
                 db.data.chats[m.chat].mute = true
-                m.reply`${rama.user.name} Has Been Muted In This Group !`)
+                m.reply(`${rama.user.name} Has Been Muted In This Group !`)
                 } else if (args[0] === "off") {
-                if (!db.data.chats[m.chat].mute) return m.reply`Previously Inactive`)
+                if (!db.data.chats[m.chat].mute) return m.reply(`Previously Inactive`)
                 db.data.chats[m.chat].mute = false
-                m.reply`${rama.user.name} Has Been Unmuted In This Group!`)
+                m.reply(`${rama.user.name} Has Been Unmuted In This Group!`)
                 } else {
                  let buttons = [
                         { buttonId: 'mute on', buttonText: { displayText: 'On' }, type: 1 },
@@ -1745,38 +1745,38 @@ break
              }
              break
             case 'linkgroup': case 'linkgc': case 'gclink': case 'grouplink': {
-                if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-                if (!m.isGroup) return m.reply`${mess.group}`)
+                if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+                if (!m.isGroup) return m.reply(`${mess.group}`)
                 let response = await rama.groupInviteCode(m.chat)
                 rama.sendText(m.chat, `https://chat.whatsapp.com/${response}\n\n${groupMetadata.subject} Group Link`, m, { detectLink: true })
             }
             break
             case 'ephemeral': {
-                if (!m.isGroup) m.reply`${mess.group}`)
-                if (!isBotAdmins) return m.reply`${mess.botAdmin}`)
-                if (!isAdmins) return m.reply`${mess.admin}`)
-                if (!text) return m.reply`Enter The enable/disable Values`)
+                if (!m.isGroup) m.reply(`${mess.group}`)
+                if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
+                if (!isAdmins) return m.reply(`${mess.admin}`)
+                if (!text) return m.reply(`Enter The enable/disable Values`)
                 if (args[0] === 'enable') {
-                    await rama.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL }).then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+                    await rama.sendMessage(m.chat, { disappearingMessagesInChat: WA_DEFAULT_EPHEMERAL }).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 } else if (args[0] === 'disable') {
-                    await rama.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res) => m.replyjsonformat(res))).catch((err) => m.replyjsonformat(err)))
+                    await rama.sendMessage(m.chat, { disappearingMessagesInChat: false }).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
                 }
             }
             break
             case 'delete': case 'del': {
-                if (!m.quoted) m.replyfalse)
+                if (!m.quoted) m.reply(false)
                 let { chat, fromMe, id, isBaileys } = m.quoted
-                if (!isBaileys) return m.reply`The Message Was Not Sent By A Bot!`)
+                if (!isBaileys) return m.reply(`The Message Was Not Sent By A Bot!`)
                 rama.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: true, id: m.quoted.id, participant: m.quoted.sender } })
             }
             break
             case 'bcgc': case 'bcgroup': {
-                if (!isCreator) return m.reply`${mess.owner}`)
-                if (!text) return m.reply`Where Is The Text?\n\nExample : ${prefix + command} Nexus Handsome`)
+                if (!isCreator) return m.reply(`${mess.owner}`)
+                if (!text) return m.reply(`Where Is The Text?\n\nExample : ${prefix + command} Nexus Handsome`)
                 let getGroups = await rama.groupFetchAllParticipating()
                 let groups = Object.entries(getGroups).slice(0).map(entry => entry[1])
                 let anu = groups.map(v => v.id)
-                m.reply`Sent Broadcast To ${anu.length} Group Chat, Finish Time ${anu.length * 1.5} Seconds`)
+                m.reply(`Sent Broadcast To ${anu.length} Group Chat, Finish Time ${anu.length * 1.5} Seconds`)
                 for (let i of anu) {
                     await sleep(1500)
                     let btn = [{
@@ -1803,14 +1803,14 @@ break
                       let txt = ` _____[ *WhatsApp-BOT HERE🎉* ]_____\n\n${text}`
                       rama.send5ButImg(i, txt, rama.user.name, global.thumb, btn)
                     }
-                m.reply`Successful Sending Broadcast To ${anu.length} Group(s)`)
+                m.reply(`Successful Sending Broadcast To ${anu.length} Group(s)`)
             }
             break
             case 'bc': case 'broadcast': case 'bcall': {
-                if (!isCreator) return m.reply`${mess.owner}`)
-                if (!text) return m.reply`Where Is The Text?\n\nExample : ${prefix + command} Nexus`)
+                if (!isCreator) return m.reply(`${mess.owner}`)
+                if (!text) return m.reply(`Where Is The Text?\n\nExample : ${prefix + command} Nexus`)
                 let anu = await store.chats.all().map(v => v.id)
-                m.reply`Send Broadcast To ${anu.length} Chat\nFinish Time ${anu.length * 1.5} Seconds`)
+                m.reply(`Send Broadcast To ${anu.length} Chat\nFinish Time ${anu.length * 1.5} Seconds`)
 		for (let yoi of anu) {
 		    await sleep(1500)
 		    let btn = [{
@@ -1837,13 +1837,13 @@ break
                       let txt = ` _____[ *WhatsApp-BOT HERE 🎉* ]_____\n\n${text}`
                       rama.send5ButImg(yoi, txt, rama.user.name, global.thumb, btn)
 		}
-		m.reply'Broadcast Success')
+		m.reply('Broadcast Success')
             }
             break
             case 'chatinfo': case 'infochat': {
-                if (!m.quoted) return m.reply`Reply Message`)
+                if (!m.quoted) return m.reply(`Reply Message`)
                 let msg = await m.getQuotedObj()
-                if (!m.quoted.isBaileys) return m.reply`The Message Was Not Sent By A Bot!`)
+                if (!m.quoted.isBaileys) return m.reply(`The Message Was Not Sent By A Bot!`)
                 let teks = ''
                 for (let i of msg.userReceipt) {
                     let read = i.readTimestamp
@@ -1856,9 +1856,9 @@ break
             }
             break
             case 'q': case 'quoted': {
-		if (!m.quoted) return m.reply'Reply Message!!')
+		if (!m.quoted) return m.reply('Reply Message!!')
 		let wokwol = await rama.serializeM(await m.getQuotedObj())
-		if (!wokwol.quoted) return m.reply'The Message You Replied To Does Not Contain A Reply')
+		if (!wokwol.quoted) return m.reply('The Message You Replied To Does Not Contain A Reply')
 		await wokwol.quoted.copyNForward(m.chat, true)
             }
 	    break
@@ -1889,28 +1889,28 @@ break
              }
              break
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
-            if (!quoted) return m.reply`Reply Video/Image With Caption ${prefix + command}`)
-            //m.replymess.wait)
+            if (!quoted) return m.reply(`Reply Video/Image With Caption ${prefix + command}`)
+            //m.reply(mess.wait)
                     if (/image/.test(mime)) {
                 let media = await quoted.download()
                 let encmedia = await rama.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
                 await fs.unlinkSync(encmedia)
             } else if (/video/.test(mime)) {
-                if ((quoted.msg || quoted).seconds > 11) return m.reply'Maximum 10 Seconds!')
+                if ((quoted.msg || quoted).seconds > 11) return m.reply('Maximum 10 Seconds!')
                 let media = await quoted.download()
                 let encmedia = await rama.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
                 await fs.unlinkSync(encmedia)
             } else {
-                m.reply`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
+                m.reply(`Send Image/Video With Caption ${prefix + command}\nVideo Duration 1-9 Seconds`)
                 }
             }
             break
 case 'smeme': case 'stickermeme': case 'stickmeme': {
 let { TelegraPh } = require('./lib/uploader')
-if (!text) return m.reply`Send/Reply Photo With Caption ${prefix + command} *Text*`)
-if (text.includes('|')) return m.reply`Send/Reply Photo With Caption ${prefix + command} *Text*`)
-if (!/image/.test(mime)) return m.reply`Send/Reply Photo With Caption ${prefix + command} *Text*`)
-m.replymess.wait)
+if (!text) return m.reply(`Send/Reply Photo With Caption ${prefix + command} *Text*`)
+if (text.includes('|')) return m.reply(`Send/Reply Photo With Caption ${prefix + command} *Text*`)
+if (!/image/.test(mime)) return m.reply(`Send/Reply Photo With Caption ${prefix + command} *Text*`)
+m.reply(mess.wait)
 mee = await rama.downloadAndSaveMediaMessage(quoted)
 mem = await TelegraPh(mee)
 meme = `https://api.memegen.link/images/custom/-/${text}.png?background=${mem}`
@@ -1919,23 +1919,23 @@ await fs.unlinkSync(memek)
 }
 break
             case 'ebinary': {
-            if (!m.quoted.text && !text) return m.reply`Reply Text With Caption ${prefix + command}`)
+            if (!m.quoted.text && !text) return m.reply(`Reply Text With Caption ${prefix + command}`)
             let { eBinary } = require('./lib/binary')
             let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
             let eb = await eBinary(teks)
-            m.replyeb)
+            m.reply(eb)
         }
         break
             case 'dbinary': {
-            if (!m.quoted.text && !text) return m.reply`Reply Text With Caption ${prefix + command}`)
+            if (!m.quoted.text && !text) return m.reply(`Reply Text With Caption ${prefix + command}`)
             let { dBinary } = require('./lib/binary')
             let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
             let db = await dBinary(teks)
-            m.replydb)
+            m.reply(db)
         }
         break
             case 'emojimix': {
-	        if (!text) return m.reply`Example : ${prefix + command} 😅+🤔`)
+	        if (!text) return m.reply(`Example : ${prefix + command} 😅+🤔`)
 		let [emoji1, emoji2] = text.split`+`
 		let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
 		for (let res of anu.results) {
@@ -1945,14 +1945,14 @@ break
 	    }
 	    break
             case 'toimage': case 'toimg': {
-                if (!quoted) return m.reply`Reply Image`)
-                if (!/webp/.test(mime)) m.reply`Reply Sticker With Caption *${prefix + command}*`)
-                m.replymess.wait)
+                if (!quoted) return m.reply(`Reply Image`)
+                if (!/webp/.test(mime)) m.reply(`Reply Sticker With Caption *${prefix + command}*`)
+                m.reply(mess.wait)
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
                 let ran = await getRandom('.png')
                 exec(`ffmpeg -i ${media} ${ran}`, (err) => {
                     fs.unlinkSync(media)
-                    if (err) m.replyerr)
+                    if (err) m.reply(err)
                     let buffer = fs.readFileSync(ran)
                     rama.sendMessage(m.chat, { image: buffer }, { quoted: fakee })
                     fs.unlinkSync(ran)
@@ -1960,9 +1960,9 @@ break
             }
             break
 	        case 'tomp4': case 'tovideo': {
-                if (!quoted) m.reply`Reply Image`)
-                if (!/webp/.test(mime)) return m.reply`Reply Sticker With Caption *${prefix + command}*`)
-                m.replymess.wait)
+                if (!quoted) m.reply(`Reply Image`)
+                if (!/webp/.test(mime)) return m.reply(`Reply Sticker With Caption *${prefix + command}*`)
+                m.reply(mess.wait)
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
@@ -1971,9 +1971,9 @@ break
             }
             break
             case 'toaud': case 'toaudio': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) return m.reply`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
-            if (!quoted) return m.reply`Send/Reply Video/Audio You Want To Convert To Audio With Caption ${prefix + command}`)
-            m.replymess.wait)
+            if (!/video/.test(mime) && !/audio/.test(mime)) return m.reply(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
+            if (!quoted) return m.reply(`Send/Reply Video/Audio You Want To Convert To Audio With Caption ${prefix + command}`)
+            m.reply(mess.wait)
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
@@ -1981,10 +1981,10 @@ break
             }
             break
             case 'tomp3': {
-            if (/document/.test(mime)) return m.reply`Send/Reply Video/Audio You Want to Convert Into MP3 With Caption ${prefix + command}`)
-            if (!/video/.test(mime) && !/audio/.test(mime)) return m.reply`Send/Reply Video/Audio You Want To Convert into MP3 With Caption ${prefix + command}`)
-            if (!quoted) return m.reply`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
-            m.replymess.wait)
+            if (/document/.test(mime)) return m.reply(`Send/Reply Video/Audio You Want to Convert Into MP3 With Caption ${prefix + command}`)
+            if (!/video/.test(mime) && !/audio/.test(mime)) return m.reply(`Send/Reply Video/Audio You Want To Convert into MP3 With Caption ${prefix + command}`)
+            if (!quoted) return m.reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
+            m.reply(mess.wait)
             let media = await quoted.download()
             let { toAudio } = require('./lib/converter')
             let audio = await toAudio(media, 'mp4')
@@ -1992,9 +1992,9 @@ break
             }
             break
             case 'tovn': case 'toptt': {
-            if (!/video/.test(mime) && !/audio/.test(mime)) return m.reply`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
-            if (!quoted) return m.reply`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
-            m.replymess.wait)
+            if (!/video/.test(mime) && !/audio/.test(mime)) return m.reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
+            if (!quoted) return m.reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
+            m.reply(mess.wait)
             let media = await quoted.download()
             let { toPTT } = require('./lib/converter')
             let audio = await toPTT(media, 'mp4')
@@ -2002,9 +2002,9 @@ break
             }
             break
             case 'togif': {
-                if (!quoted) return m.reply`Reply Image`)
-                if (!/webp/.test(mime)) return m.reply`Reply Sticker With Caption *${prefix + command}*`)
-                m.replymess.wait)
+                if (!quoted) return m.reply(`Reply Image`)
+                if (!/webp/.test(mime)) return m.reply(`Reply Sticker With Caption *${prefix + command}*`)
+                m.reply(mess.wait)
 		let { webp2mp4File } = require('./lib/uploader')
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
                 let webpToMp4 = await webp2mp4File(media)
@@ -2013,30 +2013,30 @@ break
             }
             break
 	        case 'tourl': {
-                m.replymess.wait)
+                m.reply(mess.wait)
 		        let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
                 if (/image/.test(mime)) {
                     let anu = await TelegraPh(media)
-                    m.replyutil.format(anu))
+                    m.reply(util.format(anu))
                 } else if (!/image/.test(mime)) {
                     let anu = await UploadFileUgu(media)
-                    m.replyutil.format(anu))
+                    m.reply(util.format(anu))
                 }
                 await fs.unlinkSync(media)
             }
             break
            /* case 'imagenobg': case 'removebg': case 'remove-bg': {
-	    if (!quoted) return m.reply`Send/Reply Image With Caption ${prefix + command}`)
-	    if (!/image/.test(mime)) return m.reply`Send/Reply Image With Caption ${prefix + command}`)
-	    if (/webp/.test(mime)) return m.reply`Send/Reply Image With Caption ${prefix + command}`)
+	    if (!quoted) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
+	    if (!/image/.test(mime)) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
+	    if (/webp/.test(mime)) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
 	    let remobg = require('remove.bg')
 	    let apirnobg = ['q61faXzzR5zNU6cvcrwtUkRU','S258diZhcuFJooAtHTaPEn4T','5LjfCVAp4vVNYiTjq9mXJWHF','aT7ibfUsGSwFyjaPZ9eoJc61','BY63t7Vx2tS68YZFY6AJ4HHF','5Gdq1sSWSeyZzPMHqz7ENfi8','86h6d6u4AXrst4BVMD9dzdGZ','xp8pSDavAgfE5XScqXo9UKHF','dWbCoCb3TacCP93imNEcPxcL']
 	    let apinobg = apirnobg[Math.floor(Math.random() * apirnobg.length)]
 	    hmm = await './src/remobg-'+getRandom('')
 	    localFile = await rama.downloadAndSaveMediaMessage(quoted, hmm)
 	    outputFile = await './src/hremo-'+getRandom('.png')
-	    m.replymess.wait)
+	    m.reply(mess.wait)
 	    remobg.removeBackgroundFromImageFile({
 	      path: localFile,
 	      apiKey: apinobg,
@@ -2052,7 +2052,7 @@ break
 	    }
 	    break*/
 	    case 'yts': case 'ytsearch': {
-                if (!text) return m.reply`Example : ${prefix + command} Anime Story Whatsapp`)
+                if (!text) return m.reply(`Example : ${prefix + command} Anime Story Whatsapp`)
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
@@ -2064,7 +2064,7 @@ break
             }
             break
         case 'google': {
-                if (!text) return m.reply`Example : ${prefix + command} gojo shiba inu`)
+                if (!text) return m.reply(`Example : ${prefix + command} gojo shiba inu`)
                 let google = require('google-it')
                 google({'query': text}).then(res => {
                 let teks = `Google Search Title : ${text}\n\n`
@@ -2073,12 +2073,12 @@ break
                 teks += ` *Description* : ${g.snippet}\n`
                 teks += ` *Link* : ${g.link}\n\n────────────────────────\n\n`
                 } 
-                m.replyteks)
+                m.reply(teks)
                 })
                 }
                 break
         case 'gimage': case 'googleimage': {
-        if (!text) return m.reply`Example : ${prefix + command} gojo`)
+        if (!text) return m.reply(`Example : ${prefix + command} gojo`)
         let gis = require('g-i-s')
         gis(text, async (error, result) => {
         n = result
@@ -2100,7 +2100,7 @@ break
         }
         break
 	    case 'play': case 'song': case 'ytplay': {
-                if (!text) return m.reply`Example : ${prefix + command} Stay`)
+                if (!text) return m.reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
@@ -2130,20 +2130,20 @@ break
             break
 	    case 'ytmp3': case 'getmusic': case 'ytaudio': {
                 let { yta } = require('./lib/y2mate')
-                if (!text) return m.reply`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
+                if (!text) return m.reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
-                if (media.filesize >= 999999) return m.reply'File Over Limit '+util.format(media))
+                if (media.filesize >= 999999) return m.reply('File Over Limit '+util.format(media))
                 rama.sendImage(m.chat, media.thumb, ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${isUrl(text)}\n Ext : MP3\n Resolution : ${args[1] || '320kbps'}`, m)
                 rama.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: fakee })
             }
             break
             case 'ytmp4': case 'getvideo': case 'ytvideo': {
                 let { ytv } = require('./lib/y2mate')
-                if (!text) return m.reply`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`)
+                if (!text) return m.reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`)
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(text, quality)
-                if (media.filesize >= 999999) return m.reply'File Over Limit '+util.format(media))
+                if (media.filesize >= 999999) return m.reply('File Over Limit '+util.format(media))
                 rama.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${isUrl(text)}\n Ext : MP3\n Resolution : ${args[1] || '360p'}` }, { quoted: fakee })
             }
             break
@@ -2152,7 +2152,7 @@ break
 		let urls = quoted.text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))
                 let quality = args[1] ? args[1] : '128kbps'
                 let media = await yta(urls[text - 1], quality)
-                if (media.filesize >= 100000) return m.reply'File Over Limit '+util.format(media))
+                if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media))
                 rama.sendImage(m.chat, media.thumb, ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${urls[text - 1]}\n Ext : MP3\n Resolution : ${args[1] || '128kbps'}`, m)
                 rama.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: fakee })
             }
@@ -2166,12 +2166,12 @@ break
                 if (!urls) throw`Maybe The Message You Replied Does Not Contain The Video Search Result`
                 let quality = args[1] ? args[1] : '360p'
                 let media = await ytv(urls[text - 1], quality)
-                if (media.filesize >= 100000) return m.reply'File Over Limit '+util.format(media))
+                if (media.filesize >= 100000) return m.reply('File Over Limit '+util.format(media))
                 rama.sendMessage(m.chat, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${urls[text - 1]}\n Ext : MP3\n Resolution : ${args[1] || '360p'}` }, { quoted: fakee })
             }
             break
             case 'pinterest': {
-                m.replymess.wait)
+                m.reply(mess.wait)
 		let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
@@ -2179,8 +2179,8 @@ break
             }
             break
 case 'webtonsearch': case 'webtoon':
-                if (!text) return m.reply'What Are you Looking For??')
-                await m.replymess.wait)
+                if (!text) return m.reply('What Are you Looking For??')
+                await m.reply(mess.wait)
                 nexusnw.Webtoons(q).then(async data => {
                     let txt = `*------ _____[ *WEBTOONS-SEARCH* ]_____------*\n\n`
                     for (let i of data) {
@@ -2190,15 +2190,15 @@ case 'webtonsearch': case 'webtoon':
                         txt += `*🎥 Genre :* ${i.genre}\n`
                         txt += `*📚 Url :* ${i.url}\n ----------------------------------------------------------\n`
                     }
-                    await m.replytxt)
+                    await m.reply(txt)
                 })
                 .catch((err) => {
-                    m.replymess.error)
+                    m.reply(mess.error)
                 })
             break
             case 'drakorxxx':
-                if (!text) return m.reply'What Are You Looking For??')
-                await m.replymess.wait)
+                if (!text) return m.reply('What Are You Looking For??')
+                await m.reply(mess.wait)
                 nexusnw.Drakor(`${text}`).then(async data => {
                     let txt = `*----- _____[ *DRAKOR-SEARCH* ]_____-----*\n\n`
                     for (let i of data) {
@@ -2210,12 +2210,12 @@ case 'webtonsearch': case 'webtoon':
                     await sendFileFromUrl(from,data[0].thumbnail,txt,m)
                 })
                 .catch((err) => {
-                    m.replymess.error)
+                    m.reply(mess.error)
                 })
             break
             case 'animexxx':{
-                if (!text) return m.reply`What Anime Are You Looking For??`)
-                await m.replymess.wait)
+                if (!text) return m.reply(`What Anime Are You Looking For??`)
+                await m.reply(mess.wait)
                 nexusnw.Anime(q).then(async data => {
                     let txt = `*------- _____[ *ANIME-SEARCH* ]_____-------*\n\n`
                     for (let i of data) {
@@ -2234,13 +2234,13 @@ case 'webtonsearch': case 'webtoon':
 				await rama.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: fakee })
                 })
                 .catch((err) => {
-                    m.replymess.error)
+                    m.reply(mess.error)
                 })
                 }
             break
             case 'characterxxx': case 'karakterxxx':
-                if (!text) return m.reply`What Anime Character Are You Looking For??`)
-                await m.replymess.wait)
+                if (!text) return m.reply(`What Anime Character Are You Looking For??`)
+                await m.reply(mess.wait)
                 nexusnw.Character(q).then(async data => {
                     let txt = `*--- _____[ *CHARACTER-SEARCH* ]_____---*\n\n`
                     for (let i of data) {
@@ -2259,12 +2259,12 @@ case 'webtonsearch': case 'webtoon':
 				await rama.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: fakee })
                 })
                 .catch((err) => {
-                    m.replymess.error)
+                    m.reply(mess.error)
                 })
             break
             case 'manga':
-                if (!text) return m.reply`What Manga Are You Looking For??`)
-                await m.replymess.wait)
+                if (!text) return m.reply(`What Manga Are You Looking For??`)
+                await m.reply(mess.wait)
                 nexusnw.Manga(`${text}`).then(async data => {
                     let txt = `*------ _____[ *MANGA-SEARCH* ]_____------*\n\n`
                     for (let i of data) {
@@ -2283,16 +2283,16 @@ case 'webtonsearch': case 'webtoon':
 				await rama.send5ButLoc(from, txt , `© ${ownername}`,gam, but , { userJid: m.chat, quoted: fakee })
                 })
                 .catch((err) => {
-                    m.replymess.error)
+                    m.reply(mess.error)
                 })
             break
            /* case 'waifu': case 'bully': case 'neko': case 'shinobu': case 'megumin': {
-                m.replymess.wait)
+                m.reply(mess.wait)
                 rama.sendMessage(m.chat, { image: { url: `https://fatiharridho.herokuapp.com/api/sfw/${command}` }, caption: 'Generated Random ' + command }, { quoted: fakee })           
              }
             break*/
 	    case 'couplepp':  case 'ppcouple': {
-                m.replymess.wait)
+                m.reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
                 rama.sendMessage(m.chat, { image: { url: random.male }, caption: `Couple Male🙎🏻‍♂️` }, { quoted: fakee })
@@ -2314,7 +2314,7 @@ case 'webtonsearch': case 'webtoon':
             }
             break
             case 'wallpaper': {
-                if (!text) return m.reply`Enter Query Title`)
+                if (!text) return m.reply(`Enter Query Title`)
 		let { wallpaper } = require('./lib/scraper')
                 anu = await wallpaper(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
@@ -2332,7 +2332,7 @@ case 'webtonsearch': case 'webtoon':
             }
             break
             case 'wikimedia': {
-                if (!text) return m.reply`Enter Query Title`)
+                if (!text) return m.reply(`Enter Query Title`)
 		let { wikimedia } = require('./lib/scraper')
                 anu = await wikimedia(text)
                 result = anu[Math.floor(Math.random() * anu.length)]
@@ -2380,29 +2380,29 @@ case 'webtonsearch': case 'webtoon':
             }
             break
             /*case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
-                if (!text) return m.reply`Enter Text, Example : ${prefix + command} Xeon`)
-                m.replymess.wait)
+                if (!text) return m.reply(`Enter Text, Example : ${prefix + command} Xeon`)
+                m.reply(mess.wait)
                 rama.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: fakee})
 	    }
             break*/
             case 'circuit': case 'classic8bit': case 'color-fireworks': case 'cool-metal': case 'cutegirl': case 'dark-gold-metal': case 'decorated-cookie': case 'deluxe-gold': case 'deluxe-silver': case 'dinamo': case 'double-exposure': case 'dragon-fire': case 'eroded-metal': case 'fabric-text': case 'firework': case 'floraltext': case 'fox-crossfire': case 'fun-certify1': case 'fun-certify2': case 'futuristic': case 'galaxy-angel': case 'galaxy-effect': case 'galaxy-effect2': case 'galaxy-text': case 'galaxy-text-3': case 'gankk-league-of-kings': case 'gemstone': case 'genji-overwatch': case 'glitchtext': case 'glossy': case 'glossy-bluemetal': case 'glossy-carbon': case 'glossy-chrome': case 'gold-avenger': case 'gold-barcar': case 'gold-batman': case 'gold-bird2': case 'gold-eagle': case 'gold-effect': case 'gold-fox': case 'gold-glitter': case 'gold-lion': case 'gold-lion2': case 'gold-star': case 'gold-tiger': case 'golden-letter': case 'gr-crossfire': case 'gradientlogo': case 'graffiti-color': case 'graffiti-text3':
 case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zombie': case '3dengraved': case '3dgalaxy-metal': case '3dgold': case '3dgolden': case '3dgradient': case '3dlove': case '3dluxury': case '3dneonlight': case '3dpapercut': case '3drainbow': case '3drealistic': case '3drosegold': case '3dscifi': case '3dsilver': case '3dspace': case '3dstone': case '3dtext-effect': case '3dunderwater': case '3dvintage': case '3dwaterpipe': case 'alice-league-of-kings': case 'angel-wing-galaxy': case 'anubis': case 'arch-crossfire': case 'art-shader': case 'assassins-creed': case 'avengers': case 'azzenka-league-of-kings': case 'balloons-cards': case 'balloons-love': case 'bearlogo': case 'bg-crossfire': case 'birthday-cake': case 'birthday-cards': case 'birthday-greeting': case 'birthday-roses': case 'black-metal': case 'blackpink': case 'blood-frosted': case 'blood-text': case 'blue-effect': case 'blue-glitter': case 'brickwall': case 'brokentext': case 'bubble-effect': case 'bulb-effectcase': {        
-            if (!text) return m.reply`Example : ${prefix + command} text`)
-                m.replymess.wait)
+            if (!text) return m.reply(`Example : ${prefix + command} text`)
+                m.reply(mess.wait)
                 rama.sendMessage(m.chat, { image: { url: `https://violetics.pw/api/textpro/${command}?apikey=7005-2125-9f00&text=${text}` }, caption: `Text Pro ${command}` }, { quoted: fakee})
 	        }
             break
 	    case 'nomerhoki': case 'nomorhoki': {
-                if (!Number(text)) return m.reply`Example : ${prefix + command} 916909137213`)
+                if (!Number(text)) return m.reply(`Example : ${prefix + command} 916909137213`)
                 let anu = await primbon.nomer_hoki(Number(text))
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Phone Number :* ${anu.message.nomer_hp}\n *Shuzi Angka Figures :* ${anu.message.angka_shuzi}\n *Positive Energy :*\n- Riches : ${anu.message.energi_positif.kekayaan}\n- Health : ${anu.message.energi_positif.kesehatan}\n- Love : ${anu.message.energi_positif.cinta}\n- Stability : ${anu.message.energi_positif.kestabilan}\n- Percentage : ${anu.message.energi_positif.persentase}\n *Negative Energy :*\n- Dispute : ${anu.message.energi_negatif.perselisihan}\n- Lost : ${anu.message.energi_negatif.kehilangan}\n- Catastrophe : ${anu.message.energi_negatif.malapetaka}\n- Destruction : ${anu.message.energi_negatif.kehancuran}\n- Percentage : ${anu.message.energi_negatif.persentase}`, m)
             }
             break
             case 'artimimpi': case 'tafsirmimpi': {
-                if (!text) return m.reply`Example : ${prefix + command} belanja`)
+                if (!text) return m.reply(`Example : ${prefix + command} belanja`)
                 let anu = await primbon.tafsir_mimpi(text)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Dream :* ${anu.message.mimpi}\n *Meaning :* ${anu.message.arti}\n *Solution :* ${anu.message.solusi}`, m)
             }
             break
@@ -2410,7 +2410,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Your Name :* ${anu.message.nama_anda.nama}\n *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n *Couple Name :* ${anu.message.nama_pasangan.nama}\n *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n *Results :* ${anu.message.result}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2418,7 +2418,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Your Name :* ${anu.message.nama_anda.nama}\n *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n *Couple Name :* ${anu.message.nama_pasangan.nama}\n *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n *Results :* ${anu.message.result}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2426,7 +2426,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Husband's Name :* ${anu.message.suami.nama}\n *Husband Born :* ${anu.message.suami.tgl_lahir}\n *Wife's Name :* ${anu.message.istri.nama}\n *Born Wife :* ${anu.message.istri.tgl_lahir}\n *Results :* ${anu.message.result}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2434,14 +2434,14 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Your Name :* ${anu.message.nama_anda.nama}\n *Your Birth :* ${anu.message.nama_anda.tgl_lahir}\n *Couple Name :* ${anu.message.nama_pasangan.nama}\n *Born Couple :* ${anu.message.nama_pasangan.tgl_lahir}\n *Positive Side :* ${anu.message.sisi_positif}\n *Negative Side :* ${anu.message.sisi_negatif}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'artinama': {
                 if (!text) throw `Example : ${prefix + command} Dika Ardianta`
                 let anu = await primbon.arti_nama(text)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Name :* ${anu.message.nama}\n *Meaning :* ${anu.message.arti}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2449,7 +2449,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005`
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Name :* ${anu.message.nama}\n *Born :* ${anu.message.tgl_lahir}\n *Life Path :* ${anu.message.life_path}\n *Destiny :* ${anu.message.destiny}\n *Destiny Desire :* ${anu.message.destiny_desire}\n *Personality :* ${anu.message.personality}\n *Percentage :* ${anu.message.persentase_kecocokan}`, m)
             }
             break
@@ -2457,7 +2457,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} Dika|Novia`
                 let [nama1, nama2] = text.split`|`
                 let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendImage(m.chat,  anu.message.gambar, ` *Your Name :* ${anu.message.nama_anda}\n *Couple Name :* ${anu.message.nama_pasangan}\n *Positive Side :* ${anu.message.sisi_positif}\n *Negative Side :* ${anu.message.sisi_negatif}`, m)
             }
             break
@@ -2465,7 +2465,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 6, 12, 2020`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Wedding Date :* ${anu.message.tanggal}\n *Characteristics :* ${anu.message.karakteristik}`, m)
             }
             break
@@ -2473,7 +2473,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!ext)throw `Example : ${ command} 28, 12, 2021`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Born :* ${anu.message.hari_lahir}\n *Business :* ${anu.message.usaha}`, m)
             }
             break
@@ -2481,7 +2481,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Born :* ${anu.message.hari_lahir}\n *Sustenance :* ${anu.message.rejeki}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2489,7 +2489,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Born :* ${anu.message.hari_lahir}\n *Profession :* ${anu.message.pekerjaan}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2497,7 +2497,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.ramalan_nasib(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Analysis :* ${anu.message.analisa}\n *Root Number :* ${anu.message.angka_akar}\n *Nature :* ${anu.message.sifat}\n *Element :* ${anu.message.elemen}\n *Lucky Numbers :* ${anu.message.angka_keberuntungan}`, m)
             }
             break
@@ -2505,7 +2505,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.cek_potensi_penyakit(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Analysis :* ${anu.message.analisa}\n *Sector :* ${anu.message.sektor}\n?? *Element :* ${anu.message.elemen}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2513,7 +2513,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendImage(m.chat, anu.message.image, ` *Born :* ${anu.message.tgl_lahir}\n *Tarot Symbol :* ${anu.message.simbol_tarot}\n *Meaning :* ${anu.message.arti}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2521,7 +2521,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} Dika, 1, 2005\n\nNote : ${prefix + command} Name, gender, tahun lahir\nGender : 1 untuk laki-laki & 2 untuk perempuan`
                 let [nama, gender, tahun] = text.split`,`
                 let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Name :* ${anu.message.nama}\n *Born :* ${anu.message.tahun_lahir}\n *Gender :* ${anu.message.jenis_kelamin}\n *Kua Number :* ${anu.message.angka_kua}\n *Group :* ${anu.message.kelompok}\n *Character :* ${anu.message.karakter}\n *Good Sector :* ${anu.message.sektor_baik}\n *Bad Sector :* ${anu.message.sektor_buruk}`, m)
             }
             break
@@ -2529,7 +2529,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.petung_hari_baik(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Born :* ${anu.message.tgl_lahir}\n *When Challenged :* ${anu.message.kala_tinantang}\n *Info :* ${anu.message.info}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2537,7 +2537,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.hari_sangar_taliwangke(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Born :* ${anu.message.tgl_lahir}\n *Results :* ${anu.message.result}\n *Info :* ${anu.message.info}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2545,7 +2545,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Day Of Birth :* ${anu.message.hari_lahir}\n *Date Of Birth :* ${anu.message.tgl_lahir}\n *Fateful Day :* ${anu.message.hari_naas}\n *Info :* ${anu.message.catatan}\n *Notes :* ${anu.message.info}`, m)
             }
             break
@@ -2553,7 +2553,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Day Of Birth :* ${anu.message.hari_lahir}\n *Date Of Birth :* ${anu.message.tgl_lahir}\n *Dragon Day Direction :* ${anu.message.arah_naga_hari}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2561,7 +2561,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Day Of Birth :* ${anu.message.hari_lahir}\n *Date Of Birth :* ${anu.message.tgl_lahir}\n *Sustenance Direction :* ${anu.message.arah_rejeki}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2569,7 +2569,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} DIka, 7, 7, 2005, 2022\n\nNote : ${prefix + command} Name, tanggal lahir, bulan lahir, tahun lahir, untuk tahun`
                 let [nama, tgl, bln, thn, untuk] = text.split`,`
                 let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Name :* ${anu.message.nama}\n *Born :* ${anu.message.tgl_lahir}\n *Fortune Of The Year :* ${anu.message.peruntungan_tahun}\n *Results :* ${anu.message.result}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2577,7 +2577,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.weton_jawa(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Date :* ${anu.message.tanggal}\n *Number Of Neptune :* ${anu.message.jumlah_neptu}\n *Day Character :* ${anu.message.watak_hari}\n *Dragon Day :* ${anu.message.naga_hari}\n *Good Hour :* ${anu.message.jam_baik}\n *Birth Character :* ${anu.message.watak_kelahiran}`, m)
             }
             break
@@ -2585,7 +2585,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005`
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Name :* ${anu.message.nama}\n *Born :* ${anu.message.tgl_lahir}\n *Lifeline :* ${anu.message.garis_hidup}`, m)
             }
             break
@@ -2593,7 +2593,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005`
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Name :* ${anu.message.nama}\n *Born :* ${anu.message.tgl_lahir}\n *Results :* ${anu.message.result}`, m)
             }
             break
@@ -2601,7 +2601,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 12, 1, 2022`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Date :* ${anu.message.tgl_memancing}\n *Results :* ${anu.message.result}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2609,7 +2609,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 if (!text) throw `Example : ${prefix + command} 12, 1, 2022, 28\n\nNote : ${prefix + command} First Day Of Menstruation Cycle`
                 let [tgl, bln, thn, siklus] = text.split`,`
                 let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Results :* ${anu.message.result}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
@@ -2644,72 +2644,72 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 let zodiac = await getZodiac(birth[1], birth[2])
                 
                 let anu = await primbon.zodiak(zodiac)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Zodiac :* ${anu.message.zodiak}\n *Number :* ${anu.message.nomor_keberuntungan}\n *Aroma :* ${anu.message.aroma_keberuntungan}\n *Planet :* ${anu.message.planet_yang_mengitari}\n *Flower :* ${anu.message.bunga_keberuntungan}\n *Color :* ${anu.message.warna_keberuntungan}\n *Stone :* ${anu.message.batu_keberuntungan}\n *Element :* ${anu.message.elemen_keberuntungan}\n *Zodiac Couple :* ${anu.message.pasangan_zodiak}\n *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'shio': {
                 if (!text) throw `Example : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.htm`
                 let anu = await primbon.shio(text)
-                if (anu.status == false) return m.replyanu.message)
+                if (anu.status == false) return m.reply(anu.message)
                 rama.sendText(m.chat, ` *Results :* ${anu.message}`, m)
             }
             break
 	    case 'stalker': case 'stalk': {
-		if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply'Your Daily Limit Has Expired')
-                if (!text) return m.reply`Example : ${prefix +command} type id\n\nList Type :\n1. ff (Free Fire)\n2. ml (Mobile Legends)\n3. aov (Arena Of Valor)\n4. cod (Call Of Duty)\n5. pb (point Blank)\n6. ig (Instagram)\n7. npm (https://npmjs.com)`)
+		if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply('Your Daily Limit Has Expired')
+                if (!text) return m.reply(`Example : ${prefix +command} type id\n\nList Type :\n1. ff (Free Fire)\n2. ml (Mobile Legends)\n3. aov (Arena Of Valor)\n4. cod (Call Of Duty)\n5. pb (point Blank)\n6. ig (Instagram)\n7. npm (https://npmjs.com)`)
                 let [type, id, zone] = args
                 if (type.toLowerCase() == 'ff') {
-                    if (!id) return m.reply`No Query id, Example ${prefix + command} ff 552992060`)
+                    if (!id) return m.reply(`No Query id, Example ${prefix + command} ff 552992060`)
                     let anu = await fetchJson(api('zenz', '/stalker/nickff', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
-                    if (anu.status == false) return m.replyanu.result.message)
-                    m.reply`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
+                    if (anu.status == false) return m.reply(anu.result.message)
+                    m.reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'ml') {
-                    if (!id) return m.reply`No Query id, Example : ${prefix + command} ml 214885010 2253`)
-                    if (!zone) return m.reply`No Query id, Example : ${prefix + command} ml 214885010 2253`)
+                    if (!id) return m.reply(`No Query id, Example : ${prefix + command} ml 214885010 2253`)
+                    if (!zone) return m.reply(`No Query id, Example : ${prefix + command} ml 214885010 2253`)
                     let anu = await fetchJson(api('zenz', '/stalker/nickml', { apikey: global.APIKeys[global.APIs['zenz']], query: id, query2: zone }))
-                    if (anu.status == false) return m.replyanu.result.message)
-                    m.reply`ID : ${anu.result.gameId}\nZone : ${anu.result.zoneId}\nUsername : ${anu.result.userName}`)
+                    if (anu.status == false) return m.reply(anu.result.message)
+                    m.reply(`ID : ${anu.result.gameId}\nZone : ${anu.result.zoneId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'aov') {
-                    if (!id) return m.reply`No Query id, Example ${prefix + command} aov 293306941441181`)
+                    if (!id) return m.reply(`No Query id, Example ${prefix + command} aov 293306941441181`)
                     let anu = await fetchJson(api('zenz', '/stalker/nickaov', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
-                    if (anu.status == false) return m.replyanu.result.message)
-                    m.reply`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
+                    if (anu.status == false) return m.reply(anu.result.message)
+                    m.reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'cod') {
-                    if (!id) return m.reply`No Query id, Example ${prefix + command} cod 6290150021186841472`)
+                    if (!id) return m.reply(`No Query id, Example ${prefix + command} cod 6290150021186841472`)
                     let anu = await fetchJson(api('zenz', '/stalker/nickcod', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
-                    if (anu.status == false) return m.replyanu.result.message)
-                    m.reply`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
+                    if (anu.status == false) return m.reply(anu.result.message)
+                    m.reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'pb') {
-                    if (!id) return m.reply`No Query id, Example ${prefix + command} pb riio46`)
+                    if (!id) return m.reply(`No Query id, Example ${prefix + command} pb riio46`)
                     let anu = await fetchJson(api('zenz', '/stalker/nickpb', { apikey: global.APIKeys[global.APIs['zenz']], query: id }))
-                    if (anu.status == false) return m.replyanu.result.message)
-                    m.reply`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
+                    if (anu.status == false) return m.reply(anu.result.message)
+                    m.reply(`ID : ${anu.result.gameId}\nUsername : ${anu.result.userName}`)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'ig') {
-                    if (!id) return m.reply`No Query username, Example : ${prefix + command} ig josephxeon13`)
+                    if (!id) return m.reply(`No Query username, Example : ${prefix + command} ig josephxeon13`)
                     let { result: anu } = await fetchJson(api('zenz', '/stalker/ig', { username: id }, 'apikey'))
-                    if (anu.status == false) return m.replyanu.result.message)
+                    if (anu.status == false) return m.reply(anu.result.message)
                     rama.sendMedia(m.chat, anu.caption.profile_hd, '', ` Full Name : ${anu.caption.full_name}\n User Name : ${anu.caption.user_name}\n ID ${anu.caption.user_id}\n Following : ${anu.caption.followers}\n Followers : ${anu.caption.following}\n Bussines : ${anu.caption.bussines}\n Professional : ${anu.caption.profesional}\n Verified : ${anu.caption.verified}\n Private : ${anu.caption.private}\n Bio : ${anu.caption.biography}\n Bio Url : ${anu.caption.bio_url}`, m)
 		    db.data.users[m.sender].limit -= 1
                 } else if (type.toLowerCase() == 'npm') {
-                    if (!id) return m.reply`No Query username, Example : ${prefix + command} npm scrape-primbon`)
+                    if (!id) return m.reply(`No Query username, Example : ${prefix + command} npm scrape-primbon`)
                     let { result: anu } = await fetchJson(api('zenz', '/stalker/npm', { query: id }, 'apikey'))
-                    if (anu.status == false) return m.replyanu.result.message)
-                    m.reply` Name : ${anu.name}\n Version : ${Object.keys(anu.versions)}\n Created : ${tanggal(anu.time.created)}\n Modified : ${tanggal(anu.time.modified)}\n Maintainers :\n ${anu.maintainers.map(v => `- ${v.name} : ${v.email}`).join('\n')}\n\n Description : ${anu.description}\n Homepage : ${anu.homepage}\n Keywords : ${anu.keywords}\n Author : ${anu.author.name}\n License : ${anu.license}\n Readme : ${anu.readme}`)
+                    if (anu.status == false) return m.reply(anu.result.message)
+                    m.reply(` Name : ${anu.name}\n Version : ${Object.keys(anu.versions)}\n Created : ${tanggal(anu.time.created)}\n Modified : ${tanggal(anu.time.modified)}\n Maintainers :\n ${anu.maintainers.map(v => `- ${v.name} : ${v.email}`).join('\n')}\n\n Description : ${anu.description}\n Homepage : ${anu.homepage}\n Keywords : ${anu.keywords}\n Author : ${anu.author.name}\n License : ${anu.license}\n Readme : ${anu.readme}`)
 		    db.data.users[m.sender].limit -= 1
                 } else {
-                    m.reply`Example : ${prefix +command} type id\n\nList Type :\n1. ff (Free Fire)\n2. ml (Mobile Legends)\n3. aov (Arena Of Valor)\n4. cod (Call Of Duty)\n5. pb (point Blank)\n6. ig (Instagram)\n7. npm (https://npmjs.com)`)
+                    m.reply(`Example : ${prefix +command} type id\n\nList Type :\n1. ff (Free Fire)\n2. ml (Mobile Legends)\n3. aov (Arena Of Valor)\n4. cod (Call Of Duty)\n5. pb (point Blank)\n6. ig (Instagram)\n7. npm (https://npmjs.com)`)
                 }
             }
             break
 	        case 'tiktok': case 'tiktoknowm': {
-                if (!text) return m.reply`Enter Query Link!`)
-                m.replymess.wait)
+                if (!text) return m.reply(`Enter Query Link!`)
+                m.reply(mess.wait)
                 let anu = await fetchJson(`https://fatiharridho.herokuapp.com/api/downloader/tiktok?url=${text}`)
                 let buttons = [
                     //{buttonId: `tiktokwm ${text}`, buttonText: {displayText: '🥬With Watermark🥬'}, type: 1},
@@ -2726,8 +2726,8 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
             }
             break
             case 'tiktokwmx': case 'tiktokwatermarkx': {
-                if (!text) return m.reply`Enter Query Link!`)
-                m.replymess.wait)
+                if (!text) return m.reply(`Enter Query Link!`)
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '🥬No Watermark🥬'}, type: 1},
@@ -2744,8 +2744,8 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
             }
             break
             case 'tiktokmp3': case 'tiktokaudio': {
-                if (!text) return m.reply`Enter Query Link!`)
-                m.replymess.wait)
+                if (!text) return m.reply(`Enter Query Link!`)
+                m.reply(mess.wait)
                 let anu = await fetchJson(`https://fatiharridho.herokuapp.com/api/downloader/tiktok?url=${text}`)
                 let buttons = [
                     {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '🥬No Watermark🥬'}, type: 1},
@@ -2762,8 +2762,8 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
             }
             break
 	        case 'instagram': case 'ig': case 'igdlx': {
-                if (!text) return m.reply`No Query Url!`)
-                m.replymess.wait)
+                if (!text) return m.reply(`No Query Url!`)
+                m.reply(mess.wait)
                 if (/(?:\/p\/|\/reel\/|\/tv\/)([^\s&]+)/.test(isUrl(text)[0])) {
                     let anu = await fetchJson(api('zenz', '/downloader/instagram', { url: isUrl(text)[0] }, 'apikey'))                     
                     for (let media of anu.data) rama.sendMedia(m.chat, media, '', `Download Url Instagram From ${isUrl(text)[0]}`, m)
@@ -2775,32 +2775,32 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
             break
 		//Backup, for example, the video above doesn't come out\\
 		case 'igeh': case 'instagram2x': case 'ig2': case 'igdl2': {
-                if (!text) return m.reply`Enter Query Link!`)
-                m.replymess.wait)
+                if (!text) return m.reply(`Enter Query Link!`)
+                m.reply(mess.wait)
                 
                 let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url:text }, 'apikey'))
                 rama.sendMessage(m.chat, { video: { url: anu.data[0] } }, { quoted: fakee })
             }
             break
             case 'joox': case 'jooxdl': {
-                if (!text) return m.reply`No Query Title`)
-                m.replymess.wait)
+                if (!text) return m.reply(`No Query Title`)
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
                 let msg = await rama.sendImage(m.chat, anu.result.img, ` Title : ${anu.result.lagu}\n Album : ${anu.result.album}\n Singer : ${anu.result.penyanyi}\n Publish : ${anu.result.publish}\n Lyrics :\n${anu.result.lirik.result}`, m)
                 rama.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: fakee })
             }
             break
             case 'soundcloud': case 'scdl': {
-                if (!text) return m.reply`No Query Title`)
-                m.replymess.wait)
+                if (!text) return m.reply(`No Query Title`)
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
                 let msg = await rama.sendImage(m.chat, anu.result.thumb, ` Title : ${anu.result.title}\n Url : ${isUrl(text)[0]}`)
                 rama.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: fakee })
             }
             break
 	        case 'twitdlx': case 'twitterx': {
-                if (!text) return m.reply`Enter Query Link!`)
-                m.replymess.wait)
+                if (!text) return m.reply(`Enter Query Link!`)
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `twittermp3 ${text}`, buttonText: {displayText: '🎵Audio🎵'}, type: 1}
@@ -2816,8 +2816,8 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
             }
             break
             case 'twittermp3x': case 'twitteraudiox': {
-                if (!text) return m.reply`Enter Query Link!`)
-                m.replymess.wait)
+                if (!text) return m.reply(`Enter Query Link!`)
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
                 let buttons = [
                     {buttonId: `twitter ${text}`, buttonText: {displayText: '📽️Video📽️'}, type: 1}
@@ -2834,21 +2834,21 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
             }
             break
 	        case 'fbdlx': case 'fbx': case 'facebookx': {
-                if (!text) return m.reply`Enter Query Link!`)
-                m.replymess.wait)
+                if (!text) return m.reply(`Enter Query Link!`)
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/facebook', { url: text }, 'apikey'))
                 rama.sendMessage(m.chat, { video: { url: anu.result.url }, caption: ` Title : ${anu.result.title}`}, { quoted: fakee })
             }
             break
 	        case 'pindl': case 'pinterestdl': {
-                if (!text) return m.reply`Enter Query Link!`)
-                m.replymess.wait)
+                if (!text) return m.reply(`Enter Query Link!`)
+                m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/pinterestdl', { url: text }, 'apikey'))
                 rama.sendMessage(m.chat, { video: { url: anu.result }, caption: `Download From ${text}` }, { quoted: fakee })
             }
             break
             case 'umma': case 'ummadl': {
-	        if (!text) return m.reply`Example : ${prefix + command} https://umma.id/channel/video/post/gus-arafat-sumber-kecewa-84464612933698`)
+	        if (!text) return m.reply(`Example : ${prefix + command} https://umma.id/channel/video/post/gus-arafat-sumber-kecewa-84464612933698`)
                 let { umma } = require('./lib) scraper')
 		let anu = await umma(isUrl(text)[0])
 		if (anu.type == 'video') {
@@ -2879,7 +2879,7 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 	    }
 	    break
         case 'ringtone': {
-		if (!text) return m.reply`Example : ${prefix + command} black rover`)
+		if (!text) return m.reply(`Example : ${prefix + command} black rover`)
         let { ringtone } = require('./lib/scraper')
 		let anu = await ringtone(text)
 		let result = anu[Math.floor(Math.random() * anu.length)]
@@ -2888,33 +2888,33 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 	    break
 		case 'iqraxxx': {
 		oh = `Example : ${prefix + command} 3\n\nIQRA Which Is Available : 1,2,3,4,5,6`
-		if (!text) return m.replyoh)
+		if (!text) return m.reply(oh)
 		yy = await getBuffer(`https://islamic-api-indonesia.herokuapp.com/api/data/pdf/iqra${text}`)
-		rama.sendMessage(m.chat, {document: yy, mimetype: 'application/pdf', fileName: `iqra${text}.pdf`}, {quoted:m}).catch ((err) => m.replyoh))
+		rama.sendMessage(m.chat, {document: yy, mimetype: 'application/pdf', fileName: `iqra${text}.pdf`}, {quoted:m}).catch ((err) => m.reply(oh))
 		}
 		break
 		case 'juzamma': {
 		if (args[0] === 'pdf') {
-		m.replymess.wait)
+		m.reply(mess.wait)
 		rama.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.pdf'}, mimetype: 'application/pdf', fileName: 'juz-amma-arab-latin-indonesia.pdf'}, {quoted:m})
 		} else if (args[0] === 'docx') {
-		m.replymess.wait)
+		m.reply(mess.wait)
 		rama.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.docx'}, mimetype: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', fileName: 'juz-amma-arab-latin-indonesia.docx'}, {quoted:m})
 		} else if (args[0] === 'pptx') {
-		m.replymess.wait)
+		m.reply(mess.wait)
 		rama.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.pptx'}, mimetype: 'application/vnd.openxmlformats-officedocument.presentationml.presentation', fileName: 'juz-amma-arab-latin-indonesia.pptx'}, {quoted:m})
 		} else if (args[0] === 'xlsx') {
-		m.replymess.wait)
+		m.reply(mess.wait)
 		rama.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.xlsx'}, mimetype: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', fileName: 'juz-amma-arab-latin-indonesia.xlsx'}, {quoted:m})
 		} else {
-		m.reply`What Format Do You Want? ? Example : ${prefix + command} pdf
+		m.reply(`What Format Do You Want? ? Example : ${prefix + command} pdf
 
 Available Formats: pdf, docx, pptx, xlsx`)
 		}
 		}
 		break
 		case 'hadisxxx': case 'hadistxxx': {
-		if (!args[0]) return m.reply`Example:
+		if (!args[0]) return m.reply(`Example:
 ${prefix + command} bukhari 1
 ${prefix + command} abu-daud 1
 
@@ -2935,36 +2935,36 @@ malik
 1 - 1594
 muslim
 1 - 5362`)
-		if (!args[1]) return m.reply`Which Hadith??\n\nExample:\n${prefix + command} muslim 1`)
+		if (!args[1]) return m.reply(`Which Hadith??\n\nExample:\n${prefix + command} muslim 1`)
 		try {
 		let res = await fetchJson(`https://islamic-api-indonesia.herokuapp.com/api/data/json/hadith/${args[0]}`)
 		let { number, arab, id } = res.find(v => v.number == args[1])
-		m.reply`No. ${number}
+		m.reply(`No. ${number}
 
 ${arab}
 
 ${id}`)
 		} catch (e) {
-		m.reply`Hadith Not Found !`)
+		m.reply(`Hadith Not Found !`)
 		}
 		}
 		break
 		case 'alquranxxx': {
-		if (!args[0]) return m.reply`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is Surah Al-Fatihah Verse 2 Along With The Audio, And The Verse Is Just 1`)
-		if (!args[1]) return m.reply`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is Surah Al-Fatihah Verse 2 Along With The Audio, And The Verse Is Just 1`)
+		if (!args[0]) return m.reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is Surah Al-Fatihah Verse 2 Along With The Audio, And The Verse Is Just 1`)
+		if (!args[1]) return m.reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is Surah Al-Fatihah Verse 2 Along With The Audio, And The Verse Is Just 1`)
 		let res = await fetchJson(`https://islamic-api-indonesia.herokuapp.com/api/data/quran?surah=${args[0]}&ayat=${args[1]}`)
 		let txt = `*Arab* : ${res.result.data.text.arab}
 *English* : ${res.result.data.translation.en}
 *Indonesia* : ${res.result.data.translation.id}
 
 ( Q.S ${res.result.data.surah.name.transliteration.id} : ${res.result.data.number.inSurah} )`
-		m.replytxt)
+		m.reply(txt)
 		rama.sendMessage(m.chat, {audio: { url: res.result.data.audio.primary }, mimetype: 'audio/mpeg'}, { quoted : m })
 		}
 		break
 		case 'tafsirsurahxxx': {
-		if (!args[0]) return m.reply`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is The Interpretation Of Surah Al-Fatihah Verse 2`)
-		if (!args[1]) return m.reply`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is The Interpretation Of Surah Al-Fatihah Verse 2`)
+		if (!args[0]) return m.reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is The Interpretation Of Surah Al-Fatihah Verse 2`)
+		if (!args[1]) return m.reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is The Interpretation Of Surah Al-Fatihah Verse 2`)
 		let res = await fetchJson(`https://islamic-api-indonesia.herokuapp.com/api/data/quran?surah=${args[0]}&ayat=${args[1]}`)
 		let txt = ` _____[ *Tafsir Surah* ]_____
 
@@ -2973,7 +2973,7 @@ ${id}`)
 *Long* : ${res.result.data.tafsir.id.long}
 
 ( Q.S ${res.result.data.surah.name.transliteration.id} : ${res.result.data.number.inSurah} )`
-		m.replytxt)
+		m.reply(txt)
 		}
 		break
 		   case 'bass': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'robot': case 'slow': case 'smooth': case 'squirrel':
@@ -2992,27 +2992,27 @@ ${id}`)
                 if (/smooth/.test(command)) set = '-filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'"'
                 if (/tupai/.test(command)) set = '-filter:a "atempo=0.5,asetrate=65100"'
                 if (/audio/.test(mime)) {
-                m.replymess.wait)
+                m.reply(mess.wait)
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
                 let ran = getRandom('.mp3')
                 exec(`ffmpeg -i ${media} ${set} ${ran}`, (err, stderr, stdout) => {
                 fs.unlinkSync(media)
-                if (err) return m.replyerr)
+                if (err) return m.reply(err)
                 let buff = fs.readFileSync(ran)
                 rama.sendMessage(m.chat, { audio: buff, mimetype: 'audio/mpeg' }, { quoted : m })
                 fs.unlinkSync(ran)
                 })
-                } else m.reply`Reply To The Audio You Want To Change With Caption *${prefix + command}*`)
+                } else m.reply(`Reply To The Audio You Want To Change With Caption *${prefix + command}*`)
                 } catch (e) {
-                m.replye)
+                m.reply(e)
                 }
                 break
             case 'setcmd': {
-                if (!m.quoted) return m.reply`Reply Message!`)
-                if (!m.quoted.fileSha256) return m.reply`SHA256 Hash Missing`)
-                if (!text) return m.reply`For What Command?`)
+                if (!m.quoted) return m.reply(`Reply Message!`)
+                if (!m.quoted.fileSha256) return m.reply(`SHA256 Hash Missing`)
+                if (!text) return m.reply(`For What Command?`)
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return m.reply`You Have No Permission To Change This Sticker Command`)
+                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return m.reply(`You Have No Permission To Change This Sticker Command`)
                 global.db.data.sticker[hash] = {
                     text,
                     mentionedJid: m.mentionedJid,
@@ -3020,15 +3020,15 @@ ${id}`)
                     at: + new Date,
                     locked: false,
                 }
-                m.reply`Done!`)
+                m.reply(`Done!`)
             }
             break
             case 'delcmd': {
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (!hash) return m.reply`No Hashes`)
-                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return m.reply`You Have No Permission To Delete This Sticker Command`)
+                if (!hash) return m.reply(`No Hashes`)
+                if (global.db.data.sticker[hash] && global.db.data.sticker[hash].locked) return m.reply(`You Have No Permission To Delete This Sticker Command`)
                 delete global.db.data.sticker[hash]
-                m.reply`Done!`)
+                m.reply(`Done!`)
             }
             break
             case 'listcmd': {
@@ -3041,22 +3041,22 @@ ${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index +
             }
             break
             case 'lockcmd': {
-                if (!isCreator) return m.reply`${mess.owner}`)
-                if (!m.quoted) return m.reply`Reply Message!`)
-                if (!m.quoted.fileSha256) return m.reply`SHA256 Hash Missing`)
+                if (!isCreator) return m.reply(`${mess.owner}`)
+                if (!m.quoted) return m.reply(`Reply Message!`)
+                if (!m.quoted.fileSha256) return m.reply(`SHA256 Hash Missing`)
                 let hash = m.quoted.fileSha256.toString('base64')
-                if (!(hash in global.db.data.sticker)) return m.reply`Hash Not Found In Database`)
+                if (!(hash in global.db.data.sticker)) return m.reply(`Hash Not Found In Database`)
                 global.db.data.sticker[hash].locked = !/^un/i.test(command)
-                m.reply'Done!')
+                m.reply('Done!')
             }
             break
             case 'addmsg': {
-                if (!m.quoted) return m.reply`Reply Message You Want To Save In Database`)
-                if (!text) return m.reply`Example : ${prefix + command} File Name`)
+                if (!m.quoted) return m.reply(`Reply Message You Want To Save In Database`)
+                if (!text) return m.reply(`Example : ${prefix + command} File Name`)
                 let msgs = global.db.data.database
-                if (text.toLowerCase() in msgs) return m.reply`'${text}' Has Been Registered In The Message List`)
+                if (text.toLowerCase() in msgs) return m.reply(`'${text}' Has Been Registered In The Message List`)
                 msgs[text.toLowerCase()] = quoted.fakeObj
-m.reply`Successfully Added Message In Message List As '${text}'
+m.reply(`Successfully Added Message In Message List As '${text}'
     
 Access With ${prefix}getmsg ${text}
 
@@ -3064,9 +3064,9 @@ View List Of Messages With ${prefix}listmsg`)
             }
             break
             case 'getmsg': {
-                if (!text) return m.reply`Example : ${prefix + command} file name\n\nView Message List With ${prefix}listmsg`)
+                if (!text) return m.reply(`Example : ${prefix + command} file name\n\nView Message List With ${prefix}listmsg`)
                 let msgs = global.db.data.database
-                if (!(text.toLowerCase() in msgs)) return m.reply`'${text}' Not Listed In The Message List`)
+                if (!(text.toLowerCase() in msgs)) return m.reply(`'${text}' Not Listed In The Message List`)
                 rama.copyNForward(m.chat, msgs[text.toLowerCase()], true)
             }
             break
@@ -3077,18 +3077,18 @@ View List Of Messages With ${prefix}listmsg`)
 		for (let i of seplit) {
 		    teks += `💫 *Name :* ${i.nama}\n💫 *Type :* ${getContentType(i.message).replace(/Message/i, '')}\n────────────────────────\n\n`
 	        }
-	        m.replyteks)
+	        m.reply(teks)
 	    }
 	    break
             case 'delmsg': case 'deletemsg': {
 	        let msgs = global.db.data.database
-	        if (!(text.toLowerCase() in msgs)) return m.reply`'${text}' Not Listed In The Message List`)
+	        if (!(text.toLowerCase() in msgs)) return m.reply(`'${text}' Not Listed In The Message List`)
 		delete msgs[text.toLowerCase()]
-		m.reply`Delete Successfully '${text}' From The Message list`)
+		m.reply(`Delete Successfully '${text}' From The Message list`)
             }
 	    break
 	    case 'anonymous': {
-                if (m.isGroup) return m.reply'Features Cannot Be Used For Groups!')
+                if (m.isGroup) return m.reply('Features Cannot Be Used For Groups!')
 				this.anonymous = this.anonymous ? this.anonymous : {}
 				let buttons = [
                     { buttonId: 'Start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
@@ -3097,7 +3097,7 @@ View List Of Messages With ${prefix}listmsg`)
             }
 			break
             case 'keluar': case 'leave': {
-                if (m.isGroup) return m.reply'Features Cannot Be Used For Groups!')
+                if (m.isGroup) return m.reply('Features Cannot Be Used For Groups!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 let room = Object.values(this.anonymous).find(room => room.check(m.sender))
                 if (!room) {
@@ -3105,23 +3105,23 @@ View List Of Messages With ${prefix}listmsg`)
                         { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
                     ]
                     await rama.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner \`\`\``)
-                   m.replyfalse)
+                   m.reply(false)
                 }
-                m.reply'Ok')
+                m.reply('Ok')
                 let other = room.other(m.sender)
                 if (other) await rama.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
                 delete this.anonymous[room.id]
                 if (command === 'leave') break
             }
             case 'mulai': case 'start': {
-                if (m.isGroup) return m.reply'Features Cannot Be Used For Groups!')
+                if (m.isGroup) return m.reply('Features Cannot Be Used For Groups!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 if (Object.values(this.anonymous).find(room => room.check(m.sender))) {
                     let buttons = [
                         { buttonId: 'keluar', buttonText: { displayText: '🛑Stop🛑' }, type: 1 }
                     ]
                     await rama.sendButtonText(m.chat, buttons, `\`\`\`You Are Still In An Anonymous Session, Press The Button Below To Terminate Your Anonymous Session\`\`\``, rama.user.name, m)
-                    m.replyfalse)
+                    m.reply(false)
                 }
                 let room = Object.values(this.anonymous).find(room => room.state === 'WAITING' && !room.check(m.sender))
                 if (room) {
@@ -3155,7 +3155,7 @@ View List Of Messages With ${prefix}listmsg`)
                 break
             }
             case 'next': case 'lanjut': {
-                if (m.isGroup) return m.reply'Features Cannot Be Used For Groups!')
+                if (m.isGroup) return m.reply('Features Cannot Be Used For Groups!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 let romeo = Object.values(this.anonymous).find(room => room.check(m.sender))
                 if (!romeo) {
@@ -3163,7 +3163,7 @@ View List Of Messages With ${prefix}listmsg`)
                         { buttonId: 'start', buttonText: { displayText: '🚶Start🚶' }, type: 1 }
                     ]
                     await rama.sendButtonText(m.chat, buttons, `\`\`\`You Are Not In An Anonymous Session, Press The Button To Find A Partner\`\`\``)
-                    m.replyfalse)
+                    m.reply(false)
                 }
                 let other = romeo.other(m.sender)
                 if (other) await rama.sendText(other, `\`\`\`Partner Has Left Anonymous Session\`\`\``, m)
@@ -3200,15 +3200,15 @@ View List Of Messages With ${prefix}listmsg`)
                 break
             }
             case 'public': {
-                if (!isCreator) return m.reply`${mess.owner}`)
+                if (!isCreator) return m.reply(`${mess.owner}`)
                 rama.public = true
-                m.reply'Successful Change To Public Usage')
+                m.reply('Successful Change To Public Usage')
             }
             break
             case 'self': {
-                if (!isCreator) return m.reply`${mess.owner}`)
+                if (!isCreator) return m.reply(`${mess.owner}`)
                 rama.public = false
-                m.reply'Successful Change To Self Usage')
+                m.reply('Successful Change To Self Usage')
             }
             break
             case 'ping': case 'botstatus': case 'statusbot': {
@@ -3255,11 +3255,11 @@ ${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type =>
 _CPU Core(s) Usage (${cpus.length} Core CPU)_
 ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
                 `.trim()
-                m.replyrespon)
+                m.reply(respon)
             }
             break
             case 'speedtest': {
-            m.reply'Testing Speed...')
+            m.reply('Testing Speed...')
             let cp = require('child_process')
             let { promisify } = require('util')
             let exec = promisify(cp.exec).bind(cp)
@@ -3270,8 +3270,8 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
           o = e
          } finally {
         let { stdout, stderr } = o
-        if (stdout.trim()) m.replystdout)
-        if (stderr.trim()) m.replystderr)
+        if (stdout.trim()) m.reply(stdout)
+        if (stderr.trim()) m.reply(stderr)
             }
             }
             break
@@ -3280,37 +3280,37 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
 case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
-					m.replymess.wait)
+					m.reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/${command}`)
 					.then(({data}) => {
 						rama.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 					})
 					break
 				case 'waifu': case 'loli':
-					m.replymess.wait)
+					m.reply(mess.wait)
 					axios.get(`https://api.waifu.pics/sfw/waifu`)
 					.then(({data}) => {
 					rama.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
 case "setmenuxxx": 
-if (!text) return m.reply"1. image\n2. list\n3. catalog\n\nExample .setmenu image")
+if (!text) return m.reply("1. image\n2. list\n3. catalog\n\nExample .setmenu image")
 if (q == "image") {
 typemenu = 'image'
-m.reply"Success Changing Menu To "+q)
+m.reply("Success Changing Menu To "+q)
 } else if (q == "list") {
 typemenu = 'list'
-m.reply"Success Changing Menu To "+q)
+m.reply("Success Changing Menu To "+q)
 } else if (q == "catalog") {
 typemenu = 'catalog'
-m.reply"Success Changing Menu To "+q)
+m.reply("Success Changing Menu To "+q)
 }
 break
                     case 'bug': case 'report': {
-                    	if(!text) return m.reply`Enter The Bug\n\nExample: ${command} Menu Error`)
+                    	if(!text) return m.reply(`Enter The Bug\n\nExample: ${command} Menu Error`)
                     	rama.sendMessage(`918129624395@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
-m.reply`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
+m.reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, If You Play With This, Use This Feature Again And Again For No Reason, You Will Be Blocked For Sure !`)
                     }
                     break
                      /*case 'alive': case 'bot':{
@@ -3559,14 +3559,14 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
             }
             break*/
     case 'donasi': case 'donate': 
-    m.reply`DONASI SE IKLASNYA\n0823-3809-8038(Gopay)\n082142108243(pulsa)`)
+    m.reply(`DONASI SE IKLASNYA\n0823-3809-8038(Gopay)\n082142108243(pulsa)`)
     break
     case 'sewabot': case 'sewa': {
                 rama.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/9aae92f026c1ee0ce8ce9.jpg' }, caption: `*Hi Bro ${m.pushName}\nJika Kamu Ingin memasukkan, bot ini\n ke grup kamu transfer pulsa ke 082142108243(Telkomsel) atau\n gopay 0823-3809-8038 Harga 20k oke kalo udah \n lu bisa ss bukti pembayaran lalu lu kirim ke wa.me//6282142108243 dan kirim link grup juga agar bot bisa segera join` }, { quoted: fakee })
             }
             break
             case 'sc': case 'script': {
-                m.reply`GitHub : https://github.com/ \n`)
+                m.reply(`GitHub : https://github.com/ \n`)
             }
             break
 case 'help': case 'bot': case 'list': case 'menu': case 'allmenu': {
@@ -4466,38 +4466,38 @@ And Again Me (King Nexus 🎉)  Who Helped Assemble This Sexy Script !!!`,`${Lah
 break
             default:
                 if (budy.startsWith('=>')) {
-                    if (!isCreator) return m.replymess.owner)
+                    if (!isCreator) return m.reply(mess.owner)
                     function Return(sul) {
                         sat = JSON.stringify(sul, null, 2)
                         bang = util.format(sat)
                             if (sat == undefined) {
                                 bang = util.format(sul)
                             }
-                            m.replybang)
+                            m.reply(bang)
                     }
                     try {
-                        m.replyutil.format(eval(`(async () => { return ${budy.slice(3)} })()`)))
+                        m.reply(util.format(eval(`(async () => { return ${budy.slice(3)} })()`)))
                     } catch (e) {
-                        m.replyString(e))
+                        m.reply(String(e))
                     }
                 }
 
                 if (budy.startsWith('>')) {
-                    if (!isCreator) return m.replymess.owner)
+                    if (!isCreator) return m.reply(mess.owner)
                     try {
                         let evaled = await eval(budy.slice(2))
                         if (typeof evaled !== 'string') evaled = require('util').inspect(evaled)
-                        await m.replyevaled)
+                        await m.reply(evaled)
                     } catch (err) {
-                        await m.replyString(err))
+                        await m.reply(String(err))
                     }
                 }
 
                 if (budy.startsWith('$')) {
-                    if (!isCreator) return m.replymess.owner)
+                    if (!isCreator) return m.reply(mess.owner)
                     exec(budy.slice(2), (err, stdout) => {
-                        if(err) return m.replyerr)
-                        if (stdout) return m.replystdout)
+                        if(err) return m.reply(err)
+                        if (stdout) return m.reply(stdout)
                     })
                 }
 			 if (budy.startsWith('Assalamualaikum')) {
@@ -4574,7 +4574,7 @@ let buttonMessage= {
         
 
     } catch (err) {
-        m.replyutil.format(err))
+        m.reply(util.format(err))
     }
 }
 
