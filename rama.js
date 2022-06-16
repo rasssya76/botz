@@ -4501,7 +4501,8 @@ break
                     })
                 }
 			 if (budy.startsWith('Assalamualaikum')) {
-                rama.sendMessage(m.chat, { text: `Walaikumsalam kak @${num.split("@")[0]}`, contextInfo: {mentionedJid: [num]}})
+                 for (let num of participants) 
+                 rama.sendMessage(m.chat, { text: `Walaikumsalam kak @${num.split("@")[0]}`, contextInfo: {mentionedJid: [num]}})
                 }
              if (budy.startsWith('Tes')) {
                 const fakeH = {
