@@ -184,7 +184,7 @@ let buttons = [
 ]
 let buttonMessage = {
 document: fs.readFileSync('./lib/tes.xlsx'),
-mimetype: feler,
+mimetype: 'application/pdf',
 jpegThumbnail:buffer,
 mentions: [num],
 fileName: `Welcome To ${metadata.subject}`,
@@ -214,7 +214,7 @@ let buttons = [
 ]
 let buttonMessage = {
 document: fs.readFileSync('./lib/tes.xlsx'),
-mimetype: feler,
+mimetype: 'application/pdf',
 jpegThumbnail:buffer,
 mentions: [num],
 fileName: `Out In ${metadata.subject}`,
@@ -520,10 +520,10 @@ rama.sendMessage(anu.id, buttonMessage, {quoted:fgclink})
      * @returns 
      */
     //YEAHHHHHHHHGG RAMAMAMAMAMMA
-     let doku = [f1,f2,f3,f4,f5,f6]
+     /*let doku = [f1,f2,f3,f4,f5,f6]
     
 let feler = pickRandom(doku)
-    
+    */
     
     
     rama.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
