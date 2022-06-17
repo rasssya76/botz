@@ -19,30 +19,30 @@ global.APIKeys = {
 }
 
 //customize settings\\
-global.owner = ['6282142108243','62887436223985']
+global.owner = ['6282142108243','855387696322','62887436223985']
 global.premium = ['6282142108243']
 global.ownernomer = '6282142108243'
 global.ownername = 'RAMA'
 global.botname = 'WHATSAPP-BOT'
 global.footer = 'WHATSAPP-BOT'
 global.ig = 'https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI'
-global.region = 'Indonesia, JawaTimur, Madiun'
+global.region = 'Indonesia'
 global.sc = 'https://github.com/'
 global.myweb = 'https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI'
-global.packname = 'WHATSAPP-BOT'
-global.author = 'R-BOT'
+global.packname = 'CREATE BY WHATSAPP-BOT'
+global.author = 'RAMA GANTENG'
 global.sessionName = 'session'
 global.prefa = ['','!','.','🐦','🐤','🗿','*','#','&','+','/','@','¥','∆']
 global.sp = '⭔'
 global.mess = {
-    success: 'NIH JANGAN SPAM GW KONTOL ',
+    success: '_SUCCES_',
     admin: 'Yahahahha Bukan Admin Sok keras',
     botAdmin: 'JADDIN GW ADMIN COKKK',
-    owner: 'LU BUKAN OWNER Gw KONTOL!',
+    owner: '_Lu siapa?_',
     group: 'CHAT GW DI GRUP!',
     private: 'Khusus Di private Chat !',
     bot: 'This Feature Is Only For Bot',
-    wait: '      WAIT        ',
+    wait: '_In progress, please wait..._',
     error: 'Error! Maybe Api Key Is Expired🤔!',
     endLimit: 'YAHHAHAHA LIMIT LU HABIS TUNGGU BESOK LAGI BANGSAT JANGAN SPAM GW KONTOL',
 }
