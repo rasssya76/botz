@@ -519,6 +519,13 @@ rama.sendMessage(anu.id, buttonMessage, {quoted:fgclink})
      * @param {*} options 
      * @returns 
      */
+    //YEAHHHHHHHHGG RAMAMAMAMAMMA
+     let doku = [f1,f2,f3,f4,f5,f6]
+    
+let feler = pickRandom(doku)
+    
+    
+    
     rama.sendMedia = async (jid, path, fileName = '', caption = '', quoted = '', options = {}) => {
         let types = await rama.getFile(path, true)
            let { mime, ext, res, data, filename } = types

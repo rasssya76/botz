@@ -1877,7 +1877,7 @@ break
                  let teks = `*GROUP CHAT LIST*\n\nTotal Group : ${anu.length} Group\n\n`
                  for (let i of anu) {
                      let metadata = await rama.groupMetadata(i)
-                     teks += `*Name :* ${metadata.subject}\n*ID :* ${metadata.id}`
+                     teks += `\n*Name :* ${metadata.subject}\n*ID :* ${metadata.id}`
                  }
                  rama.sendTextWithMentions(m.chat, teks, m)
              }
@@ -2398,7 +2398,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 let media = await rama.downloadAndSaveMediaMessage(quoted)                
                 let anu = await TelegraPh(media)
                 let buf = await getBuffer(`https://cililitan.herokuapp.com/api/${command}?url=${anu}`)
-                rama.sendMessage(m.chat, { image: buf, caption: `Effect ${command}` }, { quoted: m}).catch ((err) => m.reply('error'))
+                rama.sendMessage(m.chat, { image: buf, caption: `Effect ${command}` }, { quoted: m}).catch((err) => m.reply(jsonformat(err)))
                 }
                 break
 	    case 'nomerhoki': case 'nomorhoki': {
