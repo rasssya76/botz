@@ -173,10 +173,66 @@ rama.ev.on('group-participants.update', async (anu) => {
                 Kon = await getBuffer(`https://violetics.pw/api/canvas/welcomer?apikey=7005-2125-9f00&username=${encodeURIComponent(nama)}&avatar=${ppuser}&groupname=${encodeURIComponent(metadata.subject)}&timestamp=1654678938749`)
                                        
                 Tol = await getBuffer(`https://kanza-api.herokuapp.com/api/canvas/goodbye?name=${encodeURIComponent(nama)}&picurl=${ppuser}&bgurl=https://telegra.ph/file/1dfe7720d51f20e4c5f0c.jpg&mem=${encodeURIComponent(memb)}&gcname=${encodeURIComponent(metadata.subject)}&apikey=${geni}`)
-                if (anu.action == 'add') {                     
-                    rama.sendMessage(anu.id, { text: `Hi👋 @${num.split("@")[0]}\nWelcome To ${metadata.subject}`, contextInfo:{"externalAdReply": {"title": `WELCOME`,"body": `👨‍💻`, "previewType": "PHOTO","thumbnail": `ppuser`,"sourceUrl": "https://wa.me/message/4DCK3UGKERTGC1" }}}, {mentionedJid: [num]})                 
+                if (anu.action == 'add') {  
+                 const pushname = m.pushName || "No Name"                   
+                     var buffer = await getBuffer(ppuser)
+                let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                he = `Welcome To ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
+                let link = `https://wa.me/message/4DCK3UGKERTGC1`
+let buttons = [
+{buttonId: `HAI\n\nSAYA ${pushname}`, buttonText: {displayText: 'WELCOME'}, type: 1}
+]
+let buttonMessage = {
+document: fs.readFileSync('./lib/tes.xlsx'),
+mimetype: feler,
+jpegThumbnail:buffer,
+mentions: [num],
+fileName: `Welcome To ${metadata.subject}`,
+fileLength: 99999999999999,
+caption: he,
+footer: `R-BOT IN 2k22`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title: ``,
+body: `CLICK HERE`,
+mediaType:2,
+thumbnail: buffer,
+sourceUrl: link,
+mediaUrl: link,
+}}
+}
+rama.sendMessage(anu.id, buttonMessage, {quoted:fgclink})             
                 } else if (anu.action == 'remove') {
-                    rama.sendMessage(anu.id, { text: `@${num.split("@")[0]} Leaving To ${metadata.subject}`, contextInfo:{"externalAdReply": {"title": `DAGH`,"body": `👨‍💻`, "previewType": "PHOTO","thumbnail": `ppuser`,"sourceUrl": "https://wa.me/message/4DCK3UGKERTGC1"}}}, {mentionedJid: [num]})        
+                    const pushname = m.pushName || "No Name"                   
+                     var buffer = await getBuffer(ppuser)
+                let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
+                he = `Welcome To ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
+                let link = `https://wa.me/message/4DCK3UGKERTGC1`
+let buttons = [
+{buttonId: `HAI\n\nSAYA ${pushname}`, buttonText: {displayText: 'WELCOME'}, type: 1}
+]
+let buttonMessage = {
+document: fs.readFileSync('./lib/tes.xlsx'),
+mimetype: feler,
+jpegThumbnail:buffer,
+mentions: [num],
+fileName: `Out In ${metadata.subject}`,
+fileLength: 99999999999999,
+caption: he,
+footer: `R-BOT IN 2k22`,
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title: `R-BOT IN 2k20`,
+body: `CLICK HERE`,
+mediaType:2,
+thumbnail: buffer,
+sourceUrl: link,
+mediaUrl: link,
+}}
+}
+rama.sendMessage(anu.id, buttonMessage, {quoted:fgclink})          
                 }
             }
         } catch (err) {

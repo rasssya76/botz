@@ -2392,6 +2392,15 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 rama.sendMessage(m.chat, { image: { url: `https://violetics.pw/api/textpro/${command}?apikey=7005-2125-9f00&text=${text}` }, caption: `Text Pro ${command}` }, { quoted: fakee})
 	        }
             break
+              case 'wanted': case 'ytcomment': case 'beautiful': case 'jail': case 'fotojatoh': case 'pixelate': case 'blur': case 'imagesketch': case 'triggeredwebp': case 'shit': case 'burn': case 'invert': case 'gay': case 'wanted': case 'rip': case 'delete': {                          
+	        	if (!/image/.test(mime)) throw `*Send/Reply Image With Caption* ${prefix + command}`
+	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
+                let media = await rama.downloadAndSaveMediaMessage(quoted)                
+                let anu = await TelegraPh(media)
+                let buf = await getBuffer(`https://cililitan.herokuapp.com/api/${command}?url=${anu}`)
+                rama.sendMessage(m.chat, { image: buf, caption: `Effect ${command}` }, { quoted: m}).catch ((err) => m.reply('error'))
+                }
+                break
 	    case 'nomerhoki': case 'nomorhoki': {
                 if (!Number(text)) return m.reply(`Example : ${prefix + command} 916909137213`)
                 let anu = await primbon.nomer_hoki(Number(text))
