@@ -17,6 +17,7 @@ const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 const nexusnw = require('xfarr-api')
 const { aiovideodl } = require('./lib/scrapers.js')
+const { TiktokDownloader } = require('./lib/tiktokdl') 
 const hxz = require("hxz-api");
 const xfar = require('xfarr-api');
 LahKokTam = `WHATSAPP-BOT`
@@ -297,7 +298,12 @@ const reply = (teks) => {
 					rama.sendMessage(m.chat, { video: result }, { quoted: fakee })
 					}
 				  }
-
+try {				  
+pporgs = await mans.profilePictureUrl(from, 'image')
+} catch {
+pporgs = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+}
+const pporng = await getBuffer(pporang)
       //Mute Chat\\
       if (db.data.chats[m.chat].mute && !isAdmins && !isCreator) {
       return
@@ -2718,34 +2724,15 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
             }
             break
 	        case 'tiktok': case 'tiktoknowm': case 'tiktokwm': case 'tt': case 'ttnowm': case 'ttwm': {
-               let res = await aiovideodl(args[0])
-texttk = `*TIKTOK DOWNLOADER*
-
-Caption : ${res.title}
-Size : ${res.medias[0].formattedSize}
-Type : ${res.medias[0].extension ? "video/" + res.medias[0].extension : "undefined"}
-
-_untuk melihat list menu pencet tombol dibawah atau ketik menu_`
-let buttons = [
-{buttonId: `${prefix}menu`, buttonText: {displayText: 'Menu'}, type: 1}
-]
-let buttonMessage = {
-video: {url:res.medias[0].url},
-caption: texttk,
-footer: "R-BOT",
-buttons: buttons,
-headerType: 4,
-contextInfo:{externalAdReply:{
-title:"Tiktok Downloader",
-body:res.title,
-thumbnail: thumb,
-mediaType:1,
-mediaUrl: args[0],
-sourceUrl: args[0]
-}}
-}
-rama.sendMessage(from, buttonMessage, {quoted:m})
-}
+	        m.reply(mess.wait)                 
+  if (!text.includes('tiktok')) return reply('Itu bukan link tiktok!')
+   const musim_rambutan = await TiktokDownloader(`${text}`).catch(e => {
+ m.reply(`_Error in send media`) 
+} )
+   console.log(musim_rambutan)
+   const musim_duren_v = musim_rambutan.result.nowatermark
+    rama.sendMessage(from, { video: { url: musim_duren_v }, caption: `ok` }, { quoted: m })
+   }
             break
             case 'tiktokwmx': case 'tiktokwatermarkx': {
                 if (!text) return m.reply(`Enter Query Link!`)
@@ -2767,6 +2754,7 @@ rama.sendMessage(from, buttonMessage, {quoted:m})
             break
             case 'tiktokmp3': case 'tiktokaudio': { 	             
              if (!text) throw '*Enter Link Tiktok!*'
+             m.reply(mess.wait)
                 if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) throw '*The link you provided is not valid*'
                 let got = require('./lib/tiktok.js')                              
                 got.tiktokDown(`${text}`).then(async (data) => {
@@ -4093,7 +4081,7 @@ let buttonMessage= {
 {'buttonId': `.owner`,'buttonText':{'displayText':'ᴏᴡɴᴇʀ'},'type':1}
 ],
 'headerType':6}
-
+}
  rama.sendMessage(m.chat,buttonMessage, { quoted: fakemenu})               
  }
 break
