@@ -2730,8 +2730,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                   buf = await getBuffer(video.author.avatar)                
                   rama.sendMessage(m.chat, { image: { url: video.author.avatar }, jpegThumbnail:buf, caption: `${caption}` }, { quoted: m })
                   rama.sendMessage(m.chat, { video: { url: video.video.no_watermark }, jpegThumbnail:buf, mimetype: 'video/mp4', caption: `*Downloading From ${text}*` }, { quoted: m })               
-                }).catch((err) => {
-                    m.reply(`*Failed to download media and send videos*`)
+                }).catch((err) => m.reply(jsonformat(err)))
                 })
             }
             break
@@ -2759,8 +2758,7 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
                 let got = require('./lib/tiktok.js')                              
                 got.tiktokDown(`${text}`).then(async (data) => {
                 rama.sendMessage(m.chat, { audio: { url: data.result.nowatermark }, mimetype: 'audio/mp4'}, { quoted: m })
-                }).catch((err) => {
-                    m.reply(`*Failed to download media and send audio*`)
+                }).catch((err) => m.reply(jsonformat(err)))
                 })
             }
             break
