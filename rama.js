@@ -16,6 +16,7 @@ const { Primbon } = require('scrape-primbon')
 const primbon = new Primbon()
 const { smsg, formatp, tanggal, formatDate, getTime, isUrl, sleep, clockString, runtime, fetchJson, getBuffer, jsonformat, format, parseMention, getRandom } = require('./lib/myfunc')
 const nexusnw = require('xfarr-api')
+const { aiovideodl } = require('./lib/scrapers.js')
 const hxz = require("hxz-api");
 const xfar = require('xfarr-api');
 LahKokTam = `WHATSAPP-BOT`
@@ -2717,21 +2718,34 @@ case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zomb
             }
             break
 	        case 'tiktok': case 'tiktoknowm': case 'tiktokwm': case 'tt': case 'ttnowm': case 'ttwm': {
-                if (!text) throw '*Enter a Link Query!*'                                  
-                let bocil = require('@bochilteam/scraper')    
-                if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) throw '*The link you provided is not valid*'                
-                bocil.tiktokdlv3(`${text}`).then(async (video) => {           
-                  var hadi = randomNomor(100)        
-                   var hadie = randomNomor(200)     
-                   var hadir = randomNomor(300)
-                    var memek = randomNomor(1000)                      
-                  let caption = `
-                  *TIKTOK DL*\n\n*AUTHOR* : DRIPS\n*NICKNAME* : ${video.author.nickname}\n*CAPTION* : ${video.description}\n*QUALITY* : nowatermark\n*COMMENTS* : ${memek}\n*CREATE* ${hadir} Ago\n*LIKES* : ${hadi}\n*DISLIKE* : ${hadie}\n*SOURCE* : ${text}\n\n\n*RAMA*`
-                  buf = await getBuffer(video.author.avatar)                
-                  rama.sendMessage(m.chat, { image: { url: video.author.avatar }, jpegThumbnail:buf, caption: `${caption}` }, { quoted: m })
-                  rama.sendMessage(m.chat, { video: { url: video.video.no_watermark }, jpegThumbnail:buf, mimetype: 'video/mp4', caption: `*Downloading From ${text}*` }, { quoted: m })               
-                }).catch((err) => m.reply(jsonformat(err)))                
-            }
+               let res = await aiovideodl(args[0])
+texttk = `*TIKTOK DOWNLOADER*
+
+Caption : ${res.title}
+Size : ${res.medias[0].formattedSize}
+Type : ${res.medias[0].extension ? "video/" + res.medias[0].extension : "undefined"}
+
+_untuk melihat list menu pencet tombol dibawah atau ketik menu_`
+let buttons = [
+{buttonId: `${prefix}menu`, buttonText: {displayText: 'Menu'}, type: 1}
+]
+let buttonMessage = {
+video: {url:res.medias[0].url},
+caption: texttk,
+footer: "R-BOT",
+buttons: buttons,
+headerType: 4,
+contextInfo:{externalAdReply:{
+title:"Tiktok Downloader",
+body:res.title,
+thumbnail: thumb,
+mediaType:1,
+mediaUrl: args[0],
+sourceUrl: args[0]
+}}
+}
+rama.sendMessage(from, buttonMessage, {quoted:m})
+}
             break
             case 'tiktokwmx': case 'tiktokwatermarkx': {
                 if (!text) return m.reply(`Enter Query Link!`)
