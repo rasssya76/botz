@@ -227,9 +227,9 @@ const reply = (teks) => {
             rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": `https://telegra.ph/file/dae77f99fe46e5ec47c75.png`,"thumbnail": "","sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: fakee})
         }
         
-        const replys = (teks) => {
+       /* const replys = (teks) => {
             rama.sendMessage(m.chat, { text: teks, contextInfo: { externalAdReply: { showAdAttribution: true, mediaType:  2, mediaUrl: 'https://youtu.be/8TFyVqKo4dI', title: `Hai kak ${pushname}`, body: `Create By Rama`, sourceUrl: 'http://s.id/0x404', thumbnail: await( await rama.getFile(pporng)).data
-        }
+        }*/
 
         //Public & Self\\
         if (!rama.public) {
