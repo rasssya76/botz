@@ -8,6 +8,7 @@ const { Boom } = require('@hapi/boom')
 const fs = require('fs')
 const yargs = require('yargs/yargs')
 const chalk = require('chalk')
+const CFonts = require('cfonts');
 const FileType = require('file-type')
 const path = require('path')
 const PhoneNumber = require('awesome-phonenumber')
@@ -53,15 +54,27 @@ if (global.db) setInterval(async () => {
   }, 30 * 1000)
 
 async function startrama() {
+console.clear()
+ CFonts.say(`BOT`, {
+            font: '3D',
+            align: 'left',
+            gradient: ['red', 'magenta']
+        })
+console.log(color('=> Source code version:', 'yellow'), color('Myrama v1.1', 'cyan'))
+console.log(color('=> Bug? Error? Suggestion? Visit here:', 'yellow'), color('0'))
+console.log(color(`faxx.json`), color(`BOT is now online!`, 'red'))
+console.log(color('[DEV]', 'cyan'), color('Welcome back, Owner! Hope you are doing well~', 'magenta'))
+console.log('Hanya Orang biasa yg ingin belajar mengoding')
+    let { version, isLatest } = await fetchLatestBaileysVersion()
     const rama = NexusNwIncConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
         browser: ['BOT','Safari','1.0.0'],
-        auth: state
+        auth: state,
+        version
     })
-
-    store.bind(rama.ev)
     
+store.bind(rama.ev)    
     // anticall auto block
     rama.ws.on('CB:call', async (json) => {
     const callerId = json.content[0].attrs['call-creator']
@@ -210,7 +223,7 @@ rama.sendMessage(anu.id, buttonMessage, {quoted:fgclink})
                 he = `Out in ${metadata.subject} @${num.split("@")[0]}\n\n`
                 let link = `https://wa.me/message/4DCK3UGKERTGC1`
 let buttons = [
-{buttonId: `BYEEE`, buttonText: {displayText: 'WELCOME'}, type: 1}
+{buttonId: `BYEEE`, buttonText: {displayText: 'BYEE'}, type: 1}
 ]
 let buttonMessage = {
 document: fs.readFileSync('./lib/tes.xlsx'),
