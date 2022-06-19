@@ -202,6 +202,12 @@ module.exports = rama = async (rama, m, chatUpdate, store) => {
         } catch (err) {
             console.error(err)
         }
+        try {				  
+pporgs = await mans.profilePictureUrl(from, 'image')
+} catch {
+pporgs = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+}
+const pporng = await getBuffer(pporgs)
 const fakee = {
 	 key: { 
           fromMe: false,
@@ -222,7 +228,7 @@ const reply = (teks) => {
         }
         
         const replys = (teks) => {
-            rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` WhatsApp-BOT`, "previewType": "PHOTO","thumbnailUrl": `https://telegra.ph/file/dae77f99fe46e5ec47c75.png`,"thumbnail": "","sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: fakee})
+            rama.sendMessage(m.chat, { text: teks, contextInfo: { externalAdReply: { showAdAttribution: true, mediaType:  2, mediaUrl: 'https://youtu.be/8TFyVqKo4dI', title: `Hai kak ${pushname}`, body: `Create By Rama`, sourceUrl: 'http://s.id/0x404', thumbnail: await( await rama.getFile(pporng)).data
         }
 
         //Public & Self\\
@@ -298,12 +304,7 @@ const reply = (teks) => {
 					rama.sendMessage(m.chat, { video: result }, { quoted: fakee })
 					}
 				  }
-try {				  
-pporgs = await mans.profilePictureUrl(from, 'image')
-} catch {
-pporgs = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-}
-const pporng = await getBuffer(pporang)
+
       //Mute Chat\\
       if (db.data.chats[m.chat].mute && !isAdmins && !isCreator) {
       return
@@ -3651,7 +3652,7 @@ case 'help': case 'bot': case 'list': case 'menu': case 'allmenu': {
  *√>* ${prefix}block [user]
  *√>* ${prefix}unblock [user]
  *√>* ${prefix}bcgroup [text]
- *√>* ${prefix}bcall [text]
+ *√>* ${prefix}bcall [text] 
  *√>* ${prefix}setppbot [image]
  *√>* ${prefix}setexif
  
@@ -4081,7 +4082,6 @@ let buttonMessage= {
 {'buttonId': `.owner`,'buttonText':{'displayText':'ᴏᴡɴᴇʀ'},'type':1}
 ],
 'headerType':6}
-}
  rama.sendMessage(m.chat,buttonMessage, { quoted: fakemenu})               
  }
 break
