@@ -14,6 +14,9 @@ const path = require('path')
 const PhoneNumber = require('awesome-phonenumber')
 const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const { smsg, isUrl, generateMessageTag, getBuffer, getSizeMedia, fetchJson, await, sleep } = require('./lib/myfunc')
+const {
+    color
+} = require('./lib/color')
 wellll = `Welcome`
 geni = `wwG7ak6BmxosmWDPcljFZlgwG`
 var low
