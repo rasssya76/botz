@@ -3987,6 +3987,7 @@ renderLargerThumbnail:true,
 sourceUrl: `...`,
 mediaType: 1
 }}
+{quoted: m}
 }
  rama.sendMessage(m.chat,ramaKTS)              
  }
