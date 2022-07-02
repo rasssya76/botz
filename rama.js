@@ -205,7 +205,7 @@ module.exports = rama = async (rama, m, chatUpdate, store) => {
             console.error(err)
         }
         try {				  
-pporgs = await mans.profilePictureUrl(from, 'image')
+pporgs = await rama.profilePictureUrl(from, 'image')
 } catch {
 pporgs = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 }
