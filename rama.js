@@ -3638,8 +3638,7 @@ timestampe = speed();
 latensie = speed() - timestampe 
 let num = `${m.sender}` 
 let nums = `6282142108243@s.whatsapp.net`	
-  	anu = ` Hai kak ${pushname}
-Botinfo
+  	anu = `Botinfo
 Speed : ${latensie.toFixed(4)} miliseconds
 Runtime : ${runtime(process.uptime())}
 Host : ${os.hostname()}
