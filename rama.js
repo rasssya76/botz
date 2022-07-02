@@ -3985,11 +3985,10 @@ body: `${Object.keys(global.db.data.users).length} USER`,
 thumbnail: fs.readFileSync('./GojoMedia/gojo.jpg'),
 renderLargerThumbnail:true,
 sourceUrl: `...`,
-mediaType: 1
-}}
-{quoted: m}
+mediaType: 1,
+}},
 }
- rama.sendMessage(m.chat,ramaKTS)              
+ rama.sendMessage(m.chat,ramaKTS,{quoted: m})              
  }
  /*contextInfo:{"externalAdReply": 
  {"title": ` ${global.botname}`,
