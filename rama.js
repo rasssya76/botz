@@ -3981,7 +3981,7 @@ let ramaKTS = { text: `${anu}`,
 contextInfo:{ externalAdReply: 
 {title: `Hai kak ${pushname}`,
 body: `${Object.keys(global.db.data.users).length} USER`,
-thumbnail: fs.readFileSync('./GojoMedia/gojo.jpg'),
+thumbnailUrl: `https://telegra.ph/file/dd35ff6358e6df76abc6d.jpg`,
 renderLargerThumbnail:true,
 sourceUrl: `...`,
 mediaType: 1,
