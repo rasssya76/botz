@@ -3980,17 +3980,28 @@ Convertmenu
  }
  }]
 let ramaKTS = {
-title: `Hai kak ${pushname}`,
+contextInfo:{ externalAdReply: 
+{title: `Hai kak ${pushname}`,
 body: `${Object.keys(global.db.data.users).length} USER`,
 thumbnail: fs.readFileSync('./GojoMedia/gojo.jpg'),
 renderLargerThumbnail:true,
-sourceUrl: 'https://wa.me/message/4DCK3UGKERTGC1',
+sourceUrl: `...`,
 mentions: [num,nums],
 caption: `${anu}`,
 footer: `R-BOT IN 2k22`,
-buttons: butsh}
+buttons: butsh
+
+}}
+}
  rama.sendMessage(m.chat,ramaKTS)               
  }
+ /*contextInfo:{"externalAdReply": 
+ {"title": ` ${global.botname}`,
+ "body": ` R-BOT`, 
+ "previewType": "PHOTO",
+ "thumbnailUrl": ``,
+ "thumbnail": fs.readFileSync('./GojoMedia/gojo.jpg'),
+ "sourceUrl": "..."}}*/
 break
 /* 
 case 'mainmenu':
