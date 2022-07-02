@@ -2110,22 +2110,21 @@ break
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
                 let buttons = [
-                    {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: '🎶Audio🎶'}, type: 1},
-                    {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: '📽️Video📽️'}, type: 1}
+                    {buttonId: `ytmp3 ${anu.url}`, buttonText: {displayText: 'MUSIC'}, type: 1},
+                    {buttonId: `ytmp4 ${anu.url}`, buttonText: {displayText: 'VIDEO️'}, type: 1}
                 ]
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
-                    caption: `
- Title : ${anu.title}
- Ext : Search
- ID : ${anu.videoId}
- Duration : ${anu.timestamp}
- Viewes : ${anu.views}
- Uploaded On : ${anu.ago}
- Author : ${anu.author.name}
- Channel : ${anu.author.url}
- Description : ${anu.description}
- Url : ${anu.url}`,
+                    caption: `Title : ${anu.title}
+Ext : Search
+ID : ${anu.videoId}
+Duration : ${anu.timestamp}
+Viewes : ${anu.views}
+Uploaded On : ${anu.ago}
+Author : ${anu.author.name}
+Channel : ${anu.author.url}
+Description : ${anu.description}
+Url : ${anu.url}`,
                     footer: rama.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -2139,7 +2138,7 @@ break
                 let quality = args[1] ? args[1] : '320kbps'
                 let media = await yta(text, quality)
                 if (media.filesize >= 999999) return m.reply('File Over Limit '+util.format(media))
-                rama.sendImage(m.chat, media.thumb, ` Title : ${media.title}\n File Size : ${media.filesizeF}\n Url : ${isUrl(text)}\n Ext : MP3\n Resolution : ${args[1] || '320kbps'}`, m)
+                rama.sendImage(m.chat, media.thumb, `Title : ${media.title}\nFile Size : ${media.filesizeF}\nUrl : ${isUrl(text)}\nExt : MP3\nResolution : ${args[1] || '320kbps'}`, m)
                 rama.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: fakee })
             }
             break
