@@ -195,8 +195,8 @@ rama.ev.on('group-participants.update', async (anu) => {
                 let fgclink = {key: {fromMe: false,"participant":"0@s.whatsapp.net", "remoteJid": "6289523258649-1604595598@g.us"}, "message": {orderMessage: {itemCount: 9999999,status: 200, thumbnail: buffer, surface: 200, message: `${metadata.subject}`, orderTitle: 'memek', sellerJid: '0@s.whatsapp.net'}}, contextInfo: {"forwardingScore":999,"isForwarded":true},sendEphemeral: true}
                 he = `Welcome To ${metadata.subject} @${num.split("@")[0]}\n\n${metadata.desc}`
                 let link = `https://wa.me/message/4DCK3UGKERTGC1`
-let buttons = [
-{buttonId: `HAI\n\nSAYA ${pushname}`, buttonText: {displayText: 'WELCOME'}, type: 1}
+let buttonsh = [
+{buttonId: `HAI`, buttonText: {displayText: 'WELCOME'}, type: 1}
 ]
 let buttonMessage = {
 document: fs.readFileSync('./lib/tes.xlsx'),
@@ -207,7 +207,7 @@ fileName: `Welcome To ${metadata.subject}`,
 fileLength: 99999999999999,
 caption: he,
 footer: `R-BOT IN 2k22`,
-buttons: buttons,
+buttons: buttonsh,
 headerType: 4,
 contextInfo:{externalAdReply:{
 title: ``,
