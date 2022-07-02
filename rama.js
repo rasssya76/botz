@@ -3979,18 +3979,14 @@ Convertmenu
  id: 'owner'
  }
  }]
-let ramaKTS = { text: `${anu}`,
+let ramaKTS = { text: `${anu}`, mentions: [num,nums],
 contextInfo:{ externalAdReply: 
 {title: `Hai kak ${pushname}`,
 body: `${Object.keys(global.db.data.users).length} USER`,
 thumbnail: fs.readFileSync('./GojoMedia/gojo.jpg'),
 renderLargerThumbnail:true,
 sourceUrl: `...`,
-mentions: [num,nums],
-caption: `${anu}`,
-footer: `R-BOT IN 2k22`,
-buttons: butsh
-
+mediaType:1,
 }}
 }
  rama.sendMessage(m.chat,ramaKTS)              
