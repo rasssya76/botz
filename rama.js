@@ -3979,7 +3979,7 @@ Convertmenu
  id: 'owner'
  }
  }]
-let ramaKTS = {
+let ramaKTS = { text: `${anu}`,
 contextInfo:{ externalAdReply: 
 {title: `Hai kak ${pushname}`,
 body: `${Object.keys(global.db.data.users).length} USER`,
@@ -3993,7 +3993,7 @@ buttons: butsh
 
 }}
 }
- rama.sendButtonText(m.chat, butsh, `${anu}`,`R-BOT IN 2k22`, { mentions: [num,nums]})               
+ rama.sendMessage(m.chat,ramaKTS)              
  }
  /*contextInfo:{"externalAdReply": 
  {"title": ` ${global.botname}`,
