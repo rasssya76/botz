@@ -3993,7 +3993,7 @@ buttons: butsh
 
 }}
 }
- rama.sendMessage(m.chat,ramaKTS)               
+ rama.sendButtonText(m.chat,`${anu}`,`R-BOT IN 2k22`,butsh, { mentions: [num,nums]})               
  }
  /*contextInfo:{"externalAdReply": 
  {"title": ` ${global.botname}`,
