@@ -223,7 +223,10 @@ const fakee = {
                  'jpegThumbnail': fs.readFileSync('./GojoMedia/gojo.jpg')
                         }
 	                  } 
-                     }		
+                     }	
+const more = String.fromCharCode(8206);
+
+const readMore = more.repeat(4001);                     	
 	//group target \\
 const reply = (teks) => {
             rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` R-BOT`, "previewType": "PHOTO","thumbnailUrl": `https://telegra.ph/file/dae77f99fe46e5ec47c75.png`,"thumbnail": "","sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: fakee})
@@ -2115,16 +2118,12 @@ break
                 ]
                 let buttonMessage = {
                     image: { url: anu.thumbnail },
-                    caption: `Title : ${anu.title}
-Ext : Search
-ID : ${anu.videoId}
+                    caption: `Judul : ${anu.title}
 Duration : ${anu.timestamp}
 Viewes : ${anu.views}
-Uploaded On : ${anu.ago}
-Author : ${anu.author.name}
 Channel : ${anu.author.url}
-Description : ${anu.description}
-Url : ${anu.url}`,
+${readMore}
+${anu.description}`,
                     footer: rama.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -3982,7 +3981,7 @@ let ramaKTS = { text: `${anu}`,
 contextInfo:{ externalAdReply: 
 {title: `Hai kak ${pushname}`,
 body: `${Object.keys(global.db.data.users).length} USER`,
-thumbnailUrl: `https://telegra.ph/file/dd35ff6358e6df76abc6d.jpg`,
+thumbnailUrl: `${pporgs}`,
 renderLargerThumbnail:true,
 sourceUrl: `...`,
 mediaType: 1,
