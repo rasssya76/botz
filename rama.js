@@ -3638,13 +3638,12 @@ timestampe = speed();
 latensie = speed() - timestampe 
 let num = `${m.sender}` 
 let nums = `6282142108243@s.whatsapp.net`	
-  	anu = ` Hai kak @${num.split("@")[0]}
+  	anu = ` Hai kak ${pushname}
 Botinfo
 Speed : ${latensie.toFixed(4)} miliseconds
 Runtime : ${runtime(process.uptime())}
 Host : ${os.hostname()}
 Plaform : ${os.platform()}
-Owner : @${nums.split("@")[0]}
 
 Ownermenu
 *${smbol}* ${prefix}chat [option]
@@ -3979,7 +3978,7 @@ Convertmenu
  id: 'owner'
  }
  }]
-let ramaKTS = { text: `${anu}`, mentions: [num,nums],
+let ramaKTS = { text: `${anu}`,
 contextInfo:{ externalAdReply: 
 {title: `Hai kak ${pushname}`,
 body: `${Object.keys(global.db.data.users).length} USER`,
