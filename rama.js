@@ -793,17 +793,17 @@ if (q.includes('--help')) return m.reply(examkosong)
  if (args[0] === 'elephant'){
  if (isGajah < anu) return m.reply(`You Don't Have Enough Elephant(s) For This Transaction`)
  if (!args[1]) return m.reply(`Example : ${prefix + command} elephant 2\n 1 Elephant = 15000 Money`)
- kurangGajah(m.sender, anu)
- let monaynya = 15000 * anu
+ kurangGajah(m.sender, emot,)
+ let monaynya = 15000 * emot,
  addMonay(m.sender, monaynya)
   setTimeout( () => {
   m.reply(`Transaction Successful ✔️\n*Your Remaining Money* : ${getMonay(m.sender)}\n*Your Remaining Elephant(s)* : ${getGajah(m.sender)}`)
   }, 2000) 
  } else
  if (args[0] === 'iron'){
- if (isBesi < anu) return m.reply(`You Don't Have Enough Iron(s) For This Transaction`)
+ if (isBesi < emot,) return m.reply(`You Don't Have Enough Iron(s) For This Transaction`)
  if (!args[1]) return m.reply(`Example : ${prefix + command} iron 2\n 1 Iron = 15000 Money`)
- kurangBesi(m.sender, anu)
+ kurangBesi(m.sender, emot,)
  let monaynya = 16000 * anu
  addMonay(m.sender, monaynya)
   setTimeout( () => {
@@ -3864,7 +3864,9 @@ timestampe = speed();
 latensie = speed() - timestampe 
 let num = `${m.sender}` 
 let nums = `6282142108243@s.whatsapp.net`	
-  	anu = `Hai @${num.split("@")[0]}
+         //MENU\\
+
+let anuuuu = `Hai @${num.split("@")[0]}
 Botinfo
 Speed : ${latensie.toFixed(4)} miliseconds
 Runtime : ${runtime(process.uptime())}
@@ -4140,25 +4142,33 @@ Convertmenu
 *${smbol}* ${prefix}robot [reply aud]
 *${smbol}* ${prefix}slow [reply aud]
 *${smbol}* ${prefix}squirrel [reply aud]
-*${smbol}* ${prefix}juzamma
 
 Imageefek
-
-*${smbol}* ${prefix}blur
-*${smbol}* ${prefix}beautiful
-*${smbol}* ${prefix}ytcomment
-*${smbol}* ${prefix}wanted
-*${smbol}* ${prefix}triggeredwebp
-*${smbol}* ${prefix}fotojatoh
-*${smbol}* ${prefix}imagesketch
-*${smbol}* ${prefix}pixelate
-*${smbol}* ${prefix}jail
-*${smbol}* ${prefix}rip
-*${smbol}* ${prefix}gay
-*${smbol}* ${prefix}burn
-*${smbol}* ${prefix}invert
-*${smbol}* ${prefix}shit
+*${smbol}* ${prefix}blur [reply image]
+*${smbol}* ${prefix}beautiful [reply image]
+*${smbol}* ${prefix}ytcomment [reply image]
+*${smbol}* ${prefix}wanted [reply image]
+*${smbol}* ${prefix}triggeredwebp [reply image]
+*${smbol}* ${prefix}fotojatoh [reply image]
+*${smbol}* ${prefix}imagesketch [reply image]
+*${smbol}* ${prefix}pixelate [reply image]
+*${smbol}* ${prefix}jail [reply image]
+*${smbol}* ${prefix}rip [reply image]
+*${smbol}* ${prefix}gay [reply image]
+*${smbol}* ${prefix}burn [reply image]
+*${smbol}* ${prefix}invert [reply image]
+*${smbol}* ${prefix}shit [reply image]
 `
+let btn = [
+        	{ urlButton: { displayText: `Grup Bot 👥`, url : `https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI` } },
+            { urlButton: { displayText: `Youtube ▶️`, url: `https://youtube.com/c/RamaGans` } },
+           // { quickReplyButton: { displayText: `All Menu 🍱`, id: 'allmenu'} },
+            //{ quickReplyButton: { displayText: `List Menu 🍢`, id: 'command'} },
+            { quickReplyButton: { displayText: `Owner 👨‍💻`, id: 'owner'} }
+        	]
+rama.send5ButGif(m.chat, anuuuu, global.botname, global.vidmenu, btn, global.thumb, {mentions: [num,nums]})
+}
+break
     /*const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
                         hydratedTemplate: {
@@ -4206,7 +4216,7 @@ Imageefek
 'showAdAttribution': true,
 'mediaUrl': 'http://s.id/0x404',
 'mediaType': 2,
-'previewType': 'pdf',*/
+'previewType': 'pdf',
  let butsh = [{
  urlButton: {
  displayText: 'BOT GRUP',
@@ -4242,7 +4252,6 @@ mediaType: 1,
  "thumbnailUrl": ``,
  "thumbnail": fs.readFileSync('./GojoMedia/gojo.jpg'),
  "sourceUrl": "..."}}*/
-break
 /* 
 case 'mainmenu':
 var unicorn = await getBuffer(picak+'Main Menu')
