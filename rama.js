@@ -236,7 +236,7 @@ const readMore = more.repeat(4001);
 const reply = (teks) => {
             rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": ` ${global.botname}`,"body": ` R-BOT`, "previewType": "PHOTO","thumbnailUrl": `https://telegra.ph/file/dae77f99fe46e5ec47c75.png`,"thumbnail": "","sourceUrl": "https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI"}}}, { quoted: m})
         }
-        
+let emot = pickRandom(["🗿", "👍", "💨", "🩱", "🐷", "🐒", "🌝", "💩", "👻", "🔥", "🖕", "🐦","🔐","✔️","🤪","☠️","💎","😈"])        
        /* const replys = (teks) => {
             rama.sendMessage(m.chat, { text: teks, contextInfo: { externalAdReply: { showAdAttribution: true, mediaType:  2, mediaUrl: 'https://youtu.be/8TFyVqKo4dI', title: `Hai kak ${pushname}`, body: `Create By Rama`, sourceUrl: 'http://s.id/0x404', thumbnail: await( await rama.getFile(pporng)).data
         }*/
@@ -845,7 +845,7 @@ if (q.includes('--help')) return m.reply(examkosong)
  }
  break
  case 'hunt': case 'hunting': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 if (q.includes('--help')) return m.reply(examkosong) 
  if (!isDarah){ addInventoriDarah(m.sender, DarahAwal) }
  if (isCekDarah < 1) return m.reply('Your Blood Is Gone, Try To Heal Using Potions') 
@@ -922,7 +922,7 @@ if (q.includes('--help')) return m.reply(examkosong)
  }
  break*/
 	    case 'afk': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
                 user.afkReason = text
@@ -930,7 +930,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break	
         case 'ttc': case 'ttt': case 'tictactoe': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             let TicTacToe = require("./lib/tictactoe")
             this.game = this.game ? this.game : {}
             if (Object.values(this.game).find(room => room.id.startsWith('tictactoe') && [room.game.playerX, room.game.playerO].includes(m.sender))) return m.reply(`You Are Still In The Game`)
@@ -981,7 +981,7 @@ Type *surrender* to surrender and admit defeat`
             }
             break
             case 'delttc': case 'delttt': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             this.game = this.game ? this.game : {}
             try {
             if (this.game) {
@@ -996,7 +996,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
          /*   case 'suitpvp': case 'suit': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             this.suit = this.suit ? this.suit : {}
             let poin = 10
             let poin_lose = 10
@@ -1025,7 +1025,7 @@ Please @${m.mentionedJid[0].split`@`[0]} To Type Accept/Reject`
             }
             break*/
             case 'chat': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!isCreator) return m.reply(`${mess.owner}`)
                 if (!q) return m.reply(`Option : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete`)
                 if (args[0] === 'mute') {
@@ -1046,7 +1046,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
 	    case 'family100': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if ('family100'+m.chat in _family100) {
                     m.reply('There Are Still Unfinished Sessions!')
                     m.reply(false)
@@ -1070,7 +1070,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             m.reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
             break
             case 'guess': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Example : ${prefix + command} song\n\nOption : \n1. music\n2. picture (Query)\n3. word\n4. sentence\n5. lyrics (Query)\n6. blank (Query)`)
                 if (args[0] === "song") {
                     if (tebaklagu.hasOwnProperty(m.sender.split('@')[0])) return m.reply(`There Are Still Unfinished Sessions`)
@@ -1158,7 +1158,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             break
 		
 	case 'react': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!isCreator) throw mess.owner
                 reactionMessage = {
                     react: {
@@ -1172,7 +1172,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 		
 		
             case 'kuismath': case 'math': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (kuismath.hasOwnProperty(m.sender.split('@')[0])) return m.reply(`There Are Still Unfinished Sessions!`)
                 let { genMath, modes } = require('./lib/math')
                 if (!text) return m.reply(`Mode: ${Object.keys(modes).join(' | ')}\nFor Examples: ${prefix}math medium`)
@@ -1189,7 +1189,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'jodohku': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!m.isGroup) return m.reply(`${mess.group}`)
             let member = participants.map(u => u.id)
             let me = m.sender
@@ -1205,7 +1205,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'couple': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!m.isGroup) return m.reply(`${mess.group}`)
             let member = participants.map(u => u.id)
             let orang = member[Math.floor(Math.random() * member.length)]
@@ -1345,7 +1345,7 @@ rama.sendMessage(from, { text: `*${command}*\n\nName : ${q}\nAnswer : *${sange}%
       case 'nigga':
       case 'sexy':
       case 'hot': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!m.isGroup) return m.reply(`${mess.group}`)
             let member = participants.map(u => u.id)
             let me = m.sender
@@ -1382,7 +1382,7 @@ case 'halah': case 'hilih': case 'huluh': case 'heleh': case 'holoh':
             m.reply(tex.replace(/[aiueo]/g, ter).replace(/[AIUEO]/g, ter.toUpperCase()))
             break*/
             case 'react': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!isCreator) return m.reply(`${mess.owner}`)
                 reactionMessage = {
                     react: {
@@ -1394,7 +1394,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break  
             case 'join': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!isCreator) return m.reply(`${mess.owner}`)
                 if (!text) return m.reply(`Enter The Group Link!`)
                 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return m.reply(`Invalid Link!`)
@@ -1404,13 +1404,13 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'leave': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!isCreator) return m.reply(`${mess.owner}`)
                 await rama.groupLeave(m.chat).then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
             }
             break
             case 'setexif': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                if (!isCreator) return m.reply(`${mess.owner}`)
                if (!text) return m.reply(`Example : ${prefix + command} packname|author`)
           global.packname = text.split("|")[0]
@@ -1419,7 +1419,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
 	case 'kick': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (!m.isGroup) return m.reply(`${mess.group}`)
                 if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
                 if (!isAdmins) return m.reply(`${mess.admin}`)
@@ -1428,7 +1428,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 	}
 	break
 	case 'add': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (!m.isGroup) return m.reply(`${mess.group}`)
                 if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
                 if (!isAdmins) return m.reply(`${mess.admin}`)
@@ -1437,7 +1437,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 	}
 	break
 	case 'promote': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (!m.isGroup) return m.reply(`${mess.group}`)
                 if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
                 if (!isAdmins) return m.reply(`${mess.admin}`)
@@ -1446,7 +1446,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 	}
 	break
 	case 'demote': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (!m.isGroup) return m.reply(`${mess.group}`)
                 if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
                 if (!isAdmins) return m.reply(`${mess.admin}`)
@@ -1455,21 +1455,21 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 	}
 	break
         case 'block': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (!isCreator) return m.reply(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await rama.updateBlockStatus(users, 'block').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
         case 'unblock': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (!isCreator) return m.reply(`${mess.owner}`)
 		let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '')+'@s.whatsapp.net'
 		await rama.updateBlockStatus(users, 'unblock').then((res) => m.reply(jsonformat(res))).catch((err) => m.reply(jsonformat(err)))
 	}
 	break
 	    case 'setname': case 'setgcname': case 'setsubject': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!m.isGroup) return m.reply(`${mess.group}`)
                 if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
                 if (!isAdmins) m.reply(`${mess.admin}`)
@@ -1478,7 +1478,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
           case 'setdesc': case 'setdesk': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!m.isGroup) return m.reply(`${mess.group}`)
                 if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
                 if (!isAdmins) m.reply(`${mess.admin}`)
@@ -1487,7 +1487,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
           case 'setbotpp': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!isCreator) return m.reply(`${mess.owner}`)
                 if (!quoted) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
                 if (!/image/.test(mime)) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
@@ -1498,7 +1498,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
                 }
                 break
            case 'setgrouppp': case 'setgruppp': case 'setgcpp': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!m.isGroup) return m.reply(`${mess.group}`)
                 if (!isAdmins) return m.reply(`${mess.admin}`)
                 if (!quoted) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
@@ -1510,7 +1510,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
                 }
                 break
             case 'tagall': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!m.isGroup) return m.reply(`${mess.group}`)                
                 if (!isAdmins) return m.reply(`${mess.admin}`)
 let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝ 
@@ -1523,7 +1523,7 @@ let teks = `╚»˙·٠•●♥ Tag All ♥●•٠·˙«╝
                 }
                 break
                 case 'hidetag': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!m.isGroup) return m.reply(`${mess.group}`)
             //if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
             if (!isAdmins) return m.reply(`${mess.admin}`)
@@ -1531,7 +1531,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'anuu': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!m.isGroup) return m.reply(`${mess.group}`)
             //if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
             //if (!isAdmins) return m.reply(`${mess.admin}`)
@@ -1540,7 +1540,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
 	    case 'style': case 'styletext': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 	        if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply(mess.endLimit) //wont response when limit runs out\\
 		db.data.users[m.sender].limit -= 1 // -1 limit
 		let { styletext } = require('./lib/scraper')
@@ -1554,7 +1554,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 	    }
 	    break
                case 'vote': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!m.isGroup) return m.reply(`${mess.group}`)
             if (m.chat in vote) m.reply(`_There Are Still Votes In This Chat!_\n\n*${prefix}delvote* - To Delete Vote Session`)
             if (!text) return m.reply(`Enter Reason For Vote, Example: *${prefix + command} Handsome Owner*`)
@@ -1597,7 +1597,7 @@ let buttonsVote = [
 	    }
             break
                case 'upvote': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!m.isGroup) return m.reply(`${mess.group}`)
             if (!(m.chat in vote)) return m.reply(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
@@ -1640,7 +1640,7 @@ ${vote[m.chat][2].map((v, i) => `*${smbol}* ${i + 1}. @${v.split`@`[0]}`).join('
 	    }
              break
                 case 'devote': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!m.isGroup) return m.reply(`${mess.group}`)
             if (!(m.chat in vote)) return m.reply(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
             isVote = vote[m.chat][1].concat(vote[m.chat][2])
@@ -1712,7 +1712,7 @@ ${vote[m.chat][2].map((v, i) => `*${smbol}* ${i + 1}. @${v.split`@`[0]}`).join('
 rama.sendTextWithMentions(m.chat, teks_vote, m)
 break
 		case 'deletevote': case'delvote': case 'hapusvote': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!m.isGroup) return m.reply(`${mess.group}`)
             if (!(m.chat in vote)) return m.reply(`_*No Voting In This Group!*_\n\n*${prefix}vote* - To Start Voting`)
             delete vote[m.chat]
@@ -1720,7 +1720,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 	    }
             break
                case 'group': case 'grup': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!m.isGroup) return m.reply(`${mess.group}`)
                 if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
                 if (!isAdmins) return m.reply(`${mess.admin}`)
@@ -1739,7 +1739,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'editinfo': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!m.isGroup) return m.reply(`${mess.group}`)
                 if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
                 if (!isAdmins) return m.reply(`${mess.admin}`)
@@ -1758,7 +1758,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'antilink': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!m.isGroup) return m.reply(`${mess.group}`)
                 if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
                 if (!isAdmins) return m.reply(`${mess.admin}`)
@@ -1780,7 +1780,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
              }
              break
              case 'mute': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!m.isGroup) return m.reply(`${mess.group}`)
                 if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
                 if (!isAdmins) return m.reply(`${mess.admin}`)
@@ -1802,7 +1802,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
              }
              break
             case 'linkgroup': case 'linkgc': case 'gclink': case 'grouplink': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
                 if (!m.isGroup) return m.reply(`${mess.group}`)
                 let response = await rama.groupInviteCode(m.chat)
@@ -1810,7 +1810,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'ephemeral': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!m.isGroup) m.reply(`${mess.group}`)
                 if (!isBotAdmins) return m.reply(`${mess.botAdmin}`)
                 if (!isAdmins) return m.reply(`${mess.admin}`)
@@ -1823,7 +1823,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'delete': case 'del': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!m.quoted) m.reply(false)
                 let { chat, fromMe, id, isBaileys } = m.quoted
                 if (!isBaileys) return m.reply(`The Message Was Not Sent By A Bot!`)
@@ -1831,7 +1831,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'bcgc': case 'bcgroup': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!isCreator) return m.reply(`${mess.owner}`)
                 if (!text) return m.reply(`Where Is The Text?\n\nExample : ${prefix + command} Nexus Handsome`)
                 let getGroups = await rama.groupFetchAllParticipating()
@@ -1868,7 +1868,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'bc': case 'broadcast': case 'bcall': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!isCreator) return m.reply(`${mess.owner}`)
                 if (!text) return m.reply(`Where Is The Text?\n\nExample : ${prefix + command} Nexus`)
                 let anu = await store.chats.all().map(v => v.id)
@@ -1898,7 +1898,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'chatinfo': case 'infochat': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!m.quoted) return m.reply(`Reply Message`)
                 let msg = await m.getQuotedObj()
                 if (!m.quoted.isBaileys) return m.reply(`The Message Was Not Sent By A Bot!`)
@@ -1914,7 +1914,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'q': case 'quoted': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (!m.quoted) return m.reply('Reply Message!!')
 		let wokwol = await rama.serializeM(await m.getQuotedObj())
 		if (!wokwol.quoted) return m.reply('The Message You Replied To Does Not Contain A Reply')
@@ -1922,7 +1922,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
 	    break
             case 'listpc': case 'pclist': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                  let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v.id)
                  let teks = `⬣ *PERSONAL CHAT LIST*\n\nTotal Chat : ${anu.length} Chat\n\n`
                  for (let i of anu) {
@@ -1933,7 +1933,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
              }
              break
                 case 'listgc': case 'gclist': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                  let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
                  let teks = `*GROUP CHAT LIST*\n\nTotal Group : ${anu.length} Group\n\n`
                  for (let i of anu) {
@@ -1944,14 +1944,14 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
              }
              break
              case 'listonline': case 'onlinelist': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                     let id = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : m.chat
                     let online = [...Object.keys(store.presences[id]), botNumber]
                     rama.sendText(m.chat, 'Online List:\n\n' + online.map(v => ' @' + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
              }
              break
             case 'sticker': case 's': case 'stickergif': case 'sgif': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!quoted) return m.reply(`Reply Video/Image With Caption ${prefix + command}`)
             //m.reply(mess.wait)
                     if (/image/.test(mime)) {
@@ -1969,7 +1969,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
 case 'smeme': case 'stickermeme': case 'stickmeme': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 let { TelegraPh } = require('./lib/uploader')
 if (!text) return m.reply(`Send/Reply Photo With Caption ${prefix + command} *Text*`)
 if (text.includes('|')) return m.reply(`Send/Reply Photo With Caption ${prefix + command} *Text*`)
@@ -1983,7 +1983,7 @@ await fs.unlinkSync(memek)
 }
 break
             case 'ebinary': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!m.quoted.text && !text) return m.reply(`Reply Text With Caption ${prefix + command}`)
             let { eBinary } = require('./lib/binary')
             let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
@@ -1992,7 +1992,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
         }
         break
             case 'dbinary': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!m.quoted.text && !text) return m.reply(`Reply Text With Caption ${prefix + command}`)
             let { dBinary } = require('./lib/binary')
             let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
@@ -2001,7 +2001,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
         }
         break
             case 'emojimix': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 	        if (!text) return m.reply(`Example : ${prefix + command} 😅+🤔`)
 		let [emoji1, emoji2] = text.split`+`
 		let anu = await fetchJson(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emoji1)}_${encodeURIComponent(emoji2)}`)
@@ -2012,7 +2012,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 	    }
 	    break
             case 'toimage': case 'toimg': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!quoted) return m.reply(`Reply Image`)
                 if (!/webp/.test(mime)) m.reply(`Reply Sticker With Caption *${prefix + command}*`)
                 m.reply(mess.wait)
@@ -2028,7 +2028,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
 	        case 'tomp4': case 'tovideo': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!quoted) m.reply(`Reply Image`)
                 if (!/webp/.test(mime)) return m.reply(`Reply Sticker With Caption *${prefix + command}*`)
                 m.reply(mess.wait)
@@ -2040,7 +2040,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'toaud': case 'toaudio': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!/video/.test(mime) && !/audio/.test(mime)) return m.reply(`Send/Reply Video/Audio You Want To Use As Audio With Caption ${prefix + command}`)
             if (!quoted) return m.reply(`Send/Reply Video/Audio You Want To Convert To Audio With Caption ${prefix + command}`)
             m.reply(mess.wait)
@@ -2051,7 +2051,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'tomp3': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (/document/.test(mime)) return m.reply(`Send/Reply Video/Audio You Want to Convert Into MP3 With Caption ${prefix + command}`)
             if (!/video/.test(mime) && !/audio/.test(mime)) return m.reply(`Send/Reply Video/Audio You Want To Convert into MP3 With Caption ${prefix + command}`)
             if (!quoted) return m.reply(`Send/Reply Video/Audio You Want To Convert Into MP3 With Caption ${prefix + command}`)
@@ -2063,7 +2063,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'tovn': case 'toptt': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!/video/.test(mime) && !/audio/.test(mime)) return m.reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
             if (!quoted) return m.reply(`Reply Video/Audio That You Want To Be VN With Caption ${prefix + command}`)
             m.reply(mess.wait)
@@ -2074,7 +2074,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'togif': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!quoted) return m.reply(`Reply Image`)
                 if (!/webp/.test(mime)) return m.reply(`Reply Sticker With Caption *${prefix + command}*`)
                 m.reply(mess.wait)
@@ -2086,7 +2086,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
 	        case 'tourl': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 m.reply(mess.wait)
 		        let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
                 let media = await rama.downloadAndSaveMediaMessage(quoted)
@@ -2101,7 +2101,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
            /* case 'imagenobg': case 'removebg': case 'remove-bg': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 	    if (!quoted) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
 	    if (!/image/.test(mime)) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
 	    if (/webp/.test(mime)) return m.reply(`Send/Reply Image With Caption ${prefix + command}`)
@@ -2127,7 +2127,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 	    }
 	    break*/
 	    case 'yts': case 'ytsearch': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Example : ${prefix + command} Anime Story Whatsapp`)
                 let yts = require("yt-search")
                 let search = await yts(text)
@@ -2140,7 +2140,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
         case 'google': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Example : ${prefix + command} gojo shiba inu`)
                 let google = require('google-it')
                 google({'query': text}).then(res => {
@@ -2155,7 +2155,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
                 }
                 break
         case 'gimage': case 'googleimage': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
         if (!text) return m.reply(`Example : ${prefix + command} gojo`)
         let gis = require('g-i-s')
         gis(text, async (error, result) => {
@@ -2178,7 +2178,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
         }
         break
 	    case 'play': case 'song': case 'ytplay': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Example : ${prefix + command} Stay`)
                 let yts = require("yt-search")
                 let search = await yts(text)
@@ -2203,7 +2203,7 @@ ${anu.description}`,
             }
             break
 	    case 'ytmp3': case 'getmusic': case 'ytaudio': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 let { yta } = require('./lib/y2mate')
                 if (!text) return m.reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`)
                 m.reply(mess.wait)
@@ -2215,7 +2215,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'ytmp4': case 'getvideo': case 'ytvideo': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 let { ytv } = require('./lib/y2mate')
                 if (!text) return m.reply(`Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`)
                 m.reply(mess.wait)
@@ -2226,7 +2226,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'ytvd': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
    /*if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)*/
 rama.sendMessage(from, {video:{url:args[0]}, mimetype:"video/mp4", caption:"Success", contextInfo:{externalAdReply:{
@@ -2240,7 +2240,7 @@ sourceUrl: `${global.myweb}`
 }
 break
 case 'ytad': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
    /*if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)*/
 rama.sendMessage(from, {audio:{url:args[0]}, mimetype:"audio/mp4", ptt:true, contextInfo:{externalAdReply:{
@@ -2254,7 +2254,7 @@ sourceUrl: `${global.myweb}`
 }
 break
 	    case 'getmusicxxx': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 let { yta } = require('./lib/y2mate')
 		let urls = quoted.text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))
                 let quality = args[1] ? args[1] : '128kbps'
@@ -2265,7 +2265,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'getvideoxxx': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 let { ytv } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} 1`
                 if (!m.quoted) throw 'Reply Message'
@@ -2279,7 +2279,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'pinterest': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 m.reply(mess.wait)
 		let { pinterest } = require('./lib/scraper')
                 anu = await pinterest(text)
@@ -2396,13 +2396,13 @@ case 'webtonsearch': case 'webtoon':
                 })
             break
            /* case 'waifu': case 'bully': case 'neko': case 'shinobu': case 'megumin': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 m.reply(mess.wait)
                 rama.sendMessage(m.chat, { image: { url: `https://fatiharridho.herokuapp.com/api/sfw/${command}` }, caption: 'Generated Random ' + command }, { quoted: m })           
              }
             break*/
 	    case 'couplepp':  case 'ppcouple': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 m.reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
@@ -2411,7 +2411,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
 	    break
             case 'coffee': case 'kopi': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             let buttons = [
                     {buttonId: `coffe`, buttonText: {displayText: '➡️Next Image➡️'}, type: 1}
                 ]
@@ -2426,7 +2426,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'wallpaper': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Enter Query Title`)
 		let { wallpaper } = require('./lib/scraper')
                 anu = await wallpaper(text)
@@ -2445,7 +2445,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'wikimedia': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Enter Query Title`)
 		let { wikimedia } = require('./lib/scraper')
                 anu = await wikimedia(text)
@@ -2464,7 +2464,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'quotesanime': case 'animequotes': case 'animequote': case 'quoteanime': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		let { quotesAnime } = require('./lib/scraper')
                 let anu = await quotesAnime()
                 result = anu[Math.floor(Math.random() * anu.length)]
@@ -2481,7 +2481,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
 	        case 'motivasi': case 'motivationalquote': case 'bucinquote': case 'katasenja': case 'puisi': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 let anu = await fetchJson(api('zenz', '/randomtext/'+command, {}, 'apikey'))
                 let buttons = [
                     {buttonId: `motivasi`, buttonText: {displayText: '➡️Next➡️'}, type: 1}
@@ -2496,7 +2496,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             /*case '3dchristmas': case '3ddeepsea': case 'americanflag': case '3dscifi': case '3drainbow': case '3dwaterpipe': case 'halloweenskeleton': case 'sketch': case 'bluecircuit': case 'space': case 'metallic': case 'fiction': case 'greenhorror': case 'transformer': case 'berry': case 'thunder': case 'magma': case '3dcrackedstone': case '3dneonlight': case 'impressiveglitch': case 'naturalleaves': case 'fireworksparkle': case 'matrix': case 'dropwater':  case 'harrypotter': case 'foggywindow': case 'neondevils': case 'christmasholiday': case '3dgradient': case 'blackpink': case 'gluetext': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Enter Text, Example : ${prefix + command} Xeon`)
                 m.reply(mess.wait)
                 rama.sendMessage(m.chat, { image: { url: api('zenz', '/textpro/' + command, { text: text }, 'apikey') }, caption: `Text Pro ${command}` }, { quoted: m})
@@ -2504,14 +2504,14 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             break*/
             case 'circuit': case 'classic8bit': case 'color-fireworks': case 'cool-metal': case 'cutegirl': case 'dark-gold-metal': case 'decorated-cookie': case 'deluxe-gold': case 'deluxe-silver': case 'dinamo': case 'double-exposure': case 'dragon-fire': case 'eroded-metal': case 'fabric-text': case 'firework': case 'floraltext': case 'fox-crossfire': case 'fun-certify1': case 'fun-certify2': case 'futuristic': case 'galaxy-angel': case 'galaxy-effect': case 'galaxy-effect2': case 'galaxy-text': case 'galaxy-text-3': case 'gankk-league-of-kings': case 'gemstone': case 'genji-overwatch': case 'glitchtext': case 'glossy': case 'glossy-bluemetal': case 'glossy-carbon': case 'glossy-chrome': case 'gold-avenger': case 'gold-barcar': case 'gold-batman': case 'gold-bird2': case 'gold-eagle': case 'gold-effect': case 'gold-fox': case 'gold-glitter': case 'gold-lion': case 'gold-lion2': case 'gold-star': case 'gold-tiger': case 'golden-letter': case 'gr-crossfire': case 'gradientlogo': case 'graffiti-color': case 'graffiti-text3':
 case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zombie': case '3dengraved': case '3dgalaxy-metal': case '3dgold': case '3dgolden': case '3dgradient': case '3dlove': case '3dluxury': case '3dneonlight': case '3dpapercut': case '3drainbow': case '3drealistic': case '3drosegold': case '3dscifi': case '3dsilver': case '3dspace': case '3dstone': case '3dtext-effect': case '3dunderwater': case '3dvintage': case '3dwaterpipe': case 'alice-league-of-kings': case 'angel-wing-galaxy': case 'anubis': case 'arch-crossfire': case 'art-shader': case 'assassins-creed': case 'avengers': case 'azzenka-league-of-kings': case 'balloons-cards': case 'balloons-love': case 'bearlogo': case 'bg-crossfire': case 'birthday-cake': case 'birthday-cards': case 'birthday-greeting': case 'birthday-roses': case 'black-metal': case 'blackpink': case 'blood-frosted': case 'blood-text': case 'blue-effect': case 'blue-glitter': case 'brickwall': case 'brokentext': case 'bubble-effect': case 'bulb-effectcase': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})        
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})        
             if (!text) return m.reply(`Example : ${prefix + command} text`)
                 m.reply(mess.wait)
                 rama.sendMessage(m.chat, { image: { url: `https://violetics.pw/api/textpro/${command}?apikey=${violet}&text=${text}` }, caption: `Text Pro ${command}` }, { quoted: m})
 	        }
             break
               case 'wanted': case 'ytcomment': case 'beautiful': case 'jail': case 'fotojatoh': case 'pixelate': case 'blur': case 'imagesketch': case 'triggeredwebp': case 'shit': case 'burn': case 'invert': case 'gay': case 'rip': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})                          
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})                          
 	        	if (!/image/.test(mime)) throw `*Send/Reply Image With Caption* ${prefix + command}`
 	        	m.reply(mess.wait)
 	        	let { UploadFileUgu, webp2mp4File, TelegraPh } = require('./lib/uploader')
@@ -2522,7 +2522,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
                 }
                 break
 	 /*   case 'nomerhoki': case 'nomorhoki': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!Number(text)) return m.reply(`Example : ${prefix + command} 916909137213`)
                 let anu = await primbon.nomer_hoki(Number(text))
                 if (anu.status == false) return m.reply(anu.message)
@@ -2530,7 +2530,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'artimimpi': case 'tafsirmimpi': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Example : ${prefix + command} belanja`)
                 let anu = await primbon.tafsir_mimpi(text)
                 if (anu.status == false) return m.reply(anu.message)
@@ -2538,7 +2538,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'ramalanjodoh': case 'ramaljodoh': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
@@ -2547,7 +2547,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'ramalanjodohbali': case 'ramaljodohbali': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_jodoh_bali(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
@@ -2556,7 +2556,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'suamiistri': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.suami_istri(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
@@ -2565,7 +2565,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'ramalancinta': case 'ramalcinta': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005, Novia, 16, 11, 2004`
                 let [nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2] = text.split`,`
                 let anu = await primbon.ramalan_cinta(nama1, tgl1, bln1, thn1, nama2, tgl2, bln2, thn2)
@@ -2574,7 +2574,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'artinama': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} Dika Ardianta`
                 let anu = await primbon.arti_nama(text)
                 if (anu.status == false) return m.reply(anu.message)
@@ -2582,7 +2582,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'kecocokannama': case 'cocoknama': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005`
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.kecocokan_nama(nama, tgl, bln, thn)
@@ -2591,7 +2591,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'kecocokanpasangan': case 'cocokpasangan': case 'pasangan': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} Dika|Novia`
                 let [nama1, nama2] = text.split`|`
                 let anu = await primbon.kecocokan_nama_pasangan(nama1, nama2)
@@ -2600,7 +2600,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'jadianpernikahan': case 'jadiannikah': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 6, 12, 2020`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.tanggal_jadian_pernikahan(tgl, bln, thn)
@@ -2609,7 +2609,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'sifatusaha': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!ext)throw `Example : ${ command} 28, 12, 2021`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_usaha_bisnis(tgl, bln, thn)
@@ -2618,7 +2618,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'rejeki': case 'rezeki': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rejeki_hoki_weton(tgl, bln, thn)
@@ -2627,7 +2627,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'pekerjaan': case 'kerja': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.pekerjaan_weton_lahir(tgl, bln, thn)
@@ -2636,7 +2636,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'ramalannasib': case 'ramalnasib': case 'nasib': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.ramalan_nasib(tgl, bln, thn)
@@ -2645,7 +2645,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'potensipenyakit': case 'penyakit': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.cek_potensi_penyakit(tgl, bln, thn)
@@ -2654,7 +2654,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'artitarot': case 'tarot': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
@@ -2663,7 +2663,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'fengshui': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} Dika, 1, 2005\n\nNote : ${prefix + command} Name, gender, tahun lahir\nGender : 1 untuk laki-laki & 2 untuk perempuan`
                 let [nama, gender, tahun] = text.split`,`
                 let anu = await primbon.perhitungan_feng_shui(nama, gender, tahun)
@@ -2672,7 +2672,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'haribaik': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.petung_hari_baik(tgl, bln, thn)
@@ -2681,7 +2681,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'harisangar': case 'taliwangke': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.hari_sangar_taliwangke(tgl, bln, thn)
@@ -2690,7 +2690,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'harinaas': case 'harisial': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_hari_naas(tgl, bln, thn)
@@ -2699,7 +2699,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'nagahari': case 'harinaga': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.rahasia_naga_hari(tgl, bln, thn)
@@ -2708,7 +2708,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'arahrejeki': case 'arahrezeki': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_arah_rejeki(tgl, bln, thn)
@@ -2717,7 +2717,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'peruntungan': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} DIka, 7, 7, 2005, 2022\n\nNote : ${prefix + command} Name, tanggal lahir, bulan lahir, tahun lahir, untuk tahun`
                 let [nama, tgl, bln, thn, untuk] = text.split`,`
                 let anu = await primbon.ramalan_peruntungan(nama, tgl, bln, thn, untuk)
@@ -2726,7 +2726,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'weton': case 'wetonjawa': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 7, 7, 2005`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.weton_jawa(tgl, bln, thn)
@@ -2735,7 +2735,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'sifat': case 'karakter': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005`
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.sifat_karakter_tanggal_lahir(nama, tgl, bln, thn)
@@ -2744,7 +2744,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'keberuntungan': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} Dika, 7, 7, 2005`
                 let [nama, tgl, bln, thn] = text.split`,`
                 let anu = await primbon.potensi_keberuntungan(nama, tgl, bln, thn)
@@ -2753,7 +2753,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'memancing': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 12, 1, 2022`
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.primbon_memancing_ikan(tgl, bln, thn)
@@ -2762,7 +2762,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'masasubur': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} 12, 1, 2022, 28\n\nNote : ${prefix + command} First Day Of Menstruation Cycle`
                 let [tgl, bln, thn, siklus] = text.split`,`
                 let anu = await primbon.masa_subur(tgl, bln, thn, siklus)
@@ -2771,7 +2771,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'zodiak': case 'zodiac': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${ command} 7 7 2005`
                 let zodiak = [
                     ["capricorn", new Date(1970, 0, 1)],
@@ -2807,7 +2807,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'shio': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) throw `Example : ${prefix + command} tikus\n\nNote : For Detail https://primbon.com/shio.htm`
                 let anu = await primbon.shio(text)
                 if (anu.status == false) return m.reply(anu.message)
@@ -2815,7 +2815,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break*/
 	    case 'stalker': case 'stalk': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (!isPremium && global.db.data.users[m.sender].limit < 1) return m.reply('Your Daily Limit Has Expired')
                 if (!text) return m.reply(`Example : ${prefix +command} type id\n\nList Type :\n1. ff (Free Fire)\n2. ml (Mobile Legends)\n3. aov (Arena Of Valor)\n4. cod (Call Of Duty)\n5. pb (point Blank)\n6. ig (Instagram)\n7. npm (https://npmjs.com)`)
                 let [type, id, zone] = args
@@ -2868,7 +2868,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
 	        case 'tiktok': case 'tiktoknowm': case 'tiktokwm': case 'tt': case 'ttnowm': case 'ttwm': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 	        m.reply(mess.wait)                 
   if (!text.includes('tiktok')) return reply('Itu bukan link tiktok!')
    const musim_rambutan = await TiktokDownloader(`${text}`).catch(e => {
@@ -2880,7 +2880,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
    }
             break
             case 'tiktokwmx': case 'tiktokwatermarkx': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Enter Query Link!`)
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
@@ -2899,7 +2899,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'tiktokmp3': case 'tiktokaudio': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }}) 	             
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }}) 	             
              if (!text) throw '*Enter Link Tiktok!*'
              m.reply(mess.wait)
                 if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) throw '*The link you provided is not valid*'
@@ -2910,7 +2910,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
 	       case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
   /* if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)*/
 if (!args[0]) return m.reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
@@ -2948,7 +2948,7 @@ m.reply(String(err))
 }
 break
 case 'ig': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 if (!args[0]) return m.reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
 	 /*  if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)*/
@@ -2963,7 +2963,7 @@ m.reply("Error! ")
 break
 		//Backup, for example, the video above doesn't come out\\
 		case 'igeh': case 'instagram2x': case 'ig2': case 'igdl2': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Enter Query Link!`)
                 m.reply(mess.wait)
                 
@@ -2972,7 +2972,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'joox': case 'jooxdl': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`No Query Title`)
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
@@ -2981,7 +2981,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'soundcloud': case 'scdl': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`No Query Title`)
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
@@ -2990,7 +2990,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
 	        case 'twitdlx': case 'twitterx': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Enter Query Link!`)
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
@@ -3008,7 +3008,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'twittermp3x': case 'twitteraudiox': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Enter Query Link!`)
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
@@ -3027,7 +3027,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
 	        case 'fbdlx': case 'fbx': case 'facebookx': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Enter Query Link!`)
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/facebook', { url: text }, 'apikey'))
@@ -3035,7 +3035,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
 	        case 'pindl': case 'pinterestdl': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Enter Query Link!`)
                 m.reply(mess.wait)
                 let anu = await fetchJson(api('zenz', '/api/downloader/pinterestdl', { url: text }, 'apikey'))
@@ -3043,7 +3043,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'umma': case 'ummadl': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 	        if (!text) return m.reply(`Example : ${prefix + command} https://umma.id/channel/video/post/gus-arafat-sumber-kecewa-84464612933698`)
                 let { umma } = require('./lib) scraper')
 		let anu = await umma(isUrl(text)[0])
@@ -3075,7 +3075,7 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 	    }
 	    break
         case 'ringtone': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (!text) return m.reply(`Example : ${prefix + command} black rover`)
         let { ringtone } = require('./lib/scraper')
 		let anu = await ringtone(text)
@@ -3084,7 +3084,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 	    }
 	    break
 		case 'iqraxxx': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		oh = `Example : ${prefix + command} 3\n\nIQRA Which Is Available : 1,2,3,4,5,6`
 		if (!text) return m.reply(oh)
 		yy = await getBuffer(`https://islamic-api-indonesia.herokuapp.com/api/data/pdf/iqra${text}`)
@@ -3092,7 +3092,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 		}
 		break
 		case 'juzamma': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (args[0] === 'pdf') {
 		m.reply(mess.wait)
 		rama.sendMessage(m.chat, {document: {url: 'https://fatiharridho.my.id/database/islam/juz-amma-arab-latin-indonesia.pdf'}, mimetype: 'application/pdf', fileName: 'juz-amma-arab-latin-indonesia.pdf'}, {quoted:m})
@@ -3113,7 +3113,7 @@ Available Formats: pdf, docx, pptx, xlsx`)
 		}
 		break
 		case 'hadisxxx': case 'hadistxxx': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (!args[0]) return m.reply(`Example:
 ${prefix + command} bukhari 1
 ${prefix + command} abu-daud 1
@@ -3150,7 +3150,7 @@ ${id}`)
 		}
 		break
 		case 'alquranxxx': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (!args[0]) return m.reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is Surah Al-Fatihah Verse 2 Along With The Audio, And The Verse Is Just 1`)
 		if (!args[1]) return m.reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is Surah Al-Fatihah Verse 2 Along With The Audio, And The Verse Is Just 1`)
 		let res = await fetchJson(`https://islamic-api-indonesia.herokuapp.com/api/data/quran?surah=${args[0]}&ayat=${args[1]}`)
@@ -3164,7 +3164,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 		}
 		break
 		case 'tafsirsurahxxx': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		if (!args[0]) return m.reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is The Interpretation Of Surah Al-Fatihah Verse 2`)
 		if (!args[1]) return m.reply(`Usage Examples:\n${prefix + command} 1 2\n\nThen The Result Is The Interpretation Of Surah Al-Fatihah Verse 2`)
 		let res = await fetchJson(`https://islamic-api-indonesia.herokuapp.com/api/data/quran?surah=${args[0]}&ayat=${args[1]}`)
@@ -3210,7 +3210,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
                 }
                 break
             case 'setcmd': case 'addcmd': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!isCreator) return m.reply(`${mess.owner}`)
                 if (!m.quoted) return m.reply(`Reply Message!`)
                 if (!m.quoted.fileSha256) return m.reply(`SHA256 Hash Missing`)
@@ -3228,7 +3228,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'delcmd': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!isCreator) return m.reply(`${mess.owner}`)
                 let hash = m.quoted.fileSha256.toString('base64')
                 if (!hash) return m.reply(`No Hashes`)
@@ -3238,7 +3238,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'listcmd': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!isCreator) return m.reply(`${mess.owner}`)
                 let teks = `
 *Hash List*
@@ -3249,7 +3249,7 @@ ${Object.entries(global.db.data.sticker).map(([key, value], index) => `${index +
             }
             break
             case 'lockcmd': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!isCreator) return m.reply(`${mess.owner}`)
                 if (!isCreator) return m.reply(`${mess.owner}`)
                 if (!m.quoted) return m.reply(`Reply Message!`)
@@ -3261,7 +3261,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'addmsg': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!isCreator) return m.reply(`${mess.owner}`)
                 if (!m.quoted) return m.reply(`Reply Message You Want To Save In Database`)
                 if (!text) return m.reply(`Example : ${prefix + command} File Name`)
@@ -3276,7 +3276,7 @@ View List Of Messages With ${prefix}listmsg`)
             }
             break
             case 'getmsg': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!isCreator) return m.reply(`${mess.owner}`)
                 if (!text) return m.reply(`Example : ${prefix + command} file name\n\nView Message List With ${prefix}listmsg`)
                 let msgs = global.db.data.database
@@ -3285,7 +3285,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'listmsg': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!isCreator) return m.reply(`${mess.owner}`)
                 let msgs = JSON.parse(fs.readFileSync('./database/database.json'))
 	        let seplit = Object.entries(global.db.data.database).map(([nama, isi]) => { return { nama, ...isi } })
@@ -3297,7 +3297,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 	    }
 	    break
             case 'delmsg': case 'deletemsg': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             if (!isCreator) return m.reply(`${mess.owner}`)
 	        let msgs = global.db.data.database
 	        if (!(text.toLowerCase() in msgs)) return m.reply(`'${text}' Not Listed In The Message List`)
@@ -3306,7 +3306,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
 	    break
 	   /* case 'anonymous': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (m.isGroup) return m.reply('Features Cannot Be Used For Groups!')
 				this.anonymous = this.anonymous ? this.anonymous : {}
 				let buttons = [
@@ -3316,7 +3316,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
 			break
             case 'keluar': case 'leave': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (m.isGroup) return m.reply('Features Cannot Be Used For Groups!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 let room = Object.values(this.anonymous).find(room => room.check(m.sender))
@@ -3334,7 +3334,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
                 if (command === 'leave') break
             }
             case 'mulai': case 'start': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (m.isGroup) return m.reply('Features Cannot Be Used For Groups!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 if (Object.values(this.anonymous).find(room => room.check(m.sender))) {
@@ -3376,7 +3376,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
                 break
             }
             case 'next': case 'lanjut': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (m.isGroup) return m.reply('Features Cannot Be Used For Groups!')
                 this.anonymous = this.anonymous ? this.anonymous : {}
                 let romeo = Object.values(this.anonymous).find(room => room.check(m.sender))
@@ -3422,21 +3422,21 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
                 break
             }*/
             case 'public': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!isCreator) return m.reply(`${mess.owner}`)
                 rama.public = true
                 m.reply('Successful Change To Public Usage')
             }
             break
             case 'self': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!isCreator) return m.reply(`${mess.owner}`)
                 rama.public = false
                 m.reply('Successful Change To Self Usage')
             }
             break
             case 'ping': case 'botstatus': case 'statusbot': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 const used = process.memoryUsage()
                 const cpus = os.cpus().map(cpu => {
                     cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
@@ -3484,7 +3484,7 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
             }
             break
             case 'speedtest': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             m.reply('Testing Speed...')
             let cp = require('child_process')
             let { promisify } = require('util')
@@ -3502,7 +3502,7 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
             }
             break
             case 'owner': case 'creator': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 rama.sendContact(m.chat, global.owner, m)
             }
             break
@@ -3588,7 +3588,7 @@ m.reply("Success Changing Menu To "+q)
 }
 break
                     case 'bug': case 'report': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                     	if(!text) return m.reply(`Enter The Bug\n\nExample: ${command} Menu Error`)
                     	rama.sendMessage(`6282142108243@s.whatsapp.net`, {text: `*Bug Report From:* wa.me/${m.sender.split("@")[0]}
 Report Message: ${text}` })
@@ -3656,7 +3656,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 }
 break*/
          /* case 'help': case 'bot': case 'list': case 'menu': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             	timestampe = speed();
 latensie = speed() - timestampe
                 anu = ``
@@ -3717,7 +3717,7 @@ const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 rama.sendMessage(m.chat, { audio: fs.readFileSync('./noLT.m4a'), mimetype: 'audio/mp4', ptt: true }, { quoted: m }) 
                 break
                 case 'command': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                 listMessage :{
                     title: `Hi ${pushname}`,
@@ -3846,7 +3846,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
     m.reply(`DONASI SE IKLASNYA\n0823-3809-8038(Gopay)\n082142108243(pulsa)`)
     break
     case 'sewabot': case 'sewa': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 rama.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/9aae92f026c1ee0ce8ce9.jpg' }, caption: `*Hi Bro ${m.pushName}\nJika Kamu Ingin memasukkan, bot ini\n ke grup kamu transfer pulsa ke 082142108243(Telkomsel) atau\n gopay 0823-3809-8038 Harga 20k oke kalo udah \n lu bisa ss bukti pembayaran lalu lu kirim ke wa.me//6282142108243 dan kirim link grup juga agar bot bisa segera join` }, { quoted: m })
             }
             break
@@ -3854,12 +3854,12 @@ rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
     m.reply(`Runtime: ${runtime(process.uptime())}`)
     break      
             case 'sc': case 'script': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 m.reply(`GitHub : https://github.com/ \n`)
             }
             break
 case 'help': case 'bot': case 'list': case 'menu': case 'allmenu': {
-rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 timestampe = speed();
 latensie = speed() - timestampe 
 let num = `${m.sender}` 
@@ -4739,16 +4739,7 @@ break
 			 if (budy.startsWith('Assalamualaikum')) {
                  num = `${m.sender}`
                  rama.sendMessage(m.chat, { text: `Walaikumsalam kak @${num.split("@")[0]}`, contextInfo: {mentionedJid: [num]}, m})
-                }
-                if (budy.startsWith('lol','ah','ahh','kontol','memek')) {
-               let emot = pickRandom(["🗿", "👍", "💨", "🩱", "🐷", "🐒", "🌝", "💩", "👻", "🔥", "🖕", "🐦"])
-    rama.sendMessage(m.chat, {
-    	react: {
-    		text: emot,
-    		key: m.key
-    	}
-    })
-                }
+                }               
              if (budy.startsWith('Tes')) {
                 const fakeH = {
 	key : {
