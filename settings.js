@@ -28,6 +28,7 @@ global.footer = 'R-BOT'
 global.ig = 'https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI'
 global.region = 'Indonesia'
 global.sc = 'https://github.com/'
+global.reactmoji = `🗡️`
 global.myweb = 'https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI'
 global.packname = `CREATE BY R-BOT \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n`
 global.author = `\n`

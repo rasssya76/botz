@@ -206,6 +206,7 @@ sourceUrl: link,
 mediaUrl: link,
 }}
 }
+rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 rama.sendMessage(anu.id, buttonMessage, {quoted:fgclink})             
                 } else if (anu.action == 'remove') {
                     const pushname = m.pushName || "No Name"                   
@@ -236,6 +237,7 @@ sourceUrl: link,
 mediaUrl: link,
 }}
 }
+rama.sendMessage(m.chat, { react: { text: `${global.reactmoji}`, key: m.key }})
 rama.sendMessage(anu.id, buttonMessage, {quoted:fgclink})          
                 }
             }
