@@ -2506,9 +2506,15 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 case '1917-style': case '3d-effect': case '3d-rubystone': case '3d-text-sub-zombie': case '3dengraved': case '3dgalaxy-metal': case '3dgold': case '3dgolden': case '3dgradient': case '3dlove': case '3dluxury': case '3dneonlight': case '3dpapercut': case '3drainbow': case '3drealistic': case '3drosegold': case '3dscifi': case '3dsilver': case '3dspace': case '3dstone': case '3dtext-effect': case '3dunderwater': case '3dvintage': case '3dwaterpipe': case 'alice-league-of-kings': case 'angel-wing-galaxy': case 'anubis': case 'arch-crossfire': case 'art-shader': case 'assassins-creed': case 'avengers': case 'azzenka-league-of-kings': case 'balloons-cards': case 'balloons-love': case 'bearlogo': case 'bg-crossfire': case 'birthday-cake': case 'birthday-cards': case 'birthday-greeting': case 'birthday-roses': case 'black-metal': case 'blackpink': case 'blood-frosted': case 'blood-text': case 'blue-effect': case 'blue-glitter': case 'brickwall': case 'brokentext': case 'bubble-effect': case 'bulb-effectcase': {
 rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})        
             if (!text) return m.reply(`Example : ${prefix + command} text`)
-                m.reply(mess.wait)
-                rama.sendMessage(m.chat, { image: { url: `https://violetics.pw/api/textpro/${command}?apikey=${violet}&text=${text}` }, caption: `Text Pro ${command}` }, { quoted: m})
-	        }
+                m.reply(mess.wait)
+
+
+                rama.sendMessage(m.chat, { image: { url: `https://violetics.pw/api/textpro/${command}?apikey=${violet}&text=${text}` }, caption: `Text Pro ${command}` }, { quoted: m})
+
+
+	        }
+
+
             break
               case 'wanted': case 'ytcomment': case 'beautiful': case 'jail': case 'fotojatoh': case 'pixelate': case 'blur': case 'imagesketch': case 'triggeredwebp': case 'shit': case 'burn': case 'invert': case 'gay': case 'rip': {
 rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})                          
@@ -4166,8 +4172,10 @@ let btn = [
             //{ quickReplyButton: { displayText: `List Menu 🍢`, id: 'command'} },
             { quickReplyButton: { displayText: `Owner 👨‍💻`, id: 'owner'} }
         	]
-rama.send5ButGif(m.chat, anuuuu, global.botname, global.vidmenu, btn, global.thumb, {mentions: [num,nums]})
-}
+/*rama.send5ButGif(m.chat, anuuuu, global.botname, global.vidmenu, btn, global.thumb, {mentions: [num,nums]})
+}*/
+rama.sendMessage(m.chat, { caption: `${anuuuu}`, location: { jpegThumbnail: global.thumb, buttons: btn, footer: `R-BOT`, mentions: [num,nums]}})	
+            }
 break
     /*const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {
