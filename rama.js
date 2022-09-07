@@ -2129,12 +2129,13 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 	    case 'yts': case 'ytsearch': {
 rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Example : ${prefix + command} Anime Story Whatsapp`)
+                m.reply(mess.wait)
                 let yts = require("yt-search")
                 let search = await yts(text)
                 let teks = 'YouTube Search\n\n Result From '+text+'\n\n'
                 let no = 1
                 for (let i of search.all) {
-                    teks += `No : ${no++}\nType : ${i.type}\nVideo ID : ${i.videoId}\nTitle : ${i.title}\nViews : ${i.views}\nDuration : ${i.timestamp}\nUploaded On : ${i.ago}\nAuthor : ${i.author.name}\nUrl : ${i.url}\n\n─────────────────\n\n`
+                    teks += `No : ${no++}\nType : ${i.type}\nVideo ID : ${i.videoId}\nTitle : ${i.title}\nViews : ${i.views}\nDuration : ${i.timestamp}\nUploaded On : ${i.ago}\nUrl : ${i.url}\n\n─────────────────\n\n`
                 }
                 rama.sendMessage(m.chat, { image: { url: search.all[0].thumbnail },  caption: teks }, { quoted: m })
             }
@@ -4171,11 +4172,9 @@ let btn = [
            // { quickReplyButton: { displayText: `All Menu 🍱`, id: 'allmenu'} },
             //{ quickReplyButton: { displayText: `List Menu 🍢`, id: 'command'} },
             { quickReplyButton: { displayText: `Owner 👨‍💻`, id: 'owner'} }
-        	]
-/*rama.send5ButGif(m.chat, anuuuu, global.botname, global.vidmenu, btn, global.thumb, {mentions: [num,nums]})
-}*/
-rama.sendMessage(m.chat, { caption: `${anuuuu}`, location: { jpegThumbnail: global.thumb, buttons: btn, footer: `R-BOT`, mentions: [num,nums]}})	
-            }
+        	]        	
+rama.send5ButGif(m.chat, anuuuu, global.botname, global.vidmenu, btn, global.thumb, {mentions: [num,nums]})
+}
 break
     /*const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
                     templateMessage: {

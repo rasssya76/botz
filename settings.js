@@ -19,12 +19,12 @@ global.APIKeys = {
 }
 
 //customize settings\\
-global.owner = ['6282142108243','855387696322']
+global.owner = ['6282142108243']
 global.premium = ['6282142108243']
 global.ownernomer = '6282142108243'
 global.ownername = 'RAMA'
-global.botname = 'R-BOT'
-global.footer = 'R-BOT'
+global.botname = 'R-BOT V2'
+global.footer = 'R-BOT V2'
 global.ig = 'https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI'
 global.region = 'Indonesia'
 global.sc = 'https://github.com/'
