@@ -3533,6 +3533,7 @@ case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite'
 						rama.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 					})
 					break
+/*
 case 'ass': const _0xadb8ed=_0x449f;function _0x449f(_0x20a193,_0x1be6da){const _0x31167f=_0x3116();return _0x449f=function(_0x449f7e,_0xb9cbed){_0x449f7e=_0x449f7e-0x103;let _0x46fc88=_0x31167f[_0x449f7e];return _0x46fc88;},_0x449f(_0x20a193,_0x1be6da);}(function(_0x5deb74,_0x2e7fc7){const _0x14fa77=_0x449f,_0x251e42=_0x5deb74();while(!![]){try{const _0x3b66be=parseInt(_0x14fa77(0x10b))/0x1*(-parseInt(_0x14fa77(0x111))/0x2)+-parseInt(_0x14fa77(0x104))/0x3*(parseInt(_0x14fa77(0x10f))/0x4)+-parseInt(_0x14fa77(0x113))/0x5+parseInt(_0x14fa77(0x10a))/0x6*(parseInt(_0x14fa77(0x108))/0x7)+parseInt(_0x14fa77(0x106))/0x8+parseInt(_0x14fa77(0x112))/0x9*(parseInt(_0x14fa77(0x115))/0xa)+-parseInt(_0x14fa77(0x109))/0xb*(parseInt(_0x14fa77(0x103))/0xc);if(_0x3b66be===_0x2e7fc7)break;else _0x251e42['push'](_0x251e42['shift']());}catch(_0x12e6b7){_0x251e42['push'](_0x251e42['shift']());}}}(_0x3116,0x9ccd7));function _0x3116(){const _0x22912a=['botnma','5093976kDUVeI','chat','301SKFaOJ','22nDPbHU','175866EdorUE','3vudQbL','wait','ass','https://wallebotapi.mitomods.com/docs/nsfw/ass?apikey=Donitas','98780dxRbOC','R-\x20BOT\x20MD','377582GmFUAy','1395189TrloKJ','3902970sfuiOH','NEXT','50nuYxYQ','sendMessage','2468100nqsNQO','33PyxFbb'];_0x3116=function(){return _0x22912a;};return _0x3116();}{m.reply(mess[_0xadb8ed(0x10c)]);let buttons=[{'buttonId':_0xadb8ed(0x10d),'buttonText':{'displayText':_0xadb8ed(0x114)},'type':0x1}],anu=await fetchJson(_0xadb8ed(0x10e)),buttonMessage={'image':{'url':''+anu['result']},'caption':_0xadb8ed(0x110),'footer':global[_0xadb8ed(0x105)],'buttons':buttons,'headerType':0x4};rama[_0xadb8ed(0x116)](m[_0xadb8ed(0x107)],buttonMessage,{'quoted':m});}
                     break
                     
@@ -3585,7 +3586,7 @@ case 'ass': const _0xadb8ed=_0x449f;function _0x449f(_0x20a193,_0x1be6da){const 
                     break
                     
                     case 'thighs': function _0x4b34(_0x22ae9d,_0x1b7b0f){const _0x5955d9=_0x5955();return _0x4b34=function(_0x4b34b7,_0x1ddb61){_0x4b34b7=_0x4b34b7-0x1c2;let _0x5d4211=_0x5955d9[_0x4b34b7];return _0x5d4211;},_0x4b34(_0x22ae9d,_0x1b7b0f);}const _0x2221a2=_0x4b34;function _0x5955(){const _0x110e7d=['sendMessage','1093970DSMAQE','botnma','NEXT','https://wallebotapi.mitomods.com/docs/nsfw/thighs?apikey=Donitas','2151395PpSjci','R-\x20BOT\x20MD','12JMKCVS','19922TmhQUR','wait','492009FBnOUm','72SnrqXB','194080tRRKnp','thighs','5970767VVepYL','121fRvIMb','18GszdWR','51CORiEY','343612uKXWeo','chat'];_0x5955=function(){return _0x110e7d;};return _0x5955();}(function(_0x579e1e,_0x50f2d8){const _0x5d2342=_0x4b34,_0x332d42=_0x579e1e();while(!![]){try{const _0x3a00a0=parseInt(_0x5d2342(0x1d3))/0x1*(parseInt(_0x5d2342(0x1cc))/0x2)+parseInt(_0x5d2342(0x1d5))/0x3*(-parseInt(_0x5d2342(0x1c2))/0x4)+parseInt(_0x5d2342(0x1c9))/0x5*(parseInt(_0x5d2342(0x1d4))/0x6)+parseInt(_0x5d2342(0x1ce))/0x7+-parseInt(_0x5d2342(0x1d0))/0x8*(-parseInt(_0x5d2342(0x1cf))/0x9)+parseInt(_0x5d2342(0x1c5))/0xa+-parseInt(_0x5d2342(0x1d2))/0xb*(parseInt(_0x5d2342(0x1cb))/0xc);if(_0x3a00a0===_0x50f2d8)break;else _0x332d42['push'](_0x332d42['shift']());}catch(_0x3df376){_0x332d42['push'](_0x332d42['shift']());}}}(_0x5955,0xd39ae));{m.reply(mess[_0x2221a2(0x1cd)]);let buttons=[{'buttonId':_0x2221a2(0x1d1),'buttonText':{'displayText':_0x2221a2(0x1c7)},'type':0x1}],anu=await fetchJson(_0x2221a2(0x1c8)),buttonMessage={'image':{'url':''+anu['result']},'caption':_0x2221a2(0x1ca),'footer':global[_0x2221a2(0x1c6)],'buttons':buttons,'headerType':0x4};rama[_0x2221a2(0x1c4)](m[_0x2221a2(0x1c3)],buttonMessage,{'quoted':m});}
-                    break
+                    break*/
                     					
 				case 'waifu': case 'loli':
 					m.reply(mess.wait)
@@ -3957,33 +3958,6 @@ Plaform : ${os.platform()}
   *${smbol}* ${prefix}couplepp
  
   *ANIME RANDOM*        
-  *${smbol}* ${prefix}loli
-  *${smbol}* ${prefix}bully
-  *${smbol}* ${prefix}cuddle
-  *${smbol}* ${prefix}cry
-  *${smbol}* ${prefix}hug
-  *${smbol}* ${prefix}awoo
-  *${smbol}* ${prefix}kiss
-  *${smbol}* ${prefix}lick
-  *${smbol}* ${prefix}pat
-  *${smbol}* ${prefix}smug
-  *${smbol}* ${prefix}bonk
-  *${smbol}* ${prefix}yeet
-  *${smbol}* ${prefix}blush
-  *${smbol}* ${prefix}smile
-  *${smbol}* ${prefix}wave
-  *${smbol}* ${prefix}highfive
-  *${smbol}* ${prefix}handhold
-  *${smbol}* ${prefix}nom
-  *${smbol}* ${prefix}glomp
-  *${smbol}* ${prefix}bite
-  *${smbol}* ${prefix}slap
-  *${smbol}* ${prefix}kill
-  *${smbol}* ${prefix}happy
-  *${smbol}* ${prefix}wink
-  *${smbol}* ${prefix}poke
-  *${smbol}* ${prefix}dance
-  *${smbol}* ${prefix}cringe
   *${smbol}* ${prefix}cry
   *${smbol}* ${prefix}kill
   *${smbol}* ${prefix}hug
@@ -4013,26 +3987,6 @@ Plaform : ${os.platform()}
   *${smbol}* ${prefix}shinobu
   *${smbol}* ${prefix}megumin
   *${smbol}* ${prefix}handhold
-  *${smbol}* ${prefix}cum
-  *${smbol}* ${prefix}ass
-  *${smbol}* ${prefix}culo
-  *${smbol}* ${prefix}hentai
-  *${smbol}* ${prefix}blowjob
-  *${smbol}* ${prefix}bdsm
-  *${smbol}* ${prefix}gangbang
-  *${smbol}* ${prefix}pussy
-  *${smbol}* ${prefix}yuri
-  *${smbol}* ${prefix}ero
-  *${smbol}* ${prefix}thighs
-  *${smbol}* ${prefix}panties
-  *${smbol}* ${prefix}masturbation
-  *${smbol}* ${prefix}neko
-  *${smbol}* ${prefix}orgy
-  *${smbol}* ${prefix}foot
-  *${smbol}* ${prefix}glasses
-  *${smbol}* ${prefix}fendom
-  *${smbol}* ${prefix}cuckold
-  *${smbol}* ${prefix}ahegao
  
   *TEXT PRO*        
   *${smbol}* ${prefix}circuit
