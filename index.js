@@ -341,19 +341,8 @@ rama.sendMessage(anu.id, buttonMessage, {quoted:fgclink})
      * @param {*} options
      * @returns
      */
-    rama.send5ButImg = async (jid , text = '' , footer = '', img, but = [], options = {}) =>{
-        let message = await prepareWAMessageMedia({ image: img }, { upload: rama.waUploadToServer })
-        var template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
-        templateMessage: {
-        hydratedTemplate: {
-        imageMessage: message.imageMessage,
-               "hydratedContentText": text,
-               "hydratedFooterText": footer,
-               "hydratedButtons": but
-            }
-            }
-            }), options)
-            rama.relayMessage(jid, template.message, { messageId: template.key.id })
+    rama.send5ButImg = async (jid , text = '' , footer = '', img, but = [], buff, options = {}) =>{
+    rama.sendMessage(jid, { image: img, caption: text, footer: footer, templateButtons: but, ...options })
     }
 
     /**

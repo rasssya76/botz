@@ -170,7 +170,7 @@ module.exports = rama = async (rama, m, chatUpdate, store) => {
 		//RANDOM\\
 		function pickRandom(list) {
         return list[Math.floor(Math.random() * list.length)]
-        }
+        }     
           try {
             let isNumber = x => typeof x === 'number' && !isNaN(x)
             let limitUser = isPremium ? global.limitawal.premium : global.limitawal.free
@@ -2874,7 +2874,7 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 }
             }
             break
-	        case 'tiktok': case 'tiktoknowm': case 'tiktokwm': case 'tt': case 'ttnowm': case 'ttwm': {
+	       /* case 'tiktok': case 'tiktoknowm': case 'tiktokwm': case 'tt': case 'ttnowm': case 'ttwm': {
 rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 	        m.reply(mess.wait)                 
   if (!text.includes('tiktok')) return reply('Itu bukan link tiktok!')
@@ -2886,19 +2886,34 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
     rama.sendMessage(from, { video: { url: musim_duren_v }, caption: `ok` }, { quoted: m })
    }
             break
-            case 'tiktokwmx': case 'tiktokwatermarkx': {
+           /* case 'tiktok': case 'tiktoknowm': case 'tiktokwm': case 'tt': case 'ttnowm': case 'ttwm': {
+rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
+	        m.reply(mess.wait)              
+if (!text) return reply('Input URL')
+	  if (!text.includes('tiktok')) return reply('Itu bukan link tiktok!')
+	let url = (await fetch(text)).url
+	let res = await (await fetch(`https://api2.musical.ly/aweme/v1/aweme/detail/?aweme_id=${url.split('?')[0].split('/')[5]}`)).json()
+	let data = res.aweme_detail.video.play_addr.url_list
+	if (!data.length) throw 'Can\'t download video!'
+	let meta = await getInfo(url).catch(_ => {})
+	await m.reply('_In progress, please wait..._')
+	let buttons = [{ buttonText: { displayText: 'Audio' }, buttonId: `${usedPrefix}tomp3` }]
+	rama.sendMessage(m.chat, { video: { url: data[data.length - 1] }, caption: meta?.description || null, footer: await shortUrl(data[data.length - 1]), buttons }, { quoted: m })   
+}
+break     */    
+            case 'tiktok': case 'tiktoknowm': case 'tiktokwm': case 'tt': case 'ttnowm': case 'ttwm': {
 rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Enter Query Link!`)
                 m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/tiktok', { url: text }, 'apikey'))
+                let anu = await fetchJson(`http://hadi-api.herokuapp.com/api/tiktok?url=${text}`)
                 let buttons = [
-                    {buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '🥬No Watermark🥬'}, type: 1},
-                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: '🎵Audio🎵'}, type: 1}
+                    /*{buttonId: `tiktoknowm ${text}`, buttonText: {displayText: '🥬No Watermark🥬'}, type: 1},*/
+                    {buttonId: `tiktokmp3 ${text}`, buttonText: {displayText: 'Audio'}, type: 1}
                 ]
                 let buttonMessage = {
-                    video: { url: anu.result.watermark },
-                    caption: `Download From ${text}`,
-                    footer: 'Press The Button Below',
+                    video: { url: anu.result.video.nowm },
+                    caption: `TiktokDownload`,
+                    footer: '.r76',
                     buttons: buttons,
                     headerType: 5
                 }
@@ -2910,10 +2925,8 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
              if (!text) throw '*Enter Link Tiktok!*'
              m.reply(mess.wait)
                 if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) throw '*The link you provided is not valid*'
-                let got = require('./lib/tiktok.js')                              
-                got.tiktokDown(`${text}`).then(async (data) => {
-                rama.sendMessage(m.chat, { audio: { url: data.result.nowatermark }, mimetype: 'audio/mp4'}, { quoted: m })
-                }).catch((err) => m.reply(jsonformat(err)))                
+                let anm = await fetchJson(`http://hadi-api.herokuapp.com/api/tiktok?url=${text}`)
+                rama.sendMessage(m.chat, { audio: { url: anm.result.video.mp4 }, mimetype: 'audio/mp4'}, { quoted: m })   
             }
             break
 	       case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': {
@@ -3873,299 +3886,297 @@ let num = `${m.sender}`
 let nums = `6282142108243@s.whatsapp.net`	
          //MENU\\
 
-let anuuuu = `Hai @${num.split("@")[0]}
+let anuuuu = `Hai ${pushname}
 Botinfo
 Speed : ${latensie.toFixed(4)} miliseconds
 Runtime : ${runtime(process.uptime())}
 Host : ${os.hostname()}
 Plaform : ${os.platform()}
-Owner : @${nums.split("@")[0]}
-
-Ownermenu
-*${smbol}* ${prefix}chat [option]
-*${smbol}* ${prefix}join [link]
-*${smbol}* ${prefix}leave
-*${smbol}* ${prefix}block [user]
-*${smbol}* ${prefix}unblock [user]
-*${smbol}* ${prefix}bcgroup [text]
-*${smbol}* ${prefix}bcall [text] 
-*${smbol}* ${prefix}setppbot [image]
-*${smbol}* ${prefix}setexif
+  
+  *OWNER MENU*
+  *${smbol}* ${prefix}chat [option]
+  *${smbol}* ${prefix}join [link]
+  *${smbol}* ${prefix}leave
+  *${smbol}* ${prefix}block [user]
+  *${smbol}* ${prefix}unblock [user]
+  *${smbol}* ${prefix}bcgroup [text]
+  *${smbol}* ${prefix}bcall [text] 
+  *${smbol}* ${prefix}setppbot [image]
+  *${smbol}* ${prefix}setexif
  
-Groupmenu    
-*${smbol}* ${prefix}grouplink
-*${smbol}* ${prefix}ephemeral [option]
-*${smbol}* ${prefix}setgcpp [image]
-*${smbol}* ${prefix}setname [text]
-*${smbol}* ${prefix}setdesc [text]
-*${smbol}* ${prefix}group [text]
-*${smbol}* ${prefix}editinfo [option]
-*${smbol}* ${prefix}add [user]
-*${smbol}* ${prefix}kick [reply/tag]
-*${smbol}* ${prefix}hidetag [text]
-*${smbol}* ${prefix}tagall [text]
-*${smbol}* ${prefix}antilink [on/off]
-*${smbol}* ${prefix}mute [on/off]
-*${smbol}* ${prefix}promote [reply/tag]
-*${smbol}* ${prefix}demote [reply/tag]
-*${smbol}* ${prefix}vote
-*${smbol}* ${prefix}devote
-*${smbol}* ${prefix}upvote
-*${smbol}* ${prefix}checkvote
-*${smbol}* ${prefix}delvote
+  *GROUP MENU*
+  *${smbol}* ${prefix}grouplink
+  *${smbol}* ${prefix}ephemeral [option]
+  *${smbol}* ${prefix}setgcpp [image]
+  *${smbol}* ${prefix}setname [text]
+  *${smbol}* ${prefix}setdesc [text]
+  *${smbol}* ${prefix}group [text]
+  *${smbol}* ${prefix}editinfo [option]
+  *${smbol}* ${prefix}add [user]
+  *${smbol}* ${prefix}kick [reply/tag]
+  *${smbol}* ${prefix}hidetag [text]
+  *${smbol}* ${prefix}tagall [text]
+  *${smbol}* ${prefix}antilink [on/off]
+  *${smbol}* ${prefix}mute [on/off]
+  *${smbol}* ${prefix}promote [reply/tag]
+  *${smbol}* ${prefix}demote [reply/tag]
+  *${smbol}* ${prefix}vote
+  *${smbol}* ${prefix}devote
+  *${smbol}* ${prefix}upvote
+  *${smbol}* ${prefix}checkvote
+  *${smbol}* ${prefix}delvote
 
-Downloadmenu
-*${smbol}* ${prefix}ytmp3 [url|quality]
-*${smbol}* ${prefix}ytmp4 [url|quality]
-*${smbol}* ${prefix}getmusic [yt link]
-*${smbol}* ${prefix}getvideo [yt link]
-*${smbol}* ${prefix}umma [query]
-*${smbol}* ${prefix}tiktok [link]
-*${smbol}* ${prefix}joox [query]
-*${smbol}* ${prefix}soundcloud [url]
-*${smbol}* ${prefix}igdl
+  *DOWNLOAD MENU*
+  *${smbol}* ${prefix}ytmp3 [url|quality]
+  *${smbol}* ${prefix}ytmp4 [url|quality]
+  *${smbol}* ${prefix}getmusic [yt link]
+  *${smbol}* ${prefix}getvideo [yt link]
+  *${smbol}* ${prefix}umma [query]
+  *${smbol}* ${prefix}tiktok [link]
+  *${smbol}* ${prefix}joox [query]
+  *${smbol}* ${prefix}soundcloud [url]
+  *${smbol}* ${prefix}igdl
 
 
-Searchmenu 
-*${smbol}* ${prefix}play [query]
-*${smbol}* ${prefix}song [query]
-*${smbol}* ${prefix}yts [query]
-*${smbol}* ${prefix}google [query]
-*${smbol}* ${prefix}gimage [query]
-*${smbol}* ${prefix}pinterest [query]
-*${smbol}* ${prefix}wallpaper [query]
-*${smbol}* ${prefix}wikimedia [query]
-*${smbol}* ${prefix}ytsearch [query]
-*${smbol}* ${prefix}ringtone [query]
-*${smbol}* ${prefix}webtoon [query]
+  *SEARCH MENU*
+  *${smbol}* ${prefix}play [query]
+  *${smbol}* ${prefix}song [query]
+  *${smbol}* ${prefix}yts [query]
+  *${smbol}* ${prefix}google [query]
+  *${smbol}* ${prefix}gimage [query]
+  *${smbol}* ${prefix}pinterest [query]
+  *${smbol}* ${prefix}wallpaper [query]
+  *${smbol}* ${prefix}wikimedia [query]
+  *${smbol}* ${prefix}ytsearch [query]
+  *${smbol}* ${prefix}ringtone [query]
+  *${smbol}* ${prefix}webtoon [query]
  
-Randommenu
-*${smbol}* ${prefix}coffee
-*${smbol}* ${prefix}animequote (Query)
-*${smbol}* ${prefix}couplepp
+  *RANDOM MENU*
+  *${smbol}* ${prefix}coffee
+  *${smbol}* ${prefix}animequote (Query)
+  *${smbol}* ${prefix}couplepp
  
-Animerandom	        
-*${smbol}* ${prefix}loli
-*${smbol}* ${prefix}bully
-*${smbol}* ${prefix}cuddle
-*${smbol}* ${prefix}cry
-*${smbol}* ${prefix}hug
-*${smbol}* ${prefix}awoo
-*${smbol}* ${prefix}kiss
-*${smbol}* ${prefix}lick
-*${smbol}* ${prefix}pat
-*${smbol}* ${prefix}smug
-*${smbol}* ${prefix}bonk
-*${smbol}* ${prefix}yeet
-*${smbol}* ${prefix}blush
-*${smbol}* ${prefix}smile
-*${smbol}* ${prefix}wave
-*${smbol}* ${prefix}highfive
-*${smbol}* ${prefix}handhold
-*${smbol}* ${prefix}nom
-*${smbol}* ${prefix}glomp
-*${smbol}* ${prefix}bite
-*${smbol}* ${prefix}slap
-*${smbol}* ${prefix}kill
-*${smbol}* ${prefix}happy
-*${smbol}* ${prefix}wink
-*${smbol}* ${prefix}poke
-*${smbol}* ${prefix}dance
-*${smbol}* ${prefix}cringe
-*${smbol}* ${prefix}cry
-*${smbol}* ${prefix}kill
-*${smbol}* ${prefix}hug
-*${smbol}* ${prefix}pat
-*${smbol}* ${prefix}lick
-*${smbol}* ${prefix}kiss
-*${smbol}* ${prefix}bite
-*${smbol}* ${prefix}yeet
-*${smbol}* ${prefix}neko
-*${smbol}* ${prefix}bully
-*${smbol}* ${prefix}bonk
-*${smbol}* ${prefix}wink
-*${smbol}* ${prefix}poke
-*${smbol}* ${prefix}nom
-*${smbol}* ${prefix}slap
-*${smbol}* ${prefix}smile
-*${smbol}* ${prefix}wave
-*${smbol}* ${prefix}awoo
-*${smbol}* ${prefix}blush
-*${smbol}* ${prefix}smug
-*${smbol}* ${prefix}glomp
-*${smbol}* ${prefix}happy
-*${smbol}* ${prefix}dance
-*${smbol}* ${prefix}cringe
-*${smbol}* ${prefix}cuddle
-*${smbol}* ${prefix}highfive
-*${smbol}* ${prefix}shinobu
-*${smbol}* ${prefix}megumin
-*${smbol}* ${prefix}handhold
-*${smbol}* ${prefix}cum
-*${smbol}* ${prefix}ass
-*${smbol}* ${prefix}culo
-*${smbol}* ${prefix}hentai
-*${smbol}* ${prefix}blowjob
-*${smbol}* ${prefix}bdsm
-*${smbol}* ${prefix}gangbang
-*${smbol}* ${prefix}pussy
-*${smbol}* ${prefix}yuri
-*${smbol}* ${prefix}ero
-*${smbol}* ${prefix}thighs
-*${smbol}* ${prefix}panties
-*${smbol}* ${prefix}masturbation
-*${smbol}* ${prefix}neko
-*${smbol}* ${prefix}orgy
-*${smbol}* ${prefix}foot
-*${smbol}* ${prefix}glasses
-*${smbol}* ${prefix}fendom
-*${smbol}* ${prefix}cuckold
-*${smbol}* ${prefix}ahegao
+  *ANIME RANDOM*        
+  *${smbol}* ${prefix}loli
+  *${smbol}* ${prefix}bully
+  *${smbol}* ${prefix}cuddle
+  *${smbol}* ${prefix}cry
+  *${smbol}* ${prefix}hug
+  *${smbol}* ${prefix}awoo
+  *${smbol}* ${prefix}kiss
+  *${smbol}* ${prefix}lick
+  *${smbol}* ${prefix}pat
+  *${smbol}* ${prefix}smug
+  *${smbol}* ${prefix}bonk
+  *${smbol}* ${prefix}yeet
+  *${smbol}* ${prefix}blush
+  *${smbol}* ${prefix}smile
+  *${smbol}* ${prefix}wave
+  *${smbol}* ${prefix}highfive
+  *${smbol}* ${prefix}handhold
+  *${smbol}* ${prefix}nom
+  *${smbol}* ${prefix}glomp
+  *${smbol}* ${prefix}bite
+  *${smbol}* ${prefix}slap
+  *${smbol}* ${prefix}kill
+  *${smbol}* ${prefix}happy
+  *${smbol}* ${prefix}wink
+  *${smbol}* ${prefix}poke
+  *${smbol}* ${prefix}dance
+  *${smbol}* ${prefix}cringe
+  *${smbol}* ${prefix}cry
+  *${smbol}* ${prefix}kill
+  *${smbol}* ${prefix}hug
+  *${smbol}* ${prefix}pat
+  *${smbol}* ${prefix}lick
+  *${smbol}* ${prefix}kiss
+  *${smbol}* ${prefix}bite
+  *${smbol}* ${prefix}yeet
+  *${smbol}* ${prefix}neko
+  *${smbol}* ${prefix}bully
+  *${smbol}* ${prefix}bonk
+  *${smbol}* ${prefix}wink
+  *${smbol}* ${prefix}poke
+  *${smbol}* ${prefix}nom
+  *${smbol}* ${prefix}slap
+  *${smbol}* ${prefix}smile
+  *${smbol}* ${prefix}wave
+  *${smbol}* ${prefix}awoo
+  *${smbol}* ${prefix}blush
+  *${smbol}* ${prefix}smug
+  *${smbol}* ${prefix}glomp
+  *${smbol}* ${prefix}happy
+  *${smbol}* ${prefix}dance
+  *${smbol}* ${prefix}cringe
+  *${smbol}* ${prefix}cuddle
+  *${smbol}* ${prefix}highfive
+  *${smbol}* ${prefix}shinobu
+  *${smbol}* ${prefix}megumin
+  *${smbol}* ${prefix}handhold
+  *${smbol}* ${prefix}cum
+  *${smbol}* ${prefix}ass
+  *${smbol}* ${prefix}culo
+  *${smbol}* ${prefix}hentai
+  *${smbol}* ${prefix}blowjob
+  *${smbol}* ${prefix}bdsm
+  *${smbol}* ${prefix}gangbang
+  *${smbol}* ${prefix}pussy
+  *${smbol}* ${prefix}yuri
+  *${smbol}* ${prefix}ero
+  *${smbol}* ${prefix}thighs
+  *${smbol}* ${prefix}panties
+  *${smbol}* ${prefix}masturbation
+  *${smbol}* ${prefix}neko
+  *${smbol}* ${prefix}orgy
+  *${smbol}* ${prefix}foot
+  *${smbol}* ${prefix}glasses
+  *${smbol}* ${prefix}fendom
+  *${smbol}* ${prefix}cuckold
+  *${smbol}* ${prefix}ahegao
  
-Textpromenu	        
-*${smbol}* ${prefix}circuit
-*${smbol}* ${prefix}classic8bit
-*${smbol}* ${prefix}color-fireworks
-*${smbol}* ${prefix}cool-metal
-*${smbol}* ${prefix}cutegirl
-*${smbol}* ${prefix}dark-gold-metal
-*${smbol}* ${prefix}decorated-cookie
-*${smbol}* ${prefix}deluxe-gold
-*${smbol}* ${prefix}deluxe-silver
-*${smbol}* ${prefix}dinamo
-*${smbol}* ${prefix}double-exposure
-*${smbol}* ${prefix}dragon-fire
-*${smbol}* ${prefix}eroded-metal
-*${smbol}* ${prefix}fabric-text
-*${smbol}* ${prefix}firework
-*${smbol}* ${prefix}floraltext
-*${smbol}* ${prefix}fox-crossfire
-*${smbol}* ${prefix}fun-certify1
-*${smbol}* ${prefix}fun-certify2
-*${smbol}* ${prefix}futuristic
-*${smbol}* ${prefix}galaxy-angel
-*${smbol}* ${prefix}galaxy-effect
-*${smbol}* ${prefix}galaxy-effect2
-*${smbol}* ${prefix}galaxy-text
-*${smbol}* ${prefix}galaxy-text-3
-*${smbol}* ${prefix}gankk-league-of-kings
-*${smbol}* ${prefix}gemstone
-*${smbol}* ${prefix}genji-overwatch
-*${smbol}* ${prefix}glitchtext
-*${smbol}* ${prefix}glossy
-*${smbol}* ${prefix}glossy-bluemetal
-*${smbol}* ${prefix}glossy-carbon
-*${smbol}* ${prefix}glossy-chrome
-*${smbol}* ${prefix}gold-avenger
-*${smbol}* ${prefix}gold-barcar
-*${smbol}* ${prefix}gold-batman
-*${smbol}* ${prefix}gold-bird2
-*${smbol}* ${prefix}gold-eagle
-*${smbol}* ${prefix}gold-effect
-*${smbol}* ${prefix}gold-fox
-*${smbol}* ${prefix}gold-glitter
-*${smbol}* ${prefix}gold-lion
-*${smbol}* ${prefix}gold-lion2
-*${smbol}* ${prefix}gold-star
-*${smbol}* ${prefix}gold-tiger
-*${smbol}* ${prefix}golden-letter
-*${smbol}* ${prefix}gr-crossfire
-*${smbol}* ${prefix}gradientlogo
-*${smbol}* ${prefix}graffiti-color
-*${smbol}* ${prefix}graffiti-text3
-*${smbol}* ${prefix}1917-style 
-*${smbol}* ${prefix}3d-effect 
-*${smbol}* ${prefix}3d-rubystone 
-*${smbol}* ${prefix}3d-text-sub-zombie 
-*${smbol}* ${prefix}3dengraved 
-*${smbol}* ${prefix}3dgalaxy-metal 
-*${smbol}* ${prefix}3dgold 
-*${smbol}* ${prefix}3dgolden 
-*${smbol}* ${prefix}3dgradient 
-*${smbol}* ${prefix}3dlove 
-*${smbol}* ${prefix}3dluxury 
-*${smbol}* ${prefix}3dneonlight 
-*${smbol}* ${prefix}3dpapercut 
-*${smbol}* ${prefix}3drainbow 
-*${smbol}* ${prefix}3drealistic 
-*${smbol}* ${prefix}3drosegold 
-*${smbol}* ${prefix}3dscifi 
-*${smbol}* ${prefix}3dsilver 
-*${smbol}* ${prefix}3dspace 
-*${smbol}* ${prefix}3dstone 
-*${smbol}* ${prefix}3dtext-effect 
-*${smbol}* ${prefix}3dunderwater 
-*${smbol}* ${prefix}3dvintage 
-*${smbol}* ${prefix}3dwaterpipe 
-*${smbol}* ${prefix}alice-league-of-kings 
-*${smbol}* ${prefix}angel-wing-galaxy 
-*${smbol}* ${prefix}anubis 
-*${smbol}* ${prefix}arch-crossfire 
-*${smbol}* ${prefix}art-shader 
-*${smbol}* ${prefix}assassins-creed 
-*${smbol}* ${prefix}avengers 
-*${smbol}* ${prefix}azzenka-league-of-kings 
-*${smbol}* ${prefix}balloons-cards 
-*${smbol}* ${prefix}balloons-love 
-*${smbol}* ${prefix}bearlogo 
-*${smbol}* ${prefix}bg-crossfire 
-*${smbol}* ${prefix}birthday-cake 
-*${smbol}* ${prefix}birthday-cards 
-*${smbol}* ${prefix}birthday-greeting 
-*${smbol}* ${prefix}birthday-roses 
-*${smbol}* ${prefix}black-metal 
-*${smbol}* ${prefix}blackpink 
-*${smbol}* ${prefix}blood-frosted 
-*${smbol}* ${prefix}blood-text 
-*${smbol}* ${prefix}blue-effect 
-*${smbol}* ${prefix}blue-glitter 
-*${smbol}* ${prefix}brickwall 
-*${smbol}* ${prefix}brokentext 
-*${smbol}* ${prefix}bubble-effect 
-*${smbol}* ${prefix}bulb-effect 
+  *TEXT PRO*        
+  *${smbol}* ${prefix}circuit
+  *${smbol}* ${prefix}classic8bit
+  *${smbol}* ${prefix}color-fireworks
+  *${smbol}* ${prefix}cool-metal
+  *${smbol}* ${prefix}cutegirl
+  *${smbol}* ${prefix}dark-gold-metal
+  *${smbol}* ${prefix}decorated-cookie
+  *${smbol}* ${prefix}deluxe-gold
+  *${smbol}* ${prefix}deluxe-silver
+  *${smbol}* ${prefix}dinamo
+  *${smbol}* ${prefix}double-exposure
+  *${smbol}* ${prefix}dragon-fire
+  *${smbol}* ${prefix}eroded-metal
+  *${smbol}* ${prefix}fabric-text
+  *${smbol}* ${prefix}firework
+  *${smbol}* ${prefix}floraltext
+  *${smbol}* ${prefix}fox-crossfire
+  *${smbol}* ${prefix}fun-certify1
+  *${smbol}* ${prefix}fun-certify2
+  *${smbol}* ${prefix}futuristic
+  *${smbol}* ${prefix}galaxy-angel
+  *${smbol}* ${prefix}galaxy-effect
+  *${smbol}* ${prefix}galaxy-effect2
+  *${smbol}* ${prefix}galaxy-text
+  *${smbol}* ${prefix}galaxy-text-3
+  *${smbol}* ${prefix}gankk-league-of-kings
+  *${smbol}* ${prefix}gemstone
+  *${smbol}* ${prefix}genji-overwatch
+  *${smbol}* ${prefix}glitchtext
+  *${smbol}* ${prefix}glossy
+  *${smbol}* ${prefix}glossy-bluemetal
+  *${smbol}* ${prefix}glossy-carbon
+  *${smbol}* ${prefix}glossy-chrome
+  *${smbol}* ${prefix}gold-avenger
+  *${smbol}* ${prefix}gold-barcar
+  *${smbol}* ${prefix}gold-batman
+  *${smbol}* ${prefix}gold-bird2
+  *${smbol}* ${prefix}gold-eagle
+  *${smbol}* ${prefix}gold-effect
+  *${smbol}* ${prefix}gold-fox
+  *${smbol}* ${prefix}gold-glitter
+  *${smbol}* ${prefix}gold-lion
+  *${smbol}* ${prefix}gold-lion2
+  *${smbol}* ${prefix}gold-star
+  *${smbol}* ${prefix}gold-tiger
+  *${smbol}* ${prefix}golden-letter
+  *${smbol}* ${prefix}gr-crossfire
+  *${smbol}* ${prefix}gradientlogo
+  *${smbol}* ${prefix}graffiti-color
+  *${smbol}* ${prefix}graffiti-text3
+  *${smbol}* ${prefix}1917-style 
+  *${smbol}* ${prefix}3d-effect 
+  *${smbol}* ${prefix}3d-rubystone 
+  *${smbol}* ${prefix}3d-text-sub-zombie 
+  *${smbol}* ${prefix}3dengraved 
+  *${smbol}* ${prefix}3dgalaxy-metal 
+  *${smbol}* ${prefix}3dgold 
+  *${smbol}* ${prefix}3dgolden 
+  *${smbol}* ${prefix}3dgradient 
+  *${smbol}* ${prefix}3dlove 
+  *${smbol}* ${prefix}3dluxury 
+  *${smbol}* ${prefix}3dneonlight 
+  *${smbol}* ${prefix}3dpapercut 
+  *${smbol}* ${prefix}3drainbow 
+  *${smbol}* ${prefix}3drealistic 
+  *${smbol}* ${prefix}3drosegold 
+  *${smbol}* ${prefix}3dscifi 
+  *${smbol}* ${prefix}3dsilver 
+  *${smbol}* ${prefix}3dspace 
+  *${smbol}* ${prefix}3dstone 
+  *${smbol}* ${prefix}3dtext-effect 
+  *${smbol}* ${prefix}3dunderwater 
+  *${smbol}* ${prefix}3dvintage 
+  *${smbol}* ${prefix}3dwaterpipe 
+  *${smbol}* ${prefix}alice-league-of-kings 
+  *${smbol}* ${prefix}angel-wing-galaxy 
+  *${smbol}* ${prefix}anubis 
+  *${smbol}* ${prefix}arch-crossfire 
+  *${smbol}* ${prefix}art-shader 
+  *${smbol}* ${prefix}assassins-creed 
+  *${smbol}* ${prefix}avengers 
+  *${smbol}* ${prefix}azzenka-league-of-kings 
+  *${smbol}* ${prefix}balloons-cards 
+  *${smbol}* ${prefix}balloons-love 
+  *${smbol}* ${prefix}bearlogo 
+  *${smbol}* ${prefix}bg-crossfire 
+  *${smbol}* ${prefix}birthday-cake 
+  *${smbol}* ${prefix}birthday-cards 
+  *${smbol}* ${prefix}birthday-greeting 
+  *${smbol}* ${prefix}birthday-roses 
+  *${smbol}* ${prefix}black-metal 
+  *${smbol}* ${prefix}blackpink 
+  *${smbol}* ${prefix}blood-frosted 
+  *${smbol}* ${prefix}blood-text 
+  *${smbol}* ${prefix}blue-effect 
+  *${smbol}* ${prefix}blue-glitter 
+  *${smbol}* ${prefix}brickwall 
+  *${smbol}* ${prefix}brokentext 
+  *${smbol}* ${prefix}bubble-effect 
+  *${smbol}* ${prefix}bulb-effect 
  
-Convertmenu
-*${smbol}* ${prefix}toimage [reply stick]
-*${smbol}* ${prefix}sticker [reply img|gif]
-*${smbol}* ${prefix}emojimix [moji+moji]
-*${smbol}* ${prefix}tovideo [reply img]
-*${smbol}* ${prefix}togif [reply stick]
-*${smbol}* ${prefix}tourl [reply img]
-*${smbol}* ${prefix}tovn [reply aud]
-*${smbol}* ${prefix}tomp3 [reply vn]
-*${smbol}* ${prefix}smeme [reply image (text)] 
-*${smbol}* ${prefix}toaudio [reply vid]
-*${smbol}* ${prefix}ebinary [reply txt]
-*${smbol}* ${prefix}dbinary [reply txt]
-*${smbol}* ${prefix}styletext [text]
-*${smbol}* ${prefix}bass [reply aud]
-*${smbol}* ${prefix}blown [reply aud]
-*${smbol}* ${prefix}deep [reply aud]
-*${smbol}* ${prefix}earrape [reply aud]
-*${smbol}* ${prefix}fast [reply aud]
-*${smbol}* ${prefix}fat [reply aud]
-*${smbol}* ${prefix}nightcore [reply aud]
-*${smbol}* ${prefix}reverse [reply aud]
-*${smbol}* ${prefix}robot [reply aud]
-*${smbol}* ${prefix}slow [reply aud]
-*${smbol}* ${prefix}squirrel [reply aud]
+  *CONVERT MENU*
+  *${smbol}* ${prefix}toimage [reply stick]
+  *${smbol}* ${prefix}sticker [reply img|gif]
+  *${smbol}* ${prefix}emojimix [moji+moji]
+  *${smbol}* ${prefix}tovideo [reply img]
+  *${smbol}* ${prefix}togif [reply stick]
+  *${smbol}* ${prefix}tourl [reply img]
+  *${smbol}* ${prefix}tovn [reply aud]
+  *${smbol}* ${prefix}tomp3 [reply vn]
+  *${smbol}* ${prefix}smeme [reply image (text)] 
+  *${smbol}* ${prefix}toaudio [reply vid]
+  *${smbol}* ${prefix}ebinary [reply txt]
+  *${smbol}* ${prefix}dbinary [reply txt]
+  *${smbol}* ${prefix}styletext [text]
+  *${smbol}* ${prefix}bass [reply aud]
+  *${smbol}* ${prefix}blown [reply aud]
+  *${smbol}* ${prefix}deep [reply aud]
+  *${smbol}* ${prefix}earrape [reply aud]
+  *${smbol}* ${prefix}fast [reply aud]
+  *${smbol}* ${prefix}fat [reply aud]
+  *${smbol}* ${prefix}nightcore [reply aud]
+  *${smbol}* ${prefix}reverse [reply aud]
+  *${smbol}* ${prefix}robot [reply aud]
+  *${smbol}* ${prefix}slow [reply aud]
+  *${smbol}* ${prefix}squirrel [reply aud]
 
-Imageefek
-*${smbol}* ${prefix}blur [reply image]
-*${smbol}* ${prefix}beautiful [reply image]
-*${smbol}* ${prefix}ytcomment [reply image]
-*${smbol}* ${prefix}wanted [reply image]
-*${smbol}* ${prefix}triggeredwebp [reply image]
-*${smbol}* ${prefix}fotojatoh [reply image]
-*${smbol}* ${prefix}imagesketch [reply image]
-*${smbol}* ${prefix}pixelate [reply image]
-*${smbol}* ${prefix}jail [reply image]
-*${smbol}* ${prefix}rip [reply image]
-*${smbol}* ${prefix}gay [reply image]
-*${smbol}* ${prefix}burn [reply image]
-*${smbol}* ${prefix}invert [reply image]
-*${smbol}* ${prefix}shit [reply image]
-`
+  *IMAGE EFEK*
+  *${smbol}* ${prefix}blur [reply image]
+  *${smbol}* ${prefix}beautiful [reply image]
+  *${smbol}* ${prefix}ytcomment [reply image]
+  *${smbol}* ${prefix}wanted [reply image]
+  *${smbol}* ${prefix}triggeredwebp [reply image]
+  *${smbol}* ${prefix}fotojatoh [reply image]
+  *${smbol}* ${prefix}imagesketch [reply image]
+  *${smbol}* ${prefix}pixelate [reply image]
+  *${smbol}* ${prefix}jail [reply image]
+  *${smbol}* ${prefix}rip [reply image]
+  *${smbol}* ${prefix}gay [reply image]
+  *${smbol}* ${prefix}burn [reply image]
+  *${smbol}* ${prefix}invert [reply image]
+  *${smbol}* ${prefix}shit [reply image]`
 let btn = [
         	{ urlButton: { displayText: `Grup Bot 👥`, url : `https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI` } },
             { urlButton: { displayText: `Youtube ▶️`, url: `https://youtube.com/c/RamaGans` } },
@@ -4173,7 +4184,7 @@ let btn = [
             //{ quickReplyButton: { displayText: `List Menu 🍢`, id: 'command'} },
             { quickReplyButton: { displayText: `Owner 👨‍💻`, id: 'owner'} }
         	]        	
-rama.send5ButGif(m.chat, anuuuu, global.botname, global.vidmenu, btn, global.thumb, {mentions: [num,nums]})
+rama.send5ButImg(from, anuuuu,  `${LahKokTam}`, global.thumb, btn)
 }
 break
     /*const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
@@ -4264,8 +4275,8 @@ case 'mainmenu':
 var unicorn = await getBuffer(picak+'Main Menu')
 await rama.send5ButImg(from, `
  _____[ *MAIN* ]_____
-*${smbol}* ${prefix}alive
-*${smbol}* ${prefix}script
+  *${smbol}* ${prefix}alive
+  *${smbol}* ${prefix}script
 *${smbol}* ${prefix}speedtest
 *${smbol}* ${prefix}ping
 *${smbol}* ${prefix}owner
