@@ -2922,13 +2922,13 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 case 'ig': case 'igdl': case 'instagram':{
  rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 m.reply(mess.wait)               
-                 if (!args[0]) return m.reply(`Use example ${usedPrefix}${command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`)
+                 if (!args[0]) return m.reply(`Use example ${prefix}${command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`)
 //  await m.reply(`${l}🔄${r}Ｌｏａｄｉｎｇ．．．`)
     const results = await instagramdl(args[0])
         .catch(async _ => await instagramdlv2(args[0]))
         .catch(async _ => await instagramdlv3(args[0]))
         .catch(async _ => await instagramdlv4(args[0]))
-        for (const { url } of results) await rama.sendFileUrl(m.chat, url, 'instagram.mp4', `${l}✅${r} Succes\n${l}🔗${r} Url: ${url}`, m)
+        for (const { url } of results) await rama.sendFileUrl(m.chat, url, 'instagram.mp4', `NI YANG PENTING WORK`, m)
             }
   break    
              
@@ -2947,8 +2947,8 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 		let anu = await umma(isUrl(text)[0])
 		if (anu.type == 'video') {
 		    let buttons = [
-                        {buttonId: `ytmp3 ${anu.media[0]} 128kbps`, buttonText: {displayText: '🎵Audio🎵'}, type: 1},
-                        {buttonId: `ytmp4 ${anu.media[0]} 360p`, buttonText: {displayText: '📽️Video📽️'}, type: 1}
+                        {buttonId: `ytmp3 ${anu.media[0]} 128kbps`, buttonText: {displayText: 'Audio'}, type: 1},
+                        {buttonId: `ytmp4 ${anu.media[0]} 360p`, buttonText: {displayText: '️Video'}, type: 1}
                     ]
 		    let buttonMessage = {
 		        image: { url: anu.author.profilePic },
