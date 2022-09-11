@@ -6,6 +6,7 @@ const util = require('util')
 const chalk = require('chalk')
 const { exec, spawn, execSync } = require("child_process")
 const axios = require('axios')
+const cooldown = new Map();
 const path = require('path')
 const os = require('os')
 const moment = require('moment-timezone')
@@ -2919,7 +2920,7 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 rama.sendMessage(m.chat, { audio: { url: anm.result.video.mp4 }, mimetype: 'audio/mp4'}, { quoted: m })   
             }
             break	       
-case 'ig': case 'igdl': case 'instagram':{
+/*case 'ig': case 'igdl': case 'instagram':{
  rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 m.reply(mess.wait)               
                  if (!args[0]) return m.reply(`Use example ${prefix}${command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`)
@@ -2930,7 +2931,7 @@ case 'ig': case 'igdl': case 'instagram':{
         .catch(async _ => await instagramdlv4(args[0]))
         for (const { url } of results) await rama.sendFileUrl(m.chat, url, 'instagram.mp4', `NI YANG PENTING WORK`, m)
             }
-  break    
+  break*/  
              
 	        case 'pindl': case 'pinterestdl': {
 rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
@@ -3812,7 +3813,6 @@ let anuuuu = `Hai ${pushname} Selamat Menggunakan Bot ini 😊
   *${smbol}* ${prefix}getmusic [yt link]
   *${smbol}* ${prefix}getvideo [yt link]
   *${smbol}* ${prefix}tiktok [link]
-  *${smbol}* ${prefix}ig [url]
   *${smbol}* ${prefix}umma [query]
   
   *SEARCH MENU*
