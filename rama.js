@@ -163,7 +163,14 @@ module.exports = rama = async (rama, m, chatUpdate, store) => {
     	const isBotAdmins = m.isGroup ? groupAdmins.includes(botNumber) : false
     	const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
     	const isPremium = isCreator || global.premium.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender) || false
-	    
+const cmd =
+			map.command.get(m.body.trim().split(/ +/).shift().toLowerCase()) ||
+			[...map.command.values()].find((x) =>
+				x.alias.find((x) => x.toLowerCase() == m.body.trim().split(/ +/).shift().toLowerCase())
+			) ||
+			map.command.get(cmdName) ||
+			[...map.command.values()].find((x) => x.alias.find((x) => x.toLowerCase() == cmdName));	   
+			 
         //member\\
         let picaks = [flaming,fluming,flarun,flasmurf]
 		let picak = picaks[Math.floor(Math.random() * picaks.length)]
