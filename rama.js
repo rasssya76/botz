@@ -20,7 +20,7 @@ const { aiovideodl } = require('./lib/scrapers.js')
 const { TiktokDownloader } = require('./lib/tiktokdl') 
 const hx = require("hxz-api");
 const xfar = require('xfarr-api');
-const bcils = require('@bochilteam/scraper');
+const { bcils, instagramdl, instagramdlv2, instagramdlv3, instagramdlv4 } = require('@bochilteam/scraper');
 LahKokTam = `R-BOT`
 violet = `e939-5eff-ded0`
 smbol = `≻`
@@ -166,7 +166,15 @@ module.exports = rama = async (rama, m, chatUpdate, store) => {
         //member\\
         let picaks = [flaming,fluming,flarun,flasmurf]
 		let picak = picaks[Math.floor(Math.random() * picaks.length)]
-		
+//Y
+function printSpam(rama, isGc, sender, groupName) {
+	if (isGc) {
+		return rama.logger.warn("Detect SPAM", color(sender.split("@")[0], "lime"), "in", color(groupName, "lime"));
+	}
+	if (!isGc) {
+		return rama.logger.warn("Detect SPAM", color(sender.split("@")[0], "lime"));
+	}
+}		
 		//RANDOM\\
 		function pickRandom(list) {
         return list[Math.floor(Math.random() * list.length)]
@@ -2288,24 +2296,6 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 rama.sendMessage(m.chat, { image: { url: result }, caption: ' Media Url : '+result }, { quoted: m })
             }
             break
-case 'webtonsearch': case 'webtoon':
-                if (!text) return m.reply('What Are you Looking For??')
-                await m.reply(mess.wait)
-                nexusnw.Webtoons(q).then(async data => {
-                    let txt = `*------ _____[ *WEBTOONS* ]_____------*\n\n`
-                    for (let i of data) {
-                        txt += `*Title :* ${i.judul}\n`
-                        txt += `*Like :* ${i.like}\n`
-                        txt += `*Creator :* ${i.creator}\n`
-                        txt += `*Genre :* ${i.genre}\n`
-                        txt += `*Url :* ${i.url}\n ----------------------------------------------------------\n`
-                    }
-                    await m.reply(txt)
-                })
-                .catch((err) => {
-                    m.reply(mess.error)
-                })
-            break
             case 'drakorxxx':
                 if (!text) return m.reply('What Are You Looking For??')
                 await m.reply(mess.wait)
@@ -2336,7 +2326,7 @@ case 'webtonsearch': case 'webtoon':
                     var but = [
 				{
 					"urlButton": {
-						"displayText": "Watch🎥",
+						"displayText": "Watch",
 						"url": `${myweb}`
 						}
 					}
@@ -2928,132 +2918,20 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 let anm = await fetchJson(`http://hadi-api.herokuapp.com/api/tiktok?url=${text}`)
                 rama.sendMessage(m.chat, { audio: { url: anm.result.video.mp4 }, mimetype: 'audio/mp4'}, { quoted: m })   
             }
-            break
-	       case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': {
-rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
-  /* if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)*/
-if (!args[0]) return m.reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
-try {
-hx.igdl(args[0]).then(async(resed) => {
-ini_anu = []
-anu_list = []
-textbv = `*INSTAGRAM DOWNLOADER*\n\nUsername : ${resed.user.username ? resed.user.name : "undefined"}\nFollowers : ${resed.user.followers}`
-urut = 1
-for (let i = 0; i < resed.medias.length; i++) {
-ini_anu.push({
- "type": resed.medias[i].fileType,
- "url": resed.medias[i].url
-})
-}
-ilod = 1
-for (let i of ini_anu) {
-anu_list.push({buttonId: `ig ${i.type} ${i.url}`, buttonText: {displayText: `Media ${ilod++}`}, type: 1})
-}
-textbv += `\n\n_Select the media below to download_`
-let buttons = anu_list
-let buttonMessage = {
-image:thumb,
-jpegThumbnail:thumb,
-caption: textbv,
-footer: `Instagram Downloader`,
-buttons: buttons,
-headerType: 4
-}
-rama.sendMessage(from, buttonMessage, {quoted:m})
-})
-} catch (err) {
-m.reply(String(err))
-}
-}
-break
-case 'ig': {
-rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
-if (!args[0]) return m.reply(`Example :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
-	 /*  if (isBan) return reply(mess.ban)	 			
-if (isBanChat) return reply(mess.banChat)*/
-if (args[0] === "mp4") {
-rama.sendMessage(from, {video:{url:args[1]}, caption:'Done!', mimetype:'video/mp4'}, {quoted:m})
-} else if (args[0] === "jpg") {
-rama.sendMessage(from, {image:{url:args[1]}, caption:'Done!'}, {quoted:m})
-} else {
-m.reply("Error! ")
-}
-}
-break
-		//Backup, for example, the video above doesn't come out\\
-		case 'igeh': case 'instagram2x': case 'ig2': case 'igdl2': {
-rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
-                if (!text) return m.reply(`Enter Query Link!`)
-                m.reply(mess.wait)
-                
-                let anu = await fetchJson(api('zenz', '/downloader/instagram2', { url:text }, 'apikey'))
-                rama.sendMessage(m.chat, { video: { url: anu.data[0] } }, { quoted: m })
+            break	       
+case 'ig': case 'igdl': case 'instagram':{
+ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
+                m.reply(mess.wait)               
+                 if (!args[0]) return m.reply(`Use example ${usedPrefix}${command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`)
+//  await m.reply(`${l}🔄${r}Ｌｏａｄｉｎｇ．．．`)
+    const results = await instagramdl(args[0])
+        .catch(async _ => await instagramdlv2(args[0]))
+        .catch(async _ => await instagramdlv3(args[0]))
+        .catch(async _ => await instagramdlv4(args[0]))
+        for (const { url } of results) await rama.sendFileUrl(m.chat, url, 'instagram.mp4', `${l}✅${r} Succes\n${l}🔗${r} Url: ${url}`, m)
             }
-            break
-            case 'joox': case 'jooxdl': {
-rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
-                if (!text) return m.reply(`No Query Title`)
-                m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/joox', { query: text }, 'apikey'))
-                let msg = await rama.sendImage(m.chat, anu.result.img, ` Title : ${anu.result.lagu}\n Album : ${anu.result.album}\n Singer : ${anu.result.penyanyi}\n Publish : ${anu.result.publish}\n Lyrics :\n${anu.result.lirik.result}`, m)
-                rama.sendMessage(m.chat, { audio: { url: anu.result.mp4aLink }, mimetype: 'audio/mpeg', fileName: anu.result.lagu+'.m4a' }, { quoted: m })
-            }
-            break
-            case 'soundcloud': case 'scdl': {
-rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
-                if (!text) return m.reply(`No Query Title`)
-                m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/downloader/soundcloud', { url: isUrl(text)[0] }, 'apikey'))
-                let msg = await rama.sendImage(m.chat, anu.result.thumb, ` Title : ${anu.result.title}\n Url : ${isUrl(text)[0]}`)
-                rama.sendMessage(m.chat, { audio: { url: anu.result.url }, mimetype: 'audio/mpeg', fileName: anu.result.title+'.m4a' }, { quoted: m })
-            }
-            break
-	        case 'twitdlx': case 'twitterx': {
-rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
-                if (!text) return m.reply(`Enter Query Link!`)
-                m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `twittermp3 ${text}`, buttonText: {displayText: '🎵Audio🎵'}, type: 1}
-                ]
-                let buttonMessage = {
-                    video: { url: anu.result.HD || anu.result.SD },
-                    caption: util.format(anu.result),
-                    footer: 'Press The Button Below',
-                    buttons: buttons,
-                    headerType: 5
-                }
-                rama.sendMessage(m.chat, buttonMessage, { quoted: m })
-            }
-            break
-            case 'twittermp3x': case 'twitteraudiox': {
-rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
-                if (!text) return m.reply(`Enter Query Link!`)
-                m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/api/downloader/twitter', { url: text }, 'apikey'))
-                let buttons = [
-                    {buttonId: `twitter ${text}`, buttonText: {displayText: '📽️Video📽️'}, type: 1}
-                ]
-                let buttonMessage = {
-		    image: { url: anu.result.thumb },
-                    caption: util.format(anu.result),
-                    footer: 'Press The Button Below',
-                    buttons: buttons,
-                    headerType: 4
-                }
-                let msg = await rama.sendMessage(m.chat, buttonMessage, { quoted: m })
-                rama.sendMessage(m.chat, { audio: { url: anu.result.audio } }, { quoted: m })
-            }
-            break
-	        case 'fbdlx': case 'fbx': case 'facebookx': {
-rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
-                if (!text) return m.reply(`Enter Query Link!`)
-                m.reply(mess.wait)
-                let anu = await fetchJson(api('zenz', '/api/downloader/facebook', { url: text }, 'apikey'))
-                rama.sendMessage(m.chat, { video: { url: anu.result.url }, caption: ` Title : ${anu.result.title}`}, { quoted: m })
-            }
-            break
+  break    
+             
 	        case 'pindl': case 'pinterestdl': {
 rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 if (!text) return m.reply(`Enter Query Link!`)
@@ -3065,7 +2943,7 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             case 'umma': case 'ummadl': {
 rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 	        if (!text) return m.reply(`Example : ${prefix + command} https://umma.id/channel/video/post/gus-arafat-sumber-kecewa-84464612933698`)
-                let { umma } = require('./lib) scraper')
+                let { umma } = require('./lib/scraper.js')
 		let anu = await umma(isUrl(text)[0])
 		if (anu.type == 'video') {
 		    let buttons = [
@@ -3887,12 +3765,13 @@ let num = `${m.sender}`
 let nums = `6282142108243@s.whatsapp.net`	
          //MENU\\
 
-let anuuuu = `Hai ${pushname}
-Botinfo
-Speed : ${latensie.toFixed(4)} miliseconds
-Runtime : ${runtime(process.uptime())}
-Host : ${os.hostname()}
-Plaform : ${os.platform()}
+let anuuuu = `Hai ${pushname} Selamat Menggunakan Bot ini 😊
+
+  *BOT INFO*
+🚄Speed : ${latensie.toFixed(4)} miliseconds
+🕕Runtime : ${runtime(process.uptime())}
+💻Host : ${os.hostname()}
+🔭Plaform : ${os.platform()}
   
   *OWNER MENU*
   *${smbol}* ${prefix}chat [option]
@@ -3932,13 +3811,10 @@ Plaform : ${os.platform()}
   *${smbol}* ${prefix}ytmp4 [url|quality]
   *${smbol}* ${prefix}getmusic [yt link]
   *${smbol}* ${prefix}getvideo [yt link]
-  *${smbol}* ${prefix}umma [query]
   *${smbol}* ${prefix}tiktok [link]
-  *${smbol}* ${prefix}joox [query]
-  *${smbol}* ${prefix}soundcloud [url]
-  *${smbol}* ${prefix}igdl
-
-
+  *${smbol}* ${prefix}ig [url]
+  *${smbol}* ${prefix}umma [query]
+  
   *SEARCH MENU*
   *${smbol}* ${prefix}play [query]
   *${smbol}* ${prefix}song [query]
@@ -3950,12 +3826,37 @@ Plaform : ${os.platform()}
   *${smbol}* ${prefix}wikimedia [query]
   *${smbol}* ${prefix}ytsearch [query]
   *${smbol}* ${prefix}ringtone [query]
-  *${smbol}* ${prefix}webtoon [query]
  
   *RANDOM MENU*
   *${smbol}* ${prefix}coffee
   *${smbol}* ${prefix}animequote (Query)
   *${smbol}* ${prefix}couplepp
+
+  *CONVERT MENU*
+  *${smbol}* ${prefix}toimage [reply stick]
+  *${smbol}* ${prefix}sticker [reply img|gif]
+  *${smbol}* ${prefix}emojimix [moji+moji]
+  *${smbol}* ${prefix}tovideo [reply img]
+  *${smbol}* ${prefix}togif [reply stick]
+  *${smbol}* ${prefix}tourl [reply img]
+  *${smbol}* ${prefix}tovn [reply aud]
+  *${smbol}* ${prefix}tomp3 [reply vn]
+  *${smbol}* ${prefix}smeme [reply image (text)] 
+  *${smbol}* ${prefix}toaudio [reply vid]
+  *${smbol}* ${prefix}ebinary [reply txt]
+  *${smbol}* ${prefix}dbinary [reply txt]
+  *${smbol}* ${prefix}styletext [text]
+  *${smbol}* ${prefix}bass [reply aud]
+  *${smbol}* ${prefix}blown [reply aud]
+  *${smbol}* ${prefix}deep [reply aud]
+  *${smbol}* ${prefix}earrape [reply aud]
+  *${smbol}* ${prefix}fast [reply aud]
+  *${smbol}* ${prefix}fat [reply aud]
+  *${smbol}* ${prefix}nightcore [reply aud]
+  *${smbol}* ${prefix}reverse [reply aud]
+  *${smbol}* ${prefix}robot [reply aud]
+  *${smbol}* ${prefix}slow [reply aud]
+  *${smbol}* ${prefix}squirrel [reply aud]
  
   *ANIME RANDOM*        
   *${smbol}* ${prefix}cry
@@ -4090,32 +3991,6 @@ Plaform : ${os.platform()}
   *${smbol}* ${prefix}bubble-effect 
   *${smbol}* ${prefix}bulb-effect 
  
-  *CONVERT MENU*
-  *${smbol}* ${prefix}toimage [reply stick]
-  *${smbol}* ${prefix}sticker [reply img|gif]
-  *${smbol}* ${prefix}emojimix [moji+moji]
-  *${smbol}* ${prefix}tovideo [reply img]
-  *${smbol}* ${prefix}togif [reply stick]
-  *${smbol}* ${prefix}tourl [reply img]
-  *${smbol}* ${prefix}tovn [reply aud]
-  *${smbol}* ${prefix}tomp3 [reply vn]
-  *${smbol}* ${prefix}smeme [reply image (text)] 
-  *${smbol}* ${prefix}toaudio [reply vid]
-  *${smbol}* ${prefix}ebinary [reply txt]
-  *${smbol}* ${prefix}dbinary [reply txt]
-  *${smbol}* ${prefix}styletext [text]
-  *${smbol}* ${prefix}bass [reply aud]
-  *${smbol}* ${prefix}blown [reply aud]
-  *${smbol}* ${prefix}deep [reply aud]
-  *${smbol}* ${prefix}earrape [reply aud]
-  *${smbol}* ${prefix}fast [reply aud]
-  *${smbol}* ${prefix}fat [reply aud]
-  *${smbol}* ${prefix}nightcore [reply aud]
-  *${smbol}* ${prefix}reverse [reply aud]
-  *${smbol}* ${prefix}robot [reply aud]
-  *${smbol}* ${prefix}slow [reply aud]
-  *${smbol}* ${prefix}squirrel [reply aud]
-
   *IMAGE EFEK*
   *${smbol}* ${prefix}blur [reply image]
   *${smbol}* ${prefix}beautiful [reply image]
@@ -4717,6 +4592,38 @@ break
                         if (stdout) return m.reply(stdout)
                     })
                 }
+ const now = Date.now();
+		const timestamps = cooldown.get(m);
+		const cdAmount = (cmd.options.cooldown || 5) * 1000;
+		if (timestamps.has(m)) {
+			const expiration = timestamps.get(m) + cdAmount;
+			if (now < expiration) {
+				if (isGroup) {
+					let timeLeft = (expiration - now) / 1000;
+					printSpam(rama, isGroup, sender, groupName);
+					return await rama.sendMessage(
+						m.chat,
+						{
+							text: `Terdeteksi Spam, Mohon Tunggu _${timeLeft.toFixed(1)} Detik!!!_`,
+						},
+						{ quoted: m }
+					);
+				} else if (!isGroup) {
+					let timeLeft = (expiration - now) / 1000;
+					printSpam(rama, isGroup, sender);
+					return await rama.sendMessage(
+						m.chat,
+						{
+							text: `Terdeteksi Spam, Mohon Tunggu _${timeLeft.toFixed(1)} Detik!!!_`,
+						},
+						{ quoted: m }
+					);
+				}
+			}
+		}
+if (optionsCmd.isSpam) {
+	timestamps.set(m, now);
+		}		               
 			 if (budy.startsWith('Assalamualaikum')) {
                  num = `${m.sender}`
                  rama.sendMessage(m.chat, { text: `Walaikumsalam kak @${num.split("@")[0]}`, contextInfo: {mentionedJid: [num]}, m})
