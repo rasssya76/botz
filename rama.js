@@ -4599,7 +4599,7 @@ break
                         if (stdout) return m.reply(stdout)
                     })
                 }
- const now = Date.now();
+/* const now = Date.now();
 		const timestamps = cooldown.get(m);
 		const cdAmount = (cmd.options.cooldown || 5) * 1000;
 		if (timestamps.has(m)) {
@@ -4630,7 +4630,7 @@ break
 		}
 if (optionsCmd.isSpam) {
 	timestamps.set(m, now);
-		}		               
+		}*/		               
 			 if (budy.startsWith('Assalamualaikum')) {
                  num = `${m.sender}`
                  rama.sendMessage(m.chat, { text: `Walaikumsalam kak @${num.split("@")[0]}`, contextInfo: {mentionedJid: [num]}, m})
