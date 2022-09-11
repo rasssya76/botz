@@ -6,8 +6,10 @@ const { state, saveState } = useSingleFileAuthState(`./${sessionName}.json`)
 const pino = require('pino')
 const { Boom } = require('@hapi/boom')
 const fs = require('fs')
+const cooldown = new Map();
 const yargs = require('yargs/yargs')
 const chalk = require('chalk')
+const axios = require('axios')
 const CFonts = require('cfonts');
 const FileType = require('file-type')
 const path = require('path')
@@ -115,7 +117,6 @@ async function startrama() {
        rama.send5ButImg(pea[0].id, `「 Group Settings Changed 」\n\nGroup Subject Has Been Changed To *${pea[0].subject}*`, `Group Settings Change Message`, wm_fatih, [])
      }
     })
-
    /* rama.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
         try {
@@ -327,19 +328,83 @@ rama.sendMessage(anu.id, buttonMessage, {quoted:fgclink})
         }
         console.log('Connected...', update)
     })
-
     rama.ev.on('creds.update', saveState)
+          // Add Other
+      
+      /** Resize Image
+      *
+      * @param {Buffer} Buffer (Only Image)
+      * @param {Numeric} Width
+      * @param {Numeric} Height
+      */
+      rama.reSize = async (image, width, height) => {
+       let jimp = require('jimp')
+       var oyy = await jimp.read(image);
+       var kiyomasa = await oyy.resize(width, height).getBufferAsync(jimp.MIME_JPEG)
+       return kiyomasa
+      }
+      // Siapa yang cita-citanya pakai resize buat keliatan thumbnailnya
+      
 
-    // Add Other
-    /** Send Button 5 Image
-     *
+      /**
+      *
+      * @param {*} jid
+      * @param {*} url
+      * @param {*} caption
+      * @param {*} quoted
+      * @param {*} options
+      */
+     rama.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
+      let mime = '';
+      let res = await axios.head(url)
+      mime = res.headers['content-type']
+      if (mime.split("/")[1] === "gif") {
+     return rama.sendMessage(jid, { video: await getBuffer(url), caption: caption, gifPlayback: true, ...options}, { quoted: quoted, ...options})
+      }
+      let type = mime.split("/")[0]+"Message"
+      if(mime === "application/pdf"){
+     return rama.sendMessage(jid, { document: await getBuffer(url), mimetype: 'application/pdf', caption: caption, ...options}, { quoted: quoted, ...options })
+      }
+      if(mime.split("/")[0] === "image"){
+     return rama.sendMessage(jid, { image: await getBuffer(url), caption: caption, ...options}, { quoted: quoted, ...options})
+      }
+      if(mime.split("/")[0] === "video"){
+     return rama.sendMessage(jid, { video: await getBuffer(url), caption: caption, mimetype: 'video/mp4', ...options}, { quoted: quoted, ...options })
+      }
+      if(mime.split("/")[0] === "audio"){
+     return rama.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options}, { quoted: quoted, ...options })
+      }
+      }
+
+    /** Send List Messaage
+      *
+      *@param {*} jid
+      *@param {*} text
+      *@param {*} footer
+      *@param {*} title
+      *@param {*} butText
+      *@param [*] sections
+      *@param {*} quoted
+      */
+        rama.sendListMsg = (jid, text = '', footer = '', title = '' , butText = '', sects = [], quoted) => {
+        let sections = sects
+        var listMes = {
+        text: text,
+        footer: footer,
+        title: title,
+        buttonText: butText,
+        sections
+        }
+        rama.sendMessage(jid, listMes, { quoted: quoted })
+        }
+
+    /** Send Button 5 Message
+     * 
      * @param {*} jid
      * @param {*} text
      * @param {*} footer
-     * @param {*} image
-     * @param [*] button
-     * @param {*} options
-     * @returns
+     * @param {*} button
+     * @returns 
      */
     rama.send5ButImg = async (jid , text = '' , footer = '', img, but = [], buff, options = {}) =>{
     rama.sendMessage(jid, { image: img, caption: text, footer: footer, templateButtons: but, ...options })
