@@ -21,6 +21,7 @@ const { aiovideodl } = require('./lib/scrapers.js')
 const { TiktokDownloader } = require('./lib/tiktokdl') 
 const hx = require("hxz-api");
 const xfar = require('xfarr-api');
+const { FajarNews, BBCNews, metroNews, CNNNews, iNews, KumparanNews, TribunNews, DailyNews, DetikNews, OkezoneNews, CNBCNews, KompasNews, SindoNews, TempoNews, IndozoneNews, AntaraNews, RepublikaNews, VivaNews, KontanNews, MerdekaNews, KomikuSearch, AniPlanetSearch, KomikFoxSearch, KomikStationSearch, MangakuSearch, KiryuuSearch, KissMangaSearch, KlikMangaSearch, PalingMurah, LayarKaca21, AminoApps, Mangatoon, WAModsSearch, Emojis, CoronaInfo, JalanTikusMeme,Cerpen, Quotes, Darkjokes } = require("dhn-api");
 const { bcils, instagramdl, instagramdlv2, instagramdlv3, instagramdlv4 } = require('@bochilteam/scraper');
 LahKokTam = `R-BOT`
 violet = `e939-5eff-ded0`
@@ -2515,7 +2516,7 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
 
 
             break
-              case 'wanted': case 'ytcomment': case 'beautiful': case 'jail': case 'fotojatoh': case 'pixelate': case 'blur': case 'imagesketch': case 'triggeredwebp': case 'shit': case 'burn': case 'invert': case 'gay': case 'rip': {
+              case 'wanted': case 'beautiful': case 'jail': case 'fotojatoh': case 'pixelate': case 'blur': case 'imagesketch': case 'triggeredwebp': case 'shit': case 'burn': case 'invert': case 'gay': case 'rip': {
 rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})                          
 	        	if (!/image/.test(mime)) throw `*Send/Reply Image With Caption* ${prefix + command}`
 	        	m.reply(mess.wait)
@@ -3465,7 +3466,7 @@ case 'ass': const _0xadb8ed=_0x449f;function _0x449f(_0x20a193,_0x1be6da){const 
                     case 'orgy': const _0x53f892=_0x258a;function _0x258a(_0x288261,_0x35748f){const _0x2afae5=_0x2afa();return _0x258a=function(_0x258a73,_0x2c6b6e){_0x258a73=_0x258a73-0x1dc;let _0x461db8=_0x2afae5[_0x258a73];return _0x461db8;},_0x258a(_0x288261,_0x35748f);}(function(_0xe86978,_0x59f3a4){const _0x1b8578=_0x258a,_0xf8390c=_0xe86978();while(!![]){try{const _0x58697b=parseInt(_0x1b8578(0x1e6))/0x1*(-parseInt(_0x1b8578(0x1e3))/0x2)+-parseInt(_0x1b8578(0x1e0))/0x3+parseInt(_0x1b8578(0x1e4))/0x4*(-parseInt(_0x1b8578(0x1e8))/0x5)+parseInt(_0x1b8578(0x1dc))/0x6*(parseInt(_0x1b8578(0x1e5))/0x7)+parseInt(_0x1b8578(0x1eb))/0x8+parseInt(_0x1b8578(0x1ea))/0x9*(-parseInt(_0x1b8578(0x1ec))/0xa)+parseInt(_0x1b8578(0x1de))/0xb;if(_0x58697b===_0x59f3a4)break;else _0xf8390c['push'](_0xf8390c['shift']());}catch(_0x14c2e9){_0xf8390c['push'](_0xf8390c['shift']());}}}(_0x2afa,0x5a65a));{m.reply(mess[_0x53f892(0x1e1)]);let buttons=[{'buttonId':'orgy','buttonText':{'displayText':_0x53f892(0x1dd)},'type':0x1}],anu=await fetchJson(_0x53f892(0x1e7)),buttonMessage={'image':{'url':''+anu['result']},'caption':_0x53f892(0x1df),'footer':global['botnma'],'buttons':buttons,'headerType':0x4};rama[_0x53f892(0x1e2)](m[_0x53f892(0x1e9)],buttonMessage,{'quoted':m});}function _0x2afa(){const _0x26e94d=['wait','sendMessage','42xZkCLe','4pcOWox','7kGQNac','7554kqNxpR','https://wallebotapi.mitomods.com/docs/nsfw/orgy?apikey=Donitas','796285sLhnVD','chat','63pMrUmd','5784576SVZCuM','700280TTvpbE','3563706sZKpaj','NEXT','5001612vpTrRb','R-\x20BOT\x20MD','1780086nQOMte'];_0x2afa=function(){return _0x26e94d;};return _0x2afa();}
                     break
                     
-                    case 'panties': function _0xc46f(){const _0x15cf6b=['chat','botnma','4153680mcaeiO','10dskSOg','6VZGKUe','https://wallebotapi.mitomods.com/docs/nsfw/panties?apikey=Donitas','panties','result','411971LGkalH','5345496FwFokC','1574937DlDbQe','wait','NEXT','73537hWPSvW','R-\x20BOT\x20MD','5772445fuusqU','870954wEriPw','sendMessage'];_0xc46f=function(){return _0x15cf6b;};return _0xc46f();}const _0x42cb40=_0x1864;(function(_0x1cd42a,_0x42582c){const _0x8d8311=_0x1864,_0x594a3a=_0x1cd42a();while(!![]){try{const _0x2f503b=-parseInt(_0x8d8311(0xab))/0x1*(parseInt(_0x8d8311(0xb3))/0x2)+parseInt(_0x8d8311(0xae))/0x3+parseInt(_0x8d8311(0xb2))/0x4+-parseInt(_0x8d8311(0xad))/0x5+parseInt(_0x8d8311(0xa2))/0x6*(-parseInt(_0x8d8311(0xa6))/0x7)+parseInt(_0x8d8311(0xa7))/0x8+parseInt(_0x8d8311(0xa8))/0x9;if(_0x2f503b===_0x42582c)break;else _0x594a3a['push'](_0x594a3a['shift']());}catch(_0x2c7643){_0x594a3a['push'](_0x594a3a['shift']());}}}(_0xc46f,0x9042b));function _0x1864(_0x275477,_0x1f2753){const _0xc46fe4=_0xc46f();return _0x1864=function(_0x186434,_0x36524d){_0x186434=_0x186434-0xa2;let _0x3824f7=_0xc46fe4[_0x186434];return _0x3824f7;},_0x1864(_0x275477,_0x1f2753);}{m.reply(mess[_0x42cb40(0xa9)]);let buttons=[{'buttonId':_0x42cb40(0xa4),'buttonText':{'displayText':_0x42cb40(0xaa)},'type':0x1}],anu=await fetchJson(_0x42cb40(0xa3)),buttonMessage={'image':{'url':''+anu[_0x42cb40(0xa5)]},'caption':_0x42cb40(0xac),'footer':global[_0x42cb40(0xb1)],'buttons':buttons,'headerType':0x4};rama[_0x42cb40(0xaf)](m[_0x42cb40(0xb0)],buttonMessage,{'quoted':m});}
+                    case 'panties': function _0xc46f(){const _0x15cf6b=['chat','botnma','4153680mcaeiO','10dskSOg','6VZGKUe','https://wallebotapi.mitomods.com/docs/nsfw/panties?apikey=Donitas','panties','result','411971LGkalH','5345496FwFokC','1574937DlDbQe','wait','NEXT','73537mPSvW','R-\x20BOT\x20MD','5772445fuusqU','870954wEriPw','sendMessage'];_0xc46f=function(){return _0x15cf6b;};return _0xc46f();}const _0x42cb40=_0x1864;(function(_0x1cd42a,_0x42582c){const _0x8d8311=_0x1864,_0x594a3a=_0x1cd42a();while(!![]){try{const _0x2f503b=-parseInt(_0x8d8311(0xab))/0x1*(parseInt(_0x8d8311(0xb3))/0x2)+parseInt(_0x8d8311(0xae))/0x3+parseInt(_0x8d8311(0xb2))/0x4+-parseInt(_0x8d8311(0xad))/0x5+parseInt(_0x8d8311(0xa2))/0x6*(-parseInt(_0x8d8311(0xa6))/0x7)+parseInt(_0x8d8311(0xa7))/0x8+parseInt(_0x8d8311(0xa8))/0x9;if(_0x2f503b===_0x42582c)break;else _0x594a3a['push'](_0x594a3a['shift']());}catch(_0x2c7643){_0x594a3a['push'](_0x594a3a['shift']());}}}(_0xc46f,0x9042b));function _0x1864(_0x275477,_0x1f2753){const _0xc46fe4=_0xc46f();return _0x1864=function(_0x186434,_0x36524d){_0x186434=_0x186434-0xa2;let _0x3824f7=_0xc46fe4[_0x186434];return _0x3824f7;},_0x1864(_0x275477,_0x1f2753);}{m.reply(mess[_0x42cb40(0xa9)]);let buttons=[{'buttonId':_0x42cb40(0xa4),'buttonText':{'displayText':_0x42cb40(0xaa)},'type':0x1}],anu=await fetchJson(_0x42cb40(0xa3)),buttonMessage={'image':{'url':''+anu[_0x42cb40(0xa5)]},'caption':_0x42cb40(0xac),'footer':global[_0x42cb40(0xb1)],'buttons':buttons,'headerType':0x4};rama[_0x42cb40(0xaf)](m[_0x42cb40(0xb0)],buttonMessage,{'quoted':m});}
                     break
                     
                     case 'pussy': const _0x5d1ac1=_0x35f7;(function(_0x515431,_0x70562f){const _0x52c802=_0x35f7,_0x4bc375=_0x515431();while(!![]){try{const _0x2e851b=parseInt(_0x52c802(0x7c))/0x1*(-parseInt(_0x52c802(0x86))/0x2)+parseInt(_0x52c802(0x8a))/0x3*(parseInt(_0x52c802(0x8d))/0x4)+parseInt(_0x52c802(0x85))/0x5+parseInt(_0x52c802(0x87))/0x6*(parseInt(_0x52c802(0x88))/0x7)+-parseInt(_0x52c802(0x80))/0x8*(parseInt(_0x52c802(0x7d))/0x9)+parseInt(_0x52c802(0x89))/0xa+-parseInt(_0x52c802(0x84))/0xb;if(_0x2e851b===_0x70562f)break;else _0x4bc375['push'](_0x4bc375['shift']());}catch(_0x366ecb){_0x4bc375['push'](_0x4bc375['shift']());}}}(_0x49e2,0x99615));function _0x35f7(_0x289517,_0x2517a0){const _0x49e200=_0x49e2();return _0x35f7=function(_0x35f7b0,_0x1c6d27){_0x35f7b0=_0x35f7b0-0x7c;let _0x290623=_0x49e200[_0x35f7b0];return _0x290623;},_0x35f7(_0x289517,_0x2517a0);}function _0x49e2(){const _0x4b7ab0=['chat','pussy','https://wallebotapi.mitomods.com/docs/nsfw/pussy?apikey=Donitas','12379422UPfGhI','5262460AgrkWy','2XzkqcF','274782pMMPVY','126urFRZW','9615280iRCPnf','268275jsepKO','NEXT','botnma','24vtNotI','1195213IOocCQ','684YUWPKz','sendMessage','wait','44848SOtwrq'];_0x49e2=function(){return _0x4b7ab0;};return _0x49e2();}{m.reply(mess[_0x5d1ac1(0x7f)]);let buttons=[{'buttonId':_0x5d1ac1(0x82),'buttonText':{'displayText':_0x5d1ac1(0x8b)},'type':0x1}],anu=await fetchJson(_0x5d1ac1(0x83)),buttonMessage={'image':{'url':''+anu['result']},'caption':'R-\x20BOT\x20MD','footer':global[_0x5d1ac1(0x8c)],'buttons':buttons,'headerType':0x4};rama[_0x5d1ac1(0x7e)](m[_0x5d1ac1(0x81)],buttonMessage,{'quoted':m});}
@@ -3481,18 +3482,377 @@ case 'ass': const _0xadb8ed=_0x449f;function _0x449f(_0x20a193,_0x1be6da){const 
 					rama.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
-case "setmenuxxx": 
-if (!text) return m.reply("1. image\n2. list\n3. catalog\n\nExample .setmenu image")
-if (q == "image") {
-typemenu = 'image'
-m.reply("Success Changing Menu To "+q)
-} else if (q == "list") {
-typemenu = 'list'
-m.reply("Success Changing Menu To "+q)
-} else if (q == "catalog") {
-typemenu = 'catalog'
-m.reply("Success Changing Menu To "+q)
+case 'asupan':
+m.reply(mess.wait)
+teks = `Succes`
+buffer = `https://api.zacros.my.id/asupan/random`
+rama.sendMessage(from, {video:{url:buffer}, mimetype:"video/mp4", caption:"Success"}, {quoted:m})
+break
+//=================================================//
+case 'asupanukhty':
+case 'asupan-ukhty':
+m.reply(mess.wait)
+teks = `Succes`
+buffer = `https://api.zacros.my.id/asupan/ukhty`
+rama.sendMessage(from, {video:{url:buffer}, mimetype:"video/mp4", caption:"Ini Kak Jangan Lupa Donasi Ya:)"}, {quoted:m})
+break
+//=================================================//
+case 'asupan-santuy':
+case 'asupansantuy':
+m.reply(mess.wait)
+teks = `Succes`
+buffer = `https://api.zacros.my.id/asupan/santuy`
+rama.sendMessage(from, {video:{url:buffer}, mimetype:"video/mp4", caption:"Ini Kak Jangan Lupa Donasi Ya:)"}, {quoted:m})
+break
+//=================================================//
+case 'hijaber':
+m.reply(mess.wait)
+teks = `Succes`
+buffer = `https://api.zacros.my.id/asupan/hijaber`
+rama.sendMessage(from, {image:{url:buffer}, caption:"Done!"}, {quoted:m})
+break
+//=================================================//
+case 'cecan-indo':
+m.reply(mess.wait)
+teks = `Succes`
+buffer = `https://api.zacros.my.id/asupan/indonesia`
+rama.sendMessage(from, {image:{url:buffer}, caption:"Done!"}, {quoted:m})
+break
+//=================================================//
+case 'cecan-malaysia':
+m.reply(mess.wait)
+teks = `Succes`
+buffer = `https://api.zacros.my.id/asupan/malaysia`
+rama.sendMessage(from, {image:{url:buffer}, caption:"Done!"}, {quoted:m})
+break
+//=================================================//
+case 'cecan-thai':
+m.reply(mess.wait)
+teks = `Succes`
+buffer = `https://api.zacros.my.id/asupan/thailand`
+rama.sendMessage(from, {image:{url:buffer}, caption:"Done!"}, {quoted:m})
+break
+//=================================================//
+case 'cecan-vietnam':
+m.reply(mess.wait)
+teks = `Succes`
+buffer = `https://api.zacros.my.id/asupan/vietnam`
+rama.sendMessage(from, {image:{url:buffer}, caption:"Done!"}, {quoted:m})
+break
+//=================================================//
+case 'cecan-korea':
+m.reply(mess.wait)
+teks = `Succes`
+buffer = `https://api.zacros.my.id/asupan/korea`
+rama.sendMessage(from, {image:{url:buffer}, caption:"Done!"}, {quoted:m})
+break
+//=================================================//
+case 'cecan-jepang':
+m.reply(mess.wait)
+teks = `Succes`
+buffer = `https://api.zacros.my.id/asupan/japan`
+rama.sendMessage(from, {image:{url:buffer}, caption:"Done!"}, {quoted:m})
+break
+//=================================================//
+case 'cecan':
+m.reply(mess.wait)
+teks = `Succes`
+buffer = `https://api.zacros.my.id/asupan/cecan`
+rama.sendMessage(from, {image:{url:buffer}, caption:"Done!"}, {quoted:m})
+break
+case 'fajar-news':
+m.reply(mess.wait)
+FajarNews().then(async(res) => {
+console.log(res) 
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Upload: ${i.berita_diupload}\n`
+teks += `Jenis: ${i.berita_jenis}\n`
+teks += `Link: ${i.berita_url}\n`
 }
+teks += ""
+m.reply(teks) 
+})
+break
+//=================================================//
+case "quotes":
+m.reply(mess.wait)
+var res = await Quotes()
+teks += `\nAuthor: ${res.author}\n`
+teks += `\nQuotes:\n`
+teks += `${res.quotes}\n`
+teks += ""
+m.reply(teks)
+break
+//=================================================//
+case "darkjoke": case "darkjokes":
+m.reply(mess.wait)
+var res = await Darkjokes()
+teks = "*Darkjokes*"
+rama.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
+break
+//=================================================//
+case 'cnn-news':
+m.reply(mess.wait)
+CNNNews().then(res => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+m.reply(teks) 
+})
+break
+//=================================================//
+case 'layarkaca-search':
+m.reply(mess.wait)
+if (!q) return m.reply('Judul') 
+LayarKaca21(q).then(async(res) => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Film: ${i.film_title}\n`
+teks += `Link: ${i.film_link}\n`
+}
+teks += ``
+m.reply(teks) 
+})
+break
+//=================================================//
+case 'cnbc-news':
+m.reply(mess.wait)
+CNBCNews().then(async(res) => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Upload: ${i.berita_diupload}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+rama.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+})
+break
+//=================================================//
+case 'tribun-news':
+m.reply(mess.wait)
+TribunNews().then(async(res) => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Upload: ${i.berita_diupload}\n`
+teks += `Jenis: ${i.berita_jenis}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+rama.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+})
+break
+//=================================================//
+case 'indozone-news':
+m.reply(mess.wait)
+IndozoneNews().then(async(res) => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Upload: ${i.berita_diupload}\n`
+teks += `Jenis: ${i.berita_jenis}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+rama.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+})
+break
+//=================================================//
+case 'kompas-news':
+m.reply(mess.wait)
+KompasNews().then(async(res) => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Upload: ${i.berita_diupload}\n`
+teks += `Jenis: ${i.berita_jenis}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+rama.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+})
+break
+//=================================================//
+case 'detik-news':
+m.reply(mess.wait)
+DetikNews().then(async(res) => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Upload: ${i.berita_diupload}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+rama.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+})
+break
+//=================================================//
+case 'daily-news':
+m.reply(mess.wait)
+DailyNews().then(async(res) => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+rama.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+})
+break
+//=================================================//
+case 'inews-news':
+m.reply(mess.wait)
+iNews().then(async(res) => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Upload: ${i.berita_diupload}\n`
+teks += `Jenis: ${i.berita_jenis}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+m.reply(teks) 
+})
+break
+//=================================================//
+case 'okezone-news':
+m.reply(mess.wait)
+OkezoneNews().then(async(res) => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Upload: ${i.berita_diupload}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+rama.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+})
+break
+//=================================================//
+case 'sindo-news':
+m.reply(mess.wait)
+SindoNews().then(async(res) => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Jenis: ${i.berita_jenis}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+m.reply(teks) 
+})
+break
+//=================================================//
+case 'tempo-news':
+m.reply(mess.wait)
+TempoNews().then(async(res) => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Upload: ${i.berita_diupload}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+rama.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+})
+break
+//=================================================//
+case 'antara-news':
+m.reply(mess.wait)
+AntaraNews().then(async(res) => {
+no = 0
+teks = ""
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Upload: ${i.berita_diupload}\n`
+teks += `Jenis: ${i.berita_jenis}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+rama.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+})
+break
+//=================================================//
+case "kontan-news":
+m.reply(mess.wait)
+KontanNews().then(async (res) => {
+teks = ""
+no = 0
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Jenis: ${i.berita_jenis}\n`
+teks += `Upload: ${i.berita_diupload}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+rama.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+})
+break
+//=================================================//
+case "merdeka-news":
+m.reply(mess.wait)
+MerdekaNews().then(async (res) => {
+teks = ""
+no = 0
+for (let i of res) {
+no += 1
+teks += `\n• ${no.toString()} •\n`
+teks += `Berita: ${i.berita}\n`
+teks += `Upload: ${i.berita_diupload}\n`
+teks += `Link: ${i.berita_url}\n`
+}
+teks += ""
+rama.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })   
+})
 break
                     case 'bug': case 'report': {
 rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
@@ -3838,6 +4198,8 @@ let anuuuu = `Hai ${pushname} Selamat Menggunakan Bot ini 😊
   *${smbol}* ${prefix}coffee
   *${smbol}* ${prefix}animequote (Query)
   *${smbol}* ${prefix}couplepp
+  *${smbol}* ${prefix}darkjokes
+  *${smbol}* ${prefix}quotes
 
   *CONVERT MENU*
   *${smbol}* ${prefix}toimage [reply stick]
@@ -4001,7 +4363,6 @@ let anuuuu = `Hai ${pushname} Selamat Menggunakan Bot ini 😊
   *IMAGE EFEK*
   *${smbol}* ${prefix}blur [reply image]
   *${smbol}* ${prefix}beautiful [reply image]
-  *${smbol}* ${prefix}ytcomment [reply image]
   *${smbol}* ${prefix}wanted [reply image]
   *${smbol}* ${prefix}triggeredwebp [reply image]
   *${smbol}* ${prefix}fotojatoh [reply image]
@@ -4012,7 +4373,38 @@ let anuuuu = `Hai ${pushname} Selamat Menggunakan Bot ini 😊
   *${smbol}* ${prefix}gay [reply image]
   *${smbol}* ${prefix}burn [reply image]
   *${smbol}* ${prefix}invert [reply image]
-  *${smbol}* ${prefix}shit [reply image]`
+  *${smbol}* ${prefix}shit [reply image]
+  
+  *ASUPAN MATA*
+  *${smbol}* ${prefix}asupan
+  *${smbol}* ${prefix}asupanukhty
+  *${smbol}* ${prefix}asupansantuy
+  *${smbol}* ${prefix}cecan-malaysia
+  *${smbol}* ${prefix}cecan-indo
+  *${smbol}* ${prefix}hijaber
+  *${smbol}* ${prefix}cecan-korea
+  *${smbol}* ${prefix}cecan-vietnam
+  *${smbol}* ${prefix}cecan-thai
+  *${smbol}* ${prefix}cecan-jepan
+  *${smbol}* ${prefix}cecan
+    
+  *NEWS MENU*
+  *${smbol}* ${prefix}merdeka-news
+  *${smbol}* ${prefix}kontan-news 
+  *${smbol}* ${prefix}cnbc-news
+  *${smbol}* ${prefix}tribun-news
+  *${smbol}* ${prefix}indozone-news
+  *${smbol}* ${prefix}kompas-news
+  *${smbol}* ${prefix}detik-news
+  *${smbol}* ${prefix}daily-news
+  *${smbol}* ${prefix}inews-news
+  *${smbol}* ${prefix}okezone-news
+  *${smbol}* ${prefix}sindo-news
+  *${smbol}* ${prefix}tempo-news
+  *${smbol}* ${prefix}antara-news
+  *${smbol}* ${prefix}cnn-news
+  *${smbol}* ${prefix}fajar-news
+`
 let btn = [
         	{ urlButton: { displayText: `Grup Bot 👥`, url : `https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI` } },
             { urlButton: { displayText: `Youtube ▶️`, url: `https://youtube.com/c/RamaGans` } },
