@@ -255,15 +255,16 @@ participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "14169948404-1305080833
 "thumbnail": fotothum
 }}}
 const more = String.fromCharCode(8206);
-
 const readMore = more.repeat(4001);                     	
 		//group target \\
-let reply = (teks) => {
-return Rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": `R-BOT WHATSAPP-MD`,"body": `Selamat ${salam} kak ${pushname}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fotothum,"sourceUrl": `https://wa.me/message/4DCK3UGKERTGC1`}}}, { quoted: hw })
+const reply = (teks) => {
+ rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": `R-BOT WHATSAPP-MD`,"body": `Selamat ${salam} kak ${pushname}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fotothum,"sourceUrl": `https://wa.me/message/4DCK3UGKERTGC1`}}}, { quoted: hw })
 } 
+
+
 let emot = pickRandom(["🗿", "👍", "💨", "🩱", "🐷", "🐒", "🌝", "💩", "👻", "🔥", "🖕", "🐦","🔐","✔️","🤪","☠️","💎","😈"])        
        /* const replys = (teks) => {
-            rama.sendMessage(m.chat, { text: teks, contextInfo: { externalAdReply: { showAdAttribution: true, mediaType:  2, mediaUrl: 'https://youtu.be/8TFyVqKo4dI', title: `Hai kak ${pushname}`, body: `Create By Rama`, sourceUrl: 'http://s.id/0x404', thumbnail: await( await rama.getFile(pporng)).data
+            rama.sendMessage(m.chat, { text: teks, contextInfo: { externalAdReply: { showAdAttribution: true, mediaType:  2, mediaUrl: 'https://youtu.be/8TFyVqKo4dI', title: `Hai kak ${pushname}`, body: `Create By rama`, sourceUrl: 'http://s.id/0x404', thumbnail: await( await rama.getFile(pporng)).data
         }*/
 
         //Public & Self\\
@@ -4126,7 +4127,11 @@ rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
             break
     case 'runtime':
     reply(`Runtime: ${runtime(process.uptime())}`)
-    break      
+    break     
+    case 'tes':{
+    reply('On NGAB')
+    }
+    break
             case 'sc': case 'script': {
 rama.sendMessage(m.chat, { react: { text: emot, key: m.key }})
                 reply(`GitHub : https://github.com/ \n`)
@@ -4414,7 +4419,7 @@ let anuuuu = `Hai ${pushname} Selamat Menggunakan Bot ini 😊
 `
 let btn = [
         	{ urlButton: { displayText: `Grup Bot 👥`, url : `https://chat.whatsapp.com/KTm4p53s6457qcV5aDOAPI` } },
-            { urlButton: { displayText: `Youtube ▶️`, url: `https://youtube.com/c/RamaGans` } },
+            { urlButton: { displayText: `Youtube ▶️`, url: `https://youtube.com/c/ramaGans` } },
            // { quickReplyButton: { displayText: `All Menu 🍱`, id: 'allmenu'} },
             //{ quickReplyButton: { displayText: `List Menu 🍢`, id: 'command'} },
             { quickReplyButton: { displayText: `Owner 👨‍💻`, id: 'owner'} }
@@ -5105,7 +5110,7 @@ let buttonMessage= {
         
 
     } catch (err) {
-        reply(util.format(err))
+        m.reply(util.format(err))
     }
 }
 
