@@ -258,7 +258,7 @@ const more = String.fromCharCode(8206);
 
 const readMore = more.repeat(4001);                     	
 		//group target \\
-const reply = (teks) => {
+let reply = (teks) => {
 return Rama.sendMessage(m.chat, { text: teks, contextInfo:{"externalAdReply": {"title": `R-BOT WHATSAPP-MD`,"body": `Selamat ${salam} kak ${pushname}`, "previewType": "PHOTO","thumbnailUrl": ``,"thumbnail": fotothum,"sourceUrl": `https://wa.me/message/4DCK3UGKERTGC1`}}}, { quoted: hw })
 } 
 let emot = pickRandom(["🗿", "👍", "💨", "🩱", "🐷", "🐒", "🌝", "💩", "👻", "🔥", "🖕", "🐦","🔐","✔️","🤪","☠️","💎","😈"])        
