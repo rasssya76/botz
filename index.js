@@ -190,7 +190,7 @@ let buttonsh = [
 let buttonMessage = {
 document: fs.readFileSync('./lib/tes.xlsx'),
 mimetype: 'application/pdf',
-jpegThumbnail:buffer,
+jpegThumbnail:ppgroup,
 mentions: [num],
 fileName: `Welcome To ${metadata.subject}`,
 fileLength: 99999999999999,
@@ -221,7 +221,7 @@ let buttons = [
 let buttonMessage = {
 document: fs.readFileSync('./lib/tes.xlsx'),
 mimetype: 'application/pdf',
-jpegThumbnail:buffer,
+jpegThumbnail:ppgroup,
 mentions: [num],
 fileName: `Out In ${metadata.subject}`,
 fileLength: 99999999999999,
